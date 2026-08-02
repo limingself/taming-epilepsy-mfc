@@ -1,0 +1,111 @@
+{
+  "status": "frozen_actor_wgan_run02_development_evaluation",
+  "uses_run02_future_for_training_or_selection": false,
+  "candidate_only_original_not_replaced": true,
+  "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+  "candidate_checkpoint_sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac",
+  "original_actor_sha256": "5b00b8a1cd60946510edd48820dc6544adb1535ec8f36a582d37ee40bfbfb763",
+  "original_rollout_sha256": "24ee40b818c0cdb08d50280f11d34f1ed08f0c582ed4eff8728210dcb4ccc4fb",
+  "parity": {
+    "old_free_max_abs_error": 0.0,
+    "old_actor_max_abs_error": 1.787459069646502e-14,
+    "candidate_free_max_abs_error": 0.0,
+    "passes_1e_minus_6": true
+  },
+  "prediction_occupation_w1_mean": 0.10996506782603699,
+  "heldout_run01": {
+    "original_mean_time_w1": 0.13898649001196028,
+    "candidate_mean_time_w1": 0.13737632098687702,
+    "original_mean_occupation_w1": 0.09988099216465006,
+    "candidate_mean_occupation_w1": 0.09715909155830332,
+    "critic_wasserstein_estimate": 0.30941299757125273,
+    "critic_gradient_penalty": 0.0011643509870815322,
+    "critic_mean_gradient_norm": 1.0157630878184687
+  },
+  "run02_control": {
+    "mean_uncontrolled_time_w1": 0.3471287784604517,
+    "mean_original_time_w1": 0.1373801627562547,
+    "mean_candidate_time_w1": 0.13583723910310724,
+    "candidate_relative_change_vs_original_time": -0.011231051282745708,
+    "mean_uncontrolled_occupation_w1": 0.3137938320029644,
+    "mean_original_occupation_w1": 0.09936746105356492,
+    "mean_candidate_occupation_w1": 0.09654354725581749,
+    "candidate_relative_change_vs_original_occupation": -0.028418898579135266,
+    "candidate_channels_better_than_original_time": 25,
+    "candidate_channels_better_than_original_occupation": 25,
+    "original_channels_better_than_free_time": 36,
+    "candidate_channels_better_than_free_time": 36,
+    "original_channels_better_than_free_occupation": 34,
+    "candidate_channels_better_than_free_occupation": 34,
+    "representatives": {
+      "RPFa3": {
+        "uncontrolled_time_w1": 0.39175717000543553,
+        "original_time_w1": 0.09961487346958335,
+        "candidate_time_w1": 0.0994624174356481,
+        "uncontrolled_occupation_w1": 0.38167741901134133,
+        "original_occupation_w1": 0.0886238500416426,
+        "candidate_occupation_w1": 0.0881129509782782
+      },
+      "RA3": {
+        "uncontrolled_time_w1": 0.283240703421517,
+        "original_time_w1": 0.17855480026210993,
+        "candidate_time_w1": 0.17393331020130018,
+        "uncontrolled_occupation_w1": 0.22054036788860593,
+        "original_occupation_w1": 0.11491963422580978,
+        "candidate_occupation_w1": 0.10787203163152256
+      },
+      "RAFa4": {
+        "uncontrolled_time_w1": 0.3301342901126464,
+        "original_time_w1": 0.15158934118560713,
+        "candidate_time_w1": 0.14880675095048804,
+        "uncontrolled_occupation_w1": 0.30254355395101973,
+        "original_occupation_w1": 0.1243196948508395,
+        "candidate_occupation_w1": 0.11948672832115251
+      }
+    }
+  },
+  "within_patient_descriptive_bootstrap": {
+    "time_w1": {
+      "mean_candidate_minus_original": -0.001542923653147428,
+      "median_candidate_minus_original": -0.0013292185012530183,
+      "descriptive_95pct_interval_low": -0.002414855462107073,
+      "descriptive_95pct_interval_high": -0.0006965273448074452,
+      "unit_warning": "36 channels from one patient are not independent patients"
+    },
+    "occupation_w1": {
+      "mean_candidate_minus_original": -0.0028239137977474223,
+      "median_candidate_minus_original": -0.002526746948082255,
+      "descriptive_95pct_interval_low": -0.0043118729675787094,
+      "descriptive_95pct_interval_high": -0.0013476555174659647,
+      "unit_warning": "36 channels from one patient are not independent patients"
+    }
+  },
+  "original_control_diagnostics": {
+    "peak": 1.4038479078953738,
+    "rms": 0.4009695072888262,
+    "maximum_first_difference": 2.148132227726259,
+    "maximum_second_difference": 3.6471278402596576,
+    "saturation_fraction_over_95pct": 0.0
+  },
+  "candidate_control_diagnostics": {
+    "peak": 1.4135107525574708,
+    "rms": 0.4042286798641402,
+    "maximum_first_difference": 2.165224555793548,
+    "maximum_second_difference": 3.674044364736349,
+    "saturation_fraction_over_95pct": 0.0
+  },
+  "noise_reconstruction": {
+    "maximum_absolute_error": 4.7032946470793036e-07,
+    "relative_l2_error": 6.89468574238789e-08,
+    "noise_sha256": "fd0bc927119f547548be5b0b0a65a60044d74569472aff1bce4f56b69a9d9cfd",
+    "role": "evaluation-only reconstruction after policy freeze"
+  },
+  "baseline_summary_consistency": {
+    "saved_original_mean_time_w1": 0.1373801627562547,
+    "recomputed_original_mean_time_w1": 0.1373801627562547,
+    "saved_original_mean_occupation_w1": 0.09936746105356492,
+    "recomputed_original_mean_occupation_w1": 0.09936746105356492
+  },
+  "decision": "retain both as separate development artifacts; the user has not authorized replacement of the locked original",
+  "claim_guardrail": "Actor+WGAN-GP with empirical particle FP; without a value network, Bellman residual and Hamiltonian stationarity this is not an HJB solver"
+}

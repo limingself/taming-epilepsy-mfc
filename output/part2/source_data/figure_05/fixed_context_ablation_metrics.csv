@@ -1,0 +1,10 @@
+﻿channel,node_class,variant,variant_label,context_index,horizon_samples,particles,occupation_w1
+RPFa3,selected SOZ,state_only,State only,3,256,32,0.25321825174451085
+RPFa3,selected SOZ,state_delay,State + delay,3,256,32,0.19342274718943264
+RPFa3,selected SOZ,state_delay_graph,State + delay + graph,3,256,32,0.17436591615384905
+RA3,selected non-SOZ,state_only,State only,3,256,32,0.27145677811977575
+RA3,selected non-SOZ,state_delay,State + delay,3,256,32,0.28660573202971634
+RA3,selected non-SOZ,state_delay_graph,State + delay + graph,3,256,32,0.2920503921172306
+RAFa4,unselected,state_only,State only,3,256,32,0.19060762941867493
+RAFa4,unselected,state_delay,State + delay,3,256,32,0.15861878233206161
+RAFa4,unselected,state_delay_graph,State + delay + graph,3,256,32,0.1493682873614155

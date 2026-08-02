@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "paper_figure_count": 8,
+  "backend": "Python/matplotlib",
+  "formats": ["svg", "pdf", "png", "tiff"],
+  "figures": [
+    {
+      "number": 1,
+      "part": 1,
+      "title": "Connected PLV network and actuator selection",
+      "generator": "part1_network/figure_01_plv_network_selection.py",
+      "output_directory": "output/part1/figure_01",
+      "stem": "hup060_part1_plv_network_selection",
+      "source_data": "output/part1/source_data/figure_01"
+    },
+    {
+      "number": 2,
+      "part": 2,
+      "title": "Representative fixed RC-SDE prediction, distribution, and error",
+      "generator": "part2_rc_sde/figure_02_rc_sde_prediction.py",
+      "output_directory": "output/part2/figure_02",
+      "stem": "hup060_fixed_context3_particle0_prediction_distribution_error_3x3",
+      "source_data": "output/part2/source_data/figures_02_04"
+    },
+    {
+      "number": 3,
+      "part": 2,
+      "title": "All-36-electrode predictive distribution plate",
+      "generator": "part2_rc_sde/figure_03_all36_distributions.py",
+      "output_directory": "output/part2/figure_03",
+      "stem": "hup060_context3_all36_distribution_plate_6x6",
+      "source_data": "output/part2/source_data/figures_02_04"
+    },
+    {
+      "number": 4,
+      "part": 2,
+      "title": "All-electrode distribution-error decomposition",
+      "generator": "part2_rc_sde/figure_04_distribution_errors.py",
+      "output_directory": "output/part2/figure_04",
+      "stem": "hup060_context3_all36_distribution_w1_summary",
+      "source_data": "output/part2/source_data/figures_02_04"
+    },
+    {
+      "number": 5,
+      "part": 2,
+      "title": "State-delay-graph RC-SDE input ablation",
+      "generator": "part2_rc_sde/figure_05_input_ablation.py",
+      "output_directory": "output/part2/figure_05",
+      "stem": "hup060_context3_1s_free_state_delay_graph_ablation",
+      "source_data": "output/part2/source_data/figure_05"
+    },
+    {
+      "number": 6,
+      "part": 3,
+      "title": "Representative Actor-WGAN mean-field control result",
+      "generator": "part3_mfc/figure_06_actor_wgan_control.py",
+      "output_directory": "output/part3/figure_06",
+      "stem": "hup060_actor_wgan_mfc_preview",
+      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+      "derived_source_data": "output/part3/source_data/figure_06",
+      "provenance_note": "Main-result checkpoint used by the current manuscript figure."
+    },
+    {
+      "number": 7,
+      "part": 3,
+      "title": "Matched component ablation of the MFC controller",
+      "generator": "part3_mfc/figure_07_mfc_ablation.py",
+      "output_directory": "output/part3/figure_07",
+      "stem": "hup060_matched_mfc_ablation_summary_v2",
+      "source_data": "output/part3/source_data/figure_07",
+      "provenance_note": "Matched retrained full and component-ablation checkpoints."
+    },
+    {
+      "number": 8,
+      "part": 3,
+      "title": "All-36-electrode controlled distribution audit",
+      "generator": "part3_mfc/figure_08_all36_controlled_distributions.py",
+      "output_directory": "output/part3/figure_08",
+      "stem": "hup060_actor_wgan_all36_distribution_grid",
+      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+      "derived_source_data": "output/part3/source_data/figure_08",
+      "provenance_note": "Main-result checkpoint used by the current manuscript figure."
+    }
+  ]
+}

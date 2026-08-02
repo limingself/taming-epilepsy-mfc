@@ -1,0 +1,136 @@
+project:
+  name: eight_patient_preictal_reference_v2
+  version: 2
+  random_seeds: [11, 23, 37]
+  output_dir: artifacts/v2
+  cache_dir: cache/v2
+
+data:
+  zip_root: "data/ds004100"
+  subjects: [HUP060, HUP064, HUP065, HUP080, HUP086, HUP114, HUP146, HUP160]
+  target_sampling_rate_hz: 256
+  bandpass_hz: [1.0, 50.0]
+  reference: car
+  causal_filter: true
+  filter_burn_in_s: 20.0
+  resampling_mode: causal_upfirdn
+  causal_fir_half_length_factor: 10
+  retained_resampling_group_delay_s: 0.0390625
+  forecast_guard_samples: 0
+  ictal_segment_s: 32.0
+  preictal_estimation_offsets_s: [-90.0, -50.0]
+  preictal_evaluation_offsets_s: [-45.0, -5.0]
+  minimum_reference_block_s: 15.0
+  analysis_test_runs:
+    HUP060: run-02
+    HUP064: run-01
+    HUP065: run-03
+    HUP080: run-04
+    HUP086: run-02
+    HUP114: run-04
+    HUP146: run-03
+    HUP160: run-03
+  representative:
+    subject: HUP060
+    run: run-02
+  offset_qc_overrides_s:
+    HUP060_run-03: 253.998
+    HUP114_run-01: 176.998
+    HUP114_run-03: 171.998
+
+prediction:
+  primary_model_label: rc_topology_delay_direct
+  primary_comparator_label: persistence
+  topology_increment_comparator_label: esn_delay_direct
+  horizons_samples: [1, 32, 64, 128, 256]
+  primary_horizon_samples: 128
+  context_samples: 512
+  embargo_s: 2.0
+  windows_per_test_run: 8
+  latent_variance_threshold: 0.95
+  latent_components_min: 8
+  latent_components_max: 24
+  reservoir_sizes: [96, 192]
+  spectral_radii: [0.75, 0.90]
+  leak_rates: [0.25, 0.50]
+  input_scales: [0.10, 0.25]
+  ridge_alphas: [0.00001, 0.001, 0.1]
+  delay_sets_samples:
+    - [16, 64]
+    - [8, 32, 128]
+  readout_forms: [recursive, direct_horizon]
+  validation_objective_weights:
+    normalized_rmse: 0.65
+    sliced_wasserstein: 0.35
+  methods:
+    - persistence
+    - ridge_var
+    - delay_linear
+    - esn_plain
+    - esn_topology
+    - esn_delay
+    - rc_topology_delay
+
+actuator_selection:
+  initial_fraction: 0.10
+  maximum_fraction: 0.40
+  fraction_step: 0.05
+  controllability_horizon_steps: 128
+  rank_relative_tolerance: 0.00000001
+  gramian_regularization: 0.000000001
+  maximum_condition_number: 100000000.0
+  random_masks: 500
+  required_random_logdet_quantile: 0.75
+  objective_weights:
+    logdet: 0.70
+    minimum_eigenvalue: 0.30
+
+control:
+  state_space: full_channel_preferred
+  primary_variant: harmonic_feedback
+  primary_harmonic_order: 4
+  primary_target_selector: controllability_greedy
+  temporal_stride: 4
+  horizon_steps: 128
+  sensitivity_horizon_steps: [64, 128, 256]
+  harmonic_orders: [1, 2, 3, 4]
+  endpoint_envelope: hann
+  amplitude_limit_standardized: 0.35
+  energy_budget: null
+  tracking_weight: 1.0
+  covariance_weight: 0.5
+  energy_weight: 0.02
+  first_difference_weight: 0.02
+  second_difference_weight: 0.01
+  feedback_regularization: 0.001
+  per_channel_equivalence_margin_multiplier: 1.25
+  evaluation_rollouts: 256
+  evaluation_initial_states: 8
+  variants:
+    - no_control
+    - bounded_sine
+    - harmonic_feedforward
+    - feedback_only
+    - harmonic_feedback
+    - random_targets
+    - centrality_targets
+    - all_channels
+
+statistics:
+  biological_unit: patient
+  primary_generalization_scope: held_out_seizure_generalization
+  within_record_subjects_descriptive_only: [HUP064]
+  bootstrap_replicates: 10000
+  primary_alpha: 0.05
+  multiple_testing: holm
+  primary_prediction_metric: relative_nrmse_reduction_vs_persistence
+  primary_control_metric: relative_channel_swd_reduction_vs_no_control
+
+figures:
+  backend: python
+  representative_subject: HUP060
+  single_column_mm: 89
+  double_column_mm: 183
+  dpi_preview: 300
+  dpi_submission: 600
+  formats: [svg, pdf, png, tiff]

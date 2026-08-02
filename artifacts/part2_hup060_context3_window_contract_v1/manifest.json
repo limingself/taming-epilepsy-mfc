@@ -1,0 +1,285 @@
+{
+  "contract_version": 1,
+  "purpose": "freeze the exact Part-II example window for a same-window Part-III control comparison",
+  "subject": "HUP060",
+  "run": "run-02",
+  "split_role_at_original_part2_freeze": "held-out final seizure",
+  "context_index_zero_based": 3,
+  "fixed_illustrative_particle_zero_based": 0,
+  "analysis_grid": {
+    "sampling_rate_hz": 256.0,
+    "native_edf_sampling_rate_hz": 500.0,
+    "samples": 256,
+    "nominal_duration_s": 1.0,
+    "displayed_sample_times_s": [
+      0.0,
+      0.99609375
+    ],
+    "half_open_window_s": [
+      0.0,
+      1.0
+    ],
+    "causal_resampling": "causal_upfirdn",
+    "retained_causal_group_delay_s": 0.0390625
+  },
+  "forecast_origin": {
+    "saved_position": 3547,
+    "known_initial_test_segment_sample": 3546,
+    "known_initial_onset_relative_s": 13.8515625,
+    "known_initial_edf_event_coordinate_s": 133.8515625,
+    "first_evaluated_test_segment_sample": 3547,
+    "last_evaluated_test_segment_sample_inclusive": 3802,
+    "evaluated_onset_relative_half_open_s": [
+      13.85546875,
+      14.85546875
+    ],
+    "evaluated_edf_event_coordinate_half_open_s": [
+      133.85546875,
+      134.85546875
+    ],
+    "event_onset_s_from_events_tsv": 120.0,
+    "interpretation": "sample p-1 is the last known initial state; stored index 1 and observed sample p are both plotted at t=0"
+  },
+  "arrays": {
+    "observed_actual_standardized": {
+      "shape": [
+        256,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "a002c6caa785f02fa20c9245157a9ece2a7d5d3e7f5a95fb021f20d486e0bc7d"
+    },
+    "sealed_no_control_law_standardized": {
+      "shape": [
+        32,
+        256,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "ad231a329a863b4464c8cb07f9416dd558d8a9f0ce663f6b5ea98994c82e59aa"
+    },
+    "sealed_fixed_particle0_standardized": {
+      "shape": [
+        256,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "f339b184d693eb02b0473b73166a3310c427ee5f9ec76feefa327e28784cfc80"
+    },
+    "observed_three_representatives_standardized": {
+      "shape": [
+        256,
+        3
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "3cad67d6dab22940d2654a6dbaafb0751b95e3c657f8aa5a1b49f22a771b9a0a"
+    },
+    "sealed_no_control_three_representatives_standardized": {
+      "shape": [
+        32,
+        256,
+        3
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "0ecf412a681a676423547c5befee93a1eea5c80ea8234528efa2495d582171cf"
+    },
+    "time_s": {
+      "shape": [
+        256
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "9c1d63e708d48988da49db5653ec7054d1eacde8310733f640070cbce0f0f3dd"
+    },
+    "absolute_test_segment_sample": {
+      "shape": [
+        256
+      ],
+      "dtype": "<i8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "62c61f91839f818ceaff731d5d56174aad51a4eee3a8a10744c7b9659fb3f5a5"
+    },
+    "legal_train_only_run01_reference_fit_pool_standardized": {
+      "shape": [
+        7680,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "0ca6e48b2188217e12b6351ca43012c52808462c60cea58fc3571837c18de4df"
+    },
+    "legal_train_only_run01_reference_template_standardized": {
+      "shape": [
+        256,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "b531fda5bf54e18130bad9c8b6d7dc67fe0e9c7b6916d72ee30b127ad79ad01b"
+    },
+    "run02_reference_evaluation_pool_standardized": {
+      "shape": [
+        10240,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "be4be4fcbb1e0bd85ecce1745ec00a4a2d44cb66d779e188f1e32b5d91c474ff"
+    },
+    "run02_reference_evaluation_template_standardized": {
+      "shape": [
+        256,
+        36
+      ],
+      "dtype": "<f8",
+      "finite": true,
+      "sha256_dtype_shape_and_c_bytes": "1d53e6ee8bc39ea5a391c62838b47bcb603de0d27a2bff57049ac48fe0975356"
+    }
+  },
+  "alignment_assertions": {
+    "observed_shape_is_256_by_36": true,
+    "no_control_shape_is_32_by_256_by_36": true,
+    "same_time_coordinates_for_observed_no_control_and_future_control": true,
+    "observed_density_values_per_node": 256,
+    "no_control_density_values_per_node": 8192,
+    "required_future_control_shape": [
+      32,
+      256,
+      36
+    ],
+    "future_control_density_values_per_node": 8192,
+    "controlled_rollout_index_rule": "if a simulator returns initial+future with shape (32,257,36), discard only index 0 and evaluate indices 1..256 against observed samples p..p+255",
+    "paired_noise_rule": "controlled and no-control arms must use the same 32 frozen innovation paths/common random numbers particle-by-particle",
+    "density_interval_rule": "for observed, no-control, and controlled conditions use only sample_within_window 0..255 from this same context",
+    "figure_source_csv_roundtrip": {
+      "passed": true,
+      "checked_values": 26880,
+      "maximum_absolute_roundtrip_error": 4.440892098500626e-16,
+      "tolerance": 1e-12
+    }
+  },
+  "actuator_mask": {
+    "rule": "Part-I weighted-centrality threshold; no clinical labels",
+    "zero_based_indices": [
+      1,
+      5,
+      6,
+      10,
+      11,
+      15,
+      16,
+      18,
+      26,
+      27,
+      28,
+      30,
+      33
+    ],
+    "channels": [
+      "LAF2",
+      "RA3",
+      "RAFa1",
+      "RAFb1",
+      "RAFb2",
+      "RAFc2",
+      "RAFc3",
+      "RAFd1",
+      "RPFa1",
+      "RPFa2",
+      "RPFa3",
+      "RPFb1",
+      "RPFc1"
+    ],
+    "matches_part1_csv": true,
+    "matches_sealed_rollout": true
+  },
+  "representative_nodes": [
+    {
+      "channel": "RPFa3",
+      "zero_based_channel_index": 28,
+      "selected_by_original_centrality_threshold": true,
+      "soz": true,
+      "resected": true,
+      "role": "selected SOZ/resection representative"
+    },
+    {
+      "channel": "RA3",
+      "zero_based_channel_index": 5,
+      "selected_by_original_centrality_threshold": true,
+      "soz": false,
+      "resected": false,
+      "role": "selected non-SOZ representative"
+    },
+    {
+      "channel": "RAFa4",
+      "zero_based_channel_index": 9,
+      "selected_by_original_centrality_threshold": false,
+      "soz": false,
+      "resected": false,
+      "role": "unselected representative"
+    }
+  ],
+  "reference_use_contract": {
+    "synthesis_target_allowed": "train-only run-01 reference fit pool/template recorded above",
+    "evaluation_only_not_allowed_for_synthesis": "saved run-02 reference_scaled/reference_template_scaled",
+    "reference_path_alignment": "a reference template is indexed by the same 0..255 phase coordinate, but it is not a contemporaneous run-02 trace"
+  },
+  "same_window_input_artifact": {
+    "relative_path": "artifacts\\part2_hup060_context3_window_contract_v1\\same_window_legal_inputs.npz",
+    "sha256": "652b839b5371ed46f3e16ade5c40cb1bc07154c63c8c4d07c6044d62a1c94301",
+    "keys": [
+      "run01_reference_fit_pool_scaled",
+      "run01_reference_template_scaled",
+      "observed_evaluation_only_scaled",
+      "sealed_no_control_scaled",
+      "time_s",
+      "channels",
+      "selected_indices",
+      "representative_indices"
+    ],
+    "contains_run02_reference_evaluation_pool_or_template": false,
+    "controller_synthesis_allowed_keys": [
+      "run01_reference_fit_pool_scaled",
+      "run01_reference_template_scaled",
+      "sealed_no_control_scaled",
+      "time_s",
+      "channels",
+      "selected_indices",
+      "representative_indices"
+    ],
+    "evaluation_only_keys_not_allowed_in_synthesis_or_tuning": [
+      "observed_evaluation_only_scaled"
+    ],
+    "array_hashes_match_manifest_records": true
+  },
+  "causal_no_future_leakage_contract": [
+    "The Part-II scaler, PCA, graph, RC drift, state-dependent diffusion, and random seeds remain frozen from run-01 development before run-02 evaluation.",
+    "At forecast/control origin p=3547, only the causal history through p-1 may initialise the state or condition a policy.",
+    "Observed run-02 samples p..p+255 are evaluation outcomes; they must not enter target construction, controller optimisation, stopping, hyperparameter selection, or path selection.",
+    "The run-02 interictal reference pool/template saved in the rollout is evaluation-only and must not be used to synthesise or tune the controller.",
+    "A legal controller target is constructed only from the frozen run-01 reference-fit pool; the control law may then use its own simulated/current state causally.",
+    "Context 3 and illustrative particle 0 are predeclared; no best-context or best-particle selection is permitted.",
+    "Controlled/no-control contrasts must be paired with identical innovation paths; changing the noise draw between arms is not a control effect."
+  ],
+  "statistical_interpretation": {
+    "observed_occupation_values_are_temporally_dependent": true,
+    "particles_are_technical_model_realisations_not_biological_replicates": true,
+    "same_interval_density_is_an_occupation_law": true,
+    "not_an_independent_subject_level_probability_sample": true
+  },
+  "input_files_sha256": {
+    "part2_model": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+    "sealed_rollout": "eabe6377490979c3d4ab53b65b0c3ea2046f2895b63c46fc8c18f404845aefb2",
+    "node_table": "3d59ca2ce06cd9fcc04b28075ab53bfe3c9e2ea974b2c6d147ea57059587a3b6",
+    "split_proposal": "0d58fbda6596a0fbc096114a2f122148a8b65b5751fec7ba86ac93c684f16b33",
+    "config_v2": "6624f7948733194455c79ae4f3f1005979fa974f5cdd026fb5532abfa9f1a584",
+    "part2_figure_script": "30f4b0175074d7a89c38be19620662645b92b70c61866eb82dec3182f7fed779",
+    "figure_source_fixed_trajectories": "8d8933d81f5c21b5f445fe3868603f49c5810f49384f6c674b8602d962edb699",
+    "figure_source_context3_occupation_laws": "4d8fffc7e56fbc42c8fc70e4ce18d6114a02cf6a11df611b5f8c43a3404df82b"
+  }
+}

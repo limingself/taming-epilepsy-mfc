@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the associated manuscript."
+title: "Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics"
+type: software
+authors:
+  - family-names: Li
+    given-names: Ming
+version: 1.0.0
+date-released: 2026-08-02
+url: "https://github.com/limingself/taming-epilepsy-mfc"
+repository-code: "https://github.com/limingself/taming-epilepsy-mfc"
+license: MIT

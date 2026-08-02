@@ -1,0 +1,33 @@
+{
+  "subject": "HUP060",
+  "n_nodes": 36,
+  "n_edges": 63,
+  "requested_density": 0.1,
+  "realized_density": 0.1,
+  "connected_components": 1,
+  "plv_source": "multiband_equal",
+  "connectivity_rule": "maximum_spanning_tree_plus_strongest_edges",
+  "centrality_weights": {
+    "degree": 0.3,
+    "betweenness": 0.6,
+    "eigenvector": 0.1
+  },
+  "threshold_quantile": 0.65,
+  "threshold_raw_score": 0.2882179706657096,
+  "selection_rule": "weighted_centrality_score > threshold_raw_score",
+  "selected_count": 13,
+  "selected_clinical_match_count": 5,
+  "selected_nonclinical_count": 8,
+  "soz_count": 4,
+  "resection_count": 9,
+  "clinical_union_count": 10,
+  "selected_soz_overlap_count": 1,
+  "selected_resection_overlap_count": 5,
+  "selected_clinical_precision": 0.38461538461538464,
+  "clinical_union_recall": 0.5,
+  "clinical_labels_used_for_selection": false,
+  "adjacency_symmetric_max_abs_error": 0.0,
+  "laplacian_max_abs_row_sum": 8.881784197001252e-16,
+  "laplacian_zero_eigenvalue_count": 1,
+  "laplacian_algebraic_connectivity": 0.027658504115677256
+}

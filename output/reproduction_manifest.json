@@ -1,0 +1,583 @@
+{
+  "status": "pass",
+  "validated_figure_count": 8,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "networkx": "3.6.1",
+    "mne": "1.12.1",
+    "torch": "2.12.0",
+    "PyYAML": "6.0.3",
+    "tqdm": "4.68.2",
+    "joblib": "1.5.3",
+    "Pillow": "12.2.0"
+  },
+  "figures": [
+    {
+      "number": 1,
+      "part": 1,
+      "title": "Connected PLV network and actuator selection",
+      "generator": "part1_network/figure_01_plv_network_selection.py",
+      "generator_sha256": "7fee4c1db2b099871c68213a4ac29266268938187bf9b80783eebfeb0bd83ca6",
+      "source_data": "output/part1/source_data/figure_01",
+      "source_files": [
+        {
+          "path": "output/part1/source_data/figure_01/hup060_adjacency_matrix.csv",
+          "bytes": 7518,
+          "sha256": "2edc38726dce9a6af8354d11dc704cf4ffac379e14495abf9d515519208fa5a3"
+        },
+        {
+          "path": "output/part1/source_data/figure_01/hup060_connected_plv_edges.csv",
+          "bytes": 2385,
+          "sha256": "5c2c8306401ce260b798f10bd3a6ac292190a9742ea3d839bf3177df9a0381ca"
+        },
+        {
+          "path": "output/part1/source_data/figure_01/hup060_laplacian_matrix.csv",
+          "bytes": 8172,
+          "sha256": "e99d971216a82a0a4104d16fdb0594e0566f23d3aaa6d00c65a5ac7faf8110e5"
+        },
+        {
+          "path": "output/part1/source_data/figure_01/hup060_plv_nodes_and_selection.csv",
+          "bytes": 7129,
+          "sha256": "7338e6d7ffcb4b4258700d2bea559923db50f4d1a6a5b7eb5c987c1664f93cb3"
+        },
+        {
+          "path": "output/part1/source_data/figure_01/method_and_results_zh.md",
+          "bytes": 1183,
+          "sha256": "b72dcd2b5d7b0756dd10dca4b9739b9092e3870a5f53876cee71b12367c6e8c2"
+        },
+        {
+          "path": "output/part1/source_data/figure_01/summary.json",
+          "bytes": 1098,
+          "sha256": "c4365eeb019dcf90829811a4ffa81827409620543067b67e55c654793f3994d1"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part1/figure_01/hup060_part1_plv_network_selection.svg",
+          "bytes": 159819,
+          "sha256": "0f0fc71bbdc436a60683050c5b9bf3af37e3ee9ee2355973826acc5ba228fcd3"
+        },
+        {
+          "path": "output/part1/figure_01/hup060_part1_plv_network_selection.pdf",
+          "bytes": 92147,
+          "sha256": "1f06aca1b69d8dc2755db9a4b2d027cacce6dda664f5e05e4437c54a35a09d91"
+        },
+        {
+          "path": "output/part1/figure_01/hup060_part1_plv_network_selection.png",
+          "bytes": 337823,
+          "sha256": "e6ff24095a5a2d340718f1f2a978bc99af650a7eb538a34230b9cd1d49e48c37",
+          "pixel_size": [
+            1704,
+            1665
+          ],
+          "dpi": [
+            240.00459999999998,
+            240.00459999999998
+          ]
+        },
+        {
+          "path": "output/part1/figure_01/hup060_part1_plv_network_selection.tiff",
+          "bytes": 3132376,
+          "sha256": "9a7973ca08a66052c7220ff2abd725a04f6981f480bf250c94507f4df01e0161",
+          "pixel_size": [
+            4261,
+            4165
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "part": 2,
+      "title": "Representative fixed RC-SDE prediction, distribution, and error",
+      "generator": "part2_rc_sde/figure_02_rc_sde_prediction.py",
+      "generator_sha256": "2e189855d1e98d29325b6454a1b03498e187724fbd9a754f854609859d614264",
+      "source_data": "output/part2/source_data/figures_02_04",
+      "source_files": [
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
+          "bytes": 1173735,
+          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
+          "bytes": 6908,
+          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
+          "bytes": 98049,
+          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
+          "bytes": 604,
+          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
+          "bytes": 86457,
+          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.svg",
+          "bytes": 231152,
+          "sha256": "220be06e3cf333c693f89a66634013e4ef9d7fe64e4cee97ca2dfebf3b384920"
+        },
+        {
+          "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.pdf",
+          "bytes": 110865,
+          "sha256": "e656f4c35f66fe8a64cb43baf0791f930e4c1d1fbd71c8022bc243290c94747a"
+        },
+        {
+          "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.png",
+          "bytes": 465854,
+          "sha256": "37b377721c57c275cffc741fa05bc28366935016d9721c68eab06faa4e06e955",
+          "pixel_size": [
+            2148,
+            1881
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.tiff",
+          "bytes": 1812550,
+          "sha256": "4c453b087a3e1cd9a9995878429d5efe608e20d7c3ae87b3e611dc93fdddb8b7",
+          "pixel_size": [
+            4300,
+            3764
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "part": 2,
+      "title": "All-36-electrode predictive distribution plate",
+      "generator": "part2_rc_sde/figure_03_all36_distributions.py",
+      "generator_sha256": "6a63760582f1c4fd0d43469304957aff504b2d68c8e70e87c01820bc04b0fe89",
+      "source_data": "output/part2/source_data/figures_02_04",
+      "source_files": [
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
+          "bytes": 1173735,
+          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
+          "bytes": 6908,
+          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
+          "bytes": 98049,
+          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
+          "bytes": 604,
+          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
+          "bytes": 86457,
+          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.svg",
+          "bytes": 778583,
+          "sha256": "1842a51baf39fc60a5b6ef0fe5f3e021cd85605aaf4a36d3c4737e226d2d0edd"
+        },
+        {
+          "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.pdf",
+          "bytes": 238609,
+          "sha256": "d0a786e77c5e9bbb2003d8d64d03a789dcab9723bd83958588916b6144687324"
+        },
+        {
+          "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.png",
+          "bytes": 477967,
+          "sha256": "f0b83563aa3d98d09d5da1f4723f62e180df190cdec292716dd779a8a5e2dbe9",
+          "pixel_size": [
+            2059,
+            2116
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.tiff",
+          "bytes": 1806870,
+          "sha256": "d7d6003f21cb995e207b00e59c4b4b56a3dff8e8159eeb12f9fc1a6f6d54eb24",
+          "pixel_size": [
+            4118,
+            4234
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "part": 2,
+      "title": "All-electrode distribution-error decomposition",
+      "generator": "part2_rc_sde/figure_04_distribution_errors.py",
+      "generator_sha256": "10cf18e69533bdf91c14e8ca04ecb57c1946141a5a1c3a3022e55606f6cd32e1",
+      "source_data": "output/part2/source_data/figures_02_04",
+      "source_files": [
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
+          "bytes": 1173735,
+          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
+          "bytes": 6908,
+          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
+          "bytes": 98049,
+          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
+          "bytes": 604,
+          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
+          "bytes": 86457,
+          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.svg",
+          "bytes": 100179,
+          "sha256": "c19b62eb9bbb8c8d77059f3b9721fdd0fa9f8f079c1cc47b6b67a888f5b1cd83"
+        },
+        {
+          "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.pdf",
+          "bytes": 61897,
+          "sha256": "af1db321f5b4bdbd9f5faa199feb18d950f47349f5444aaf2cc7983c955e4566"
+        },
+        {
+          "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.png",
+          "bytes": 217909,
+          "sha256": "c1dfc942bc65f49fa42732a25162d8056952c2d2ef059c350b57d3f00863b49d",
+          "pixel_size": [
+            2077,
+            1673
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.tiff",
+          "bytes": 1207128,
+          "sha256": "b3fc7f02d1cca8e6ed15ee6854feb206325f78420970500f5b55a00a9212faa3",
+          "pixel_size": [
+            4156,
+            3349
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "part": 2,
+      "title": "State-delay-graph RC-SDE input ablation",
+      "generator": "part2_rc_sde/figure_05_input_ablation.py",
+      "generator_sha256": "a17d10b56798fe5786878ac413cbc86a0159f0ae6cccf737b84c60f25a5f9863",
+      "source_data": "output/part2/source_data/figure_05",
+      "source_files": [
+        {
+          "path": "output/part2/source_data/figure_05/fixed_context_ablation_density_curves.csv",
+          "bytes": 473608,
+          "sha256": "27fa315844e7f791a170b154d817beb48cbbf199d454b1f614d275e1ca738ae6"
+        },
+        {
+          "path": "output/part2/source_data/figure_05/fixed_context_ablation_metrics.csv",
+          "bytes": 802,
+          "sha256": "db263eb4465ddf691ad9298091be9153dff23b314050a851c9ddf53a6e077ccd"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.svg",
+          "bytes": 63339,
+          "sha256": "99abcc12096a9d01527be581ba126f99e260b11997d03f714af2485ddba1d32b"
+        },
+        {
+          "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.pdf",
+          "bytes": 68034,
+          "sha256": "63a89f032398d3f76fa0947b83633f0eb52442fe262fef568db1d6a658e139a7"
+        },
+        {
+          "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.png",
+          "bytes": 250844,
+          "sha256": "e0b1f44bfd0ae3154ca87b0d1bc1708e4a52e781f81f42ffaaeb5aa522c8cf1d",
+          "pixel_size": [
+            2139,
+            1388
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.tiff",
+          "bytes": 1140148,
+          "sha256": "703adc5079a573b35979f5e9f0d7c3bbad928d56aeed5a4f27ac14f1ab0f5e2e",
+          "pixel_size": [
+            4276,
+            2777
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "part": 3,
+      "title": "Representative Actor-WGAN mean-field control result",
+      "generator": "part3_mfc/figure_06_actor_wgan_control.py",
+      "generator_sha256": "16338cfddd6a2963c94483aa613ed517c434851b197a6bdf0942839ca23b890a",
+      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+      "source_files": [
+        {
+          "path": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+          "bytes": 16769764,
+          "sha256": "bb5e43d4b8774d144e3fd598650ee1653e22f8391764467b13e403d2577d8541"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.svg",
+          "bytes": 242993,
+          "sha256": "930059e721a4fe15c7426d4be86da3a77ee0f5028b13550d73337e5ea5576919"
+        },
+        {
+          "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.pdf",
+          "bytes": 120560,
+          "sha256": "22d349c80562810bed433f4e00125d83aacb699840d6566b20fbfe4120e0fb2e"
+        },
+        {
+          "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.png",
+          "bytes": 724361,
+          "sha256": "99ee0e372937d5a15234c9e26821abd921f489052010c4a8e28bd140ca10a739",
+          "pixel_size": [
+            2178,
+            2248
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.tiff",
+          "bytes": 78268266,
+          "sha256": "0fb6bef903a14dda68a7a8bbe355df7c196053b6fe9cafb547466ae69259cc8d",
+          "pixel_size": [
+            4355,
+            4493
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ],
+      "derived_source_data": "output/part3/source_data/figure_06",
+      "derived_source_files": [
+        {
+          "path": "output/part3/source_data/figure_06/source_data_representative_controls.csv",
+          "bytes": 145379,
+          "sha256": "90b93bbcbd5680b261a54226702d1a4586ad078e91e47399bb0e531a7c0ce406"
+        },
+        {
+          "path": "output/part3/source_data/figure_06/source_data_representative_densities.csv",
+          "bytes": 340561,
+          "sha256": "ef3499e69b5bca8cab0534d9e5536496a2dff157d9190d4b23431384c6e5ce9a"
+        },
+        {
+          "path": "output/part3/source_data/figure_06/source_data_representative_trajectories.csv",
+          "bytes": 268615,
+          "sha256": "dfd8d2432c3dccd06efc5d9abecae9376fe4c9c44ce309127da89a1042646649"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "part": 3,
+      "title": "Matched component ablation of the MFC controller",
+      "generator": "part3_mfc/figure_07_mfc_ablation.py",
+      "generator_sha256": "7855b3beb587b66586f6fc23a887ab5e4e202d622ba415c8df09447a160f3577",
+      "source_data": "output/part3/source_data/figure_07",
+      "source_files": [
+        {
+          "path": "output/part3/source_data/figure_07/ablation_contrasts_vs_full.csv",
+          "bytes": 7609,
+          "sha256": "fc8adbec2120d1150b9b88e7a7a9830a6d131c626a857d37ad2025832d897dc7"
+        },
+        {
+          "path": "output/part3/source_data/figure_07/ablation_per_channel.csv",
+          "bytes": 11931,
+          "sha256": "f26b81a096de99bf3557006ad953f9546cd253af74a057228c6c11ef3035a78a"
+        },
+        {
+          "path": "output/part3/source_data/figure_07/ablation_rollouts.npz",
+          "bytes": 22627793,
+          "sha256": "8ab19f1f6798584221c489570f1f94cf05201405f06264afeb619606fd017d7f"
+        },
+        {
+          "path": "output/part3/source_data/figure_07/ablation_summary.csv",
+          "bytes": 2662,
+          "sha256": "1dd470edb10b9fedafc094429475c4e7dfda99dcccb29fa55ef41715f8b67910"
+        },
+        {
+          "path": "output/part3/source_data/figure_07/evaluation_summary.json",
+          "bytes": 10585,
+          "sha256": "f136361dfc01c4b8cb0605ee51991dc06f9c1d6bd1344f7edfa03d873dbc2572"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part3/figure_07/hup060_matched_mfc_ablation_summary_v2.svg",
+          "bytes": 124116,
+          "sha256": "8139a1a000bfe35ca7e19b1b697cdb2a3f4e7ba13b4c49e2dec78d308d8a4a0c"
+        },
+        {
+          "path": "output/part3/figure_07/hup060_matched_mfc_ablation_summary_v2.pdf",
+          "bytes": 70160,
+          "sha256": "db885de20e1b57fd73b9ce3f6579fda3caad89ecdcbaa8a6c6f716c640252352"
+        },
+        {
+          "path": "output/part3/figure_07/hup060_matched_mfc_ablation_summary_v2.png",
+          "bytes": 365952,
+          "sha256": "94dbe6c384a2ccec40b182920c5e0aca2e30b2a48125e4d7f3bd879d3ffae087",
+          "pixel_size": [
+            2886,
+            1808
+          ],
+          "dpi": [
+            359.9942,
+            359.9942
+          ]
+        },
+        {
+          "path": "output/part3/figure_07/hup060_matched_mfc_ablation_summary_v2.tiff",
+          "bytes": 57999278,
+          "sha256": "e94d22326786db8a589dc4ca5566278d87baeb5db2c80a71d4f6345d39aa4c41",
+          "pixel_size": [
+            4814,
+            3012
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "part": 3,
+      "title": "All-36-electrode controlled distribution audit",
+      "generator": "part3_mfc/figure_08_all36_controlled_distributions.py",
+      "generator_sha256": "04f2f1c78fc6cd6c9fdb825d69dfeb1ad528523a1d789c75f92dc5a8e08543c6",
+      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+      "source_files": [
+        {
+          "path": "output/part3/source_data/figures_06_08/paired_comparison.npz",
+          "bytes": 16769764,
+          "sha256": "bb5e43d4b8774d144e3fd598650ee1653e22f8391764467b13e403d2577d8541"
+        }
+      ],
+      "exports": [
+        {
+          "path": "output/part3/figure_08/hup060_actor_wgan_all36_distribution_grid.svg",
+          "bytes": 318063,
+          "sha256": "b238ea39a300c5f9076cf952508fda299a2000fe6f66fd035934995d97ddd4a2"
+        },
+        {
+          "path": "output/part3/figure_08/hup060_actor_wgan_all36_distribution_grid.pdf",
+          "bytes": 134625,
+          "sha256": "7daf3f0e83a2543dfcc57190e0d57e0081c345b6980b4b7d7cf21aadccbf0547"
+        },
+        {
+          "path": "output/part3/figure_08/hup060_actor_wgan_all36_distribution_grid.png",
+          "bytes": 831099,
+          "sha256": "85a742b366a795a5af24caa23049a19a7a02e429b9f29ba32ef4b98cb2cc5b11",
+          "pixel_size": [
+            2113,
+            2310
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        {
+          "path": "output/part3/figure_08/hup060_actor_wgan_all36_distribution_grid.tiff",
+          "bytes": 78113590,
+          "sha256": "8070dbedc6ba5fb28322b7e2fa523841bf5f3a51c45c27c66c5ef11471901be0",
+          "pixel_size": [
+            4226,
+            4621
+          ],
+          "dpi": [
+            600.0,
+            600.0
+          ]
+        }
+      ],
+      "derived_source_data": "output/part3/source_data/figure_08",
+      "derived_source_files": [
+        {
+          "path": "output/part3/source_data/figure_08/source_data_actor_wgan_all36_densities.csv",
+          "bytes": 2684325,
+          "sha256": "6e3f31236d80774ba96e6ed245f6fb53643d187c8224fee3a98b493f8fc17cd8"
+        }
+      ]
+    }
+  ]
+}

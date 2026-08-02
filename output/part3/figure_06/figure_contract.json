@@ -1,0 +1,33 @@
+{
+  "core_conclusion": "Adding a time-conditioned WGAN-GP critic to the locked structured Actor yields a modest paired improvement in reference-law matching.",
+  "figure_archetype": "quantitative grid",
+  "target_output": "double-column manuscript figure",
+  "backend": "Python/matplotlib only",
+  "final_size_mm": {
+    "width": 183,
+    "representative_height": 184
+  },
+  "panel_map": {
+    "representative_a_c": "fixed-particle 1-s trajectories",
+    "representative_d_f": "complete-particle occupation laws",
+    "representative_g_i": "direct or graph-mediated control input",
+    "summary_a": "all-channel primary W1 endpoints",
+    "summary_b": "paired per-channel occupation W1",
+    "summary_c": "time-localized mean W1",
+    "summary_d": "critic and validation diagnostics"
+  },
+  "statistics": {
+    "particles": 32,
+    "reference_paths": 15,
+    "channels": 36,
+    "fixed_particle": 0,
+    "fixed_reference_path": 0,
+    "uncertainty_warning": "particles and channels are technical/model units, not independent patients"
+  },
+  "reviewer_risks": [
+    "run-02 is a development window",
+    "critic score is not used as the final W1 metric",
+    "single-particle traces are illustrative; distributions use all particles",
+    "unselected-node input is graph-mediated, not direct stimulation"
+  ]
+}

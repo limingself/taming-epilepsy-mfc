@@ -1,0 +1,38 @@
+{
+  "status": "paper_final_only",
+  "subject": "HUP060",
+  "paper_parts": 3,
+  "paper_figures": 8,
+  "part_1": {
+    "model_code": "part1_network/part1_model.py",
+    "figure_code": ["part1_network/figure_01_plv_network_selection.py"],
+    "figures": [1]
+  },
+  "part_2": {
+    "model_code": "part2_rc_sde/part2_model.py",
+    "figure_code": [
+      "part2_rc_sde/figure_02_rc_sde_prediction.py",
+      "part2_rc_sde/figure_03_all36_distributions.py",
+      "part2_rc_sde/figure_04_distribution_errors.py",
+      "part2_rc_sde/figure_05_input_ablation.py"
+    ],
+    "model": "artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
+    "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+    "diffusion": "state_dependent",
+    "figures": [2, 3, 4, 5]
+  },
+  "part_3": {
+    "model_code": "part3_mfc/part3_model.py",
+    "figure_code": [
+      "part3_mfc/figure_06_actor_wgan_control.py",
+      "part3_mfc/figure_07_mfc_ablation.py",
+      "part3_mfc/figure_08_all36_controlled_distributions.py"
+    ],
+    "main_checkpoint": "artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/frozen_actor_wgan.pt",
+    "main_checkpoint_sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac",
+    "matched_ablation_full_checkpoint": "artifacts/part3_hup060_actor_wgan_v1/ablation_full_seed20261011_v1/frozen_actor_wgan.pt",
+    "matched_ablation_full_checkpoint_sha256": "684af6f473f9e029977d5d2d0e75586df434345a2e28a2582fb32af364642c11",
+    "figures": [6, 7, 8],
+    "implementation": "structured_actor_plus_wgan_gp_critic_plus_empirical_particle_fp"
+  }
+}

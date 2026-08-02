@@ -1,0 +1,14 @@
+{
+  "core_conclusion": "Deviation feedback is dominant; graph spread gives a moderate marginal-law benefit and WGAN-GP gives a small matched-budget refinement.",
+  "archetype": "quantitative grid",
+  "backend": "Python/matplotlib",
+  "main_result_checkpoint": "seed20261011_adv050_anchor020 (Figures 6 and 8 only)",
+  "matched_ablation_checkpoint": "ablation_full_seed20261011_v1 plus three matched retraining arms (Figure 7)",
+  "checkpoint_note": "The main-result and matched-ablation full checkpoints share the architecture but are distinct training runs and distinct weights.",
+  "source_data": [
+    "output/part3/source_data/figure_07/ablation_summary.csv",
+    "output/part3/source_data/figure_07/ablation_per_channel.csv",
+    "output/part3/source_data/figure_07/ablation_contrasts_vs_full.csv",
+    "output/part3/source_data/figure_07/ablation_rollouts.npz"
+  ]
+}

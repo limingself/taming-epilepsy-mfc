@@ -1,0 +1,4 @@
+channel,zero_based_channel_index,selected_by_original_centrality_threshold,soz,resected,role
+RPFa3,28,True,True,True,selected SOZ/resection representative
+RA3,5,True,False,False,selected non-SOZ representative
+RAFa4,9,False,False,False,unselected representative

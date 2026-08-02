@@ -1,0 +1,32 @@
+{
+  "role": "prefix-only synthesis input; contains no run-02 future",
+  "source_manifest": "artifacts/part2_hup060_context3_window_contract_v1/manifest.json",
+  "destination": "artifacts/part3_hup060_causal_synthesis_contract_v1/synthesis_only_inputs.npz",
+  "keys": [
+    "channels",
+    "forecast_origin",
+    "model_sha256",
+    "past_context_scaled",
+    "representative_indices",
+    "run01_reference_fit_pool_scaled",
+    "run01_reference_template_scaled",
+    "sampling_rate_hz",
+    "selected_indices"
+  ],
+  "context_provenance": {
+    "model_path": "artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
+    "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+    "forecast_origin": 3547,
+    "known_last_sample": 3546,
+    "context_half_open": [
+      3291,
+      3547
+    ],
+    "future_observation_accessed_during_training": false
+  },
+  "forbidden_keys": [
+    "observed_evaluation_only_scaled",
+    "sealed_no_control_scaled",
+    "test_sequence"
+  ]
+}

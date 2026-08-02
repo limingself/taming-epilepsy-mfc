@@ -1,0 +1,39 @@
+schema_version: 1
+
+subject: HUP060
+source_network: artifacts/framework_goal/networks/HUP060/network.npz
+clinical_node_table: part1_network/hup060_clinical_labels.csv
+output_dir: output/part1/source_data/figure_01
+figure_dir: output/part1/figure_01
+
+network:
+  plv_source: multiband_equal
+  bands_hz:
+    delta: [1.0, 4.0]
+    theta: [4.0, 8.0]
+    alpha: [8.0, 13.0]
+    beta: [13.0, 30.0]
+    gamma: [30.0, 50.0]
+  band_aggregation: equal_weight_mean
+  density: 0.10
+  connectivity_rule: maximum_spanning_tree_plus_strongest_edges
+
+weighted_centrality:
+  component_normalization: within_patient_minmax
+  weights:
+    degree: 0.30
+    betweenness: 0.60
+    eigenvector: 0.10
+
+selection:
+  threshold_rule: training_score_empirical_quantile
+  threshold_quantile: 0.65
+  comparator: strictly_greater_than
+  clinical_labels_used_for_selection: false
+  clinical_match_definition: selected_and_either_soz_or_resection
+
+figure:
+  backend: python
+  width_mm: 183
+  formats: [svg, pdf, tiff, png]
+  submission_dpi: 600

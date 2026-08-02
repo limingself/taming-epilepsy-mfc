@@ -1,0 +1,101 @@
+{
+  "status": "development_sequential_covariance_backbone",
+  "claim_guardrail": "forward empirical FP plus structured neural feedback; final HJB claim requires a frozen value/Bellman residual audit",
+  "uses_recorded_future_for_training_or_selection": false,
+  "synthesis_contract_keys": [
+    "channels",
+    "forecast_origin",
+    "model_sha256",
+    "past_context_scaled",
+    "representative_indices",
+    "run01_reference_fit_pool_scaled",
+    "run01_reference_template_scaled",
+    "sampling_rate_hz",
+    "selected_indices"
+  ],
+  "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+  "configuration": {
+    "epochs": 180,
+    "epoch_offset": 870,
+    "resumed": false,
+    "objective_mode": "covariance",
+    "freeze_common": false,
+    "local_only": false,
+    "train_markov_only": false,
+    "local_initial_fraction": 0.0,
+    "local_maximum_fraction": 0.05,
+    "markov_residual_scale": 0.6,
+    "markov_hidden_size": 96,
+    "selected_epoch": 1040,
+    "particles": 32,
+    "horizon_samples": 256,
+    "sampling_rate_hz": 256.0,
+    "basis_count": 8,
+    "amplitude_limit": 1.8,
+    "actuator_alpha": 1.0,
+    "base_gain_scale": 0.0,
+    "learning_rate": 5e-05,
+    "diffusion_scale": 0.79451175,
+    "graph_diffusion_time": 0.5,
+    "smoothness_weight": 0.2,
+    "curvature_weight": 0.1,
+    "slew_barrier_weight": 0.0,
+    "curvature_barrier_weight": 0.0,
+    "maximum_first_difference": 0.35,
+    "maximum_second_difference": 0.5,
+    "hard_slew_limit": 0.0
+  },
+  "best_validation_loss": 41.95336402920759,
+  "prediction_occupation_w1": {
+    "mean_all36": 0.10996506782603699,
+    "representatives": {
+      "RPFa3": 0.07734505956504996,
+      "RA3": 0.1278860722628614,
+      "RAFa4": 0.1088900979280011
+    }
+  },
+  "sealed_density_control": {
+    "mean_uncontrolled_time_resolved_w1": 0.3471287784604517,
+    "mean_controlled_time_resolved_w1": 0.1373801627562547,
+    "mean_uncontrolled_occupation_w1": 0.3137938320029644,
+    "mean_controlled_occupation_w1": 0.09936746105356492,
+    "nodes_improved_time_resolved_w1": 36,
+    "representatives": {
+      "RPFa3": {
+        "uncontrolled_time_resolved_w1": 0.39175717000543553,
+        "controlled_time_resolved_w1": 0.09961487346958335,
+        "uncontrolled_occupation_w1": 0.38167741901134133,
+        "controlled_occupation_w1": 0.08862385004164264,
+        "controlled_reference_variance_ratio": 1.8641587472667887
+      },
+      "RA3": {
+        "uncontrolled_time_resolved_w1": 0.283240703421517,
+        "controlled_time_resolved_w1": 0.17855480026210988,
+        "uncontrolled_occupation_w1": 0.22054036788860593,
+        "controlled_occupation_w1": 0.11491963422580985,
+        "controlled_reference_variance_ratio": 0.8736274011259035
+      },
+      "RAFa4": {
+        "uncontrolled_time_resolved_w1": 0.3301342901126464,
+        "controlled_time_resolved_w1": 0.1515893411856071,
+        "uncontrolled_occupation_w1": 0.30254355395101973,
+        "controlled_occupation_w1": 0.12431969485083955,
+        "controlled_reference_variance_ratio": 1.867990464004331
+      }
+    }
+  },
+  "control_diagnostics": {
+    "peak": 1.403847907895374,
+    "rms": 0.4009695072888262,
+    "command_peak": 1.403847907895374,
+    "maximum_first_difference": 2.14813222772626,
+    "maximum_second_difference": 3.647127840259655
+  },
+  "noise_reconstruction": {
+    "maximum_absolute_error": 4.7032946470793036e-07,
+    "relative_l2_error": 6.89468574238789e-08,
+    "noise_sha256": "fd0bc927119f547548be5b0b0a65a60044d74569472aff1bce4f56b69a9d9cfd",
+    "role": "evaluation-only reconstruction after policy freeze"
+  },
+  "elapsed_seconds": 325.840303200006
+}
