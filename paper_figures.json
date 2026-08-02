@@ -16,38 +16,42 @@
     {
       "number": 2,
       "part": 2,
-      "title": "Representative fixed RC-SDE prediction, distribution, and error",
+      "title": "Representative unified zero-control RC-SDE prediction, distribution, and error",
       "generator": "part2_rc_sde/figure_02_rc_sde_prediction.py",
       "output_directory": "output/part2/figure_02",
       "stem": "hup060_fixed_context3_particle0_prediction_distribution_error_3x3",
-      "source_data": "output/part2/source_data/figures_02_04"
+      "source_data": "output/part2/source_data/figures_02_04",
+      "provenance_note": "Exact u=0 particle branch reused as the Part III uncontrolled baseline."
     },
     {
       "number": 3,
       "part": 2,
-      "title": "All-36-electrode predictive distribution plate",
+      "title": "All-36-electrode unified zero-control predictive distribution plate",
       "generator": "part2_rc_sde/figure_03_all36_distributions.py",
       "output_directory": "output/part2/figure_03",
       "stem": "hup060_context3_all36_distribution_plate_6x6",
-      "source_data": "output/part2/source_data/figures_02_04"
+      "source_data": "output/part2/source_data/figures_02_04",
+      "provenance_note": "Exact u=0 particle branch reused as the Part III uncontrolled baseline."
     },
     {
       "number": 4,
       "part": 2,
-      "title": "All-electrode distribution-error decomposition",
+      "title": "All-electrode unified zero-control distribution-error decomposition",
       "generator": "part2_rc_sde/figure_04_distribution_errors.py",
       "output_directory": "output/part2/figure_04",
       "stem": "hup060_context3_all36_distribution_w1_summary",
-      "source_data": "output/part2/source_data/figures_02_04"
+      "source_data": "output/part2/source_data/figures_02_04",
+      "provenance_note": "Exact u=0 particle branch reused as the Part III uncontrolled baseline."
     },
     {
       "number": 5,
       "part": 2,
-      "title": "State-delay-graph RC-SDE input ablation",
+      "title": "Protocol-matched state-delay-graph RC-SDE input ablation",
       "generator": "part2_rc_sde/figure_05_input_ablation.py",
       "output_directory": "output/part2/figure_05",
       "stem": "hup060_context3_1s_free_state_delay_graph_ablation",
-      "source_data": "output/part2/source_data/figure_05"
+      "source_data": "output/part2/source_data/figure_05",
+      "provenance_note": "All variants use the Part III diffusion multiplier and innovation bank; the full variant has zero maximum absolute discrepancy from the Part III u=0 branch."
     },
     {
       "number": 6,

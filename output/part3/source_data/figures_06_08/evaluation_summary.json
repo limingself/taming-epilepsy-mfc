@@ -1,7 +1,8 @@
 {
   "status": "frozen_actor_wgan_run02_development_evaluation",
   "uses_run02_future_for_training_or_selection": false,
-  "candidate_only_original_not_replaced": true,
+  "candidate_only_original_not_replaced": false,
+  "adopted_as_paper_primary_checkpoint": true,
   "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
   "candidate_checkpoint_sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac",
   "original_actor_sha256": "5b00b8a1cd60946510edd48820dc6544adb1535ec8f36a582d37ee40bfbfb763",
@@ -13,6 +14,7 @@
     "passes_1e_minus_6": true
   },
   "prediction_occupation_w1_mean": 0.10996506782603699,
+  "prediction_comparison_target": "observed_ictal_run02_future",
   "heldout_run01": {
     "original_mean_time_w1": 0.13898649001196028,
     "candidate_mean_time_w1": 0.13737632098687702,
@@ -28,6 +30,7 @@
     "mean_candidate_time_w1": 0.13583723910310724,
     "candidate_relative_change_vs_original_time": -0.011231051282745708,
     "mean_uncontrolled_occupation_w1": 0.3137938320029644,
+    "uncontrolled_occupation_comparison_target": "run01_interictal_reference_validation",
     "mean_original_occupation_w1": 0.09936746105356492,
     "mean_candidate_occupation_w1": 0.09654354725581749,
     "candidate_relative_change_vs_original_occupation": -0.028418898579135266,
@@ -106,6 +109,6 @@
     "saved_original_mean_occupation_w1": 0.09936746105356492,
     "recomputed_original_mean_occupation_w1": 0.09936746105356492
   },
-  "decision": "retain both as separate development artifacts; the user has not authorized replacement of the locked original",
+  "decision": "adopt the Actor+WGAN-GP checkpoint as the paper's primary Part-III development result; retain the locked original Actor as a comparator",
   "claim_guardrail": "Actor+WGAN-GP with empirical particle FP; without a value network, Bellman residual and Hamiltonian stationarity this is not an HJB solver"
 }

@@ -1,10 +1,19 @@
 {
-  "core_conclusion": "Deviation feedback is dominant; graph spread gives a moderate marginal-law benefit and WGAN-GP gives a small matched-budget refinement.",
-  "archetype": "quantitative grid",
+  "core_conclusion": "Particle-specific deviation feedback is the dominant component; graph spread provides a moderate marginal-law benefit and WGAN provides a small refinement under matched training.",
+  "archetype": "quantitative summary plus non-overlapping small multiples",
   "backend": "Python/matplotlib",
-  "main_result_checkpoint": "seed20261011_adv050_anchor020 (Figures 6 and 8 only)",
-  "matched_ablation_checkpoint": "ablation_full_seed20261011_v1 plus three matched retraining arms (Figure 7)",
-  "checkpoint_note": "The main-result and matched-ablation full checkpoints share the architecture but are distinct training runs and distinct weights.",
+  "figures": {
+    "summary": "output/part3/figure_07/hup060_matched_mfc_ablation_summary_v2.pdf",
+    "trajectories": "generated audit figure; not a main-paper output",
+    "laws_and_inputs": "generated audit figure; not a main-paper output"
+  },
+  "visibility_fixes": [
+    "one controlled variant per representative-node subplot",
+    "log-scale component-effect panel makes the small WGAN effect visible",
+    "explicit zero-line annotation for the unselected no-graph input",
+    "all annotations kept inside fixed axes limits"
+  ],
+  "statistics": "single-seed HUP060 development evidence; channels and particles are technical units rather than independent patients",
   "source_data": [
     "output/part3/source_data/figure_07/ablation_summary.csv",
     "output/part3/source_data/figure_07/ablation_per_channel.csv",

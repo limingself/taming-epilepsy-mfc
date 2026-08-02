@@ -1,0 +1,84 @@
+{
+  "subject": "HUP060",
+  "split": "run-02 adaptation validation",
+  "context_index": 3,
+  "particle_index": 0,
+  "forecast_boundary_sample": 3547,
+  "analysis_sampling_rate_hz": 256.0,
+  "horizon_samples": 256,
+  "horizon_seconds": 1.0,
+  "distribution_particles": 32,
+  "context_or_particle_selected_by_outcome": false,
+  "rollout_recomputed": false,
+  "protocol_identity": "exact Part-III u=0 branch: same frozen model, initial Markov state, diffusion scale, reconstructed innovations, particles, and horizon",
+  "effective_diffusion_multiplier": 0.79451175,
+  "innovation_noise_sha256": "fd0bc927119f547548be5b0b0a65a60044d74569472aff1bce4f56b69a9d9cfd",
+  "full_saved_rollout_parity_max_abs": 0.0,
+  "observed_parity_max_abs": 0.0,
+  "representative_metrics": [
+    {
+      "channel": "RPFa3",
+      "node_class": "selected SOZ",
+      "context_index": 3,
+      "particle_index": 0,
+      "forecast_boundary_sample": 3547,
+      "mae": 0.5449980002879536,
+      "rmse": 0.6653143050223954,
+      "nrmse": 1.245065071273493,
+      "correlation": 0.2035767295291659,
+      "maximum_absolute_error": 1.9989697527584087,
+      "occupation_w1": 0.0773450595650499,
+      "distribution_particles": 32
+    },
+    {
+      "channel": "RA3",
+      "node_class": "selected non-SOZ",
+      "context_index": 3,
+      "particle_index": 0,
+      "forecast_boundary_sample": 3547,
+      "mae": 0.5584323335808669,
+      "rmse": 0.7251011238103691,
+      "nrmse": 1.498993892927044,
+      "correlation": 0.1007560743579082,
+      "maximum_absolute_error": 1.9581863478267585,
+      "occupation_w1": 0.1278860722628614,
+      "distribution_particles": 32
+    },
+    {
+      "channel": "RAFa4",
+      "node_class": "unselected",
+      "context_index": 3,
+      "particle_index": 0,
+      "forecast_boundary_sample": 3547,
+      "mae": 0.6760130077635882,
+      "rmse": 0.8284323856303648,
+      "nrmse": 1.2686988355008837,
+      "correlation": 0.1420572222474405,
+      "maximum_absolute_error": 2.1347371214821225,
+      "occupation_w1": 0.1088900979280011,
+      "distribution_particles": 32
+    }
+  ],
+  "all36_w1_summary": {
+    "mean": 0.10996506782603695,
+    "median": 0.09550018656651135,
+    "iqr": [
+      0.07048609585865848,
+      0.14168944147312426
+    ],
+    "minimum": 0.0311719541124364,
+    "maximum": 0.2291618693329557
+  },
+  "all36_moment_error_summary": {
+    "mean_absolute_mean_error": 0.027419824998924355,
+    "median_absolute_mean_error": 0.02213300456544645,
+    "mean_absolute_sd_error": 0.09476586247716695,
+    "median_absolute_sd_error": 0.0581023979659617
+  },
+  "input_sha256": {
+    "part2_model": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+    "unified_part3_paired_comparison": "bb5e43d4b8774d144e3fd598650ee1653e22f8391764467b13e403d2577d8541",
+    "part2_ablation_rollout": "4e3fcf064ad164a865d3076160feb26d6ed8aaa312e8cbb7c9c74bc0d014dfdc",
+    "part1_node_table": "7338e6d7ffcb4b4258700d2bea559923db50f4d1a6a5b7eb5c987c1664f93cb3"
+  }
+}

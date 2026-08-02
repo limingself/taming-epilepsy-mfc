@@ -1500,7 +1500,8 @@ def evaluate_model(argv: list[str] | None = None) -> int:
     summary = {
         "status": "frozen_actor_wgan_run02_development_evaluation",
         "uses_run02_future_for_training_or_selection": False,
-        "candidate_only_original_not_replaced": True,
+        "candidate_only_original_not_replaced": False,
+        "adopted_as_paper_primary_checkpoint": True,
         "model_sha256": model_hash,
         "candidate_checkpoint_sha256": sha256_file(checkpoint_path),
         "original_actor_sha256": original_actor_hash,
@@ -1580,8 +1581,8 @@ def evaluate_model(argv: list[str] | None = None) -> int:
             "recomputed_original_mean_occupation_w1": float(original_occ.mean()),
         },
         "decision": (
-            "retain both as separate development artifacts; the user has not "
-            "authorized replacement of the locked original"
+            "adopt the Actor+WGAN-GP checkpoint as the paper's primary Part-III "
+            "development result; retain the locked original Actor as a comparator"
         ),
         "claim_guardrail": (
             "Actor+WGAN-GP with empirical particle FP; without a value network, "

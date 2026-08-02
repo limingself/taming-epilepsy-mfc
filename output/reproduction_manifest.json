@@ -100,52 +100,57 @@
     {
       "number": 2,
       "part": 2,
-      "title": "Representative fixed RC-SDE prediction, distribution, and error",
+      "title": "Representative unified zero-control RC-SDE prediction, distribution, and error",
       "generator": "part2_rc_sde/figure_02_rc_sde_prediction.py",
-      "generator_sha256": "2e189855d1e98d29325b6454a1b03498e187724fbd9a754f854609859d614264",
+      "generator_sha256": "4a2f0409674ed2686fc50f97de520d0c551cd2b9d71c8c4a0aa20831c144061b",
       "source_data": "output/part2/source_data/figures_02_04",
       "source_files": [
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
-          "bytes": 1173735,
-          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+          "bytes": 1170118,
+          "sha256": "def05324b1cd90f0986141899c3a1e2b26ab71f71f0702982247516c75ed4b50"
         },
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
-          "bytes": 6908,
-          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+          "bytes": 6935,
+          "sha256": "88f48aa4ac09e9204f41e40a344dcd46cee9aea1316a546c9287f9f2bf360995"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
-          "bytes": 98049,
-          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+          "bytes": 97403,
+          "sha256": "eb4f1558e4e5c0609ff96e1b6d7dfb5056f5f2ff00278a24db224babd35a5d19"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
-          "bytes": 604,
-          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+          "bytes": 605,
+          "sha256": "b99ff179c3fa23367d2a8e29154f05f4bc2309c2caf8a9edc4cb64e39a6bb3e9"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
-          "bytes": 86457,
-          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+          "bytes": 86724,
+          "sha256": "9d96542e8f9089c28a76821438734d8a9bac9c2c6d3a48299f86d1465dd0344d"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/unified_protocol_summary.json",
+          "bytes": 3075,
+          "sha256": "bc4e486f3ffc99faac3ff5a38302cbcff3858b0211f0675e8bcadc5b3408c033"
         }
       ],
       "exports": [
         {
           "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.svg",
-          "bytes": 231152,
-          "sha256": "220be06e3cf333c693f89a66634013e4ef9d7fe64e4cee97ca2dfebf3b384920"
+          "bytes": 230990,
+          "sha256": "1ade869ec3c61b6645a603acb9bee03f45f3a347af85d29f804c8f54963ef1cc"
         },
         {
           "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.pdf",
-          "bytes": 110865,
-          "sha256": "e656f4c35f66fe8a64cb43baf0791f930e4c1d1fbd71c8022bc243290c94747a"
+          "bytes": 110980,
+          "sha256": "b3447e5ad01dcc4ad8f0ce41aeae6795dd7dfee61bfad7d999c417bf12b82f8d"
         },
         {
           "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.png",
-          "bytes": 465854,
-          "sha256": "37b377721c57c275cffc741fa05bc28366935016d9721c68eab06faa4e06e955",
+          "bytes": 486694,
+          "sha256": "1869127e60725ff4ad1d3ea0437f67d1b1fe3abc0aa64591ca9552fba9775379",
           "pixel_size": [
             2148,
             1881
@@ -157,8 +162,8 @@
         },
         {
           "path": "output/part2/figure_02/hup060_fixed_context3_particle0_prediction_distribution_error_3x3.tiff",
-          "bytes": 1812550,
-          "sha256": "4c453b087a3e1cd9a9995878429d5efe608e20d7c3ae87b3e611dc93fdddb8b7",
+          "bytes": 1892270,
+          "sha256": "9d5f7267c2cec37d7f194650d035f8b11e9a1d661e782fb108f26a3662fc0bf7",
           "pixel_size": [
             4300,
             3764
@@ -173,52 +178,57 @@
     {
       "number": 3,
       "part": 2,
-      "title": "All-36-electrode predictive distribution plate",
+      "title": "All-36-electrode unified zero-control predictive distribution plate",
       "generator": "part2_rc_sde/figure_03_all36_distributions.py",
-      "generator_sha256": "6a63760582f1c4fd0d43469304957aff504b2d68c8e70e87c01820bc04b0fe89",
+      "generator_sha256": "80786a2c1c8458dcce4ada92f067140435f8f7738fec75a1272886fe847f9637",
       "source_data": "output/part2/source_data/figures_02_04",
       "source_files": [
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
-          "bytes": 1173735,
-          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+          "bytes": 1170118,
+          "sha256": "def05324b1cd90f0986141899c3a1e2b26ab71f71f0702982247516c75ed4b50"
         },
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
-          "bytes": 6908,
-          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+          "bytes": 6935,
+          "sha256": "88f48aa4ac09e9204f41e40a344dcd46cee9aea1316a546c9287f9f2bf360995"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
-          "bytes": 98049,
-          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+          "bytes": 97403,
+          "sha256": "eb4f1558e4e5c0609ff96e1b6d7dfb5056f5f2ff00278a24db224babd35a5d19"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
-          "bytes": 604,
-          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+          "bytes": 605,
+          "sha256": "b99ff179c3fa23367d2a8e29154f05f4bc2309c2caf8a9edc4cb64e39a6bb3e9"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
-          "bytes": 86457,
-          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+          "bytes": 86724,
+          "sha256": "9d96542e8f9089c28a76821438734d8a9bac9c2c6d3a48299f86d1465dd0344d"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/unified_protocol_summary.json",
+          "bytes": 3075,
+          "sha256": "bc4e486f3ffc99faac3ff5a38302cbcff3858b0211f0675e8bcadc5b3408c033"
         }
       ],
       "exports": [
         {
           "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.svg",
-          "bytes": 778583,
-          "sha256": "1842a51baf39fc60a5b6ef0fe5f3e021cd85605aaf4a36d3c4737e226d2d0edd"
+          "bytes": 778847,
+          "sha256": "73b850cc3b387c477c1b14703810bac10776511529c3e37d376fea573126a451"
         },
         {
           "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.pdf",
-          "bytes": 238609,
-          "sha256": "d0a786e77c5e9bbb2003d8d64d03a789dcab9723bd83958588916b6144687324"
+          "bytes": 240588,
+          "sha256": "f87dc9643edf8760ba1577ccf577e71eef732cef2be3ee703f32679053c68ebe"
         },
         {
           "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.png",
-          "bytes": 477967,
-          "sha256": "f0b83563aa3d98d09d5da1f4723f62e180df190cdec292716dd779a8a5e2dbe9",
+          "bytes": 493511,
+          "sha256": "9e23f3827f1054fb53dcaea452e16c11736ac030d0c904cf338ab6d6b81e2db0",
           "pixel_size": [
             2059,
             2116
@@ -230,8 +240,8 @@
         },
         {
           "path": "output/part2/figure_03/hup060_context3_all36_distribution_plate_6x6.tiff",
-          "bytes": 1806870,
-          "sha256": "d7d6003f21cb995e207b00e59c4b4b56a3dff8e8159eeb12f9fc1a6f6d54eb24",
+          "bytes": 1850282,
+          "sha256": "674d757da5f9d9eda9511e39eba6c6b5e05c6f3007a45ed95c4591afdef0a252",
           "pixel_size": [
             4118,
             4234
@@ -246,52 +256,57 @@
     {
       "number": 4,
       "part": 2,
-      "title": "All-electrode distribution-error decomposition",
+      "title": "All-electrode unified zero-control distribution-error decomposition",
       "generator": "part2_rc_sde/figure_04_distribution_errors.py",
-      "generator_sha256": "10cf18e69533bdf91c14e8ca04ecb57c1946141a5a1c3a3022e55606f6cd32e1",
+      "generator_sha256": "1e19ac3018db50766fefc016d28c561e79206b409462902e16c84bc6253aedcc",
       "source_data": "output/part2/source_data/figures_02_04",
       "source_files": [
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_curves.csv",
-          "bytes": 1173735,
-          "sha256": "6987839c2e13dd88341e1a2fdce93782cf3020b5ee906d66c55afe2a74dde3e8"
+          "bytes": 1170118,
+          "sha256": "def05324b1cd90f0986141899c3a1e2b26ab71f71f0702982247516c75ed4b50"
         },
         {
           "path": "output/part2/source_data/figures_02_04/all36_distribution_metrics.csv",
-          "bytes": 6908,
-          "sha256": "751420f59462137ef0d085cc58c5c3ff87e685930dcd94790ee532c18a6620b8"
+          "bytes": 6935,
+          "sha256": "88f48aa4ac09e9204f41e40a344dcd46cee9aea1316a546c9287f9f2bf360995"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_distribution_curves.csv",
-          "bytes": 98049,
-          "sha256": "3758cf6d3b0aa91c0d01a938121b70e82f65c4cd2be2a4d18b23956040808ce2"
+          "bytes": 97403,
+          "sha256": "eb4f1558e4e5c0609ff96e1b6d7dfb5056f5f2ff00278a24db224babd35a5d19"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_metrics.csv",
-          "bytes": 604,
-          "sha256": "db3e520130387e0e6682a1e2e4a208fbb4eb0d3d73d6bff90d83f7adefad2393"
+          "bytes": 605,
+          "sha256": "b99ff179c3fa23367d2a8e29154f05f4bc2309c2caf8a9edc4cb64e39a6bb3e9"
         },
         {
           "path": "output/part2/source_data/figures_02_04/representative_trajectory_and_error.csv",
-          "bytes": 86457,
-          "sha256": "6d8b33836253e9b2adc4aa66448a158542a9796eb2e4765fc1a0d5ebfa7c2199"
+          "bytes": 86724,
+          "sha256": "9d96542e8f9089c28a76821438734d8a9bac9c2c6d3a48299f86d1465dd0344d"
+        },
+        {
+          "path": "output/part2/source_data/figures_02_04/unified_protocol_summary.json",
+          "bytes": 3075,
+          "sha256": "bc4e486f3ffc99faac3ff5a38302cbcff3858b0211f0675e8bcadc5b3408c033"
         }
       ],
       "exports": [
         {
           "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.svg",
-          "bytes": 100179,
-          "sha256": "c19b62eb9bbb8c8d77059f3b9721fdd0fa9f8f079c1cc47b6b67a888f5b1cd83"
+          "bytes": 96871,
+          "sha256": "3ceae08f069d233724735db05594dfeb2e0775176f5cb4509b1f824d8c298b6d"
         },
         {
           "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.pdf",
-          "bytes": 61897,
-          "sha256": "af1db321f5b4bdbd9f5faa199feb18d950f47349f5444aaf2cc7983c955e4566"
+          "bytes": 62654,
+          "sha256": "0c075378b60aa1a44e3c409e98af59cac4db696a80335500c569f5c9462f3835"
         },
         {
           "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.png",
-          "bytes": 217909,
-          "sha256": "c1dfc942bc65f49fa42732a25162d8056952c2d2ef059c350b57d3f00863b49d",
+          "bytes": 215200,
+          "sha256": "e7045c9bfb375c23fad7dcea52fbeaf53d2e443f6a5ae5b34aa85ee7ff59286a",
           "pixel_size": [
             2077,
             1673
@@ -303,8 +318,8 @@
         },
         {
           "path": "output/part2/figure_04/hup060_context3_all36_distribution_w1_summary.tiff",
-          "bytes": 1207128,
-          "sha256": "b3fc7f02d1cca8e6ed15ee6854feb206325f78420970500f5b55a00a9212faa3",
+          "bytes": 1169064,
+          "sha256": "c7f7ec11d17787a2a48611119215dafdf6f251c05893bcb982108f4f4ea4bc21",
           "pixel_size": [
             4156,
             3349
@@ -319,39 +334,44 @@
     {
       "number": 5,
       "part": 2,
-      "title": "State-delay-graph RC-SDE input ablation",
+      "title": "Protocol-matched state-delay-graph RC-SDE input ablation",
       "generator": "part2_rc_sde/figure_05_input_ablation.py",
-      "generator_sha256": "a17d10b56798fe5786878ac413cbc86a0159f0ae6cccf737b84c60f25a5f9863",
+      "generator_sha256": "193cd2097cc68f0be850952bd8bcb1a4bb4fb5c1f9efc93aaeb5bd1932e720be",
       "source_data": "output/part2/source_data/figure_05",
       "source_files": [
         {
           "path": "output/part2/source_data/figure_05/fixed_context_ablation_density_curves.csv",
-          "bytes": 473608,
-          "sha256": "27fa315844e7f791a170b154d817beb48cbbf199d454b1f614d275e1ca738ae6"
+          "bytes": 472704,
+          "sha256": "c0b35b21e520ad92bad8188ad4ec5a4f9ff28aaf7cf277187673d4d6475acf2d"
         },
         {
           "path": "output/part2/source_data/figure_05/fixed_context_ablation_metrics.csv",
-          "bytes": 802,
-          "sha256": "db263eb4465ddf691ad9298091be9153dff23b314050a851c9ddf53a6e077ccd"
+          "bytes": 801,
+          "sha256": "3ccaf86ed5f1d75a45f8641f611f44ae4f719f985680b97671a5669ae9997e61"
+        },
+        {
+          "path": "output/part2/source_data/figure_05/unified_ablation_summary.json",
+          "bytes": 3421,
+          "sha256": "312e8eae7ac26ec0b5b393bb3fd99c96d2a2833286ff2570bd773e59aeacad04"
         }
       ],
       "exports": [
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.svg",
-          "bytes": 63339,
-          "sha256": "99abcc12096a9d01527be581ba126f99e260b11997d03f714af2485ddba1d32b"
+          "bytes": 63315,
+          "sha256": "8f2cba7504f9dcee45afb6d1a8d5650587905b4b283e57535cbb0e90bcb56944"
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.pdf",
-          "bytes": 68034,
-          "sha256": "63a89f032398d3f76fa0947b83633f0eb52442fe262fef568db1d6a658e139a7"
+          "bytes": 68696,
+          "sha256": "4ca3b1ed375581e870d65eccdbba362aa1202013052895697042426cf7871a36"
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.png",
-          "bytes": 250844,
-          "sha256": "e0b1f44bfd0ae3154ca87b0d1bc1708e4a52e781f81f42ffaaeb5aa522c8cf1d",
+          "bytes": 245849,
+          "sha256": "373019d1e52b2be28ff88db72c3df7b60ac6a654256e7ee4feb3e8b15b0acc9f",
           "pixel_size": [
-            2139,
+            2159,
             1388
           ],
           "dpi": [
@@ -361,10 +381,10 @@
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.tiff",
-          "bytes": 1140148,
-          "sha256": "703adc5079a573b35979f5e9f0d7c3bbad928d56aeed5a4f27ac14f1ab0f5e2e",
+          "bytes": 1144718,
+          "sha256": "812a334c41de3c6795f6a1d6a19c933ead939613050ad108d17412debebf2fd0",
           "pixel_size": [
-            4276,
+            4316,
             2777
           ],
           "dpi": [
@@ -470,13 +490,13 @@
         },
         {
           "path": "output/part3/source_data/figure_07/ablation_summary.csv",
-          "bytes": 2662,
-          "sha256": "1dd470edb10b9fedafc094429475c4e7dfda99dcccb29fa55ef41715f8b67910"
+          "bytes": 2678,
+          "sha256": "24d1c5c08c725ee0b46caf1686609ee83d3e16797cc2d1e2a328b9ba400668d4"
         },
         {
           "path": "output/part3/source_data/figure_07/evaluation_summary.json",
-          "bytes": 10585,
-          "sha256": "f136361dfc01c4b8cb0605ee51991dc06f9c1d6bd1344f7edfa03d873dbc2572"
+          "bytes": 10219,
+          "sha256": "9465756d3550068f13ddb997d75d3bf4bbf7dab82e13db4330caa0dffe632ddb"
         }
       ],
       "exports": [
@@ -579,5 +599,17 @@
         }
       ]
     }
-  ]
+  ],
+  "unified_part2_part3_protocol": {
+    "status": "pass",
+    "effective_diffusion_multiplier": 0.79451175,
+    "full_u0_parity_max_abs": 0.0,
+    "representative_occupation_w1": {
+      "RPFa3": 0.0773450595650499,
+      "RA3": 0.1278860722628614,
+      "RAFa4": 0.1088900979280011
+    },
+    "all36_mean_occupation_w1": 0.10996506782603695,
+    "all36_median_occupation_w1": 0.09550018656651135
+  }
 }

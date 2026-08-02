@@ -19,6 +19,9 @@
     "model": "artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
     "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
     "diffusion": "state_dependent",
+    "effective_diffusion_multiplier": 0.79451175,
+    "unified_zero_control_source": "artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/run02_development_evaluation/paired_comparison.npz",
+    "protocol_identity": "same frozen model, context-3 initial Markov state, particle-wise innovations, particles, and 1-s horizon as Part III u=0",
     "figures": [2, 3, 4, 5]
   },
   "part_3": {

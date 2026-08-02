@@ -1,6 +1,8 @@
 {
+  "contract_version": 2,
   "role": "prefix-only synthesis input; contains no run-02 future",
   "source_manifest": "artifacts/part2_hup060_context3_window_contract_v1/manifest.json",
+  "source_manifest_scope": "historical window coordinates and causal provenance only; it does not supply the current u=0 numerical rollout",
   "destination": "artifacts/part3_hup060_causal_synthesis_contract_v1/synthesis_only_inputs.npz",
   "keys": [
     "channels",
@@ -13,6 +15,9 @@
     "sampling_rate_hz",
     "selected_indices"
   ],
+  "legacy_key_notes": {
+    "past_context_scaled": "Legacy key name: the stored array is the model-input raw EEG context before the frozen train-fitted standardization/PCA transform; the adapter applies that transform internally."
+  },
   "context_provenance": {
     "model_path": "artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
     "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",

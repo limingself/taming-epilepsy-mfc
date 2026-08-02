@@ -1,5 +1,9 @@
 {
   "contract_version": 1,
+  "status": "superseded_historical_provenance_only",
+  "effective_diffusion_multiplier": 1.0,
+  "superseded_by": "output/part2/source_data/figures_02_04/unified_protocol_summary.json",
+  "current_use_restriction": "window coordinates and causal provenance only; sealed_no_control_scaled is forbidden for current Figs. 2--5 and control-gain calculations",
   "purpose": "freeze the exact Part-II example window for a same-window Part-III control comparison",
   "subject": "HUP060",
   "run": "run-02",

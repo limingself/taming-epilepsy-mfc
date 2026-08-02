@@ -1,39 +1,45 @@
-# Part II：状态依赖扩散 Graph-RC-SDE
+# Part II: state-dependent Graph-RC SDE
 
-本目录只保留论文 Part II 的一个模型入口和四个逐图绘制入口。
+This directory exposes one Part-II model command and one plotting script for
+each manuscript figure.  The frozen model uses state-dependent diffusion; it
+is not the superseded constant-diffusion baseline.
 
-## 唯一模型入口
+## Unified prediction/control protocol
 
-`part2_model.py` 对应论文中的最终状态依赖扩散 Graph-RC-SDE，而不是旧的常扩散版本。冻结模型为 36 通道、96 个 reservoir 单元、13 维潜状态、延迟 `(1, 8, 32)`、随机种子 11、扩散 ridge 系数 0.1。
+Part II now reports the exact `u=0` particle branch used as the uncontrolled
+arm in Part III.  Both parts therefore share the frozen Graph-RC SDE, context-3
+initial Markov state, effective diffusion multiplier `0.79451175`, 32
+particle-wise innovation paths, and 1-s horizon.  The full arm of Fig. 5 is
+required to reproduce that saved branch with zero maximum absolute discrepancy.
+
+For HUP060 run-02, the representative prediction-to-recording occupation-law
+Wasserstein-1 distances are `0.077`, `0.128`, and `0.109`; the cross-contact
+mean and median across all 36 electrodes are `0.110` and `0.096`.
+
+## Model entry point
 
 ```powershell
-# 检查冻结模型、参数和文件哈希
 python part2_rc_sde/part2_model.py inspect
-
-# 从冻结的匹配滚动结果重新生成 Figs. 2--5 的全部 Source Data
 python part2_rc_sde/part2_model.py source-data
-
-# 从原始数据重新执行验证集选模和最终训练（耗时）
 python part2_rc_sde/part2_model.py train
 ```
 
-`source-data` 使用由最终模型生成并冻结的同一组 run-02、context-3、1 s、32 粒子匹配滚动结果，因此不会重新挑选时间窗、粒子或噪声路径。
+`source-data` rebuilds the Fig. 2--5 tables from frozen evaluation artifacts.
+It does not select a context, particle, or noise path by outcome.  `train`
+requires the independently obtained OpenNeuro archives configured in
+`config_v2.yaml`.
 
-## 每张论文图的独立代码
+## Independent figure scripts
 
-- `figure_02_rc_sde_prediction.py`：三类代表节点的轨迹、预测分布和轨迹误差。
-- `figure_03_all36_distributions.py`：36 电极预测分布矩阵。
-- `figure_04_distribution_errors.py`：36 电极的 W1、均值误差和标准差误差。
-- `figure_05_input_ablation.py`：状态、状态+延迟、状态+延迟+PLV 图耦合消融。
+- `figure_02_rc_sde_prediction.py`: representative trajectories,
+  distributions, and trajectory error.
+- `figure_03_all36_distributions.py`: predictive distributions for all 36
+  electrodes.
+- `figure_04_distribution_errors.py`: cross-electrode Wasserstein, mean, and
+  standard-deviation error audit.
+- `figure_05_input_ablation.py`: matched state, state+delay, and
+  state+delay+PLV-graph input ablation.
 
-每个脚本只生成其文件名所对应的一张图，并同时导出 SVG、PDF、PNG 和 600-dpi TIFF。Source Data 位于 `../output/part2/source_data/`，图片位于 `../output/part2/figure_02/` 至 `figure_05/`。
-
-## 共享依赖说明
-
-为避免 Part III 重复实现相同随机动力学，`part2_model.py` 仍调用项目级共享包 `mfc_pipeline`。其中 Part-II 专用的内部实现为：
-
-- `mfc_pipeline/part2_state_dependent_rc_sde.py`：RC 漂移与状态依赖扩散的数值类；
-- `mfc_pipeline/part2_data_pipeline.py`：原始 BIDS-ZIP 数据划分和预处理；
-- `mfc_pipeline/part2_training.py`：验证集选择与最终训练过程。
-
-这些是当前模型的内部组成，而不是其他模型版本；用户侧只需运行本目录中的 `part2_model.py`。
+Each plotting script reads only its committed Source Data and exports SVG,
+PDF, PNG, and 600-dpi TIFF locally.  Shared numerical implementation lives in
+`mfc_pipeline/`; it is not a second model version.

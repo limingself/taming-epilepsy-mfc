@@ -1,5 +1,6 @@
 {
-  "status": "prefix_only_actor_wgan_gp_candidate",
+  "status": "adopted_paper_primary_development_checkpoint",
+  "historical_training_status": "prefix_only_actor_wgan_gp_candidate",
   "uses_recorded_run02_future": false,
   "network_count": 2,
   "network_roles": [
@@ -30,5 +31,5 @@
     "original_summary_sha256": "c2f3cfce4c709aeb2879848233cd902c175391e858d3b74804b413d7235010be"
   },
   "elapsed_seconds": 119.07279959999141,
-  "claim_guardrail": "independent development candidate only; it may be compared with, but must not overwrite or relabel, the locked original Actor"
+  "claim_guardrail": "adopted as the paper's primary Part-III development checkpoint; the locked original Actor remains an explicit comparator and the result is not an independent test"
 }

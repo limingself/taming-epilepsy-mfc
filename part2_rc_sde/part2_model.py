@@ -60,6 +60,15 @@ ROLLOUT_PATH = (
     / "part2_hup060_fixed_free_input_ablation"
     / "fixed_context_ablation_rollouts.npz"
 )
+UNIFIED_ROLLOUT_PATH = (
+    ROOT
+    / "artifacts"
+    / "part3_hup060_actor_wgan_v1"
+    / "seed20261011_adv050_anchor020"
+    / "run02_development_evaluation"
+    / "paired_comparison.npz"
+)
+UNIFIED_EVALUATION_SUMMARY = UNIFIED_ROLLOUT_PATH.parent / "evaluation_summary.json"
 NODE_TABLE_PATH = (
     ROOT
     / "output"
@@ -73,10 +82,12 @@ SOURCE_05 = ROOT / "output" / "part2" / "source_data" / "figure_05"
 
 HORIZON = 256
 SAMPLING_RATE = 256.0
-EXPECTED_CONTEXTS = 8
+EXPECTED_CONTEXTS = 1
 EXPECTED_PARTICLES = 32
+DATA_CONTEXT = 0
 FIXED_CONTEXT = 3
 FIXED_PARTICLE = 0
+EFFECTIVE_DIFFUSION_MULTIPLIER = 0.79451175
 NODE_SPECS = (
     ("RPFa3", "selected SOZ"),
     ("RA3", "selected non-SOZ"),
@@ -149,7 +160,7 @@ def load_frozen_model() -> ResidualGraphRCSDE:
 
 
 def _load_frozen_evaluation() -> dict[str, Any]:
-    """Load the fixed, matched-noise run-02 evaluation artifact."""
+    """Load the fixed run-02 ablation artifact and assert Part-III parity."""
 
     if not ROLLOUT_PATH.is_file():
         raise FileNotFoundError(ROLLOUT_PATH)
@@ -165,6 +176,30 @@ def _load_frozen_evaluation() -> dict[str, Any]:
     if float(np.max(np.ptp(data["state_delay_graph"][:, :, 0], axis=1))) > 1e-12:
         raise RuntimeError("particles do not share the fixed initial state")
 
+    if not UNIFIED_ROLLOUT_PATH.is_file():
+        raise FileNotFoundError(UNIFIED_ROLLOUT_PATH)
+    with np.load(UNIFIED_ROLLOUT_PATH, allow_pickle=False) as payload:
+        unified_channels = [str(value) for value in payload["channels"].tolist()]
+        unified_future = np.asarray(payload["uncontrolled_scaled"], dtype=np.float64)
+        unified_observed = np.asarray(payload["observed_scaled"], dtype=np.float64)
+        unified_particle = int(np.asarray(payload["fixed_particle_index"]).ravel()[0])
+        unified_sampling_rate = float(np.asarray(payload["sampling_rate_hz"]).ravel()[0])
+    if channels != unified_channels:
+        raise RuntimeError("Part-II and Part-III channel orders differ")
+    if unified_particle != FIXED_PARTICLE or not np.isclose(unified_sampling_rate, SAMPLING_RATE):
+        raise RuntimeError("the frozen particle or analysis sampling rate changed")
+    full_parity = float(
+        np.max(np.abs(data["state_delay_graph"][DATA_CONTEXT, :, 1:] - unified_future))
+    )
+    observed_parity = float(
+        np.max(np.abs(data["observed"][DATA_CONTEXT] - unified_observed))
+    )
+    if full_parity > 1e-6 or observed_parity > 1e-12:
+        raise RuntimeError(
+            "the Part-II full branch is not the frozen Part-III u=0 branch: "
+            f"rollout={full_parity}, observed={observed_parity}"
+        )
+
     node_table = pd.read_csv(NODE_TABLE_PATH)
     for column in ("selected", "soz", "resection"):
         node_table[column] = _parse_bool(node_table[column])
@@ -177,6 +212,8 @@ def _load_frozen_evaluation() -> dict[str, Any]:
     ] = "selected SOZ/resection"
     data["channels"] = channels
     data["node_table"] = node_table
+    data["full_saved_rollout_parity_max_abs"] = full_parity
+    data["observed_parity_max_abs"] = observed_parity
     return data
 
 
@@ -193,9 +230,9 @@ def _write_prediction_source_data(data: dict[str, Any]) -> None:
     representative_density_rows: list[dict[str, Any]] = []
     for channel, node_class in NODE_SPECS:
         channel_index = channels.index(channel)
-        observed_path = observed[FIXED_CONTEXT, :, channel_index]
-        predicted_path = predicted[FIXED_CONTEXT, FIXED_PARTICLE, :, channel_index]
-        predictive_law = predicted[FIXED_CONTEXT, :, :, channel_index].reshape(-1)
+        observed_path = observed[DATA_CONTEXT, :, channel_index]
+        predicted_path = predicted[DATA_CONTEXT, FIXED_PARTICLE, :, channel_index]
+        predictive_law = predicted[DATA_CONTEXT, :, :, channel_index].reshape(-1)
         metrics = _trajectory_metrics(observed_path, predicted_path)
         distribution_w1 = float(wasserstein_distance(observed_path, predictive_law))
         metric_rows.append(
@@ -204,7 +241,7 @@ def _write_prediction_source_data(data: dict[str, Any]) -> None:
                 "node_class": node_class,
                 "context_index": FIXED_CONTEXT,
                 "particle_index": FIXED_PARTICLE,
-                "forecast_boundary_sample": int(positions[FIXED_CONTEXT]),
+                "forecast_boundary_sample": int(positions[DATA_CONTEXT]),
                 **metrics,
                 "occupation_w1": distribution_w1,
                 "distribution_particles": EXPECTED_PARTICLES,
@@ -259,8 +296,8 @@ def _write_prediction_source_data(data: dict[str, Any]) -> None:
     )
 
     node_table = data["node_table"].set_index("channel")
-    observed_context = observed[FIXED_CONTEXT]
-    predicted_context = predicted[FIXED_CONTEXT]
+    observed_context = observed[DATA_CONTEXT]
+    predicted_context = predicted[DATA_CONTEXT]
     global_grid = _density_grid(observed_context, predicted_context, points=320)
     all_metrics: list[dict[str, Any]] = []
     all_curves: list[dict[str, Any]] = []
@@ -317,7 +354,7 @@ def _write_prediction_source_data(data: dict[str, Any]) -> None:
     )
 
 
-def _write_ablation_source_data(data: dict[str, Any]) -> None:
+def _write_ablation_source_data(data: dict[str, Any]) -> pd.DataFrame:
     SOURCE_05.mkdir(parents=True, exist_ok=True)
     channels = data["channels"]
     observed = np.asarray(data["observed"], dtype=np.float64)
@@ -325,17 +362,17 @@ def _write_ablation_source_data(data: dict[str, Any]) -> None:
     density_rows: list[dict[str, Any]] = []
     for channel, node_class in NODE_SPECS:
         channel_index = channels.index(channel)
-        observed_values = observed[FIXED_CONTEXT, :, channel_index]
+        observed_values = observed[DATA_CONTEXT, :, channel_index]
         clouds = [observed_values]
         for key, _label in VARIANT_SPECS:
-            clouds.append(data[key][FIXED_CONTEXT, :, 1:, channel_index].reshape(-1))
+            clouds.append(data[key][DATA_CONTEXT, :, 1:, channel_index].reshape(-1))
         pooled = np.concatenate(clouds)
         low, high = np.quantile(pooled, [0.005, 0.995])
         padding = 0.08 * max(float(high - low), 0.1)
         grid = np.linspace(low - padding, high + padding, 450)
         observed_density = _kde(observed_values, grid)
         for key, label in VARIANT_SPECS:
-            predicted_values = data[key][FIXED_CONTEXT, :, 1:, channel_index].reshape(-1)
+            predicted_values = data[key][DATA_CONTEXT, :, 1:, channel_index].reshape(-1)
             predicted_density = _kde(predicted_values, grid)
             rows.append(
                 {
@@ -371,7 +408,8 @@ def _write_ablation_source_data(data: dict[str, Any]) -> None:
                     "density": float(density_value),
                 }
             )
-    pd.DataFrame(rows).to_csv(
+    metrics = pd.DataFrame(rows)
+    metrics.to_csv(
         SOURCE_05 / "fixed_context_ablation_metrics.csv",
         index=False,
         encoding="utf-8-sig",
@@ -381,6 +419,82 @@ def _write_ablation_source_data(data: dict[str, Any]) -> None:
         index=False,
         encoding="utf-8-sig",
     )
+    return metrics
+
+
+def _write_unified_audits(data: dict[str, Any], ablation: pd.DataFrame) -> None:
+    """Write machine-readable protocol identity and descriptive metrics."""
+
+    representative = pd.read_csv(SOURCE_02_04 / "representative_metrics.csv")
+    all36 = pd.read_csv(SOURCE_02_04 / "all36_distribution_metrics.csv")
+    evaluation = json.loads(UNIFIED_EVALUATION_SUMMARY.read_text(encoding="utf-8"))
+    noise = evaluation.get("noise_reconstruction", {})
+    protocol = {
+        "subject": "HUP060",
+        "split": "run-02 adaptation validation",
+        "context_index": FIXED_CONTEXT,
+        "particle_index": FIXED_PARTICLE,
+        "forecast_boundary_sample": int(np.asarray(data["positions"])[DATA_CONTEXT]),
+        "analysis_sampling_rate_hz": SAMPLING_RATE,
+        "horizon_samples": HORIZON,
+        "horizon_seconds": HORIZON / SAMPLING_RATE,
+        "distribution_particles": EXPECTED_PARTICLES,
+        "context_or_particle_selected_by_outcome": False,
+        "rollout_recomputed": False,
+        "protocol_identity": (
+            "exact Part-III u=0 branch: same frozen model, initial Markov state, "
+            "diffusion scale, reconstructed innovations, particles, and horizon"
+        ),
+        "effective_diffusion_multiplier": EFFECTIVE_DIFFUSION_MULTIPLIER,
+        "innovation_noise_sha256": noise.get("noise_sha256"),
+        "full_saved_rollout_parity_max_abs": float(data["full_saved_rollout_parity_max_abs"]),
+        "observed_parity_max_abs": float(data["observed_parity_max_abs"]),
+        "representative_metrics": representative.to_dict(orient="records"),
+        "all36_w1_summary": {
+            "mean": float(all36["occupation_w1"].mean()),
+            "median": float(all36["occupation_w1"].median()),
+            "iqr": [
+                float(all36["occupation_w1"].quantile(0.25)),
+                float(all36["occupation_w1"].quantile(0.75)),
+            ],
+            "minimum": float(all36["occupation_w1"].min()),
+            "maximum": float(all36["occupation_w1"].max()),
+        },
+        "all36_moment_error_summary": {
+            "mean_absolute_mean_error": float(all36["absolute_mean_error"].mean()),
+            "median_absolute_mean_error": float(all36["absolute_mean_error"].median()),
+            "mean_absolute_sd_error": float(all36["absolute_sd_error"].mean()),
+            "median_absolute_sd_error": float(all36["absolute_sd_error"].median()),
+        },
+        "input_sha256": {
+            "part2_model": _sha256(MODEL_PATH),
+            "unified_part3_paired_comparison": _sha256(UNIFIED_ROLLOUT_PATH),
+            "part2_ablation_rollout": _sha256(ROLLOUT_PATH),
+            "part1_node_table": _sha256(NODE_TABLE_PATH),
+        },
+    }
+    (SOURCE_02_04 / "unified_protocol_summary.json").write_text(
+        json.dumps(protocol, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    ablation_audit = {
+        "subject": "HUP060",
+        "split": "run-02 adaptation validation",
+        "protocol": (
+            "fixed context index 3; 1-s autonomous rollout; 32 particles; "
+            "same effective diffusion scale and innovation bank as Part III"
+        ),
+        "effective_diffusion_multiplier": EFFECTIVE_DIFFUSION_MULTIPLIER,
+        "context_index": FIXED_CONTEXT,
+        "forecast_boundary_sample": int(np.asarray(data["positions"])[DATA_CONTEXT]),
+        "analysis_sampling_rate_hz": SAMPLING_RATE,
+        "full_saved_rollout_parity_max_abs": float(data["full_saved_rollout_parity_max_abs"]),
+        "metrics": ablation.to_dict(orient="records"),
+        "future_observation_refresh": False,
+        "input_sha256": protocol["input_sha256"],
+    }
+    (SOURCE_05 / "unified_ablation_summary.json").write_text(
+        json.dumps(ablation_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def build_paper_source_data() -> None:
@@ -389,7 +503,8 @@ def build_paper_source_data() -> None:
     load_frozen_model()  # fail early if model provenance is unavailable
     evaluation = _load_frozen_evaluation()
     _write_prediction_source_data(evaluation)
-    _write_ablation_source_data(evaluation)
+    ablation = _write_ablation_source_data(evaluation)
+    _write_unified_audits(evaluation, ablation)
 
 
 def inspect_model() -> dict[str, Any]:
@@ -401,9 +516,11 @@ def inspect_model() -> dict[str, Any]:
         "latent_dimension": int(model.q),
         "channels": int(np.asarray(model.adjacency).shape[0]),
         "diffusion_mode": str(model.config.diffusion_mode),
+        "effective_diffusion_multiplier": EFFECTIVE_DIFFUSION_MULTIPLIER,
         "configuration": asdict(model.config),
         "paper_rollout": str(ROLLOUT_PATH.relative_to(ROOT)),
         "paper_rollout_sha256": _sha256(ROLLOUT_PATH),
+        "unified_zero_control_source": str(UNIFIED_ROLLOUT_PATH.relative_to(ROOT)),
     }
 
 

@@ -1,5 +1,5 @@
 [project]
 name = "taming-epilepsy-mfc"
-version = "1.0.0"
+version = "1.1.0"
 description = "Reproducible PLV, Graph-RC-SDE, and Actor-WGAN mean-field control workflow for HUP060"
 requires-python = ">=3.11"

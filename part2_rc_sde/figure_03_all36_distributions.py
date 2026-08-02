@@ -102,7 +102,7 @@ def make_figure_03() -> None:
     ]
     figure.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.52, 0.92), ncol=3, columnspacing=1.2, handlelength=1.8)
     figure.suptitle(
-        "HUP060 run-02: distribution prediction across all 36 electrodes",
+        "HUP060 run-02: unified zero-control law across all 36 electrodes",
         x=0.065,
         y=0.985,
         ha="left",
@@ -112,7 +112,7 @@ def make_figure_03() -> None:
     figure.text(
         0.065,
         0.947,
-        "Each panel uses the same fixed context-3 1-s observation and all 32 saved uncontrolled particles; * marks a selected actuator.",
+        "Each panel uses the fixed context-3 observation and the exact 32-particle u=0 law reused in Part III; * marks a selected actuator.",
         fontsize=5.9,
         color="#555555",
     )

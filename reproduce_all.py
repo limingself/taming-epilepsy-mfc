@@ -27,7 +27,7 @@ PART_SCRIPTS = {
 }
 
 
-def run_script(path: Path) -> None:
+def run_script(path: Path, arguments: tuple[str, ...] = ()) -> None:
     environment = os.environ.copy()
     environment.setdefault("MPLBACKEND", "Agg")
     environment.setdefault("PYTHONHASHSEED", "0")
@@ -38,7 +38,12 @@ def run_script(path: Path) -> None:
     runtime = ROOT / ".runtime"
     (runtime / "matplotlib").mkdir(parents=True, exist_ok=True)
     environment.setdefault("MPLCONFIGDIR", str(runtime / "matplotlib"))
-    subprocess.run([sys.executable, str(path)], cwd=ROOT, env=environment, check=True)
+    subprocess.run(
+        [sys.executable, str(path), *arguments],
+        cwd=ROOT,
+        env=environment,
+        check=True,
+    )
 
 
 def main() -> int:
@@ -48,6 +53,11 @@ def main() -> int:
     args = parser.parse_args()
     parts = (1, 2, 3) if args.part == "all" else (int(args.part),)
     for part in parts:
+        if part == 2:
+            run_script(
+                ROOT / "part2_rc_sde" / "part2_model.py",
+                ("source-data",),
+            )
         for script in PART_SCRIPTS[part]:
             run_script(script)
     if not args.skip_verify:

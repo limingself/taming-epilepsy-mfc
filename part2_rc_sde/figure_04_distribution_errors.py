@@ -97,7 +97,7 @@ def make_figure_04() -> None:
     ]
     figure.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.58, 0.885), ncol=3, columnspacing=1.3)
     figure.suptitle(
-        "HUP060 run-02: all-electrode distribution-prediction error",
+        "HUP060 run-02: unified zero-control distribution error",
         x=0.12,
         y=0.975,
         ha="left",

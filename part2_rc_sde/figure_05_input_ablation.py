@@ -129,7 +129,7 @@ def main() -> int:
     handles, labels = axes[0, 0].get_legend_handles_labels()
     figure.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.54, 0.825), ncol=4, handlelength=2.2, columnspacing=1.3)
     figure.suptitle(
-        "HUP060 run-02: matched 1-s free-rollout input ablation",
+        "HUP060 run-02: protocol-matched Graph–RC input ablation",
         x=0.075,
         y=0.985,
         ha="left",
@@ -140,7 +140,7 @@ def main() -> int:
         0.075,
         0.915,
         textwrap.fill(
-            "State only, state + delay, and state + delay + PLV graph models are fit on the same run-01 data and evaluated on the same fixed context-3 window with matched noise.",
+            "All variants use the same run-01 fit data, context-3 initial state, diffusion scale, and reconstructed Part III innovation tensor.",
             width=130,
         ),
         fontsize=6.0,
@@ -150,7 +150,7 @@ def main() -> int:
         0.075,
         0.035,
         textwrap.fill(
-            "All predictions are autonomous 256-step RC-SDE rollouts; no future observation refresh is used. Each predicted occupation law pools 32 technical particles and 256 forecast times from the same 1-s window.",
+            "All predictions are autonomous 256-step RC-SDE rollouts with u=0 and no future-observation refresh. The full graph arm exactly reproduces the Part III zero-control law.",
             width=155,
         ),
         fontsize=5.4,

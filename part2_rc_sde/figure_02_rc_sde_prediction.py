@@ -164,7 +164,7 @@ def make_figure_02() -> None:
         handlelength=2.2,
     )
     figure.suptitle(
-        "HUP060 run-02: fixed 1-s free RC-SDE prediction, distribution, and error",
+        "HUP060 run-02: unified zero-control Graph–RC SDE prediction",
         x=0.075,
         y=0.975,
         ha="left",
@@ -175,8 +175,8 @@ def make_figure_02() -> None:
         0.075,
         0.925,
         textwrap.fill(
-            "Rows 1 and 3 use the predeclared context 3 and fixed stochastic particle 0. "
-            "Row 2 uses all 32 saved particles from exactly the same 1-s context.",
+            "Rows 1 and 3 use predeclared context 3 and stochastic particle 0. "
+            "Row 2 uses the exact 32-particle u=0 law reused as the Part III control baseline.",
             width=125,
         ),
         fontsize=6.1,

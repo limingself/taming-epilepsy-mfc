@@ -17,6 +17,55 @@ ROOT = Path(__file__).resolve().parent
 FORMATS = ("svg", "pdf", "png", "tiff")
 
 
+def validate_unified_part2_protocol() -> dict[str, object]:
+    """Fail if Part II no longer equals the Part-III zero-control branch."""
+
+    summary_path = (
+        ROOT
+        / "output"
+        / "part2"
+        / "source_data"
+        / "figures_02_04"
+        / "unified_protocol_summary.json"
+    )
+    ablation_path = (
+        ROOT
+        / "output"
+        / "part2"
+        / "source_data"
+        / "figure_05"
+        / "unified_ablation_summary.json"
+    )
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    ablation = json.loads(ablation_path.read_text(encoding="utf-8"))
+    if abs(float(summary["effective_diffusion_multiplier"]) - 0.79451175) > 1e-12:
+        raise RuntimeError("unexpected Part-II effective diffusion multiplier")
+    parity = float(ablation["full_saved_rollout_parity_max_abs"])
+    if parity > 1e-9:
+        raise RuntimeError(f"Part-II/Part-III u=0 parity failed: {parity}")
+    representative = {
+        str(row["channel"]): float(row["occupation_w1"])
+        for row in summary["representative_metrics"]
+    }
+    expected = {"RPFa3": 0.0773450596, "RA3": 0.1278860723, "RAFa4": 0.1088900979}
+    for channel, value in expected.items():
+        if abs(representative[channel] - value) > 5e-7:
+            raise RuntimeError(f"unified Part-II W1 changed for {channel}")
+    all36 = summary["all36_w1_summary"]
+    if abs(float(all36["mean"]) - 0.1099650678) > 5e-7:
+        raise RuntimeError("unified all-electrode mean W1 changed")
+    if abs(float(all36["median"]) - 0.0955001866) > 5e-7:
+        raise RuntimeError("unified all-electrode median W1 changed")
+    return {
+        "status": "pass",
+        "effective_diffusion_multiplier": float(summary["effective_diffusion_multiplier"]),
+        "full_u0_parity_max_abs": parity,
+        "representative_occupation_w1": representative,
+        "all36_mean_occupation_w1": float(all36["mean"]),
+        "all36_median_occupation_w1": float(all36["median"]),
+    }
+
+
 def sha256(path: Path) -> str:
     import hashlib
 
@@ -134,6 +183,8 @@ def verify(parts: set[int] | None = None) -> dict[str, object]:
         "packages": package_versions(),
         "figures": records,
     }
+    if parts is None or 2 in parts:
+        payload["unified_part2_part3_protocol"] = validate_unified_part2_protocol()
     if parts is None:
         manifest_name = "reproduction_manifest.json"
     else:
