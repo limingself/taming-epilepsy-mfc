@@ -1,0 +1,15 @@
+{
+  "schema_version": "patient-extensions-sensitive-scan-v1",
+  "status": "PASS",
+  "files_scanned": 78,
+  "forbidden_payload_files": [],
+  "large_csv_files_over_128_kib": [],
+  "absolute_path_or_credential_findings": [],
+  "checks": [
+    "no patient arrays, serialized models, EEG archives, raw/cache/run/staging directories",
+    "no large or long-form result tables",
+    "no one-time GO/access receipt files",
+    "no machine-absolute user paths, private username, fixed authorization values, private keys, or GitHub token forms"
+  ],
+  "note": "Protocol code may name local receipt filenames and output extensions; the corresponding private payloads are not distributed."
+}

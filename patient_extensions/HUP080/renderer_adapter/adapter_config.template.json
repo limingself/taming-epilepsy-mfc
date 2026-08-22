@@ -1,0 +1,28 @@
+{
+  "schema_version": "hup080-v2-common-renderer-path-adapter-v1",
+  "subject_id": "HUP080",
+  "purpose": "Extend the frozen common renderer output-root allowlist to the isolated HUP080 v2 preview root only.",
+  "common_renderer": {
+    "path": "${REPO_ROOT}/patient_extensions/common/renderer/render_channel_plate.py",
+    "sha256": "f644b5a4fed2cac529558f7e8aa8a83c39a04f11ecaafaa8ceba2638d6f9b37f"
+  },
+  "common_config": {
+    "path": "${REPO_ROOT}/patient_extensions/common/renderer/config.json",
+    "sha256": "39a06adcc56007c120ba0c953de307d0615b0edfac5499703d88c0db3bbc8941"
+  },
+  "formal_candidate": {
+    "path": "${PATIENT_RUN_ROOT}/science_run/artifacts/16_common_renderer_input_freeze/common_renderer_input.npz",
+    "sha256": "adb2b3fe4b5e2754a60cbfa795575016dd934ff15e97145776168cee9b0597ef"
+  },
+  "formal_binding": {
+    "path": "${PATIENT_RUN_ROOT}/render_audit_v1/COMMON_RENDERER_BINDING_GO.json",
+    "sha256": "3d0f9bc4ef6103281584a1e6a99bcdf6adfbf57ad02185a2714619a4a9b37d61"
+  },
+  "allowed_output_root": "${PATIENT_RUN_ROOT}/preview",
+  "fixed_stage": "preview",
+  "synthetic_bypass_permitted": false,
+  "patient_specific_renderer_permitted": false,
+  "final_export_permitted": false,
+  "overleaf_write_permitted": false,
+  "no_overwrite": true
+}

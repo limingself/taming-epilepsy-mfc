@@ -1,0 +1,18 @@
+{
+  "schema_version": "patient-extensions-test-report-v1",
+  "status": "PASS",
+  "checks": [
+    "HUP065 frozen aggregate/count/vector contract",
+    "HUP080 frozen aggregate/count/vector contract",
+    "HUP080 hash-only parent-v1 NO_GO receipt and exploratory-v2 amendment contract",
+    "HUP065 hash-only private-failure provenance receipt contract",
+    "HUP080 tau_G=0 identity-map/20-indirect-channel semantics",
+    "HUP065 accepted publication PDF/PNG hashes and dimensions",
+    "HUP080 accepted publication PDF/PNG hashes and dimensions",
+    "executed-freeze/public-template provenance and portability-map hashes",
+    "common protocol executed-provenance/runtime-checkout lock separation",
+    "sensitive/public-payload scan"
+  ],
+  "test_scope": "stdlib-only aggregate, vector, provenance, figure-hash/dimension, and sensitive-payload verification",
+  "patient_signal_arrays_loaded": false
+}

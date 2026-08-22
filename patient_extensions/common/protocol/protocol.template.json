@@ -1,0 +1,677 @@
+{
+  "schema_version": 1,
+  "status": "STATIC_COMMON_PROTOCOL_ONLY_NO_SCIENCE_RUN",
+  "protocol_id": "HUP060_consistent_sparse_rerun_common_v1",
+  "backend": "python",
+  "scope": [
+    "HUP060",
+    "HUP065",
+    "HUP080"
+  ],
+  "guardrails": {
+    "terminal_data_read_by_static_self_test": false,
+    "d_drive_read_by_static_self_test": false,
+    "training_authorized": false,
+    "scientific_evaluation_authorized": false,
+    "overleaf_write_authorized": false,
+    "test_set_may_select_any_candidate": false,
+    "clinical_labels_may_select_actuators": false
+  },
+  "authority_freeze": {
+    "read_only_authority_roots": [
+      "${REPO_ROOT}",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_actor_critic_error_v1",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_loss_diagnostics_v1",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_wgan_loss_decomposition_v1"
+    ],
+    "before_run_recursive_hash_inventory_required": true,
+    "after_run_recursive_hash_inventory_required": true,
+    "inventory_fields": [
+      "relative_path",
+      "bytes",
+      "sha256"
+    ],
+    "inventory_comparison": "exact path, byte-size and SHA-256 equality",
+    "any_hup060_authority_change": "NO_GO",
+    "hup060_authority_may_be_training_input": false,
+    "canonical_source_code_may_be_imported_read_only": true,
+    "hup060_patient_arrays_models_checkpoints_and_outputs_may_be_training_input": false,
+    "allowed_new_output_directory_names": [
+      "HUP065_hup060_sparse_rerun_v1",
+      "HUP080_hup060_sparse_rerun_v1"
+    ],
+    "allowed_output_parent": "${LEGACY_EXTENSION_ROOT}",
+    "output_target_must_not_exist_before_run": true,
+    "output_target_definition": "patient_code_root/science_run; the audited code package itself may preexist",
+    "existing_output_target": "NO_GO",
+    "output_outside_allowed_target": "NO_GO"
+  },
+  "canonical_hup060_locks": {
+    "formal_patient_split_proposal": {
+      "path": "${REPO_ROOT}/artifacts/v2/qc/patient_split_proposal.csv",
+      "sha256": "0d58fbda6596a0fbc096114a2f122148a8b65b5751fec7ba86ac93c684f16b33"
+    },
+    "paper_final_manifest": {
+      "path": "${REPO_ROOT}/PAPER_FINAL_VERSION.json",
+      "sha256": "ed61474d9fb17d67b4daa527e102117ab7d6b15a11b1ed6126b8d0aa3e74c0ea"
+    },
+    "part1_entry": {
+      "path": "${REPO_ROOT}/part1_network/part1_model.py",
+      "sha256": "a98895f8428086fcb255d788340e2645a6567bb50868c347482bc3ac23bbe346"
+    },
+    "part1_network_core": {
+      "path": "${REPO_ROOT}/mfc_pipeline/network.py",
+      "sha256": "1b182235a253c99708a1c3873cb8e7cbef08da2af7e3b52555144a02396146be"
+    },
+    "part2_entry": {
+      "path": "${REPO_ROOT}/part2_rc_sde/part2_model.py",
+      "sha256": "bcc47f0360790f2e3aef6ad4cbb2fe4ee6e0e1cc6825aacc5e96565f31cb6138"
+    },
+    "part2_core": {
+      "path": "${REPO_ROOT}/mfc_pipeline/part2_state_dependent_rc_sde.py",
+      "sha256": "611bad593839c342fa1173d2e6b991a6b9392d11bc38ba561ae6c6370845ecef"
+    },
+    "part2_training": {
+      "path": "${REPO_ROOT}/mfc_pipeline/part2_training.py",
+      "sha256": "cedd8dacd7b46d17ecd49c4ac3616474f6ee17e5e135d593a0835b6618f8890b"
+    },
+    "part2_data_pipeline": {
+      "path": "${REPO_ROOT}/mfc_pipeline/part2_data_pipeline.py",
+      "sha256": "19ba72ceedcd3538ed730a6798206903d82e00269f570951d0fa4de8e6562316"
+    },
+    "part3_entry": {
+      "path": "${REPO_ROOT}/part3_mfc/part3_model.py",
+      "sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1"
+    },
+    "actor_wgan": {
+      "path": "${REPO_ROOT}/mfc_pipeline/actor_wgan.py",
+      "sha256": "aa5b30b88b402b09f137ff0e91571e19bb1caeea93d9de4f4faf7fa57d5e60fd"
+    },
+    "wgan_gp": {
+      "path": "${REPO_ROOT}/mfc_pipeline/full_markov_hjb_fp_wgan.py",
+      "sha256": "c32c3a480f3bb98dae7510f6cdd56612dedc3252c00890d64c7be46df9ab9f55"
+    },
+    "structured_actor": {
+      "path": "${REPO_ROOT}/mfc_pipeline/sequential_covariance_hjb.py",
+      "sha256": "660e571c91cc1df2595554f329106b3973359f1579059de3aef2cd911a733b09"
+    },
+    "part3_data": {
+      "path": "${REPO_ROOT}/mfc_pipeline/data.py",
+      "sha256": "f61cf1a68b31ffd775084bd7f0274334c3ef395b08ec2fda417e39523fff7601"
+    },
+    "part3_causal_particle_rollout": {
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_particle_rollout.py",
+      "sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c"
+    },
+    "part3_riccati": {
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_riccati.py",
+      "sha256": "748567f5fb616a641c3916a69dbb9385cf2a3cd0e64d890b49301bb3244c3ae2"
+    },
+    "part3_square_wave": {
+      "path": "${REPO_ROOT}/mfc_pipeline/square_wave_mfc.py",
+      "sha256": "11969e75d4357396d86cae41ffe11c529d0167310213c29346871ba25e70b64a"
+    },
+    "hup060_part2_checkpoint": {
+      "path": "${REPO_ROOT}/artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
+      "sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43"
+    },
+    "hup060_structured_teacher_checkpoint": {
+      "path": "${REPO_ROOT}/artifacts/part3_hup060_sequential_covariance_v1/run02_context3_markov_precision_joint_v1/frozen_actor.pt",
+      "sha256": "5b00b8a1cd60946510edd48820dc6544adb1535ec8f36a582d37ee40bfbfb763"
+    },
+    "hup060_structured_teacher_summary": {
+      "path": "${REPO_ROOT}/artifacts/part3_hup060_sequential_covariance_v1/run02_context3_markov_precision_joint_v1/summary.json",
+      "sha256": "c2f3cfce4c709aeb2879848233cd902c175391e858d3b74804b413d7235010be"
+    },
+    "hup060_structured_teacher_history": {
+      "path": "${REPO_ROOT}/artifacts/part3_hup060_sequential_covariance_v1/run02_context3_markov_precision_joint_v1/training_history.csv",
+      "sha256": "6533318a6eddf195dc9a5823c56fec692977c623277a505a64432afc5fdc4b26"
+    },
+    "hup060_part3_checkpoint": {
+      "path": "${REPO_ROOT}/artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/frozen_actor_wgan.pt",
+      "sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac"
+    },
+    "hup060_all_channel_renderer": {
+      "path": "${REPO_ROOT}/part3_mfc/figure_08_all36_controlled_distributions.py",
+      "sha256": "04f2f1c78fc6cd6c9fdb825d69dfeb1ad528523a1d789c75f92dc5a8e08543c6"
+    }
+  },
+  "subjects": {
+    "HUP060": {
+      "expected_channels": 36,
+      "development_runs": "run-01",
+      "validation_folds": "blocked-run-01",
+      "final_refit_runs": "run-01",
+      "sealed_test_run": "run-02",
+      "excluded_runs": {
+        "run-03": "onset_sample_time_mismatch"
+      },
+      "reference_train_runs": "run-01",
+      "reference_train_window_seconds_half_open": [
+        30.0,
+        70.0
+      ],
+      "reference_test_run": "run-02",
+      "reference_test_window_seconds_half_open": [
+        75.0,
+        115.0
+      ],
+      "reference_role": "preictal_reference"
+    },
+    "HUP065": {
+      "expected_channels": 64,
+      "development_runs": [
+        "run-01",
+        "run-02"
+      ],
+      "validation_folds": [
+        "leave-run-01-out",
+        "leave-run-02-out"
+      ],
+      "final_refit_runs": [
+        "run-01",
+        "run-02"
+      ],
+      "sealed_test_run": "run-03",
+      "excluded_runs": {},
+      "reference_train_runs": [
+        "run-01",
+        "run-02"
+      ],
+      "reference_train_window_seconds_half_open": [
+        30.0,
+        70.0
+      ],
+      "reference_test_run": "run-03",
+      "reference_test_window_seconds_half_open": [
+        75.0,
+        115.0
+      ],
+      "reference_role": "preictal_reference"
+    },
+    "HUP080": {
+      "expected_channels": 96,
+      "development_runs": [
+        "run-01",
+        "run-02",
+        "run-03"
+      ],
+      "validation_folds": [
+        "leave-run-01-out",
+        "leave-run-02-out",
+        "leave-run-03-out"
+      ],
+      "final_refit_runs": [
+        "run-01",
+        "run-02",
+        "run-03"
+      ],
+      "sealed_test_run": "run-04",
+      "excluded_runs": {},
+      "reference_train_runs": [
+        "run-01",
+        "run-02",
+        "run-03"
+      ],
+      "reference_train_window_seconds_half_open": [
+        30.0,
+        70.0
+      ],
+      "reference_test_run": "run-04",
+      "reference_test_window_seconds_half_open": [
+        75.0,
+        115.0
+      ],
+      "reference_role": "preictal_reference"
+    }
+  },
+  "common_model": {
+    "preprocessing": {
+      "target_sampling_rate_hz": 256,
+      "bandpass_hz": [
+        1.0,
+        50.0
+      ],
+      "reference": "car",
+      "causal_filter": true,
+      "train_only_standardization_and_pca": true
+    },
+    "part1": {
+      "plv_bands_hz": [
+        [
+          1.0,
+          4.0
+        ],
+        [
+          4.0,
+          8.0
+        ],
+        [
+          8.0,
+          13.0
+        ],
+        [
+          13.0,
+          30.0
+        ],
+        [
+          30.0,
+          50.0
+        ]
+      ],
+      "band_aggregation": "equal_weight_mean",
+      "plv_window_seconds": 4.0,
+      "plv_window_overlap_fraction": 0.5,
+      "network_role": "actuator_ranking_and_sparse_mask_selection_only",
+      "graph_rule": "maximum_spanning_tree_plus_strongest_edges",
+      "graph_density": 0.1,
+      "centrality_weights": {
+        "degree": 0.3,
+        "betweenness": 0.6,
+        "eigenvector": 0.1
+      },
+      "clinical_labels_used_for_selection": false
+    },
+    "part2": {
+      "model_class": "ResidualGraphRCSDE",
+      "diffusion_mode": "state_dependent_D(x)R D(x)",
+      "plant_network_source": "broadband_windowed_plv_median_not_part1_multiband_graph",
+      "plant_plv_window_seconds": 2.0,
+      "plant_plv_window_overlap_fraction": 0.5,
+      "plant_graph_rule": "maximum_spanning_tree_plus_strongest_edges",
+      "plant_graph_density": 0.1,
+      "part1_graph_may_be_reused_as_plant_graph": false,
+      "context_samples": 512,
+      "direct_validation_windows": 6,
+      "direct_validation_maximum_horizon_samples": 128,
+      "direct_validation_positions": "D_canonical_forecast_positions",
+      "diffusion_alpha_loro_aggregation": "mean_swd_ratio_over_six_windows_per_fold_then_minimize_worst_fold_then_overall_mean_then_alpha",
+      "adjacency_binding": {
+        "raw_part2_plant_adjacency": "model.adjacency_input",
+        "normalized_model_adjacency": "model.adjacency",
+        "world_adjacency": "model.adjacency"
+      },
+      "latent_variance_threshold": 0.95,
+      "latent_components_min": 8,
+      "latent_components_max": 24,
+      "direct_validation_objective": {
+        "nrmse_16": 0.4,
+        "nrmse_32": 0.35,
+        "nrmse_64": 0.15,
+        "swd_ratio_128": 0.1
+      },
+      "loro_candidate_aggregation": "minimize_worst_fold_then_mean_then_candidate_id",
+      "rolling_gate": {
+        "block_candidates_samples": [
+          4,
+          8,
+          12,
+          16,
+          24,
+          32
+        ],
+        "median_correlation_min": 0.7,
+        "median_nrmse_max": 0.8,
+        "selection_rule": "largest_eligible_block",
+        "no_eligible_block": "NO_GO_before_part3"
+      },
+      "test_used_for_selection": false
+    },
+    "part3": {
+      "model_family": "structured_spline_covariance_actor_plus_time_conditioned_wgan_gp_plus_empirical_particle_fp",
+      "horizon_samples": 256,
+      "particles": 32,
+      "antithetic_noise": true,
+      "actor": {
+        "basis_count": 8,
+        "hidden_size": 64,
+        "markov_hidden_size": 96,
+        "residual_scale": 0.15,
+        "markov_residual_scale": 0.6,
+        "amplitude_limit": 1.8,
+        "local_gain_maximum_fraction": 0.05,
+        "runtime_control_projection_or_rescaling": false,
+        "plant_control_graph_diffusion_time_source": "patient_specific_candidate_graph_diffusion_time",
+        "plant_control_channel_map_override_allowed": false,
+        "extra_feedback_only_graph_diffusion_substitution_allowed": false,
+        "stepper_class": "FrozenIctalGraphRCBatchStepper",
+        "stepper_construction": "direct_D_canonical_constructor_without_increment_or_persistence_transform",
+        "canonical_diffusion_scale": 0.79451175,
+        "dimension_rule": "input_output_dimensions_follow_patient_channels_and_sparse_actuator_count"
+      },
+      "critic": {
+        "architecture": "channels_plus_3_to_128_to_128_to_1",
+        "activation": "SiLU",
+        "gradient_penalty_weight": 10.0,
+        "drift_weight": 0.001,
+        "updates_per_epoch": 3
+      },
+      "actor_objective_identity": "total=law+adversarial_weight*adversarial+action_anchor_weight*action_anchor",
+      "fixed_training_schedule": {
+        "teacher_epochs_total": 1050,
+        "s3_to_s4_modern_actor_initialization_seed": 20260921,
+        "teacher_formal_stage_ids": [
+          "S0_INITIAL_0_100",
+          "S1_BALANCED_100_250",
+          "S2S_SAFE_250_450",
+          "S3_COVARIANCE_450_650",
+          "S4_MARKOV_ALPHA100_650_770",
+          "S5_SMOOTHA_770_870",
+          "S6_PRECISION_ALL_PARAMS_870_1050"
+        ],
+        "teacher_stages": [
+          {
+            "stage_id": "S0_INITIAL_0_100",
+            "epochs": 100,
+            "epoch_offset": 0,
+            "validation_every": 5,
+            "learning_rate": 0.0003,
+            "objective": "initial",
+            "actuator_alpha": 0.25,
+            "train_scope": "all_pre_markov_parameters"
+          },
+          {
+            "stage_id": "S1_BALANCED_100_250",
+            "epochs": 150,
+            "epoch_offset": 100,
+            "validation_every": 5,
+            "learning_rate": 0.0002,
+            "objective": "initial_balanced_channel_weights",
+            "actuator_alpha": 0.25,
+            "train_scope": "all_pre_markov_parameters"
+          },
+          {
+            "stage_id": "S2S_SAFE_250_450",
+            "epochs": 200,
+            "epoch_offset": 250,
+            "validation_every": 5,
+            "learning_rate": 0.0001,
+            "objective": "balanced_safe",
+            "actuator_alpha": 0.25,
+            "train_scope": "all_pre_markov_parameters"
+          },
+          {
+            "stage_id": "S3_COVARIANCE_450_650",
+            "epochs": 200,
+            "epoch_offset": 450,
+            "validation_every": 5,
+            "learning_rate": 0.0001,
+            "objective": "covariance",
+            "actuator_alpha": 0.25,
+            "train_scope": "deviation_only_freeze_common"
+          },
+          {
+            "stage_id": "S4_MARKOV_ALPHA100_650_770",
+            "epochs": 120,
+            "epoch_offset": 650,
+            "validation_every": 10,
+            "learning_rate": 0.0002,
+            "objective": "covariance",
+            "actuator_alpha": 1.0,
+            "train_scope": "markov_only"
+          },
+          {
+            "stage_id": "S5_SMOOTHA_770_870",
+            "epochs": 100,
+            "epoch_offset": 770,
+            "validation_every": 10,
+            "learning_rate": 0.0001,
+            "objective": "covariance_smoothA",
+            "actuator_alpha": 1.0,
+            "train_scope": "markov_only"
+          },
+          {
+            "stage_id": "S6_PRECISION_ALL_PARAMS_870_1050",
+            "epochs": 180,
+            "epoch_offset": 870,
+            "validation_every": 10,
+            "learning_rate": 5E-05,
+            "objective": "covariance",
+            "actuator_alpha": 1.0,
+            "train_scope": "all_actor_parameters"
+          }
+        ],
+        "discarded_robust_branch_executed": false,
+        "wgan_epochs": 40,
+        "actor_learning_rate": 1E-05,
+        "critic_learning_rate": 0.0001,
+        "adversarial_weight": 0.5,
+        "action_anchor_weight": 0.2,
+        "validation_every_epochs": 4,
+        "critic_pretrain_steps": 24,
+        "critic_pretrain_banks": 3,
+        "critic_updates_per_epoch": 3
+      },
+      "checkpoint_selection_score": {
+        "law_relative": 0.5,
+        "time_w1_relative": 0.25,
+        "occupation_w1_relative": 0.25
+      },
+      "law_noninferiority_multiplier": 1.02,
+      "epoch_zero_ineligible": true,
+      "test_opened_only_after_freeze": true
+    }
+  },
+  "implementation_stages": {
+    "distinct_part1_selection_and_part2_plant_graphs_required": true,
+    "canonical_runtime_module_binding": "single hash-and-path-validated live module identity; no purge/reimport while model objects exist",
+    "joblib_model_class_identity_required_before_dump_and_after_load": true,
+    "s0_to_s6_scope": "fresh build from formal development data only",
+    "loro_scope": [
+      "part1",
+      "part2",
+      "analytical_sparse_screen"
+    ],
+    "full_neural_training_uses_loro_arms": false,
+    "analytical_screen": {
+      "role": "resource_constrained_prescreen_only",
+      "comparison_scope": "analytical_candidates_only_no_neural_training",
+      "all_arms_use_common_random_numbers": true,
+      "fold_metric_aggregation": "worst_fold",
+      "rank_order": [
+        "maximize_worst_fold_full_gate_b_count",
+        "minimize_worst_fold_mean_time_plus_occupation_w1",
+        "minimize_actuator_count",
+        "stable_candidate_id"
+      ],
+      "freeze_unique_top_k": 1,
+      "ties_resolved_by_declared_rank_only": true,
+      "no_post_training_arm_reselection": true
+    },
+    "final_development_refit": {
+      "part1_part2_refit_on_all_development_runs": true,
+      "analytical_top1_only": true,
+      "start_from_fresh_initialization": true,
+      "teacher_epochs_total": 1050,
+      "teacher_stage_chain": "S0-S1-S2S-S3-S4-S5-S6",
+      "wgan_epochs": 40,
+      "context_5_role": "checkpoint_epoch_selection_only",
+      "context_5_may_select_or_replace_arm": false,
+      "context_6_role": "terminal_veto_only",
+      "context_6_may_rank_or_rescue_candidate": false
+    },
+    "outer_evaluation": {
+      "open_once_after_complete_freeze": true,
+      "role": "retrospective_exploratory_only",
+      "aggregate_context_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "common_random_number_banks": 3,
+      "required_unique_context_bank_evaluations_per_channel": 24,
+      "aggregation_requires_complete_cartesian_product": true,
+      "fixed_display_context_index": 7,
+      "fixed_display_crn_bank": 0,
+      "reference_and_ictal_windows_use_independent_canonical_preprocessing_state": true,
+      "may_reselect_mask_model_checkpoint_or_hyperparameter": false,
+      "may_trigger_fallback_or_rescue": false
+    }
+  },
+  "forbidden_training_inputs": {
+    "old_checkpoints": true,
+    "old_fitted_models": true,
+    "old_ofrc_artifacts": true,
+    "old_rollouts_or_old_controller_outputs": true,
+    "warm_start_from_any_prior_patient_result": true,
+    "allowed_use_of_old_artifacts": "read_only_authority_and_retrospective_comparison_only"
+  },
+  "sparse_actuation": {
+    "candidate_fraction_grid": [
+      0.2,
+      0.3,
+      0.35,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "hup060_fraction_anchor": 0.35,
+    "maximum_fraction": 0.8,
+    "minimum_fraction_without_direct_output": 0.2,
+    "minimum_actuators": 1,
+    "mask_source": "training_only_weighted_centrality_strict_threshold",
+    "centrality_quantile_rule": "q=1-actuator_fraction",
+    "centrality_comparator": "strictly_greater_than",
+    "mask_is_frozen_before_test": true,
+    "all_channels_are_evaluated": true,
+    "all_channels_are_not_claimed_as_directly_actuated": true
+  },
+  "gates": {
+    "gate_a_integrity": [
+      "canonical_source_locks_recorded",
+      "formal_split_roles_preserved",
+      "no_test_or_reference_test_access_during_selection",
+      "common_random_numbers_within_each_fold",
+      "uncontrolled_branch_parity"
+    ],
+    "gate_b_validation": {
+      "finite_outputs": true,
+      "peak_control_not_above_amplitude_limit": true,
+      "law_noninferiority_required": true,
+      "aggregation": "worst_case_over_declared_contexts_and_crn_banks_for_every_metric",
+      "per_channel_metrics": {
+        "minimum_time_w1_relative_reduction": 0.1,
+        "minimum_occupation_w1_relative_reduction": 0.1,
+        "time_w1_controlled_reference_max": 0.35,
+        "occupation_w1_controlled_reference_max": 0.25,
+        "controlled_reference_mean_abs_error_max": 0.1,
+        "controlled_reference_symmetric_sd_ratio_max": 2.0
+      },
+      "full_gate_b_count": "number of channels passing all six metrics"
+    },
+    "gate_c_frozen_test": {
+      "report_all_channels": true,
+      "report_direct_actuator_mask": true,
+      "candidate_reselection_forbidden": true,
+      "hyperparameter_recalibration_forbidden": true
+    }
+  },
+  "common_random_numbers": {
+    "analytical_screen_derivation": "sha256(protocol_id|subject|fold|stage|replicate|base_seed), candidate_id_excluded",
+    "analytical_validation_base_seed": 20260922,
+    "teacher_training_base_seed": 20260921,
+    "teacher_training_noise_rule": "20260921+1009*(absolute_epoch+1)",
+    "teacher_validation_seed": 20260922,
+    "wgan_training_base_seed": 20261011,
+    "wgan_validation_seed": 20260922,
+    "epoch_stride": 1009,
+    "candidate_id_must_not_change_bank": true,
+    "paired_uncontrolled_and_controlled_bank": true
+  },
+  "energy": {
+    "amplitude_limit_standardized": 1.8,
+    "training_energy_weight": 0.01,
+    "canonical_per_actuator_rms_anchor": 0.405,
+    "per_actuator_rms_max": 0.405,
+    "total_energy_definition": "sum_over_actuators(mean_over_particle_time(u_j^2))",
+    "total_energy_cap_formula": "(13/36)*n_channels*(0.405^2)",
+    "total_energy_cap_independent_of_selected_actuator_count": true,
+    "hard_projection_or_rescaling_allowed": false,
+    "energy_violation_action": "mark analytical candidate ineligible or veto the frozen candidate; never alter, rescale, project, rescue, or replace its control trajectory",
+    "peak_control_max": 1.8,
+    "saturation_fraction_max_exclusive": 0.01,
+    "energy_is_feasibility_gate": true,
+    "test_energy_used_for_selection": false
+  },
+  "selection_rule": {
+    "split": "loro_analytical_only",
+    "fold_aggregation": "worst_fold",
+    "lexicographic_order": [
+      "pass_integrity_and_energy_feasibility",
+      "maximize_worst_fold_full_gate_b_count",
+      "minimize_worst_fold_mean_time_plus_occupation_w1",
+      "minimize_actuator_count",
+      "stable_candidate_id"
+    ],
+    "analytical_feasibility_prefilter_excludes_gate_a_and_full_gate_count": true,
+    "freeze_unique_analytical_top1_before_neural_training": true,
+    "context_5_selects_checkpoint_epoch_only": true,
+    "context_6_is_terminal_veto_only": true,
+    "outer_is_retrospective_report_only": true
+  },
+  "patient_specific_tuning_whitelist": {
+    "part1": "actuator_fraction",
+    "part2": [
+      "reservoir_size",
+      "spectral_radius",
+      "leak_rate",
+      "input_scale",
+      "delays_samples",
+      "ridge_alpha",
+      "diffusion_ridge_alpha",
+      "effective_diffusion_multiplier"
+    ],
+    "part3": [
+      "actuator_fraction",
+      "graph_diffusion_time",
+      "analytical_base_gain"
+    ],
+    "part3_allowed_values": {
+      "graph_diffusion_time": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.5
+      ],
+      "analytical_base_gain": [
+        0.35,
+        0.45,
+        0.668
+      ]
+    },
+    "dimension_only": [
+      "n_channels",
+      "n_actuators",
+      "latent_dimension"
+    ],
+    "forbidden": [
+      "test_run",
+      "reference_test_run",
+      "test_selected_mask",
+      "test_selected_epoch",
+      "critic_architecture",
+      "actor_model_family",
+      "loss_component_deletion",
+      "gradient_penalty_weight",
+      "law_noninferiority_multiplier",
+      "checkpoint_selection_score",
+      "random_seed_selected_by_outcome",
+      "actor_learning_rate",
+      "critic_learning_rate",
+      "teacher_stage_schedule",
+      "teacher_epochs",
+      "wgan_epochs",
+      "adversarial_weight",
+      "action_anchor_weight",
+      "local_gain_maximum_fraction"
+    ]
+  }
+}

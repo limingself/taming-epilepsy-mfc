@@ -1,0 +1,119 @@
+{
+  "schema_version": "hup065-source-adaptation-audit-v1",
+  "status": "IMPLEMENTATION_READY_AFTER_ANALYTICAL_PREFILTER_PROTOCOL_CONFORMANCE_REPAIR",
+  "subject": "HUP065",
+  "shared_protocol_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+  "scientific_implementation_sources": {
+    "h065/data_model.py": "5dc512c1a1d109768e7f76442ce9b8c8b185c0c0090ad752956f4001151a0409",
+    "h065/control.py": "4df38a43a15436a86bf852197b062841fe878cdad9ed2bc47d4b9edd10248cc3",
+    "h065/training.py": "263f0a5aeacf32d3316c15db11ff03d69b0ba74745fbf08a45908b9ff30cdd74",
+    "h065/outer.py": "edcd656b85861a8adb55e70cd2eefb479a6a815a2c56f1d64ef9fa58a5ac0713"
+  },
+  "direct_hash_identical_d_imports": {
+    "actor_wgan.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/actor_wgan.py",
+      "sha256": "aa5b30b88b402b09f137ff0e91571e19bb1caeea93d9de4f4faf7fa57d5e60fd",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "full_markov_hjb_fp_wgan.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/full_markov_hjb_fp_wgan.py",
+      "sha256": "c32c3a480f3bb98dae7510f6cdd56612dedc3252c00890d64c7be46df9ab9f55",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "sequential_covariance_hjb.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/sequential_covariance_hjb.py",
+      "sha256": "660e571c91cc1df2595554f329106b3973359f1579059de3aef2cd911a733b09",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "causal_ltv_particle_rollout.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_particle_rollout.py",
+      "sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "causal_ltv_riccati.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_riccati.py",
+      "sha256": "748567f5fb616a641c3916a69dbb9385cf2a3cd0e64d890b49301bb3244c3ae2",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "data.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/data.py",
+      "sha256": "f61cf1a68b31ffd775084bd7f0274334c3ef395b08ec2fda417e39523fff7601",
+      "use": "direct_import_no_local_copy_or_edit"
+    },
+    "square_wave_mfc.py": {
+      "path": "${REPO_ROOT}/mfc_pipeline/square_wave_mfc.py",
+      "sha256": "11969e75d4357396d86cae41ffe11c529d0167310213c29346871ba25e70b64a",
+      "use": "direct_import_no_local_copy_or_edit"
+    }
+  },
+  "controller_code_reference": {
+    "path": "${REPO_ROOT}/patient_extensions/common/legacy_adapters/controller_runner.py",
+    "sha256": "b916bd32898187d94b656e8634468456dc7d8e3a98ef502d71de15c384026055",
+    "role": "code_only_never_model_checkpoint_rollout_or_result_input",
+    "runtime_transformations": [
+      "bind_PIPELINE_ROOT_to_hash_locked_D_canonical",
+      "remove_local_multistep_calibration_import",
+      "use_D_FrozenIctalGraphRCBatchStepper_directly",
+      "pass_candidate_tau_as_TorchGraphRCSDE_control_graph_diffusion_time",
+      "remove_adapted_local_control_channel_map_override",
+      "remove_feedback_only_graph_heat_map_substitution",
+      "bind_rollout_to_D_empirical_fp_rollout_without_projection"
+    ]
+  },
+  "patient_dimension_and_path_generalization": {
+    "expected_channels": 64,
+    "selected_indices_source": "fresh_HUP065_Part-I_strict_centrality_mask",
+    "world_plant_source": "fresh_HUP065_Part-II_broadband_adjacency",
+    "raw_plant_binding": "model.adjacency_input",
+    "normalized_plant_binding": "model.adjacency_and_world.adjacency",
+    "old_weight_or_result_input": false
+  },
+  "numerical_semantics_changed_from_d_canonical": {
+    "plant_equations": false,
+    "riccati_equations": false,
+    "stepper_equations": false,
+    "actor_architecture": false,
+    "wgan_loss": false,
+    "teacher_objective": false,
+    "control_projection_or_rescaling": false,
+    "gate_thresholds_or_selection_order": false
+  },
+  "analytical_prefilter_protocol_conformance_repair": {
+    "failure_audit": "ANALYTICAL_PLANT_PREFILTER_FAILURE_AUDIT.json",
+    "failure_audit_sha256": "39a86042e2fc78eab409a7e3280274e880c949384e8dbde8c3e873f4f96ce341",
+    "failed_run_archive": "failed_analytical_undeclared_plant_prefilter_20260820_233956Z",
+    "failed_run_archive_inventory_sha256": "a512cd649bb7148a1cec7a7b6fffd2eb3c5a3509dfd403ead707c1516eca8941",
+    "failed_run_selection_use": "DO_NOT_REUSE_FOR_SELECTION",
+    "old_control_sha256": "bef7e14253140a25ecc226aec49f738b0124a62c68117548781482c946915736",
+    "repaired_control_sha256": "4df38a43a15436a86bf852197b062841fe878cdad9ed2bc47d4b9edd10248cc3",
+    "shared_protocol_changed": false,
+    "grid_changed": false,
+    "rank_order_changed": false,
+    "thresholds_changed": false,
+    "plant_equations_or_metrics_changed": false,
+    "plant_four_inequality_role": "diagnostic_report_only_never_eligibility_rank_no_go_rescue_or_replacement",
+    "analytical_eligibility": "protocol_gate_a_static_integrity_and_gate_c_energy_finite_only",
+    "aggregate_control_improvement_role": "diagnostic_only_not_protocol_gate_a_not_eligibility",
+    "pre_rank_diagnostic_evidence_field": "aggregate_control_improvement_or_gate_b_used_as_pre_rank_eligibility",
+    "ambiguous_gate_a_or_gate_b_evidence_field_removed": true,
+    "trajectory_gate_c_operands_repeated_in_every_channel_context_row": true,
+    "repair_class": "remove_undeclared_prefilter_and_restore_existing_shared_protocol_selection_semantics"
+  },
+  "explicitly_rejected_baseline_adapted_sources": {
+    "causal_ltv_particle_rollout.py": "bc073733efe3aa7b1a85e1b4674a8400e950b5d2695c7091695da9588604779e",
+    "causal_ltv_riccati.py": "47557ec71dec40723ec7d2cf0c41f4f2f742bbea854fbafb79ef875b696aa846",
+    "reason": "these baseline variants change physical residual propagation and are not the D HUP060 canonical plant"
+  },
+  "formal_guards": {
+    "single_live_hash_and_path_validated_mfc_module_set": true,
+    "joblib_class_identity_checked_before_dump_and_after_load": true,
+    "part1_selection_graph_never_used_as_part2_world_plant": true,
+    "hard_projection_or_budgeted_rollout_forbidden": true,
+    "hup060_authority_inventory_checked_before_and_after_every_phase": true,
+    "plant_fidelity_diagnostic_cannot_enter_eligibility_or_rank": true,
+    "protocol_gate_a_is_static_integrity_not_average_control_improvement": true,
+    "analytical_gate_c_operands_are_row_reconstructable": true,
+    "failed_analytical_archive_reuse_forbidden": true
+  }
+}
+

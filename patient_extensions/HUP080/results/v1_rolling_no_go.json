@@ -1,0 +1,80 @@
+{
+  "schema_version": "hup080-parent-v1-rolling-screen-public-v1",
+  "subject": "HUP080",
+  "classification": "valid parent-v1 development-only rolling-screen outcome",
+  "parent_v1_executed_config_sha256": "0539881d94304cd7116839bf7a9ffa1fcb8a0382cce5bb90dc1eb641aa0fac1a",
+  "parent_v1_implementation_freeze_sha256": "359745077c159ec9ea5a6aebca045e8f55f3d8af0b9024777f68df0004982ffd",
+  "parent_v1_candidates_samples": [4, 8, 12, 16, 24, 32],
+  "minimum_correlation": 0.70,
+  "maximum_nrmse": 0.80,
+  "joint_fold_rule": "every_development_loro_fold_must_pass",
+  "outcome": "NO_GO_before_part3",
+  "success_marker_present": false,
+  "formal_part3_phase_present": false,
+  "outer_run04_seen": false,
+  "private_failed_stage_required_for_public_verification": false,
+  "failure_artifacts_read_by_v2_science": false,
+  "failure_artifact_inventory": {
+    "diffusion_alpha_loro_fold_summary.csv": {
+      "bytes": 799,
+      "sha256": "bd95f67f27f3a63cdf82632ea9e53be13b3d58826fe148d29b92464ab7fccc47"
+    },
+    "diffusion_alpha_loro_summary.csv": {
+      "bytes": 320,
+      "sha256": "d03ac840f6bc19d6241f920ccd3dc68430ff8c0c561ff903607948ef281c21cd"
+    },
+    "diffusion_alpha_loro.csv": {
+      "bytes": 7567,
+      "sha256": "b66d17db4195df638f9951cf46e09783e3bd2d5f4ad8e4eee32601dcbee951b1"
+    },
+    "fold_part1_selection_networks/leave-run-01-out.npz": {
+      "bytes": 339047,
+      "sha256": "21bf7680ad5cc4e7109160fd2ff728679705db4c170b510018de3c2f4409b39d"
+    },
+    "fold_part1_selection_networks/leave-run-02-out.npz": {
+      "bytes": 339139,
+      "sha256": "39b392f87285b1c264386e662052ae6bab9768e48dccb57a42c25a30b788bd36"
+    },
+    "fold_part1_selection_networks/leave-run-03-out.npz": {
+      "bytes": 338999,
+      "sha256": "838dbae374f6cbd5e393d1cb2b1c830c5efbffc9171c8f3fbe4f921e5a1bdfd0"
+    },
+    "fold_part2_plant_networks/leave-run-01-out.npz": {
+      "bytes": 14750,
+      "sha256": "efc6c074ae76388d7ff26bbb3ad0af2f00edd22951bbd8a5a8d6935d34aaf0f2"
+    },
+    "fold_part2_plant_networks/leave-run-02-out.npz": {
+      "bytes": 14620,
+      "sha256": "029c7e83da002a27513401a2780377dfcd55b539f442226003a17dd75e75cc09"
+    },
+    "fold_part2_plant_networks/leave-run-03-out.npz": {
+      "bytes": 14635,
+      "sha256": "4de22c0ad169480efb074be1b3cc43b156dfdeabf3be3dbdf08234cbc6c8bbc5"
+    },
+    "part2_grid_context_metrics.csv": {
+      "bytes": 1309520,
+      "sha256": "06e3621ffe72f23c3162ca315edf4199e60f8342ba9a6bb55ab678c3148cca2e"
+    },
+    "part2_grid_fold_metrics.csv": {
+      "bytes": 82503,
+      "sha256": "fef77f57619aab86d78d44e90f3847a2770fb1d0f9f223fec50479ac6069276a"
+    },
+    "rolling_block_loro_channel_metrics.csv": {
+      "bytes": 944082,
+      "sha256": "4ca775d79e5a330abc86f1640a373eb4cbe586055cc4b1d6418067a0f2de6217"
+    },
+    "rolling_block_loro_fold_screen.csv": {
+      "bytes": 1511,
+      "sha256": "7c937b08852448214dc093a0b0a32d5b8724124423e84d1eeac2a541103dc3ef"
+    }
+  },
+  "exploratory_v2": {
+    "classification": "post-v1-development-NO_GO exploratory amendment",
+    "sole_scientific_change": "add 1- and 2-sample rolling-block candidates",
+    "extended_candidates_samples": [1, 2, 4, 8, 12, 16, 24, 32],
+    "thresholds_changed": false,
+    "joint_fold_rule_changed": false,
+    "parent_no_go_remains_valid": true,
+    "may_be_described_as_original_preregistered_replication": false
+  }
+}

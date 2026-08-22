@@ -1,0 +1,955 @@
+{
+  "schema_version": "hup065-hup060-sparse-runner-v1.0",
+  "status": "IMPLEMENTATION_READY_AFTER_PROTOCOL_CONFORMANCE_REPAIR_NO_ACTIVE_SCIENCE_RUN",
+  "subject": "HUP065",
+  "public_portability": {
+    "template_role": "path-and-authorization-relocated public template; not the executed frozen config",
+    "executed_config_sha256": "7f436ba67234c1e0007d29d925d06d2f353483da0cbb026538be322a83268ccf",
+    "scientific_parameters_changed": false,
+    "materialized_config_gets_a_new_sha256": true
+  },
+  "expected_channels": 64,
+  "code_root": "${PATIENT_RUN_ROOT}",
+  "default_run_root": "${PATIENT_RUN_ROOT}/science_run",
+  "runtime_root": "${PATIENT_RUN_ROOT}/.runtime",
+  "shared_protocol": {
+    "path": "${REPO_ROOT}/patient_extensions/common/protocol/protocol.json",
+    "sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+    "executed_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+    "common_module_path": "${REPO_ROOT}/patient_extensions/common/protocol/common_protocol.py",
+    "common_module_sha256": "a10c11498a7b4f136273e6ffe07a5eaa0d6fa2e75c18d87087bc653dd0535790"
+  },
+  "canonical": {
+    "authority_roots": [
+      "${REPO_ROOT}",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_actor_critic_error_v1",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_loss_diagnostics_v1",
+      "${LEGACY_WORKSPACE_ROOT}/HUP060_wgan_loss_decomposition_v1"
+    ],
+    "locks": {
+      "formal_patient_split_proposal": [
+        "${REPO_ROOT}/artifacts/v2/qc/patient_split_proposal.csv",
+        "0d58fbda6596a0fbc096114a2f122148a8b65b5751fec7ba86ac93c684f16b33"
+      ],
+      "paper_final_manifest": [
+        "${REPO_ROOT}/PAPER_FINAL_VERSION.json",
+        "ed61474d9fb17d67b4daa527e102117ab7d6b15a11b1ed6126b8d0aa3e74c0ea"
+      ],
+      "part1_entry": [
+        "${REPO_ROOT}/part1_network/part1_model.py",
+        "a98895f8428086fcb255d788340e2645a6567bb50868c347482bc3ac23bbe346"
+      ],
+      "part1_network_core": [
+        "${REPO_ROOT}/mfc_pipeline/network.py",
+        "1b182235a253c99708a1c3873cb8e7cbef08da2af7e3b52555144a02396146be"
+      ],
+      "part2_entry": [
+        "${REPO_ROOT}/part2_rc_sde/part2_model.py",
+        "bcc47f0360790f2e3aef6ad4cbb2fe4ee6e0e1cc6825aacc5e96565f31cb6138"
+      ],
+      "part2_core": [
+        "${REPO_ROOT}/mfc_pipeline/part2_state_dependent_rc_sde.py",
+        "611bad593839c342fa1173d2e6b991a6b9392d11bc38ba561ae6c6370845ecef"
+      ],
+      "part2_training": [
+        "${REPO_ROOT}/mfc_pipeline/part2_training.py",
+        "cedd8dacd7b46d17ecd49c4ac3616474f6ee17e5e135d593a0835b6618f8890b"
+      ],
+      "part2_data_pipeline": [
+        "${REPO_ROOT}/mfc_pipeline/part2_data_pipeline.py",
+        "19ba72ceedcd3538ed730a6798206903d82e00269f570951d0fa4de8e6562316"
+      ],
+      "canonical_data_loader": [
+        "${REPO_ROOT}/mfc_pipeline/data.py",
+        "f61cf1a68b31ffd775084bd7f0274334c3ef395b08ec2fda417e39523fff7601"
+      ],
+      "causal_particle_rollout": [
+        "${REPO_ROOT}/mfc_pipeline/causal_ltv_particle_rollout.py",
+        "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c"
+      ],
+      "causal_riccati": [
+        "${REPO_ROOT}/mfc_pipeline/causal_ltv_riccati.py",
+        "748567f5fb616a641c3916a69dbb9385cf2a3cd0e64d890b49301bb3244c3ae2"
+      ],
+      "square_wave_mfc": [
+        "${REPO_ROOT}/mfc_pipeline/square_wave_mfc.py",
+        "11969e75d4357396d86cae41ffe11c529d0167310213c29346871ba25e70b64a"
+      ],
+      "part3_entry": [
+        "${REPO_ROOT}/part3_mfc/part3_model.py",
+        "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1"
+      ],
+      "actor_wgan": [
+        "${REPO_ROOT}/mfc_pipeline/actor_wgan.py",
+        "aa5b30b88b402b09f137ff0e91571e19bb1caeea93d9de4f4faf7fa57d5e60fd"
+      ],
+      "wgan_gp": [
+        "${REPO_ROOT}/mfc_pipeline/full_markov_hjb_fp_wgan.py",
+        "c32c3a480f3bb98dae7510f6cdd56612dedc3252c00890d64c7be46df9ab9f55"
+      ],
+      "structured_actor": [
+        "${REPO_ROOT}/mfc_pipeline/sequential_covariance_hjb.py",
+        "660e571c91cc1df2595554f329106b3973359f1579059de3aef2cd911a733b09"
+      ]
+    },
+    "forbidden_weight_inputs": [
+      "${REPO_ROOT}/artifacts/part2_hup060_state_dependent_optimized/hup060_state_dependent_rc.joblib",
+      "${REPO_ROOT}/artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/frozen_actor_wgan.pt"
+    ]
+  },
+  "code_reference_locks": {
+    "controller_runner": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/controller_runner.py",
+      "b916bd32898187d94b656e8634468456dc7d8e3a98ef502d71de15c384026055"
+    ],
+    "hup060_stage_runner": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/stage_objective.py",
+      "2298cb877967651ce413970ec26597793bf18c3f17c4353f02779f46c716f557"
+    ],
+    "hup060_stage_contract": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/stage_contract.json",
+      "f6356232334c9c6e9341815ecd0d4af72ca648cdbba5e67fcff0fad8b5ef1c57"
+    ],
+    "historical_actor_source": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/historical_actor.py",
+      "ab5fd7bb17bed0a54fce0fd5dcf232fa3d6e9b875e3ffeaaa29cf9a731a62206"
+    ],
+    "shared_renderer": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/render_channel_plate.py",
+      "f644b5a4fed2cac529558f7e8aa8a83c39a04f11ecaafaa8ceba2638d6f9b37f"
+    ],
+    "shared_renderer_config": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/config.json",
+      "39a06adcc56007c120ba0c953de307d0615b0edfac5499703d88c0db3bbc8941"
+    ]
+  },
+  "implementation_audit": {
+    "path": "${PATIENT_RUN_ROOT}/SOURCE_ADAPTATION_AUDIT.json",
+    "sha256": "07af021fc72f35eeb064b9abc02eba48dd8a466a232aa9dc38b1eb8d2bbfd6bf"
+  },
+  "public_failure_provenance": {
+    "path": "${PATIENT_RUN_ROOT}/results/failure_provenance.json",
+    "sha256": "54d2c659a2bc34eeab0b98412e2774a9aa0f941836ef3eead9a5d8502c76e04e",
+    "role": "hash-only audit provenance; never a science or selection input"
+  },
+  "raw_data": {
+    "zip_root": "${DS004100_ROOT}",
+    "subject_archive": "${DS004100_ROOT}/sub-HUP065.zip",
+    "source_kind": "raw_BIDS_ZIP_containing_EDF_and_sidecars",
+    "task": "ictal",
+    "acquisition": "ecog",
+    "development_runs": [
+      "run-01",
+      "run-02"
+    ],
+    "sealed_outer_run": "run-03",
+    "old_artifact_inputs_forbidden": [
+      "old_model",
+      "old_checkpoint",
+      "old_OFRC",
+      "old_rollout",
+      "old_controller_output",
+      "old_interictal_reference",
+      "warm_start"
+    ]
+  },
+  "split": {
+    "scheme": "held_out_seizure",
+    "inner_validation_scheme": "leave_one_eligible_training_seizure_out",
+    "folds": [
+      {
+        "fold_id": "leave-run-01-out",
+        "training_runs": [
+          "run-02"
+        ],
+        "validation_run": "run-01",
+        "onset_relative_seconds_half_open": [
+          0.0,
+          32.0
+        ]
+      },
+      {
+        "fold_id": "leave-run-02-out",
+        "training_runs": [
+          "run-01"
+        ],
+        "validation_run": "run-02",
+        "onset_relative_seconds_half_open": [
+          0.0,
+          32.0
+        ]
+      }
+    ],
+    "final_refit_runs": [
+      "run-01",
+      "run-02"
+    ],
+    "ictal_onset_absolute_seconds": 120.0,
+    "development_ictal_absolute_seconds_half_open": [
+      120.0,
+      152.0
+    ],
+    "reference_train_runs": [
+      "run-01",
+      "run-02"
+    ],
+    "reference_train_absolute_seconds_half_open": [
+      30.0,
+      70.0
+    ],
+    "loro_reference_rule": {
+      "fold_fit_reference": "training_run_preictal_30_70_only",
+      "leftout_validation_reference": "leftout_run_preictal_30_70_only",
+      "leftout_reference_may_enter_fit": false
+    },
+    "all_development_reference_path_split": {
+      "deterministic_run_order": [
+        "run-01",
+        "run-02"
+      ],
+      "path_duration_samples": 256,
+      "per_run_fit_path_indices_half_open": [
+        0,
+        15
+      ],
+      "per_run_ctx5_validation_path_indices_half_open": [
+        15,
+        30
+      ],
+      "per_run_unused_tail_path_indices_half_open": [
+        30,
+        40
+      ],
+      "pool_construction": "fit_concat_each_run_paths0_15_ctx5_concat_each_run_paths15_30",
+      "outcome_dependent_split": false,
+      "same_tensor_for_fit_and_validation": false
+    },
+    "outer_ictal_run": "run-03",
+    "outer_ictal_absolute_seconds_half_open": [
+      120.0,
+      152.0
+    ],
+    "outer_reference_run": "run-03",
+    "outer_reference_absolute_seconds_half_open": [
+      75.0,
+      115.0
+    ],
+    "context_samples": 256,
+    "forecast_samples": 256,
+    "development_context_boundaries_samples": [
+      512,
+      1573,
+      2633,
+      3694,
+      4754,
+      5815,
+      6875,
+      7936
+    ],
+    "actor_fit_context_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "checkpoint_selection_context_index": 5,
+    "terminal_veto_context_index": 6,
+    "unused_development_context_index": 7,
+    "outer_preview_windows": [
+      {
+        "window_id": "outer-context-00",
+        "context_start_sample": 256,
+        "context_stop_sample": 512,
+        "future_start_sample": 512,
+        "future_stop_sample": 768
+      },
+      {
+        "window_id": "outer-context-01",
+        "context_start_sample": 1317,
+        "context_stop_sample": 1573,
+        "future_start_sample": 1573,
+        "future_stop_sample": 1829
+      },
+      {
+        "window_id": "outer-context-02",
+        "context_start_sample": 2377,
+        "context_stop_sample": 2633,
+        "future_start_sample": 2633,
+        "future_stop_sample": 2889
+      },
+      {
+        "window_id": "outer-context-03",
+        "context_start_sample": 3438,
+        "context_stop_sample": 3694,
+        "future_start_sample": 3694,
+        "future_stop_sample": 3950
+      },
+      {
+        "window_id": "outer-context-04",
+        "context_start_sample": 4498,
+        "context_stop_sample": 4754,
+        "future_start_sample": 4754,
+        "future_stop_sample": 5010
+      },
+      {
+        "window_id": "outer-context-05",
+        "context_start_sample": 5559,
+        "context_stop_sample": 5815,
+        "future_start_sample": 5815,
+        "future_stop_sample": 6071
+      },
+      {
+        "window_id": "outer-context-06",
+        "context_start_sample": 6619,
+        "context_stop_sample": 6875,
+        "future_start_sample": 6875,
+        "future_stop_sample": 7131
+      },
+      {
+        "window_id": "outer-context-07",
+        "context_start_sample": 7680,
+        "context_stop_sample": 7936,
+        "future_start_sample": 7936,
+        "future_stop_sample": 8192
+      }
+    ]
+  },
+  "preprocessing": {
+    "target_sampling_rate_hz": 256.0,
+    "bandpass_hz": [
+      1.0,
+      50.0
+    ],
+    "filter_order": 4,
+    "causal_filter": true,
+    "filter_burn_in_seconds": 20.0,
+    "reference": "car",
+    "resampling_mode": "causal_upfirdn",
+    "causal_fir_half_length_factor": 10,
+    "forecast_guard_samples": 0
+  },
+  "part1": {
+    "plv_bands_hz": [
+      [
+        1.0,
+        4.0
+      ],
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        13.0
+      ],
+      [
+        13.0,
+        30.0
+      ],
+      [
+        30.0,
+        50.0
+      ]
+    ],
+    "band_aggregation": "equal_weight_mean",
+    "plv_window_seconds": 4.0,
+    "plv_overlap": 0.5,
+    "graph_rule": "maximum_spanning_tree_plus_strongest_edges",
+    "graph_density": 0.1,
+    "centrality_weights": {
+      "degree": 0.3,
+      "betweenness": 0.6,
+      "eigenvector": 0.1
+    },
+    "mask_comparator": "strictly_greater_than_linear_quantile",
+    "clinical_labels_used_for_selection": false
+  },
+  "part2": {
+    "model_class": "ResidualGraphRCSDE",
+    "plant_network_source": "broadband_windowed_plv_median_not_part1_multiband_graph",
+    "plant_plv_window_seconds": 2.0,
+    "plant_plv_window_overlap_fraction": 0.5,
+    "plant_graph_density": 0.1,
+    "part1_graph_may_be_reused_as_plant_graph": false,
+    "context_samples": 512,
+    "validation_horizons_samples": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "validation_windows": 6,
+    "direct_validation_objective": {
+      "nrmse_16": 0.4,
+      "nrmse_32": 0.35,
+      "nrmse_64": 0.15,
+      "swd_ratio_128": 0.1
+    },
+    "reservoir_sizes": [
+      96,
+      160
+    ],
+    "spectral_radii": [
+      0.2,
+      0.4
+    ],
+    "leak_rates": [
+      0.1,
+      0.25
+    ],
+    "input_scales": [
+      0.05,
+      0.1
+    ],
+    "delay_sets_samples": [
+      [
+        1,
+        8,
+        32
+      ],
+      [
+        4,
+        16,
+        64
+      ],
+      [
+        8,
+        32,
+        128
+      ]
+    ],
+    "ridge_alphas": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "reservoir_sparsity": 0.9,
+    "washout_samples": 32,
+    "random_seed": 11,
+    "latent_variance_threshold": 0.95,
+    "latent_components_min": 8,
+    "latent_components_max": 24,
+    "diffusion_mode": "state_dependent",
+    "diffusion_ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "diffusion_shrinkage": 0.05,
+    "diffusion_relative_jitter": 1E-08,
+    "effective_diffusion_multiplier": 0.79451175,
+    "candidate_count": 144,
+    "fold_aggregation": "worst_fold",
+    "rolling_block_candidates_samples": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "rolling_display_samples": 128,
+    "rolling_selection_min_correlation": 0.7,
+    "rolling_selection_max_nrmse": 0.8,
+    "rolling_selection_rule": "largest_jointly_eligible_across_all_loro_folds",
+    "rolling_no_eligible_block": "NO_GO_before_part3"
+  },
+  "analytical_screen": {
+    "role": "resource_constrained_prescreen_only",
+    "eligibility_prefilter": "protocol_gate_a_static_integrity_and_gate_c_energy_finite_only",
+    "protocol_gate_a_integrity_components": [
+      "canonical_source_locks_recorded",
+      "formal_split_roles_preserved",
+      "no_test_or_reference_test_access_during_selection",
+      "common_random_numbers_within_each_fold",
+      "uncontrolled_branch_parity"
+    ],
+    "plant_fidelity_four_inequality_role": "diagnostic_report_only_never_eligibility_rank_no_go_rescue_or_replacement",
+    "aggregate_control_improvement_role": "diagnostic_only_not_protocol_gate_a_not_eligibility",
+    "trajectory_gate_c_operands_repeated_in_each_channel_context_row": true,
+    "undeclared_plant_prefilter_failure_remediation": {
+      "audit": "ANALYTICAL_PLANT_PREFILTER_FAILURE_AUDIT.json",
+      "failed_run_archive": "failed_analytical_undeclared_plant_prefilter_20260820_233956Z",
+      "archived_inventory_sha256": "a512cd649bb7148a1cec7a7b6fffd2eb3c5a3509dfd403ead707c1516eca8941",
+      "archived_outputs_may_be_reused_for_selection": false,
+      "requires_fresh_run_from_init": true
+    },
+    "actuator_fraction_grid": [
+      0.2,
+      0.3,
+      0.35,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "centrality_quantile_rule": "q=1-fraction",
+    "graph_diffusion_time_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.5
+    ],
+    "analytical_base_gain_grid": [
+      0.35,
+      0.45,
+      0.668
+    ],
+    "candidate_count": 120,
+    "particles": 32,
+    "common_random_numbers": true,
+    "evaluation_crn_banks": 3,
+    "freeze_unique_top_k": 1,
+    "ranking": [
+      "pass_integrity_and_energy",
+      "maximize_worst_fold_full_gate_b_count",
+      "minimize_worst_fold_mean_time_plus_occupation_w1",
+      "minimize_actuator_count",
+      "stable_candidate_id"
+    ],
+    "neural_training_during_screen": false,
+    "no_post_training_arm_reselection": true
+  },
+  "part3": {
+    "fresh_initialization_required": true,
+    "warm_start_forbidden": true,
+    "horizon_samples": 256,
+    "particles": 32,
+    "antithetic_noise": true,
+    "plant_adapter": {
+      "causal_particle_rollout": "D_canonical_hash_locked",
+      "causal_riccati": "D_canonical_hash_locked",
+      "graph_diffusion_time_role": "TorchGraphRCSDE_plant_input",
+      "local_control_map_override": false,
+      "feedback_only_heat_map_substitution": false,
+      "stepper": "D_canonical_FrozenIctalGraphRCBatchStepper",
+      "local_multistep_wrapper_used": false
+    },
+    "actor": {
+      "basis_count": 8,
+      "hidden_size": 64,
+      "markov_hidden_size": 96,
+      "residual_scale": 0.15,
+      "markov_residual_scale": 0.6,
+      "local_gain_initial_fraction": 0.0,
+      "local_gain_maximum_fraction": 0.05,
+      "amplitude_limit": 1.8,
+      "control_step_scale": 0.5,
+      "runtime_control_projection_or_rescaling": false
+    },
+    "critic": {
+      "architecture": "channels_plus_3_to_128_to_128_to_1",
+      "activation": "SiLU",
+      "gradient_penalty_weight": 10.0,
+      "drift_weight": 0.001,
+      "updates_per_epoch": 3,
+      "pretrain_steps": 24,
+      "pretrain_banks": 3
+    },
+    "training": {
+      "teacher_epochs_total": 1050,
+      "s3_to_s4_modern_actor_initialization_seed": 20260921,
+      "teacher_formal_stage_ids": [
+        "S0_INITIAL_0_100",
+        "S1_BALANCED_100_250",
+        "S2S_SAFE_250_450",
+        "S3_COVARIANCE_450_650",
+        "S4_MARKOV_ALPHA100_650_770",
+        "S5_SMOOTHA_770_870",
+        "S6_PRECISION_ALL_PARAMS_870_1050"
+      ],
+      "teacher_stages": [
+        {
+          "stage_id": "S0_INITIAL_0_100",
+          "epochs": 100,
+          "epoch_offset": 0,
+          "validation_every": 5,
+          "learning_rate": 0.0003,
+          "objective": "initial",
+          "actuator_alpha": 0.25,
+          "train_scope": "all_pre_markov_parameters"
+        },
+        {
+          "stage_id": "S1_BALANCED_100_250",
+          "epochs": 150,
+          "epoch_offset": 100,
+          "validation_every": 5,
+          "learning_rate": 0.0002,
+          "objective": "initial_balanced_channel_weights",
+          "actuator_alpha": 0.25,
+          "train_scope": "all_pre_markov_parameters"
+        },
+        {
+          "stage_id": "S2S_SAFE_250_450",
+          "epochs": 200,
+          "epoch_offset": 250,
+          "validation_every": 5,
+          "learning_rate": 0.0001,
+          "objective": "balanced_safe",
+          "actuator_alpha": 0.25,
+          "train_scope": "all_pre_markov_parameters"
+        },
+        {
+          "stage_id": "S3_COVARIANCE_450_650",
+          "epochs": 200,
+          "epoch_offset": 450,
+          "validation_every": 5,
+          "learning_rate": 0.0001,
+          "objective": "covariance",
+          "actuator_alpha": 0.25,
+          "train_scope": "deviation_only_freeze_common"
+        },
+        {
+          "stage_id": "S4_MARKOV_ALPHA100_650_770",
+          "epochs": 120,
+          "epoch_offset": 650,
+          "validation_every": 10,
+          "learning_rate": 0.0002,
+          "objective": "covariance",
+          "actuator_alpha": 1.0,
+          "train_scope": "markov_only"
+        },
+        {
+          "stage_id": "S5_SMOOTHA_770_870",
+          "epochs": 100,
+          "epoch_offset": 770,
+          "validation_every": 10,
+          "learning_rate": 0.0001,
+          "objective": "covariance_smoothA",
+          "actuator_alpha": 1.0,
+          "train_scope": "markov_only"
+        },
+        {
+          "stage_id": "S6_PRECISION_ALL_PARAMS_870_1050",
+          "epochs": 180,
+          "epoch_offset": 870,
+          "validation_every": 10,
+          "learning_rate": 5E-05,
+          "objective": "covariance",
+          "actuator_alpha": 1.0,
+          "train_scope": "all_actor_parameters"
+        }
+      ],
+      "discarded_robust_branch_executed": false,
+      "wgan_epochs": 40,
+      "actor_learning_rate": 1E-05,
+      "critic_learning_rate": 0.0001,
+      "adversarial_weight": 0.5,
+      "action_anchor_weight": 0.2,
+      "validation_every_epochs": 4,
+      "seed": 20261011,
+      "validation_seed": 20260922,
+      "teacher_rollout_base_seed": 20260921,
+      "teacher_rollout_seed_rule": "20260921+1009*(absolute_epoch+1)",
+      "teacher_validation_noise_seed": 20260922,
+      "critic_pretrain_steps": 24,
+      "critic_pretrain_banks": 3,
+      "critic_updates_per_epoch": 3,
+      "formal_wgan_handoff": {
+        "critic_pretrain_noise_rule": "seed+101*(bank+1)",
+        "critic_pretrain_gp_seed_rule": "seed+50000+step",
+        "joint_epoch_noise_rule": "seed+1009*(epoch+1)",
+        "joint_epoch_gp_seed_rule": "seed+100000*(epoch+1)+critic_step",
+        "actor_gradient_clip": 1.0,
+        "critic_gradient_clip": 5.0,
+        "critic_adam_betas": [
+          0.0,
+          0.9
+        ],
+        "epoch_zero_eligible": false,
+        "law_noninferiority_required": true,
+        "empty_noninferior_pool": "retain_frozen_s6_teacher_after_full_wgan40_and_record_NO_ACCEPTED_WGAN",
+        "arm_reselection_allowed": false
+      },
+      "objective_weights": {
+        "initial": {
+          "mean": 2.0,
+          "log_variance": 3.0,
+          "worst_log_variance": 0.0,
+          "time_quantile": 5.0,
+          "worst_time_quantile": 0.0,
+          "no_harm_mean": 0.0,
+          "no_harm_quantile": 0.0,
+          "occupation": 2.0,
+          "tube": 2.0,
+          "joint": 0.5,
+          "energy": 0.01,
+          "smoothness": 0.2,
+          "curvature": 0.1,
+          "saturation": 1.0
+        },
+        "initial_balanced_channel_weights": {
+          "mean": 2.0,
+          "log_variance": 3.0,
+          "worst_log_variance": 0.0,
+          "time_quantile": 5.0,
+          "worst_time_quantile": 0.0,
+          "no_harm_mean": 0.0,
+          "no_harm_quantile": 0.0,
+          "occupation": 2.0,
+          "tube": 2.0,
+          "joint": 0.5,
+          "energy": 0.01,
+          "smoothness": 0.2,
+          "curvature": 0.1,
+          "saturation": 1.0
+        },
+        "balanced_safe": {
+          "mean": 5.0,
+          "log_variance": 3.0,
+          "worst_log_variance": 2.0,
+          "time_quantile": 5.0,
+          "worst_time_quantile": 3.0,
+          "no_harm_mean": 10.0,
+          "no_harm_quantile": 10.0,
+          "occupation": 2.0,
+          "tube": 2.0,
+          "joint": 0.5,
+          "energy": 0.01,
+          "smoothness": 0.2,
+          "curvature": 0.1,
+          "saturation": 1.0
+        },
+        "covariance": {
+          "mean": 10.0,
+          "log_variance": 10.0,
+          "worst_log_variance": 5.0,
+          "time_quantile": 8.0,
+          "worst_time_quantile": 5.0,
+          "no_harm_mean": 20.0,
+          "no_harm_quantile": 20.0,
+          "occupation": 2.0,
+          "tube": 2.0,
+          "joint": 0.5,
+          "energy": 0.01,
+          "smoothness": 0.2,
+          "curvature": 0.1,
+          "saturation": 1.0
+        },
+        "covariance_smoothA": {
+          "mean": 10.0,
+          "log_variance": 10.0,
+          "worst_log_variance": 5.0,
+          "time_quantile": 8.0,
+          "worst_time_quantile": 5.0,
+          "no_harm_mean": 20.0,
+          "no_harm_quantile": 20.0,
+          "occupation": 2.0,
+          "tube": 2.0,
+          "joint": 0.5,
+          "energy": 0.01,
+          "smoothness": 100.0,
+          "curvature": 50.0,
+          "slew_barrier": 1000.0,
+          "curvature_barrier": 1000.0,
+          "maximum_first_difference": 0.35,
+          "maximum_second_difference": 0.5,
+          "saturation": 1.0
+        }
+      }
+    },
+    "checkpoint_selection": {
+      "context_index": 5,
+      "score": {
+        "law_relative": 0.5,
+        "time_w1_relative": 0.25,
+        "occupation_w1_relative": 0.25
+      },
+      "law_noninferiority_multiplier": 1.02,
+      "epoch_zero_ineligible": true,
+      "may_select_arm": false
+    },
+    "terminal": {
+      "context_index": 6,
+      "role": "veto_only",
+      "may_rank_rescue_or_replace": false,
+      "finite_and_gate_c_all_contexts_required": true,
+      "aggregate_time_w1_improvement_required": true,
+      "aggregate_occupation_w1_improvement_required": true,
+      "minimum_full_six_gate_b_channel_count": 1
+    }
+  },
+  "energy": {
+    "definition": "sum_over_actuators(mean_over_particle_time(u_j^2))",
+    "total_energy_cap": 3.7908,
+    "total_l2_rms_cap": 1.94699768875055,
+    "formula": "(13/36)*64*(0.405^2)",
+    "independent_of_selected_actuator_count": true,
+    "hard_projection_or_rescaling_allowed": false,
+    "violation_action": "mark_candidate_ineligible_or_veto_frozen_candidate_never_modify_trajectory",
+    "per_actuator_rms_max": 0.405,
+    "peak_control_max": 1.8,
+    "saturation_fraction_max_exclusive": 0.01
+  },
+  "gates": {
+    "law_noninferiority_multiplier": 1.02,
+    "per_channel": {
+      "minimum_time_w1_relative_reduction": 0.1,
+      "minimum_occupation_w1_relative_reduction": 0.1,
+      "time_w1_controlled_reference_max": 0.35,
+      "occupation_w1_controlled_reference_max": 0.25,
+      "controlled_reference_mean_abs_error_max": 0.1,
+      "controlled_reference_symmetric_sd_ratio_max": 2.0
+    }
+  },
+  "phases": [
+    {
+      "id": "P0_PREFLIGHT",
+      "name": "metadata_hash_preflight_and_authority_inventory",
+      "depends_on": []
+    },
+    {
+      "id": "DEV_MATERIALIZE",
+      "name": "development_raw_run01_run02_materialization",
+      "depends_on": [
+        "P0_PREFLIGHT"
+      ]
+    },
+    {
+      "id": "P1_LORO_GRAPHS",
+      "name": "two_fold_loro_part1_graphs",
+      "depends_on": [
+        "DEV_MATERIALIZE"
+      ]
+    },
+    {
+      "id": "P2_LORO_RC_SDE",
+      "name": "two_fold_loro_part2_state_dependent_rc_sde",
+      "depends_on": [
+        "P1_LORO_GRAPHS"
+      ]
+    },
+    {
+      "id": "ANALYTICAL_TOP1",
+      "name": "loro_analytical_120_arm_screen_and_unique_top1_freeze",
+      "depends_on": [
+        "P2_LORO_RC_SDE"
+      ]
+    },
+    {
+      "id": "ALLDEV_REFIT",
+      "name": "part1_part2_refit_on_run01_plus_run02_and_role_bundles",
+      "depends_on": [
+        "ANALYTICAL_TOP1"
+      ]
+    },
+    {
+      "id": "S0_INITIAL_0_100",
+      "name": "teacher_initial_epochs_0_100",
+      "depends_on": [
+        "ALLDEV_REFIT"
+      ]
+    },
+    {
+      "id": "S1_BALANCED_100_250",
+      "name": "teacher_balanced_epochs_100_250",
+      "depends_on": [
+        "S0_INITIAL_0_100"
+      ]
+    },
+    {
+      "id": "S2S_SAFE_250_450",
+      "name": "teacher_safe_epochs_250_450",
+      "depends_on": [
+        "S1_BALANCED_100_250"
+      ]
+    },
+    {
+      "id": "S3_COVARIANCE_450_650",
+      "name": "teacher_covariance_epochs_450_650",
+      "depends_on": [
+        "S2S_SAFE_250_450"
+      ]
+    },
+    {
+      "id": "S4_MARKOV_ALPHA100_650_770",
+      "name": "teacher_markov_epochs_650_770",
+      "depends_on": [
+        "S3_COVARIANCE_450_650"
+      ]
+    },
+    {
+      "id": "S5_SMOOTHA_770_870",
+      "name": "teacher_smoothA_epochs_770_870",
+      "depends_on": [
+        "S4_MARKOV_ALPHA100_650_770"
+      ]
+    },
+    {
+      "id": "S6_PRECISION_ALL_PARAMS_870_1050",
+      "name": "teacher_precision_epochs_870_1050",
+      "depends_on": [
+        "S5_SMOOTHA_770_870"
+      ]
+    },
+    {
+      "id": "WGAN40_CTX5_SELECT_CTX6_VETO",
+      "name": "wgan40_then_ctx5_epoch_selection_ctx6_terminal_veto_and_freeze",
+      "depends_on": [
+        "S6_PRECISION_ALL_PARAMS_870_1050"
+      ]
+    },
+    {
+      "id": "OUTER",
+      "name": "one_time_run03_sealed_segment_eight_contexts_by_three_banks_ofrc_binding",
+      "depends_on": [
+        "WGAN40_CTX5_SELECT_CTX6_VETO"
+      ],
+      "requires_external_go": true
+    }
+  ],
+  "outer_go": {
+    "receipt_filename": "OUTER_GO.json",
+    "required_authorization_text": "ENV:HUP065_EXPECTED_OUTER_AUTHORIZATION",
+    "single_open_ledger_filename": "OUTER_OPENED.json",
+    "development_freeze_phase_id": "WGAN40_CTX5_SELECT_CTX6_VETO",
+    "reselection_fallback_rescue_forbidden": true,
+    "aggregate_window_ids": [
+      "outer-context-00",
+      "outer-context-01",
+      "outer-context-02",
+      "outer-context-03",
+      "outer-context-04",
+      "outer-context-05",
+      "outer-context-06",
+      "outer-context-07"
+    ],
+    "display_window_id": "outer-context-07",
+    "display_crn_bank": 0,
+    "reference_and_ictal_preprocessing_state": "independent_loader_instances",
+    "renderer_execution_in_outer": false,
+    "renderer_binding_status": "NO_GO_PENDING_INDEPENDENT_AUDIT",
+    "preview_laws": [
+      "Observed",
+      "Free",
+      "Reference",
+      "Controlled"
+    ]
+  },
+  "runtime_safety": {
+    "python_dont_write_bytecode_required": true,
+    "subprocess_python_flag": "-B",
+    "redirect_mne_cache": true,
+    "redirect_matplotlib_cache": true,
+    "phase_atomic_publish": true,
+    "phase_output_root_directory": "p",
+    "phase_staging_directory_pattern": ".sNN-{random128_base64url22}",
+    "atomic_json_temp_pattern": ".j-{random128_base64url22}",
+    "random_token_source": "secrets.token_bytes(16)",
+    "formal_path_characters_max_exclusive": 200,
+    "existing_phase_output": "NO_GO",
+    "existing_science_run_root_before_init": "NO_GO",
+    "authority_before_after_exact_hash_invariant": true,
+    "runtime_control_projection_or_rescaling_allowed": false,
+    "static_self_test_may_read_d_drive": false,
+    "static_self_test_may_read_patient_data": false,
+    "static_self_test_may_run_science": false,
+    "overleaf_write_allowed": false
+  }
+}
+

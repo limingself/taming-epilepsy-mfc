@@ -1,0 +1,138 @@
+{
+  "schema_version": "patient-extensions-portability-test-report-v1",
+  "status": "PASS",
+  "date": "2026-08-23",
+  "tests": [
+    {
+      "name": "public aggregate/vector/figure/provenance/sensitive verifier",
+      "command": "python -B patient_extensions/verify_public_results.py",
+      "status": "PASS"
+    },
+    {
+      "name": "HUP065 template materialization, path contract, and public synthetic test",
+      "commands": [
+        "python -B patient_extensions/materialize_config.py --patient HUP065 --dataset-root <local-root> --force",
+        "python -B patient_extensions/HUP065/runner.py static-check",
+        "python -B patient_extensions/HUP065/runner.py path-check",
+        "python -B patient_extensions/HUP065/static_self_test.py"
+      ],
+      "status": "PASS",
+      "public_directory_name_accepted": true,
+      "private_failure_stage_opened": false,
+      "private_106_mb_failure_archive_required": false,
+      "hash_only_failure_provenance_validated": true,
+      "signal_data_opened": false
+    },
+    {
+      "name": "HUP080 template materialization and pending phase-ledger status",
+      "commands": [
+        "python -B patient_extensions/materialize_config.py --patient HUP080 --dataset-root <local-root> --force",
+        "python -B patient_extensions/HUP080/runner.py status"
+      ],
+      "status": "PASS",
+      "phase_count": 18,
+      "all_phases_pending": true,
+      "signal_data_opened": false
+    },
+    {
+      "name": "HUP080 full static/synthetic self-test",
+      "command": "python -B patient_extensions/HUP080/runner.py self-test",
+      "status": "PASS",
+      "parent_v1_hash_only_artifacts_validated": 13,
+      "private_v1_stage_opened": false,
+      "parent_v1_artifacts_used_as_science_input": false,
+      "direct_and_indirect_counts": [
+        76,
+        20
+      ],
+      "patient_signal_data_opened": false,
+      "science_run": false
+    },
+    {
+      "name": "staged-tree archive newline portability matrix",
+      "status": "PASS",
+      "archive_source": "git write-tree followed by git archive; independently tested with checkout-root text normalized to LF",
+      "windows_archive_cross_eol_case": {
+        "executed_or_template_particle_rollout_sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c",
+        "checkout_particle_rollout_sha256": "b0b4f2f6948a6ad2ef67f3043d2551727708aa661b75da4b5576516d0c1000a9",
+        "materialized_identity": "eol_only",
+        "HUP065_static_check": "PASS",
+        "HUP065_path_check": "PASS",
+        "HUP065_public_selftest": "PASS",
+        "HUP080_status": "PASS",
+        "HUP080_full_selftest": "PASS",
+        "common_protocol_selftest": "PASS",
+        "common_protocol_executed_provenance_sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c",
+        "common_protocol_runtime_checkout_sha256": "b0b4f2f6948a6ad2ef67f3043d2551727708aa661b75da4b5576516d0c1000a9"
+      },
+      "lf_archive_case": {
+        "particle_rollout_sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c",
+        "crlf_sequence_count": 0,
+        "HUP065_static_check": "PASS",
+        "HUP065_path_check": "PASS",
+        "HUP065_public_selftest": "PASS",
+        "HUP080_status": "PASS",
+        "HUP080_full_selftest": "PASS",
+        "common_protocol_selftest": "PASS",
+        "common_protocol_runtime_checkout_sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c"
+      },
+      "core_autocrlf_required": false,
+      "tracked_hup060_source_blob_changed": false
+    },
+    {
+      "name": "shared protocol static/synthetic self-test",
+      "command": "python -B patient_extensions/common/protocol/static_self_test.py",
+      "status": "PASS",
+      "supported_channels": [
+        36,
+        64,
+        96
+      ],
+      "current_checkout": "PASS",
+      "git_archive_cross_eol_checkout": "PASS",
+      "forced_lf_checkout": "PASS",
+      "executed_hash_verified_from_public_portability_provenance": true,
+      "runtime_hash_verified_against_checkout_bytes": true,
+      "signal_data_opened": false
+    },
+    {
+      "name": "common renderer synthetic self-test",
+      "command": "python -B patient_extensions/common/renderer/selftest.py --work-directory <ignored-local-runtime>",
+      "status": "PASS",
+      "HUP065_page_occupancy": [
+        36,
+        28
+      ],
+      "HUP080_page_occupancy": [
+        36,
+        36,
+        24
+      ],
+      "signal_data_opened": false
+    },
+    {
+      "name": "legacy numerical objective AST equivalence",
+      "status": "PASS",
+      "objective_function_ast_equal": true,
+      "private_launcher_or_authorization_published": false
+    },
+    {
+      "name": "Python syntax and JSON parse sweep",
+      "status": "PASS",
+      "python_files_compiled": 32,
+      "public_json_files_parsed": 27
+    },
+    {
+      "name": "git whitespace/error check",
+      "command": "git diff --check",
+      "status": "PASS",
+      "note": "No whitespace errors were emitted."
+    },
+    {
+      "name": "existing HUP060 tracked source/manifest/entry-point preservation",
+      "status": "PASS",
+      "tracked_hup060_source_blobs_changed": 0,
+      "existing_hup060_manifest_or_reproduce_entry_overwritten": false
+    }
+  ]
+}

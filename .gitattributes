@@ -1,0 +1,3 @@
+# The extension package carries byte-level provenance hashes.  Disable line-ending
+# normalization so GitHub archives and clones preserve the audited bytes exactly.
+patient_extensions/** -text whitespace=cr-at-eol,-blank-at-eof

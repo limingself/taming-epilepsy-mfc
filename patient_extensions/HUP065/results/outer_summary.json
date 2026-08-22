@@ -1,0 +1,21 @@
+{
+  "schema_version": "patient-sparse-control-archive-summary-v1",
+  "subject": "HUP065",
+  "classification": "hash-locked retrospective held-out-seizure reanalysis",
+  "development_runs": ["run-01", "run-02"],
+  "outer_run": "run-03",
+  "channels": 64,
+  "direct_actuators": 23,
+  "candidate_id": "f-0.35_q-0.65_gain-0.350_tau-0.200",
+  "rolling_block_samples": 8,
+  "outer_gate_b_pass_count": 21,
+  "outer_gate_c_pass": true,
+  "outer_both_improved_all_context_count": 27,
+  "mean_time_w1_free": 0.27179461046098846,
+  "mean_time_w1_controlled": 0.2090708032460317,
+  "mean_occupation_w1_free": 0.17950937749047155,
+  "mean_occupation_w1_controlled": 0.13887517391509355,
+  "total_energy": 1.3827750353711814,
+  "outer_used_for_selection_or_rescue": false,
+  "authoritative_report": "frozen_run/science_run/p/OUTER/run03_retrospective_report.json"
+}

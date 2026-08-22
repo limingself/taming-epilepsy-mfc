@@ -1,0 +1,22 @@
+{
+  "schema_version": "patient-sparse-control-archive-summary-v1",
+  "subject": "HUP080",
+  "classification": "post-v1-NO_GO exploratory amendment; hash-locked retrospective held-out-seizure reanalysis",
+  "development_runs": ["run-01", "run-02", "run-03"],
+  "outer_run": "run-04",
+  "channels": 96,
+  "direct_actuators": 76,
+  "candidate_id": "f-0.80_q-0.20_gain-0.350_tau-0.000",
+  "rolling_block_samples": 2,
+  "outer_gate_b_pass_count": 65,
+  "outer_gate_c_pass": true,
+  "outer_both_improved_all_context_bank_count": 96,
+  "context_bank_evaluations": 24,
+  "mean_time_w1_free": 0.3286193598915133,
+  "mean_time_w1_controlled": 0.0960328004826287,
+  "mean_occupation_w1_free": 0.32035737631043043,
+  "mean_occupation_w1_controlled": 0.07818781426942978,
+  "total_energy": 2.510281004464377,
+  "outer_used_for_selection_or_rescue": false,
+  "authoritative_report": "frozen_run/science_run/artifacts/15_run04_once/run04_retrospective_report.json"
+}

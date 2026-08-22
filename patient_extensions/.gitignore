@@ -1,0 +1,40 @@
+# Materialized, machine-local configurations
+HUP065/config.json
+HUP065/SOURCE_ADAPTATION_AUDIT.json
+HUP080/config.json
+HUP080/SOURCE_BINDING_AUDIT.json
+HUP080/renderer_adapter/adapter_config.json
+common/protocol/protocol.json
+common/legacy_adapters/stage_contract.json
+
+# Patient data, learned weights, signal arrays, and run state must stay private
+**/*.npz
+**/*.pt
+**/*.pth
+**/*.joblib
+**/*.edf
+**/*.edf.gz
+**/*.zip
+**/raw/
+**/raw_data/
+**/cache/
+**/.runtime/
+**/.staging/
+**/science_run/
+**/runs/
+**/failed_*/
+**/*training_history*.csv
+**/*selection_long*.csv
+**/*channel_density_long*.csv
+**/*channel_metrics*.csv
+**/*trajectory_safety_metrics*.csv
+
+# One-time authorization/access receipts are never public payloads
+**/OUTER_GO.json
+**/RUN04_GO.json
+**/ACCESS_STARTED.json
+**/OUTER_OPENED.json
+
+__pycache__/
+*.py[cod]
+

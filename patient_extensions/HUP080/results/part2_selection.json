@@ -1,0 +1,98 @@
+{
+  "candidate_grid_sha256": "19a9ead73381463ca98b27dd49e315bb6c8ebe7687c69b7a25043b04de153491",
+  "clinical_labels_used": false,
+  "ctx5_used": false,
+  "ctx6_used": false,
+  "ctx7_used": false,
+  "diffusion_ridge_alpha_selected_by_loro": 10.0,
+  "effective_diffusion_multiplier_for_part3": 0.79451175,
+  "fold_models": [
+    {
+      "fold_id": "leave-run-01-out",
+      "latent_components": 24,
+      "model_normalized_plant_adjacency_sha256": "dcb59a3a56de16f73eb0ea6ba2fdda90cb643cf845576a85a8d8c9f1a13d97b0",
+      "model_plant_adjacency_input_sha256": "b86d6126d4c033b042cfc757a066ff89634252e729d1153dbe6715863126bec3",
+      "model_sha256": "1ad59d2b22ed416d6268cf552bf6ec8c39a18ae6c3d2a41e692d965bbb6606e8",
+      "part1_and_part2_networks_distinct": true,
+      "part1_selection_network_sha256": "21bf7680ad5cc4e7109160fd2ff728679705db4c170b510018de3c2f4409b39d",
+      "part2_plant_network_sha256": "efc6c074ae76388d7ff26bbb3ad0af2f00edd22951bbd8a5a8d6935d34aaf0f2",
+      "training_runs": [
+        "run-02",
+        "run-03"
+      ],
+      "validation_run": "run-01"
+    },
+    {
+      "fold_id": "leave-run-02-out",
+      "latent_components": 24,
+      "model_normalized_plant_adjacency_sha256": "9f19570f8caaf4731b39d29971e0544b68d2fc387b7d42032e55ceb201594bf6",
+      "model_plant_adjacency_input_sha256": "884a3a3cba7e94b2acc19dbd2e17c925f657d83971f21e62e4fecf8214692ff6",
+      "model_sha256": "11f58854c6211753e732d015e806691e5e0c940e55baa7ee831a258c3cdb06e5",
+      "part1_and_part2_networks_distinct": true,
+      "part1_selection_network_sha256": "39b392f87285b1c264386e662052ae6bab9768e48dccb57a42c25a30b788bd36",
+      "part2_plant_network_sha256": "029c7e83da002a27513401a2780377dfcd55b539f442226003a17dd75e75cc09",
+      "training_runs": [
+        "run-01",
+        "run-03"
+      ],
+      "validation_run": "run-02"
+    },
+    {
+      "fold_id": "leave-run-03-out",
+      "latent_components": 24,
+      "model_normalized_plant_adjacency_sha256": "f49ed9bd377c3fea9d3e27c817fb551f532a8cac2565cf1b9a03b8fb099d709c",
+      "model_plant_adjacency_input_sha256": "95fc644b42aeaeabefae396fb528e1ac9a391590d9f93c5f71fac20b6242b88e",
+      "model_sha256": "d719dde5dad8a7682554bc8e6a521de3cda131dc090090a51b3b74183df137ca",
+      "part1_and_part2_networks_distinct": true,
+      "part1_selection_network_sha256": "838dbae374f6cbd5e393d1cb2b1c830c5efbffc9171c8f3fbe4f921e5a1bdfd0",
+      "part2_plant_network_sha256": "4de22c0ad169480efb074be1b3cc43b156dfdeabf3be3dbdf08234cbc6c8bbc5",
+      "training_runs": [
+        "run-01",
+        "run-02"
+      ],
+      "validation_run": "run-03"
+    }
+  ],
+  "loro_candidate_aggregation": "minimize_worst_fold_then_mean_then_candidate_id",
+  "model_config": {
+    "delays_samples": [
+      1,
+      8,
+      32
+    ],
+    "diffusion_mode": "state_dependent",
+    "diffusion_relative_jitter": 1e-08,
+    "diffusion_ridge_alpha": 10.0,
+    "diffusion_shrinkage": 0.05,
+    "input_scale": 0.05,
+    "latent_components_max": 24,
+    "latent_components_min": 8,
+    "latent_variance_threshold": 0.95,
+    "leak_rate": 0.1,
+    "random_seed": 11,
+    "reservoir_size": 160,
+    "reservoir_sparsity": 0.9,
+    "ridge_alpha": 1.0,
+    "spectral_radius": 0.2,
+    "washout_samples": 32
+  },
+  "network_role_contract": {
+    "part1": "multiband_equal_4s_selection_only",
+    "part1_graph_reused_as_part2_plant": false,
+    "part2": "broadband_2s_graph_rc_plant_only"
+  },
+  "rolling_block_samples_selected_by_loro": 2,
+  "rolling_block_selection_rule": "largest candidate passing correlation>=0.70 and nRMSE<=0.80 in every development LORO fold; empty set is NO_GO",
+  "sealed_run_opened": false,
+  "selected_candidate_id": "part2-candidate-074",
+  "selected_candidate_index": 74,
+  "selection_context_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "subject": "HUP080"
+}

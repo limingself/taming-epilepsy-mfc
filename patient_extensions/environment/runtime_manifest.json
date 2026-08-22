@@ -1,0 +1,21 @@
+{
+  "schema_version": "patient-extension-runtime-observed-v1",
+  "observation_date": "2026-08-23",
+  "timezone": "Asia/Shanghai",
+  "operating_system": "Windows 11 10.0.26200",
+  "python": "3.12.10",
+  "python_executable": "machine-local path intentionally omitted",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "torch": "2.12.0",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.9",
+    "mne": "1.12.1"
+  },
+  "authoritative_dependency_lock": "requirements-lock.txt",
+  "subjects": ["HUP065", "HUP080"]
+}
+

@@ -1,0 +1,972 @@
+{
+  "schema_version": "hup080-hup060-sparse-rerun-v2.0",
+  "status": "EXPLORATORY_V2_CODE_READY_NO_SCIENCE_RUN",
+  "subject": "HUP080",
+  "execution_label": "HUP060-based HUP080 post-v1-NO_GO exploratory rolling-grid amendment",
+  "public_portability": {
+    "template_role": "path-and-authorization-relocated public template; not the executed frozen config",
+    "executed_v2_config_sha256": "4e46bb903166dd98b2805bf5aa9ca581744aa6fe797893b57c669a87dbcdfcab",
+    "executed_parent_v1_config_sha256": "0539881d94304cd7116839bf7a9ffa1fcb8a0382cce5bb90dc1eb641aa0fac1a",
+    "scientific_parameters_changed_from_executed_v2": false,
+    "materialized_config_gets_a_new_sha256": true
+  },
+  "project_root": "${PATIENT_RUN_ROOT}",
+  "science_root": "${PATIENT_RUN_ROOT}/science_run",
+  "runtime_root": "${PATIENT_RUN_ROOT}/.runtime",
+  "exploratory_v2_delta": {
+    "amendment_id": "HUP080_POST_V1_PHASE02_NO_GO_ROLLING_GRID_ONLY_V2",
+    "classification": "post_v1_phase02_no_go_protocol_amendment",
+    "base_version": "HUP080_hup060_sparse_rerun_v1",
+    "base_config_sha256": "0539881d94304cd7116839bf7a9ffa1fcb8a0382cce5bb90dc1eb641aa0fac1a",
+    "base_implementation_freeze_sha256": "359745077c159ec9ea5a6aebca045e8f55f3d8af0b9024777f68df0004982ffd",
+    "sole_scientific_change": "Part-II rolling block candidates extended from [4,8,12,16,24,32] to [1,2,4,8,12,16,24,32]",
+    "amended_json_pointer": "/part2/rolling_block_candidates",
+    "base_candidates": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "extended_candidates": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "thresholds_unchanged": {
+      "minimum_correlation": 0.7,
+      "maximum_nrmse": 0.8
+    },
+    "joint_fold_rule_unchanged": "every_development_loro_fold_must_pass",
+    "only_added_candidates": [
+      1,
+      2
+    ],
+    "thresholds_or_selection_rule_changed": false,
+    "parent_no_go_remains_valid": true,
+    "may_be_described_as_original_preregistered_replication": false,
+    "run04_seen_before_amendment": false,
+    "v1_failure_evidence_role": "AUDIT_ONLY_DO_NOT_REUSE_FOR_SCIENCE_SELECTION_OR_TRAINING",
+    "v1_failure_public_receipt": "${PATIENT_RUN_ROOT}/results/v1_rolling_no_go.json",
+    "v1_failure_public_receipt_sha256": "b11d39a421b98b50ae215c8d638b8fb8c8ec490099af34dae4492ee54b0b3a98",
+    "v1_failure_success_marker_present": false,
+    "v1_failure_formal_phase_present": false,
+    "v2_may_read_v1_failure_as_science_input": false,
+    "sealed_run04_role_unchanged": true,
+    "authorized_write_roots": [
+      "${PATIENT_RUN_ROOT}/science_run",
+      "${PATIENT_RUN_ROOT}/.runtime"
+    ]
+  },
+  "shared_protocol": {
+    "path": "${REPO_ROOT}/patient_extensions/common/protocol/protocol.json",
+    "sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+    "executed_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+    "common_protocol_py": "${REPO_ROOT}/patient_extensions/common/protocol/common_protocol.py",
+    "common_protocol_py_sha256": "a10c11498a7b4f136273e6ffe07a5eaa0d6fa2e75c18d87087bc653dd0535790",
+    "static_self_test_py": "${REPO_ROOT}/patient_extensions/common/protocol/static_self_test.py",
+    "static_self_test_py_sha256": "cc9e43b741741f3b2e8d974f5f749c791c96dada94a8ea7649b3788a69e06e94",
+    "readme": "${REPO_ROOT}/patient_extensions/common/protocol/README.md",
+    "readme_sha256": "8682bcd319cb6959a7aacd2d3841a1b072600fa88d3f7be9af071956b401f1fa"
+  },
+  "common_renderer_locks": {
+    "renderer": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/render_channel_plate.py",
+      "f644b5a4fed2cac529558f7e8aa8a83c39a04f11ecaafaa8ceba2638d6f9b37f"
+    ],
+    "config": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/config.json",
+      "39a06adcc56007c120ba0c953de307d0615b0edfac5499703d88c0db3bbc8941"
+    ],
+    "selftest": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/selftest.py",
+      "62c2d5aafdd067559ee9c05ebedd0c73a546a89ef2483357a0060642aeb4063b"
+    ],
+    "readme": [
+      "${REPO_ROOT}/patient_extensions/common/renderer/README.md",
+      "abfc95b225ea647013dfdd3541f3c5151ecd92324e2ca60b67cf9c5f41d1db81"
+    ]
+  },
+  "formal_implementation_locks": {
+    "runner": [
+      "${PATIENT_RUN_ROOT}/runner.py",
+      "e502836bc4e00c34e22d49cc6ae8d85c9f85a903d68122d9b151dfb98f81b5bd"
+    ],
+    "selftest": [
+      "${PATIENT_RUN_ROOT}/selftest.py",
+      "0bb5aaaeaa425f1c5df6a47fb2c95e30e25980d4dc1b7ec229ef1d9ae10d14c6"
+    ],
+    "readme": [
+      "${PATIENT_RUN_ROOT}/README.md",
+      "baa456c4aaa69719d54355c58095a78c69590750fab50768d1dab1fc165a005f"
+    ],
+    "source_binding_audit": [
+      "${PATIENT_RUN_ROOT}/SOURCE_BINDING_AUDIT.json",
+      "ac3d6fb14b71481605ebbee6a82445f9c7b1ab91f2dafbe246a0ea530d0807ae"
+    ],
+    "package_init": [
+      "${PATIENT_RUN_ROOT}/h080/__init__.py",
+      "3ceda7f94ac90b610a08c3d0941464b0124f3fe8945d98fd3aba9f1d45ea4811"
+    ],
+    "contracts": [
+      "${PATIENT_RUN_ROOT}/h080/contracts.py",
+      "3ff61c457062bc7f50cb8f7dd49402e9db37f931ddba1bb7a0e04ebaa77b8f69"
+    ],
+    "staging": [
+      "${PATIENT_RUN_ROOT}/h080/staging.py",
+      "de7155d8b90db893decad262775320beb46f4da01c1de923b648a6f3079b9442"
+    ],
+    "data_model": [
+      "${PATIENT_RUN_ROOT}/h080/data_model.py",
+      "83dcd6100040b19625865ba12163d38ea3fdc89b37a4acf14eb3c965a83d17d4"
+    ],
+    "control": [
+      "${PATIENT_RUN_ROOT}/h080/control.py",
+      "44c02a1adf56f907de04de5b588eedc9dd00b043776d2344e04ba48940cc7bdf"
+    ],
+    "training": [
+      "${PATIENT_RUN_ROOT}/h080/training.py",
+      "4c5087a191bed9f3827ba407baf46e3c4a1502ba81d53d6a19cf717ea7bdf624"
+    ],
+    "outer": [
+      "${PATIENT_RUN_ROOT}/h080/outer.py",
+      "0804cc02345a3fa3943a447d91eebd34323248be1e23416e217b6891fbff31b5"
+    ],
+    "pipeline": [
+      "${PATIENT_RUN_ROOT}/h080/pipeline.py",
+      "774647dd182680e936c90bda2eeb07770574ff4a87a96813ba25e19e85bab81c"
+    ],
+    "renderer_input": [
+      "${PATIENT_RUN_ROOT}/h080/renderer_input.py",
+      "d6d2f7df19e51ac5c5b76464939974020887195eaac0354e76427c69e91a75e4"
+    ]
+  },
+  "source_data": {
+    "zip_root": "${DS004100_ROOT}",
+    "raw_zip": "${DS004100_ROOT}/sub-HUP080.zip",
+    "raw_zip_bytes": 92298727,
+    "raw_zip_central_directory_metadata_sha256": "98946c7114e8fc4e3a31e5634eef5533269973b3c9e31213212c76a7f89556a9",
+    "historical_whole_zip_sha256_nonselection_receipt": "9fbd90e8eea6ea64f333f167acb574156244985c6f6c157ca4996fe8e44f4eb1",
+    "historical_whole_zip_hash_note": "Computed during abandoned build audit before the formal firewall; raw bytes only, no EDF decode, no numpy load, no outcome use; never recomputed or used as a runtime gate.",
+    "development_member_contract": [
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_acq-ecog_space-fsaverage_coordsystem.json",
+        "crc32": 986897770,
+        "uncompressed_bytes": 278,
+        "compressed_bytes": 184
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_acq-ecog_space-fsaverage_electrodes.tsv",
+        "crc32": 2038545286,
+        "uncompressed_bytes": 5604,
+        "compressed_bytes": 2299
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-01_channels.tsv",
+        "crc32": 1293566580,
+        "uncompressed_bytes": 7452,
+        "compressed_bytes": 555
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-01_events.tsv",
+        "crc32": 1583786247,
+        "uncompressed_bytes": 104,
+        "compressed_bytes": 91
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.edf",
+        "crc32": 1666743778,
+        "uncompressed_bytes": 26039976,
+        "compressed_bytes": 14671041
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-01_ieeg.json",
+        "crc32": 4169141809,
+        "uncompressed_bytes": 467,
+        "compressed_bytes": 208
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-02_channels.tsv",
+        "crc32": 1293566580,
+        "uncompressed_bytes": 7452,
+        "compressed_bytes": 555
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-02_events.tsv",
+        "crc32": 3448140788,
+        "uncompressed_bytes": 104,
+        "compressed_bytes": 91
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.edf",
+        "crc32": 2117674855,
+        "uncompressed_bytes": 25933366,
+        "compressed_bytes": 14155550
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-02_ieeg.json",
+        "crc32": 230425262,
+        "uncompressed_bytes": 467,
+        "compressed_bytes": 208
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-03_channels.tsv",
+        "crc32": 1293566580,
+        "uncompressed_bytes": 7452,
+        "compressed_bytes": 555
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-03_events.tsv",
+        "crc32": 4232184513,
+        "uncompressed_bytes": 104,
+        "compressed_bytes": 91
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-03_ieeg.edf",
+        "crc32": 2726778524,
+        "uncompressed_bytes": 26999466,
+        "compressed_bytes": 14417766
+      },
+      {
+        "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-03_ieeg.json",
+        "crc32": 1845080183,
+        "uncompressed_bytes": 467,
+        "compressed_bytes": 208
+      }
+    ],
+    "sealed_run04_edf_member_contract": {
+      "filename": "sub-HUP080/ses-presurgery/ieeg/sub-HUP080_ses-presurgery_task-ictal_acq-ecog_run-04_ieeg.edf",
+      "crc32": 1521425594,
+      "uncompressed_bytes": 25933366,
+      "compressed_bytes": 14387509
+    },
+    "split_proposal": "${REPO_ROOT}/artifacts/v2/qc/patient_split_proposal.csv",
+    "split_proposal_sha256": "0d58fbda6596a0fbc096114a2f122148a8b65b5751fec7ba86ac93c684f16b33",
+    "task": "ictal",
+    "expected_channels": 96,
+    "development_runs": [
+      "run-01",
+      "run-02",
+      "run-03"
+    ],
+    "sealed_run": "run-04",
+    "ictal_window_absolute_seconds_half_open": [
+      120.0,
+      152.0
+    ],
+    "development_reference_window_absolute_seconds_half_open": [
+      30.0,
+      70.0
+    ],
+    "sealed_reference_window_absolute_seconds_half_open": [
+      75.0,
+      115.0
+    ],
+    "reference_label": "preictal_reference",
+    "reference_isolation": "fold-aligned seizure-level",
+    "forbidden_task": "interictal"
+  },
+  "authority_roots": [
+    "${REPO_ROOT}",
+    "${LEGACY_WORKSPACE_ROOT}/HUP060_actor_critic_error_v1",
+    "${LEGACY_WORKSPACE_ROOT}/HUP060_loss_diagnostics_v1",
+    "${LEGACY_WORKSPACE_ROOT}/HUP060_wgan_loss_decomposition_v1"
+  ],
+  "canonical_locks": {
+    "paper_final_manifest": [
+      "${REPO_ROOT}/PAPER_FINAL_VERSION.json",
+      "ed61474d9fb17d67b4daa527e102117ab7d6b15a11b1ed6126b8d0aa3e74c0ea"
+    ],
+    "part1_entry": [
+      "${REPO_ROOT}/part1_network/part1_model.py",
+      "a98895f8428086fcb255d788340e2645a6567bb50868c347482bc3ac23bbe346"
+    ],
+    "part1_config": [
+      "${REPO_ROOT}/part1_network/config.yaml",
+      "aba05c2c1f86276fd7face4e2e69b256b5c80382846ae38daf32444fe4f9e7cc"
+    ],
+    "network_core": [
+      "${REPO_ROOT}/mfc_pipeline/network.py",
+      "1b182235a253c99708a1c3873cb8e7cbef08da2af7e3b52555144a02396146be"
+    ],
+    "data_core": [
+      "${REPO_ROOT}/mfc_pipeline/data.py",
+      "f61cf1a68b31ffd775084bd7f0274334c3ef395b08ec2fda417e39523fff7601"
+    ],
+    "part2_entry": [
+      "${REPO_ROOT}/part2_rc_sde/part2_model.py",
+      "bcc47f0360790f2e3aef6ad4cbb2fe4ee6e0e1cc6825aacc5e96565f31cb6138"
+    ],
+    "part2_core": [
+      "${REPO_ROOT}/mfc_pipeline/part2_state_dependent_rc_sde.py",
+      "611bad593839c342fa1173d2e6b991a6b9392d11bc38ba561ae6c6370845ecef"
+    ],
+    "part2_training": [
+      "${REPO_ROOT}/mfc_pipeline/part2_training.py",
+      "cedd8dacd7b46d17ecd49c4ac3616474f6ee17e5e135d593a0835b6618f8890b"
+    ],
+    "part2_data_pipeline": [
+      "${REPO_ROOT}/mfc_pipeline/part2_data_pipeline.py",
+      "19ba72ceedcd3538ed730a6798206903d82e00269f570951d0fa4de8e6562316"
+    ],
+    "part2_config": [
+      "${REPO_ROOT}/part2_hup060_state_dependent_optimized.yaml",
+      "399aca05ab79e33d5059ff0099d4997b70e34d8088d5fdf0ed9fbce610c0d8cb"
+    ],
+    "part3_entry": [
+      "${REPO_ROOT}/part3_mfc/part3_model.py",
+      "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1"
+    ],
+    "actor_wgan": [
+      "${REPO_ROOT}/mfc_pipeline/actor_wgan.py",
+      "aa5b30b88b402b09f137ff0e91571e19bb1caeea93d9de4f4faf7fa57d5e60fd"
+    ],
+    "wgan_gp": [
+      "${REPO_ROOT}/mfc_pipeline/full_markov_hjb_fp_wgan.py",
+      "c32c3a480f3bb98dae7510f6cdd56612dedc3252c00890d64c7be46df9ab9f55"
+    ],
+    "structured_actor": [
+      "${REPO_ROOT}/mfc_pipeline/sequential_covariance_hjb.py",
+      "660e571c91cc1df2595554f329106b3973359f1579059de3aef2cd911a733b09"
+    ],
+    "canonical_particle_rollout": [
+      "${REPO_ROOT}/mfc_pipeline/causal_ltv_particle_rollout.py",
+      "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c"
+    ],
+    "canonical_riccati": [
+      "${REPO_ROOT}/mfc_pipeline/causal_ltv_riccati.py",
+      "748567f5fb616a641c3916a69dbb9385cf2a3cd0e64d890b49301bb3244c3ae2"
+    ],
+    "canonical_square_wave": [
+      "${REPO_ROOT}/mfc_pipeline/square_wave_mfc.py",
+      "11969e75d4357396d86cae41ffe11c529d0167310213c29346871ba25e70b64a"
+    ],
+    "renderer": [
+      "${REPO_ROOT}/part3_mfc/figure_08_all36_controlled_distributions.py",
+      "04f2f1c78fc6cd6c9fdb825d69dfeb1ad528523a1d789c75f92dc5a8e08543c6"
+    ]
+  },
+  "adaptation_locks": {
+    "controller_runner": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/controller_runner.py",
+      "b916bd32898187d94b656e8634468456dc7d8e3a98ef502d71de15c384026055"
+    ],
+    "hup060_stage_runner": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/stage_objective.py",
+      "2298cb877967651ce413970ec26597793bf18c3f17c4353f02779f46c716f557"
+    ],
+    "hup060_stage_contract": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/stage_contract.json",
+      "f6356232334c9c6e9341815ecd0d4af72ca648cdbba5e67fcff0fad8b5ef1c57"
+    ],
+    "historical_actor_source": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/historical_actor.py",
+      "ab5fd7bb17bed0a54fce0fd5dcf232fa3d6e9b875e3ffeaaa29cf9a731a62206"
+    ],
+    "multistep_calibration": [
+      "${REPO_ROOT}/patient_extensions/common/legacy_adapters/multistep_drift_calibration.py",
+      "768bad3e16cf2e4dec8306000f4c58f1af14f6f5b01b62aa2c6b757201fd2a8c"
+    ]
+  },
+  "preprocessing": {
+    "target_sampling_rate_hz": 256.0,
+    "bandpass_hz": [
+      1.0,
+      50.0
+    ],
+    "filter_order": 4,
+    "filter_burn_in_s": 20.0,
+    "reference": "car",
+    "resampling_mode": "causal_upfirdn",
+    "causal_fir_half_length_factor": 10,
+    "use_existing_cache": false
+  },
+  "part1": {
+    "bands_hz": {
+      "delta": [
+        1.0,
+        4.0
+      ],
+      "theta": [
+        4.0,
+        8.0
+      ],
+      "alpha": [
+        8.0,
+        13.0
+      ],
+      "beta": [
+        13.0,
+        30.0
+      ],
+      "gamma": [
+        30.0,
+        50.0
+      ]
+    },
+    "plv_window_s": 4.0,
+    "plv_overlap": 0.5,
+    "band_aggregation": "equal_weight_mean",
+    "network_density": 0.1,
+    "graph_rule": "maximum_spanning_tree_plus_strongest_edges",
+    "centrality_weights": {
+      "degree": 0.3,
+      "betweenness": 0.6,
+      "eigenvector": 0.1
+    },
+    "clinical_labels_used_for_selection": false
+  },
+  "part2": {
+    "loro_candidate_aggregation": "minimize_worst_fold_then_mean_then_candidate_id",
+    "plant_network_source": "broadband_windowed_plv_median_not_part1_multiband_graph",
+    "plant_plv_window_s": 2.0,
+    "plant_plv_overlap": 0.5,
+    "part1_graph_may_be_reused_as_plant_graph": false,
+    "context_samples": 512,
+    "maximum_validation_horizon_samples": 128,
+    "validation_windows": 6,
+    "rolling_display_samples": 128,
+    "rolling_block_candidates": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "rolling_selection_min_correlation": 0.7,
+    "rolling_selection_max_nrmse": 0.8,
+    "rolling_joint_fold_rule": "every_development_loro_fold_must_pass",
+    "grid": {
+      "reservoir_sizes": [
+        96,
+        160
+      ],
+      "spectral_radii": [
+        0.2,
+        0.4
+      ],
+      "leak_rates": [
+        0.1,
+        0.25
+      ],
+      "input_scales": [
+        0.05,
+        0.1
+      ],
+      "delay_sets_samples": [
+        [
+          1,
+          8,
+          32
+        ],
+        [
+          4,
+          16,
+          64
+        ],
+        [
+          8,
+          32,
+          128
+        ]
+      ],
+      "ridge_alphas": [
+        0.01,
+        0.1,
+        1.0
+      ]
+    },
+    "candidate_count": 144,
+    "reservoir_sparsity": 0.9,
+    "washout_samples": 32,
+    "random_seed": 11,
+    "latent_variance_threshold": 0.95,
+    "latent_components_min": 8,
+    "latent_components_max": 24,
+    "diffusion_shrinkage": 0.05,
+    "diffusion_relative_jitter": 1E-08,
+    "diffusion_mode": "state_dependent",
+    "diffusion_ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "effective_diffusion_multiplier": 0.79451175,
+    "selection_context_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation_horizons_samples": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "objective_weights": {
+      "nrmse_16": 0.4,
+      "nrmse_32": 0.35,
+      "nrmse_64": 0.15,
+      "swd_ratio_128": 0.1
+    }
+  },
+  "contexts": {
+    "context_samples": 256,
+    "future_samples": 256,
+    "count_per_run": 8,
+    "position_rule": "round(linspace(512, len(32s)-256, 8))",
+    "analytical_and_controller_fit": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "checkpoint_epoch_selection_only": [
+      5
+    ],
+    "terminal_veto_only": [
+      6
+    ],
+    "posthoc_only_never_success": [
+      7
+    ],
+    "fixed_display_context_index": 7
+  },
+  "reference_path_split": {
+    "unit": "nonoverlapping_1s_paths_within_each_40s_development_preictal_window",
+    "neural_fit_indices_half_open": [
+      0,
+      15
+    ],
+    "ctx5_checkpoint_validation_indices_half_open": [
+      15,
+      30
+    ],
+    "unused_development_tail_indices_half_open": [
+      30,
+      40
+    ],
+    "apply_per_run_then_concatenate_in_order": [
+      "run-01",
+      "run-02",
+      "run-03"
+    ],
+    "loro_fit_uses_each_training_run_full_preictal_window": true,
+    "loro_validation_uses_left_out_run_full_preictal_window": true
+  },
+  "controller": {
+    "fraction_grid": [
+      0.2,
+      0.3,
+      0.35,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "quantile_rule": "q=1-fraction",
+    "quantile_numeric_precision_decimals": 12,
+    "quantile_comparator": "strictly_greater_than",
+    "tau_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.5
+    ],
+    "gain_grid": [
+      0.35,
+      0.45,
+      0.668
+    ],
+    "analytical_candidate_count": 120,
+    "horizon_samples": 256,
+    "particles": 32,
+    "control_step_scale": 0.5,
+    "amplitude_limit": 1.8,
+    "per_actuator_rms_max": 0.405,
+    "total_energy_cap": 5.6862,
+    "total_energy_formula": "(13/36)*96*(0.405^2)",
+    "runtime_control_projection_or_rescaling": false,
+    "energy_violation_action": "mark analytical candidate ineligible or veto frozen candidate; never rescale/project/rescue/replace",
+    "saturation_threshold_fraction_of_peak": 0.95,
+    "saturation_fraction_max_exclusive": 0.01,
+    "graph_diffusion_time_parameter": "tau",
+    "teacher_epochs_total": 1050,
+    "teacher_stage_ids": [
+      "S0_INITIAL_0_100",
+      "S1_BALANCED_100_250",
+      "S2S_SAFE_250_450",
+      "S3_COVARIANCE_450_650",
+      "S4_MARKOV_ALPHA100_650_770",
+      "S5_SMOOTHA_770_870",
+      "S6_PRECISION_ALL_PARAMS_870_1050"
+    ],
+    "teacher_stages": [
+      {
+        "stage_id": "S0_INITIAL_0_100",
+        "epochs": 100,
+        "epoch_offset": 0,
+        "validation_every": 5,
+        "learning_rate": 0.0003,
+        "objective": "initial",
+        "actuator_alpha": 0.25,
+        "train_scope": "all_pre_markov_parameters"
+      },
+      {
+        "stage_id": "S1_BALANCED_100_250",
+        "epochs": 150,
+        "epoch_offset": 100,
+        "validation_every": 5,
+        "learning_rate": 0.0002,
+        "objective": "initial_balanced_channel_weights",
+        "actuator_alpha": 0.25,
+        "train_scope": "all_pre_markov_parameters"
+      },
+      {
+        "stage_id": "S2S_SAFE_250_450",
+        "epochs": 200,
+        "epoch_offset": 250,
+        "validation_every": 5,
+        "learning_rate": 0.0001,
+        "objective": "balanced_safe",
+        "actuator_alpha": 0.25,
+        "train_scope": "all_pre_markov_parameters"
+      },
+      {
+        "stage_id": "S3_COVARIANCE_450_650",
+        "epochs": 200,
+        "epoch_offset": 450,
+        "validation_every": 5,
+        "learning_rate": 0.0001,
+        "objective": "covariance",
+        "actuator_alpha": 0.25,
+        "train_scope": "deviation_only_freeze_common"
+      },
+      {
+        "stage_id": "S4_MARKOV_ALPHA100_650_770",
+        "epochs": 120,
+        "epoch_offset": 650,
+        "validation_every": 10,
+        "learning_rate": 0.0002,
+        "objective": "covariance",
+        "actuator_alpha": 1.0,
+        "train_scope": "markov_only"
+      },
+      {
+        "stage_id": "S5_SMOOTHA_770_870",
+        "epochs": 100,
+        "epoch_offset": 770,
+        "validation_every": 10,
+        "learning_rate": 0.0001,
+        "objective": "covariance_smoothA",
+        "actuator_alpha": 1.0,
+        "train_scope": "markov_only"
+      },
+      {
+        "stage_id": "S6_PRECISION_ALL_PARAMS_870_1050",
+        "epochs": 180,
+        "epoch_offset": 870,
+        "validation_every": 10,
+        "learning_rate": 5E-05,
+        "objective": "covariance",
+        "actuator_alpha": 1.0,
+        "train_scope": "all_actor_parameters"
+      }
+    ],
+    "objective_weights": {
+      "initial": {
+        "mean": 2.0,
+        "log_variance": 3.0,
+        "worst_log_variance": 0.0,
+        "time_quantile": 5.0,
+        "worst_time_quantile": 0.0,
+        "no_harm_mean": 0.0,
+        "no_harm_quantile": 0.0,
+        "occupation": 2.0,
+        "tube": 2.0,
+        "joint": 0.5,
+        "energy": 0.01,
+        "smoothness": 0.2,
+        "curvature": 0.1,
+        "saturation": 1.0
+      },
+      "initial_balanced_channel_weights": {
+        "mean": 2.0,
+        "log_variance": 3.0,
+        "worst_log_variance": 0.0,
+        "time_quantile": 5.0,
+        "worst_time_quantile": 0.0,
+        "no_harm_mean": 0.0,
+        "no_harm_quantile": 0.0,
+        "occupation": 2.0,
+        "tube": 2.0,
+        "joint": 0.5,
+        "energy": 0.01,
+        "smoothness": 0.2,
+        "curvature": 0.1,
+        "saturation": 1.0
+      },
+      "balanced_safe": {
+        "mean": 5.0,
+        "log_variance": 3.0,
+        "worst_log_variance": 2.0,
+        "time_quantile": 5.0,
+        "worst_time_quantile": 3.0,
+        "no_harm_mean": 10.0,
+        "no_harm_quantile": 10.0,
+        "occupation": 2.0,
+        "tube": 2.0,
+        "joint": 0.5,
+        "energy": 0.01,
+        "smoothness": 0.2,
+        "curvature": 0.1,
+        "saturation": 1.0
+      },
+      "covariance": {
+        "mean": 10.0,
+        "log_variance": 10.0,
+        "worst_log_variance": 5.0,
+        "time_quantile": 8.0,
+        "worst_time_quantile": 5.0,
+        "no_harm_mean": 20.0,
+        "no_harm_quantile": 20.0,
+        "occupation": 2.0,
+        "tube": 2.0,
+        "joint": 0.5,
+        "energy": 0.01,
+        "smoothness": 0.2,
+        "curvature": 0.1,
+        "saturation": 1.0
+      },
+      "covariance_smoothA": {
+        "mean": 10.0,
+        "log_variance": 10.0,
+        "worst_log_variance": 5.0,
+        "time_quantile": 8.0,
+        "worst_time_quantile": 5.0,
+        "no_harm_mean": 20.0,
+        "no_harm_quantile": 20.0,
+        "occupation": 2.0,
+        "tube": 2.0,
+        "joint": 0.5,
+        "energy": 0.01,
+        "smoothness": 100.0,
+        "curvature": 50.0,
+        "slew_barrier": 1000.0,
+        "curvature_barrier": 1000.0,
+        "maximum_first_difference": 0.35,
+        "maximum_second_difference": 0.5,
+        "saturation": 1.0
+      }
+    },
+    "discarded_s2r_executed": false,
+    "wgan_epochs": 40,
+    "validation_every_epochs": 4,
+    "actor_learning_rate": 1E-05,
+    "critic_learning_rate": 0.0001,
+    "critic_pretrain_steps": 24,
+    "critic_pretrain_banks": 3,
+    "critic_steps": 3,
+    "adversarial_weight": 0.5,
+    "teacher_anchor_weight": 0.2,
+    "base_gain_ridge": 0.2,
+    "markov_residual_scale": 0.6,
+    "seed": 20261011,
+    "s3_to_s4_modern_template_initialization_seed": 20260921,
+    "teacher_training_noise_seed_rule": "20260921 + 1009*(absolute_epoch+1)",
+    "teacher_validation_noise_seed": 20260922,
+    "wgan_validation_noise_seed": 20260922,
+    "validation_seed": 20260922,
+    "validation_crn_banks": 3,
+    "wgan_exact_seed_contract": {
+      "critic_pretrain_noise": "20261011 + 101*(bank+1)",
+      "critic_pretrain_gp": "20261011 + 50000 + step",
+      "joint_epoch_noise": "20261011 + 1009*epoch",
+      "joint_epoch_gp": "20261011 + 100000*epoch + critic_step",
+      "actor_gradient_clip": 1.0,
+      "critic_gradient_clip": 5.0,
+      "epoch_zero_eligible": false,
+      "noninferiority_multiplier": 1.02,
+      "fallback_update_may_be_promoted": false
+    },
+    "analytical_rank": [
+      "maximize_worst_fold_full_gate_b_count",
+      "minimize_worst_fold_mean_time_plus_occupation_w1",
+      "minimize_actuator_count",
+      "stable_candidate_id"
+    ],
+    "freeze_top_k": 1,
+    "ctx5_may_select_epoch": true,
+    "ctx5_may_select_arm": false,
+    "ctx6_may_veto": true,
+    "ctx6_may_rank_or_rescue": false,
+    "ctx7_used_for_success": false
+  },
+  "analytical_eligibility_contract": {
+    "gate_a_name": "static_protocol_integrity",
+    "gate_a_components": [
+      "canonical_source_locks_recorded",
+      "formal_split_roles_preserved",
+      "no_test_or_reference_test_access_during_selection",
+      "common_random_numbers_within_each_fold",
+      "uncontrolled_branch_parity"
+    ],
+    "gate_c_name": "trajectory_safety",
+    "gate_c_components": [
+      "finite_outputs",
+      "total_energy_cap",
+      "per_actuator_rms_cap",
+      "peak_cap",
+      "saturation_fraction_cap"
+    ],
+    "requires_gate_a_and_gate_c": true,
+    "plant_four_inequality_status": "diagnostic_only",
+    "plant_may_filter_rank_or_veto_analytical_arms": false,
+    "aggregate_both_w1_improvement_status": "diagnostic_only",
+    "full_gate_b_count_status": "ranking_metric_not_feasibility_prefilter",
+    "trajectory_safety_values_reported": true
+  },
+  "gate_b": {
+    "definition": "six_frozen_components",
+    "minimum_time_w1_relative_reduction": 0.1,
+    "minimum_occupation_w1_relative_reduction": 0.1,
+    "time_w1_controlled_reference_max": 0.35,
+    "occupation_w1_controlled_reference_max": 0.25,
+    "controlled_reference_mean_abs_error_max": 0.1,
+    "controlled_reference_symmetric_sd_ratio_max": 2.0,
+    "finite_required": true,
+    "aggregation": "AND each component over every declared context and all three CRN banks per channel",
+    "both_improved_reported_separately": true,
+    "aggregate_both_w1_improvement_or_gate_b_may_be_analytical_feasibility_prefilter": false,
+    "all_channels_reported": true
+  },
+  "gate_c": {
+    "finite": true,
+    "total_energy_lte": 5.6862,
+    "per_actuator_rms_lte": 0.405,
+    "peak_lte": 1.8,
+    "saturation_fraction_lt": 0.01
+  },
+  "ctx6_veto_rule": {
+    "finite_all_contexts_and_crn_banks": true,
+    "gate_c_all_contexts_and_crn_banks": true,
+    "aggregate_time_w1_controlled_lt_free": true,
+    "aggregate_occupation_w1_controlled_lt_free": true,
+    "minimum_full_six_gate_b_channel_count": 1,
+    "may_rank_rescue_or_replace": false
+  },
+  "phase_order": [
+    "00_inventory_before",
+    "01_prepare_development",
+    "02_loro_part1_part2",
+    "03_loro_analytical_top1",
+    "04_final_refit",
+    "05_teacher_s0",
+    "06_teacher_s1",
+    "07_teacher_s2s",
+    "08_teacher_s3",
+    "09_teacher_s4",
+    "10_teacher_s5",
+    "11_teacher_s6",
+    "12_wgan40_ctx5_select",
+    "13_ctx6_terminal_veto",
+    "14_freeze_outer",
+    "15_run04_once",
+    "16_common_renderer_input_freeze",
+    "17_inventory_after"
+  ],
+  "outer_evaluation": {
+    "classification": "hash-locked retrospective held-out-seizure reanalysis",
+    "go_token_required": true,
+    "open_sealed_ictal_and_reference_segments_together_once": true,
+    "independent_canonical_preprocessing_state_per_sealed_window": true,
+    "evaluate_all_eight_contexts_from_single_sealed_ictal_segment": true,
+    "reselection_forbidden": true,
+    "display_window_id": "outer-context-07",
+    "display_context_fixed_before_open": 7,
+    "display_crn_bank": 0,
+    "aggregate_window_ids": [
+      "outer-context-00",
+      "outer-context-01",
+      "outer-context-02",
+      "outer-context-03",
+      "outer-context-04",
+      "outer-context-05",
+      "outer-context-06",
+      "outer-context-07"
+    ],
+    "aggregate_context_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "aggregate_rule": "fail-closed over every predeclared outer window and all three CRN banks",
+    "overleaf_write": false
+  },
+  "figure_contract": {
+    "core_conclusion": "A frozen direct-actuation support is evaluated across all 96 HUP080 channels on one retrospective held-out seizure.",
+    "evidence": "per-channel reference, uncontrolled and controlled empirical laws; direct and indirect status disclosed",
+    "archetype": "quantitative grid",
+    "backend": "python_common_renderer_v1_after_result_audit",
+    "embedded_patient_renderer_enabled": false,
+    "pages": [
+      [
+        0,
+        36
+      ],
+      [
+        36,
+        72
+      ],
+      [
+        72,
+        96
+      ]
+    ],
+    "layout": [
+      6,
+      6
+    ],
+    "page_size_mm": [
+      183,
+      190
+    ],
+    "kde_absolute_bandwidth": 0.16,
+    "pooled_quantiles": [
+      0.002,
+      0.998
+    ],
+    "grid_points": 240,
+    "formats": [
+      "svg",
+      "pdf",
+      "png",
+      "tiff"
+    ],
+    "submission_dpi": 600,
+    "overleaf_write": false
+  }
+}
+

@@ -1,0 +1,65 @@
+{
+  "qa_schema_version": "hup080-publication-manual-visual-qa-v3",
+  "status": "PASS",
+  "accepted_package": "package_overleaf_final_v2",
+  "baseline_package": "package_overleaf_final",
+  "pages_inspected": [
+    "package_overleaf_final_v2/figures/hup080_ofrc_all_channels_page_01.png",
+    "package_overleaf_final_v2/figures/hup080_ofrc_all_channels_page_02.png",
+    "package_overleaf_final_v2/figures/hup080_ofrc_all_channels_page_03.png"
+  ],
+  "authorized_visible_revision": {
+    "from": "Sparse direct actuation: 76/96 | complete Gate-B: 65/96 | safety: 96/96",
+    "to": "Direct actuation: 76/96 | complete Gate-B: 65/96 | safety: 96/96"
+  },
+  "visual_checks": {
+    "revised_summary_exact_and_readable_on_all_three_pages": true,
+    "sparse_word_absent_from_visible_title_and_summary": true,
+    "publication_title_unchanged_and_unclipped": true,
+    "legend_unchanged_and_unclipped": true,
+    "page_occupancy_exact": [36, 36, 24],
+    "page_03_has_exactly_12_intentionally_blank_cells": true,
+    "all_96_channels_present_once": true,
+    "channel_title_gate_b_overlap_count": 0,
+    "minimum_channel_gate_b_gap_pt": 2.740458124552623,
+    "w1_annotations_remain_readable_over_curves": true,
+    "axes_footer_and_labels_not_clipped": true,
+    "no_new_text_curve_overlap": true,
+    "no_unexpected_artifacts": true
+  },
+  "pixel_difference_attribution": {
+    "changed_pixel_count_per_page": 7865,
+    "changed_pixel_bbox_xyxy_inclusive_on_every_page": [120, 117, 859, 139],
+    "all_changes_within_summary_line_region": true,
+    "all_pixels_outside_summary_line_region_identical_to_baseline": true,
+    "pdf_extracted_text_diff_only_expected_summary_replacement": true
+  },
+  "science_and_source_integrity": {
+    "curves_kdes_axes_channel_order_actuation_gate_safety_and_pagination_unchanged": true,
+    "all_four_source_files_byte_identical": true,
+    "science_run_modified": false,
+    "common_renderer_modified": false,
+    "hup060_modified": false,
+    "hup065_modified": false,
+    "overleaf_modified": false,
+    "git_modified": false
+  },
+  "export_contract": {
+    "backend": "Python/matplotlib only",
+    "fixed_canvas_mm": [183.0, 190.0],
+    "png_dimensions_px_at_300_dpi": [2161, 2244],
+    "pdf_page_count": 3,
+    "pdf_fonts": "embedded ArialMT and Arial-BoldMT CID TrueType subsets with Unicode maps",
+    "editable_pdf_text": true
+  },
+  "accepted_pdf_sha256": {
+    "page_01": "f656aa87da5a40b229bec41836da7d0e8ef785bc499bd0b7f926be7e5991c30a",
+    "page_02": "b4c37086b5fef77fefcc8039dd7119ff8b74bc4c158afd768eb310f486b94042",
+    "page_03": "55b1faac4753067a6cbd2ef1c6106cf9ede7e00d267d22a59a79f3fcdebf1657"
+  },
+  "accepted_png_sha256": {
+    "page_01": "bfb1a929548ba650d496ac058bad99ebe0332b02de3d16f27384a6af56cb46b0",
+    "page_02": "a897191f3f2aa0707fbe6eb1c52d338a0b70b4236ca25d1090c0c1e77f8bfef1",
+    "page_03": "e5cace545d299c8fec22ee30e884ba7c8f4a12209dd0646b95a59a6e3eae4e9a"
+  }
+}

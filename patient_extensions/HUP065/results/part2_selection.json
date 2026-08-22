@@ -1,0 +1,89 @@
+{
+  "candidate_grid_sha256": "19a9ead73381463ca98b27dd49e315bb6c8ebe7687c69b7a25043b04de153491",
+  "candidate_selection_order": [
+    "worst_fold_objective",
+    "mean_objective",
+    "candidate_index"
+  ],
+  "clinical_labels_used": false,
+  "ctx5_used": false,
+  "ctx6_used": false,
+  "ctx7_used": false,
+  "diffusion_alpha_loro_windows_per_fold": 6,
+  "diffusion_alpha_selection_order": [
+    "worst_fold_mean_swd_ratio",
+    "mean_fold_swd_ratio",
+    "diffusion_ridge_alpha"
+  ],
+  "diffusion_ridge_alpha_selected_by_loro": 0.1,
+  "effective_diffusion_multiplier_for_part3": 0.79451175,
+  "fold_models": [
+    {
+      "fold_id": "leave-run-01-out",
+      "latent_components": 18,
+      "model_sha256": "1152ad8f5aec469edf55c46d899b3fc2594918fe5931e1675b66317c74373289",
+      "part1_selection_network_sha256": "e43cdf81580806e009245b2acd30e4ec997ae29e2229acf5d976ea1c6c7609b6",
+      "part2_model_normalized_adjacency_array_sha256": "4c7619914c743b1b255d05170ce7b7266643a7a9599e0018f745fce78e183d77",
+      "part2_plant_adjacency_input_array_sha256": "2896452cf0bb216c1e9d566d94571f22d844c320c6a03311c6f87067501c6032",
+      "part2_plant_adjacency_sha256": "933ea2df3c71783b7c78527be4f9aa269bba021fc654146db4636df39578b48d",
+      "training_runs": [
+        "run-02"
+      ],
+      "validation_run": "run-01"
+    },
+    {
+      "fold_id": "leave-run-02-out",
+      "latent_components": 19,
+      "model_sha256": "6432aceb602ab4360bd2e9b3d8c62dc40deea4362ce26901d87da4e3af83f2ae",
+      "part1_selection_network_sha256": "d954b8d28d1b0b351f4972a5cbc440179f5793201d735246eedae65b5daca11e",
+      "part2_model_normalized_adjacency_array_sha256": "7d7cd1bd5f1ac0c69ce7031d8b0de2951a0ccb3b0d6f02501f40642633bd82dd",
+      "part2_plant_adjacency_input_array_sha256": "03b47049bbd6eea8aa32c7a399d9c36e8b71de3c9ddbcaf048314da573a43736",
+      "part2_plant_adjacency_sha256": "c07d5281c4b2e94fac370794dbe3ff3f9a432bb3561d59df5575fb7840983ef2",
+      "training_runs": [
+        "run-01"
+      ],
+      "validation_run": "run-02"
+    }
+  ],
+  "graph_roles": {
+    "adjacency_reused_between_roles": false,
+    "part1_selection_network": "multiband_equal_4s_centrality_and_direct_mask",
+    "part2_plant_adjacency": "broadband_2s_windowed_plv_median_graph_rc_world"
+  },
+  "model_config": {
+    "delays_samples": [
+      1,
+      8,
+      32
+    ],
+    "diffusion_mode": "state_dependent",
+    "diffusion_relative_jitter": 1e-08,
+    "diffusion_ridge_alpha": 0.1,
+    "diffusion_shrinkage": 0.05,
+    "input_scale": 0.1,
+    "latent_components_max": 24,
+    "latent_components_min": 8,
+    "latent_variance_threshold": 0.95,
+    "leak_rate": 0.25,
+    "random_seed": 11,
+    "reservoir_size": 160,
+    "reservoir_sparsity": 0.9,
+    "ridge_alpha": 1.0,
+    "spectral_radius": 0.2,
+    "washout_samples": 32
+  },
+  "rolling_block_samples_selected_by_loro": 8,
+  "rolling_block_selection_rule": "largest_candidate_passing_corr_ge_0.70_and_nrmse_le_0.80_in_every_fold",
+  "rolling_no_eligible_block": "NO_GO_before_part3",
+  "sealed_run_opened": false,
+  "selected_candidate_index": 101,
+  "selection_context_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "subject": "HUP065"
+}

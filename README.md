@@ -43,6 +43,24 @@ diffusion-scale-1.0 rollout and is retained only for provenance.  It is not an
 input to the current paper figures.  `PAPER_FINAL_VERSION.json` is the
 authoritative model-and-figure contract.
 
+## HUP065 and HUP080 extensions
+
+The additive [`patient_extensions/`](patient_extensions/) package provides
+portable code, configuration templates, lightweight frozen summaries and
+accepted publication figures for HUP065 and HUP080. It does not replace or
+modify the HUP060 workflow above. HUP080 is explicitly reported as an
+exploratory v2 extension after the valid parent-v1 rolling-screen
+`NO_GO_before_part3` outcome.
+
+```powershell
+python patient_extensions/verify_public_results.py
+```
+
+Patient-derived signal arrays, learned weights, raw archives, training
+histories and one-time access receipts are intentionally excluded. See
+[`patient_extensions/README.md`](patient_extensions/README.md) for the exact
+scope and relocation workflow.
+
 ## Quick start
 
 ```powershell

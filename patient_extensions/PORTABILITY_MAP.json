@@ -1,0 +1,232 @@
+{
+  "schema_version": "patient-extensions-portability-map-v1",
+  "status": "PATH_AND_AUTHORIZATION_ONLY_PUBLIC_RELOCATION_SCIENTIFIC_PARAMETERS_UNCHANGED",
+  "non_equivalence_notice": "The public templates and materialized configs are not byte-identical to the executed frozen configs and receive their own SHA-256 values.",
+  "checkout_byte_portability": {
+    "executed_windows_byte_hashes_retained_in_committed_templates": true,
+    "materialized_checkout_local_locks_use_current_file_bytes": true,
+    "recursive_lock_forms": [
+      "[path, sha256]",
+      "{path, sha256}",
+      "path-or-path-key plus sibling *_sha256"
+    ],
+    "identity_classification_in_local_receipt": [
+      "byte_identical",
+      "eol_only",
+      "relocation_specific_generated_or_public_adaptation"
+    ],
+    "requires_core_autocrlf": false,
+    "tracked_hup060_source_blobs_modified": false,
+    "serialized_models_or_raw_archives_refreshed_or_published": false,
+    "public_directory_allowlist_additions": [
+      "HUP065",
+      "HUP080"
+    ],
+    "executed_private_allowlist_retained_as_provenance": true
+  },
+  "path_only_mappings": [
+    {
+      "private_role": "canonical HUP060 repository root",
+      "public_placeholder": "${REPO_ROOT}"
+    },
+    {
+      "private_role": "independently obtained OpenNeuro ds004100 root",
+      "public_placeholder": "${DS004100_ROOT}"
+    },
+    {
+      "private_role": "patient-specific isolated run root",
+      "public_placeholder": "${PATIENT_RUN_ROOT}"
+    },
+    {
+      "private_role": "legacy immutable HUP060 authority parent",
+      "public_placeholder": "${LEGACY_WORKSPACE_ROOT}"
+    },
+    {
+      "private_role": "legacy patient-extension parent",
+      "public_placeholder": "${LEGACY_EXTENSION_ROOT}"
+    },
+    {
+      "private_role": "offline historical provenance root",
+      "public_placeholder": "${PRIVATE_PROVENANCE_ROOT}"
+    }
+  ],
+  "executed_config_bindings": {
+    "HUP065": {
+      "executed_config_sha256": "7f436ba67234c1e0007d29d925d06d2f353483da0cbb026538be322a83268ccf",
+      "public_template": "HUP065/config.template.json",
+      "public_template_sha256": "f3428f2b4e64f0a3c66e32f3b04d8bc5b4191d381d5710fd968f4490caac38f5",
+      "scientific_parameter_delta": "none",
+      "portability_delta": "absolute paths replaced by declared placeholders; fixed authorization values replaced by local environment-variable binding; excluded private failure stages replaced by a hash-only provenance receipt"
+    },
+    "HUP080_exploratory_v2": {
+      "executed_config_sha256": "4e46bb903166dd98b2805bf5aa9ca581744aa6fe797893b57c669a87dbcdfcab",
+      "parent_v1_executed_config_sha256": "0539881d94304cd7116839bf7a9ffa1fcb8a0382cce5bb90dc1eb641aa0fac1a",
+      "public_template": "HUP080/config.template.json",
+      "public_template_sha256": "a2c6c0b97f137db1dff5d3cc8c69e440582dd7411e0832cd3a5608d9f3553b51",
+      "scientific_parameter_delta_from_executed_v2": "none",
+      "v2_scientific_delta_from_valid_v1_no_go": "rolling-block grid adds only 1 and 2 samples; thresholds and every-fold selection rule unchanged",
+      "classification": "exploratory v2; not the original preregistered replication"
+    },
+    "shared_protocol": {
+      "executed_protocol_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+      "public_template": "common/protocol/protocol.template.json",
+      "public_template_sha256": "97315b9d393de1b66501a64e6c28e67300813662c28f52a31883e79428b87253",
+      "scientific_parameter_delta": "none",
+      "portability_delta": "path placeholders only"
+    }
+  },
+  "source_adaptations": [
+    {
+      "source_role": "HUP065 runner",
+      "executed_source_sha256": "903a35aef8ce8d0caaff61c20f131ecfd400f16808c8107b32d862b0134220c7",
+      "public_path": "HUP065/runner.py",
+      "public_sha256": "03f598cd16c045d07e728f654f58531c1f37a7ecf6dc6257c1bdaea477a60c2d",
+      "changes": [
+        "accept audited public HUP065 directory name",
+        "preserve executed shared-protocol SHA separately from the relocation-specific protocol hash",
+        "validate executed D-plant hashes as provenance while verifying relocation-specific checkout byte locks at runtime",
+        "replace embedded authorization values with constant-time comparison to local environment variables"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP065 science backend",
+      "executed_source_sha256": "d9bd75504db404ceaf405574ba961d2494ce5551a1e0a30d01b0185d144b5f2d",
+      "public_path": "HUP065/science_backend.py",
+      "public_sha256": "f164aabe805940c6f87d82f2c38a4687e1dd38a343959eb5938b2f2fff437cb0",
+      "changes": [
+        "remove machine-specific path wording from a comment"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP065 static self-test",
+      "executed_source_sha256": "190cdd31616ee1dc5e7c348a85dc28d6ec09f8eb6e2a06e5b77c79ca5d10274f",
+      "public_path": "HUP065/static_self_test.py",
+      "public_sha256": "f979be0df5b9937a5c43448b282dfd2095ecdda07f7420fb5385699662dcb48f",
+      "changes": [
+        "validate executed canonical hashes from preserved provenance while runtime locks follow checkout bytes",
+        "replace private 106 MB failure-stage reads with the bundled hash-only failure-provenance receipt",
+        "make the historical MAX_PATH proof independent of checkout path length"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP080 runner",
+      "executed_source_sha256": "e502836bc4e00c34e22d49cc6ae8d85c9f85a903d68122d9b151dfb98f81b5bd",
+      "public_path": "HUP080/runner.py",
+      "public_sha256": "c1c2f6510d635f3feb06389e2468ce43a5df919bea9d67627b71f4b1cbbb4e5d",
+      "changes": [
+        "replace embedded authorization value with constant-time comparison of two local environment variables",
+        "describe the public CLI as an exploratory partial-actuation extension"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP080 self-test",
+      "executed_source_sha256": "0bb5aaaeaa425f1c5df6a47fb2c95e30e25980d4dc1b7ec229ef1d9ae10d14c6",
+      "public_path": "HUP080/selftest.py",
+      "public_sha256": "f90afd5c724f8121ad68e7f202d176561cc504970424048ae900b03deb884d50",
+      "changes": [
+        "validate relocation-specific shared-protocol file hash while separately asserting the executed protocol provenance hash",
+        "replace private parent-v1 config/freeze/staging reads with the bundled hash-only NO_GO provenance receipt",
+        "assert the receipt is absent from every v2 science execution source"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP080 package initializer",
+      "executed_source_sha256": "3ceda7f94ac90b610a08c3d0941464b0124f3fe8945d98fd3aba9f1d45ea4811",
+      "public_path": "HUP080/h080/__init__.py",
+      "public_sha256": "7b8822ae3baf837b4a6cfab26bd63c09142acd7f203b95c80f250438075d5c5e",
+      "changes": [
+        "describe the package as exploratory partial-actuation rather than sparse-control"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP080 phase dispatcher",
+      "executed_source_sha256": "774647dd182680e936c90bda2eeb07770574ff4a87a96813ba25e19e85bab81c",
+      "public_path": "HUP080/h080/pipeline.py",
+      "public_sha256": "23a6f63ab3cafa1a481af7328fa444c5caa38864f40951a2e37e5f94397728a9",
+      "changes": [
+        "remove an unused fixed authorization constant and its export"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "HUP080 common-renderer candidate adapter",
+      "executed_source_sha256": "d6d2f7df19e51ac5c5b76464939974020887195eaac0354e76427c69e91a75e4",
+      "public_path": "HUP080/h080/renderer_input.py",
+      "public_sha256": "d82f465d98e709c9e6fbd50849bfe2d2973df0eef8cc4858824e84e064bd616b",
+      "changes": [
+        "bind renderer candidates to the preserved executed protocol SHA while the relocated protocol file retains its own local hash"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "common protocol static self-test",
+      "executed_source_sha256": "cc9e43b741741f3b2e8d974f5f749c791c96dada94a8ea7649b3788a69e06e94",
+      "public_path": "common/protocol/static_self_test.py",
+      "public_sha256": "5f079cb09b483092de500e70be553693c8f13fd906673cf3513df63c8352a15a",
+      "changes": [
+        "validate executed D-plant hashes from materialized protocol provenance",
+        "independently verify relocation-specific runtime locks against current checkout bytes"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "common renderer synthetic self-test",
+      "executed_source_sha256": "62c2d5aafdd067559ee9c05ebedd0c73a546a89ef2483357a0060642aeb4063b",
+      "public_path": "common/renderer/selftest.py",
+      "public_sha256": "99f2e1e685dd03052777f072f9613376727302ae3e6efa4b155b38f5d470b4a7",
+      "changes": [
+        "derive the forbidden drive-root test path from the current filesystem anchor instead of embedding a drive letter"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "public configuration materializer",
+      "public_path": "materialize_config.py",
+      "public_sha256": "b6aa2daea361911ba623a386459f02af01a37d59805e8e30865104aed9fcf504",
+      "changes": [
+        "recursively refresh all checkout-local source/reference lock forms to current bytes",
+        "record byte-identical, EOL-only, or relocation-generated identity without overwriting committed executed hashes",
+        "preserve the executed canonical HUP060 lock map inside materialized protocol provenance",
+        "allow the audited public HUP065/HUP080 directory names only in materialized protocol output",
+        "exclude serialized models and raw archives from public lock relocation"
+      ],
+      "scientific_equations_or_parameters_changed": false
+    },
+    {
+      "source_role": "legacy gated stage runner numerical objective",
+      "executed_source_sha256": "2298cb877967651ce413970ec26597793bf18c3f17c4353f02779f46c716f557",
+      "public_path": "common/legacy_adapters/stage_objective.py",
+      "public_sha256": "700c7c3990595abf313effe6ddf80f6bca02888fbd813b2e7330e53a9f6829ae",
+      "changes": [
+        "publish the objective function only",
+        "omit private launcher paths, fixed authorization value, and access workflow"
+      ],
+      "objective_function_ast_equal_to_executed_source": true,
+      "scientific_equations_or_parameters_changed": false
+    }
+  ],
+  "byte_identical_science_core_examples": [
+    {
+      "path": "HUP065/h065/control.py",
+      "sha256": "4df38a43a15436a86bf852197b062841fe878cdad9ed2bc47d4b9edd10248cc3"
+    },
+    {
+      "path": "HUP080/h080/control.py",
+      "sha256": "44c02a1adf56f907de04de5b588eedc9dd00b043776d2344e04ba48940cc7bdf"
+    },
+    {
+      "path": "HUP080/h080/contracts.py",
+      "sha256": "3ff61c457062bc7f50cb8f7dd49402e9db37f931ddba1bb7a0e04ebaa77b8f69"
+    }
+  ],
+  "private_archive_manifest_anchors": {
+    "HUP065": "df6752e1916eb12e1bb0d16330fc77ce63e4444846d675cddcc4213c3f36a637",
+    "HUP080": "6382eb5aec69643855866765ac39eb981f93abb6b99727e145ddb7d803ad4f0d"
+  }
+}

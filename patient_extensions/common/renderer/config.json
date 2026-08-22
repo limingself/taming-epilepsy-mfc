@@ -1,0 +1,127 @@
+{
+  "schema_version": "ofrc-final-candidate-v1",
+  "provenance": {
+    "required_shared_protocol_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399"
+  },
+  "figure_contract": {
+    "core_conclusion": "Display the supplied candidate's channel-wise observed, free, reference, and controlled occupation laws together with externally supplied actuation and full-Gate status.",
+    "archetype": "quantitative grid",
+    "backend": "python",
+    "interpretation_limit": "The renderer does not infer recovery, validation, or Gate status from visual curve overlap.",
+    "default_stage": "preview",
+    "preview_formats": [
+      "png"
+    ],
+    "confirmed_final_formats": [
+      "svg",
+      "pdf",
+      "tiff"
+    ]
+  },
+  "profiles": {
+    "HUP065": {
+      "channel_count": 64,
+      "page_occupancy": [
+        36,
+        28
+      ]
+    },
+    "HUP080": {
+      "channel_count": 96,
+      "page_occupancy": [
+        36,
+        36,
+        24
+      ]
+    }
+  },
+  "gate_b_components": [
+    {
+      "key": "gate_time_w1_relative_reduction_pass",
+      "short_label": "tW1↓"
+    },
+    {
+      "key": "gate_occupation_w1_relative_reduction_pass",
+      "short_label": "oW1↓"
+    },
+    {
+      "key": "gate_time_w1_absolute_pass",
+      "short_label": "tW1≤"
+    },
+    {
+      "key": "gate_occupation_w1_absolute_pass",
+      "short_label": "oW1≤"
+    },
+    {
+      "key": "gate_mean_error_pass",
+      "short_label": "|μ|≤"
+    },
+    {
+      "key": "gate_sd_ratio_pass",
+      "short_label": "SD≤"
+    }
+  ],
+  "layout": {
+    "rows": 6,
+    "columns": 6,
+    "width_mm": 183.0,
+    "height_mm": 190.0,
+    "shared_amplitude_axis": true,
+    "per_channel_density_axis": true
+  },
+  "kde": {
+    "absolute_bandwidth": 0.16,
+    "grid_points": 240,
+    "lower_quantile": 0.002,
+    "upper_quantile": 0.998,
+    "margin_fraction": 0.05
+  },
+  "style": {
+    "O": {
+      "label": "Observed ictal",
+      "color": "#272727",
+      "linewidth": 0.70,
+      "linestyle": "-",
+      "alpha": 0.78
+    },
+    "F": {
+      "label": "Free RC-SDE",
+      "color": "#9A9A9A",
+      "linewidth": 0.75,
+      "linestyle": ":",
+      "alpha": 0.82
+    },
+    "R": {
+      "label": "Reference",
+      "color": "#3C8D62",
+      "linewidth": 0.90,
+      "linestyle": "-.",
+      "alpha": 0.92
+    },
+    "C": {
+      "label": "Controlled",
+      "color": "#2166AC",
+      "linewidth": 0.95,
+      "linestyle": "-",
+      "alpha": 1.0
+    }
+  },
+  "export": {
+    "preview_dpi": 300,
+    "tiff_dpi": 600,
+    "final_export_enabled": false
+  },
+  "integrity": {
+    "minimum_samples_per_series_per_channel": 8,
+    "maximum_direct_fraction": 0.8,
+    "minimum_indirect_fraction": 0.2,
+    "allowed_outer_evaluation_roles": [
+      "outer_evaluation",
+      "sealed_terminal_evaluation"
+    ],
+    "require_finite_values": true,
+    "require_unique_nonempty_channel_names": true,
+    "no_overwrite": true,
+    "atomic_staging": true
+  }
+}

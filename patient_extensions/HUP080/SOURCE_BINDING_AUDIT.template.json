@@ -1,0 +1,174 @@
+{
+  "schema_version": "hup080-canonical-source-binding-audit-v4-exploratory-amendment",
+  "status": "PASS_STATIC_SYNTHETIC_EXPLORATORY_V2_NO_SCIENCE_RUN",
+  "subject": "HUP080",
+  "shared_protocol_sha256": "a59141b4e239eb6676c915108aaa82ba330cf9574a40158c4702479f6d2f1399",
+  "amendment_provenance": {
+    "classification": "post_v1_phase02_no_go_protocol_amendment",
+    "parent_config_sha256": "0539881d94304cd7116839bf7a9ffa1fcb8a0382cce5bb90dc1eb641aa0fac1a",
+    "parent_implementation_freeze_sha256": "359745077c159ec9ea5a6aebca045e8f55f3d8af0b9024777f68df0004982ffd",
+    "parent_shared_protocol_grid": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "local_amended_grid": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "only_added_candidates": [
+      1,
+      2
+    ],
+    "thresholds_and_every_fold_selection_rule_unchanged": true,
+    "v1_no_go_remains_valid": true,
+    "run04_seen": false,
+    "v1_failure_artifacts_are_audit_only_never_science_inputs": true
+  },
+  "formal_adapter": {
+    "path": "${PATIENT_RUN_ROOT}/h080/control.py",
+    "sha256": "44c02a1adf56f907de04de5b588eedc9dd00b043776d2344e04ba48940cc7bdf",
+    "role": "hash-bound orchestration and dimension/path adapter around directly imported D-canonical modules",
+    "allowed_differences_from_hup060": [
+      "patient path and subject identity are configuration-bound rather than hard-coded",
+      "the fitted plant channel count is asserted dynamically as 96 rather than hard-coded as 36",
+      "the direct Actor output dimension is derived from the frozen sparse Part-I mask",
+      "the pre-registered candidate tau is passed directly as TorchGraphRCSDE.control_graph_diffusion_time",
+      "the Part-I selection graph and Part-II broadband plant adjacency are built and stored as separate roles",
+      "fit, LORO-validation, ctx5-validation and outer references are supplied by the frozen HUP080 split protocol",
+      "atomic phase publication, resume receipts and retrospective outer-access firewalls are added around the canonical science calls",
+      "after the v1 Part-II rolling-screen NO_GO, the local HUP080 exploratory grid adds only 1- and 2-sample blocks while thresholds, every-fold AND, largest-eligible selection and empty-pool NO_GO remain unchanged"
+    ],
+    "forbidden_differences_absent": {
+      "plant_equation_change": true,
+      "actor_or_critic_loss_change": true,
+      "control_channel_map_override": true,
+      "extra_feedback_heat_map_substitution": true,
+      "increment_or_persistence_stepper_transform": true,
+      "runtime_energy_projection_or_rescaling": true,
+      "plant_four_inequality_as_analytical_filter_rank_or_veto": true,
+      "gate_threshold_change": true,
+      "post_result_arm_or_display_window_selection": true
+    }
+  },
+  "direct_d_canonical_imports": [
+    {
+      "module": "actor_wgan.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/actor_wgan.py",
+      "sha256": "aa5b30b88b402b09f137ff0e91571e19bb1caeea93d9de4f4faf7fa57d5e60fd",
+      "byte_identity_rule": "executed directly from this exact hash; no adapted copy"
+    },
+    {
+      "module": "full_markov_hjb_fp_wgan.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/full_markov_hjb_fp_wgan.py",
+      "sha256": "c32c3a480f3bb98dae7510f6cdd56612dedc3252c00890d64c7be46df9ab9f55",
+      "byte_identity_rule": "executed directly from this exact hash; empirical_fp_rollout is rebound from this module"
+    },
+    {
+      "module": "sequential_covariance_hjb.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/sequential_covariance_hjb.py",
+      "sha256": "660e571c91cc1df2595554f329106b3973359f1579059de3aef2cd911a733b09",
+      "byte_identity_rule": "executed directly from this exact hash; no adapted copy"
+    },
+    {
+      "module": "causal_ltv_particle_rollout.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_particle_rollout.py",
+      "sha256": "47b3328091a85f851fc8e42275c24847564f2795c7292f53f51c37746832305c",
+      "byte_identity_rule": "FrozenIctalGraphRCBatchStepper is constructed directly from this exact module"
+    },
+    {
+      "module": "causal_ltv_riccati.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/causal_ltv_riccati.py",
+      "sha256": "748567f5fb616a641c3916a69dbb9385cf2a3cd0e64d890b49301bb3244c3ae2",
+      "byte_identity_rule": "executed directly from this exact hash"
+    },
+    {
+      "module": "square_wave_mfc.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/square_wave_mfc.py",
+      "sha256": "11969e75d4357396d86cae41ffe11c529d0167310213c29346871ba25e70b64a",
+      "byte_identity_rule": "executed directly from this exact hash"
+    },
+    {
+      "module": "data.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/data.py",
+      "sha256": "f61cf1a68b31ffd775084bd7f0274334c3ef395b08ec2fda417e39523fff7601",
+      "byte_identity_rule": "canonical patient loader and causal preprocessing are executed directly"
+    },
+    {
+      "module": "network.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/network.py",
+      "sha256": "1b182235a253c99708a1c3873cb8e7cbef08da2af7e3b52555144a02396146be",
+      "byte_identity_rule": "Part-I network functions are executed directly"
+    },
+    {
+      "module": "part2_state_dependent_rc_sde.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/part2_state_dependent_rc_sde.py",
+      "sha256": "611bad593839c342fa1173d2e6b991a6b9392d11bc38ba561ae6c6370845ecef",
+      "byte_identity_rule": "ResidualGraphRCSDE is executed directly and class identity is checked around every serialization"
+    },
+    {
+      "module": "part2_data_pipeline.py",
+      "path": "${REPO_ROOT}/mfc_pipeline/part2_data_pipeline.py",
+      "sha256": "19ba72ceedcd3538ed730a6798206903d82e00269f570951d0fa4de8e6562316",
+      "byte_identity_rule": "broadband 2 s plant adjacency and forecast_positions are executed directly"
+    }
+  ],
+  "rejected_noncanonical_mirrors": [
+    {
+      "module": "causal_ltv_particle_rollout.py",
+      "sha256": "bc073733efe3aa7b1a85e1b4674a8400e950b5d2695c7091695da9588604779e",
+      "reason": "changes the same-step physical residual equation"
+    },
+    {
+      "module": "causal_ltv_riccati.py",
+      "sha256": "47557ec71dec40723ec7d2cf0c41f4f2f742bbea854fbafb79ef875b696aa846",
+      "reason": "changes the same-step physical residual equation"
+    },
+    {
+      "module": "square_wave_mfc.py",
+      "sha256": "ad3cbe84f61980f63ffae1a0522767e6540be1f25bb05bc33b39ce8978b0b149",
+      "reason": "changes the plant/control construction"
+    }
+  ],
+  "runtime_binding_contract": {
+    "reuse_valid_loaded_d_modules_by_object_identity": true,
+    "purge_valid_live_d_modules": false,
+    "fail_closed_on_foreign_loaded_module": true,
+    "verify_resolved_module_file_paths_and_hashes": true,
+    "assert_part2_class_identity_before_dump_and_after_load": true,
+    "model_adjacency_input_equals_raw_part2_plant_adjacency": true,
+    "world_adjacency_equals_model_normalized_adjacency": true,
+    "raw_adjacency_is_not_required_to_equal_normalized_adjacency": true,
+    "candidate_tau_installed_in_plant": true,
+    "world_control_channel_map_preserved": true,
+    "d_canonical_frozen_batch_stepper_direct_constructor": true,
+    "direct_mask_controls_actor_output_dimension": true,
+    "graph_mediated_effective_input_on_indirect_channels_allowed_by_d_plant": true,
+    "runtime_projection_or_rescaling": false,
+    "analytical_eligibility": "Gate-A static protocol integrity AND Gate-C trajectory safety",
+    "plant_four_inequality_status": "diagnostic_only_never_filter_rank_or_veto",
+    "per_trajectory_safety_ledger_required": true
+  },
+  "static_evidence": {
+    "synthetic_dynamic_96_construction_passed": true,
+    "distinct_part1_and_part2_graph_role_test_passed": true,
+    "part2_512_history_6_window_test_passed": true,
+    "live_module_identity_reuse_and_stale_class_rejection_passed": true,
+    "unprojected_empirical_rollout_test_passed": true,
+    "plant_false_still_analytically_eligible_when_gate_a_and_gate_c_pass": true,
+    "per_trajectory_safety_values_are_auditable": true,
+    "shared_parent_rolling_grid_and_local_candidate_only_amendment_are_explicit": true,
+    "v1_failure_evidence_is_hash_bound_audit_only_and_not_reused": true,
+    "patient_arrays_or_checkpoints_read_during_audit": false,
+    "science_training_or_outer_evaluation_run": false
+  }
+}
