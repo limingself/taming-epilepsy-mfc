@@ -40,7 +40,7 @@ def _store(config: dict) -> PhaseStore:
     )
 
 
-def main() -> int:
+def historical_main() -> int:
     parser = argparse.ArgumentParser(
         description=(
             "Fail-closed, resumable HUP080 exploratory partial-actuation extension"
@@ -88,5 +88,22 @@ def main() -> int:
     return 0
 
 
+
+def main(argv=None):
+    """Current HUP080 Full WGAN-GP main with preserved historical input-preparation helpers.
+
+The existing helper definitions below remain for import compatibility; only
+main dispatch is current. Historical full-pipeline/control defaults are not
+the current CLI.
+
+Current Full WGAN-GP command; original preparation helpers stay available."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from current_patient import main as current_main
+    return current_main('HUP080', argv)
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
+

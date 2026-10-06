@@ -23,6 +23,8 @@ PART_SCRIPTS = {
         ROOT / "part3_mfc" / "figure_06_actor_wgan_control.py",
         ROOT / "part3_mfc" / "figure_07_mfc_ablation.py",
         ROOT / "part3_mfc" / "figure_08_all36_controlled_distributions.py",
+        ROOT / "part3_mfc" / "figure_09_trivial_baselines.py",
+        ROOT / "part3_mfc" / "figure_10_training_losses.py",
     ],
 }
 

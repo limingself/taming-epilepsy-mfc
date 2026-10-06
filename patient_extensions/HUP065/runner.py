@@ -1,5 +1,11 @@
 #!/usr/bin/env python
-"""Fail-closed, resumable orchestration for the fresh HUP065 sparse rerun.
+"""Current HUP065 Full WGAN-GP main with preserved historical input-preparation helpers.
+
+The existing helper definitions below remain for import compatibility; only
+main dispatch is current. Historical full-pipeline/control defaults are not
+the current CLI.
+
+Fail-closed, resumable orchestration for the fresh HUP065 sparse rerun.
 
 This file is the execution boundary, not a notebook.  Importing it never opens
 patient data, imports the D-drive scientific modules, trains, evaluates, or
@@ -1745,7 +1751,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(argv: Sequence[str] | None = None) -> int:
+def historical_main(argv: Sequence[str] | None = None) -> int:
     args = parse_args(argv)
     config = load_config(args.config)
     configure_runtime(
@@ -1809,5 +1815,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     raise AssertionError(args.command)
 
 
+
+def main(argv=None):
+    """Current Full WGAN-GP command; original preparation helpers stay available."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from current_patient import main as current_main
+    return current_main('HUP065', argv)
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
+

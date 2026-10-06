@@ -1,53 +1,33 @@
-# HUP065 and HUP080 public reproducibility extensions
+# Current HUP065/HUP080 Full WGAN-GP extensions
 
-This directory adds manuscript-matched HUP065 and HUP080 extensions without
-changing the existing HUP060 reproduction entry points or manifests. It
-contains portable code, path-relocated configuration templates, lightweight
-aggregate and channel-level pass vectors, accepted publication PDF/PNG files,
-and provenance/QA records.
-
-| Subject | Development / outer split | Selected controller | Direct nodes | Complete Gate-B | Safety |
-|---|---|---|---:|---:|---:|
-| HUP065 | run-01--02 / run-03 | `f-0.35_q-0.65_gain-0.350_tau-0.200`, rolling block 8 | 23/64 | 21/64 | 64/64 contact vector; all 24 trajectories met Gate-C |
-| HUP080 exploratory v2 | run-01--03 / run-04 | `f-0.80_q-0.20_gain-0.350_tau-0.000`, rolling block 2 | 76/96 | 65/96 | 96/96 contact vector; all 24 trajectories met Gate-C |
-
-HUP080 v1 validly stopped at `NO_GO_before_part3` after testing rolling blocks
-4, 8, 12, 16, 24 and 32. Exploratory v2 added only blocks 1 and 2; thresholds
-and the every-fold rule were unchanged. It is not the original preregistered
-replication. At `tau_G=0`, its 20 indirect channels receive no instantaneous
-heat-kernel input and can change only through the frozen plant dynamics.
-
-Run the public, signal-free verifier with Python's standard library:
+The existing patient paths are updated in place. Default commands verify the
+current unrounded channel/context/bank tables and approved publication figures:
 
 ```powershell
 python patient_extensions/verify_public_results.py
+python patient_extensions/HUP065/runner.py
+python patient_extensions/HUP080/runner.py
 ```
 
-To prepare a relocation-specific local configuration after independently
-obtaining OpenNeuro `ds004100`:
+HUP065 uses32/64 weighted selected direct nodes, the23-node fresh parent and
+low-gain extension selected at added0. HUP080 uses76/96 nodes, fresh parent200
+and selected continuation125. Both current analyses are post hoc amendments,
+not newly pristine held-out tests. Gate-B covers21/64 and57/96 channels under
+the all24-condition rule. Those24 conditions are8 contexts×3 paired banks,
+not24patients.
 
-```powershell
-python patient_extensions/materialize_config.py --patient HUP065 --dataset-root <ds004100-root>
-python patient_extensions/materialize_config.py --patient HUP080 --dataset-root <ds004100-root> --force
-```
+The original public arrays/weights exclusion remains: no signal `.npy/.npz`,
+external `.pt/.joblib`, raw ZIP/EDF, large density CSVs, training histories or
+access receipts are added. To verify a complete trusted local current bundle,
+use `runner.py verify-private --new-tag NEW` with an optional `--bundle-root`.
+Without that argument the current tree under the same original project's
+`patient_results/…/current_full_wgangp` is used only for explicitly requested
+private actions. Missing current inputs fail; there is no old-controller fallback.
 
-The templates retain the executed scientific values, but their path and
-authorization bindings are portable. Materialized configs therefore have new
-hashes and must not be presented as the original freezes. The executed hashes
-and exact portability edits are in `PORTABILITY_MAP.json`; private archive
-manifest anchors are in `archive_hashes/README.md`.
-
-The committed templates also retain the executed Windows byte hashes as
-provenance. During materialization, every source/reference lock that resolves
-inside the current checkout is recursively rebound to that checkout's actual
-bytes. This makes LF GitHub archives and clones portable without relying on
-`core.autocrlf`; EOL-only changes are disclosed in the local relocation
-receipt and do not alter scientific parameters. The materialized shared
-protocol additionally permits the audited public directory names `HUP065` and
-`HUP080`, while preserving the executed private allowlist separately.
-
-The public package deliberately excludes raw EEG/ZIP/EDF data, development or
-outer signal arrays, serialized weights, large or long-form tables, training
-histories, caches, failed staging trees, and one-time authorization/access
-receipts. Full reruns additionally require independently obtained data and any
-hash-locked legacy authority roots declared by the materializer options.
+Executed current fresh/screen/plot sources are now in the original `common/`
+and patient directories. Kernel equations and scientific results are not
+modified. Legacy preprocessing/prediction helpers remain for frozen input
+provenance, but their earlier control defaults are not current runner defaults.
+The `current_full_wgangp` block in each existing template is authoritative for
+the control stage; pre-existing PartI/II preparation values are retained.
+Historical freezes/tags/releases remain separate provenance, not default inputs.

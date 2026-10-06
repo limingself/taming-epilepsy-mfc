@@ -1,3 +1,19 @@
 # The extension package carries byte-level provenance hashes.  Disable line-ending
 # normalization so GitHub archives and clones preserve the audited bytes exactly.
 patient_extensions/** -text whitespace=cr-at-eol,-blank-at-eof
+
+# Current in-place control sources and figure tables preserve executed bytes.
+# Parts I/II and shared predictor files deliberately keep their prior rules.
+part3_mfc/** -text whitespace=cr-at-eol,-blank-at-eof
+output/part3/** -text whitespace=cr-at-eol,-blank-at-eof
+CURRENT_PROJECT_MANIFEST.json -text
+PAPER_FINAL_VERSION.json -text
+paper_figures.json -text
+CURRENT_RELEASE.json -text
+README.md -text
+DATA_NOTICE.md -text
+CITATION.cff -text
+reproduce_all.py -text
+verify_outputs.py -text
+.gitattributes -text whitespace=cr-at-eol,-blank-at-eof
+.gitignore -text whitespace=cr-at-eol,-blank-at-eof

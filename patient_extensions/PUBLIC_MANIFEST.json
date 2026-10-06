@@ -1,470 +1,522 @@
 {
-  "schema_version": "patient-extensions-public-manifest-v1",
-  "scope": "patient_extensions; excludes this self-referential manifest and ignored machine-local materializations",
-  "file_count": 77,
-  "total_bytes": 5435626,
+  "schema_version": "current_full_wgangp_inplace_v2",
+  "current_cases": {
+    "HUP065": 32,
+    "HUP080": 76
+  },
+  "scope": "Current native patient code, saved metrics and publication outputs. Historical preprocessing helpers remain provenance, not current control defaults.",
+  "file_count": 102,
+  "total_bytes": 6049477,
   "files": [
     {
       "path": ".gitignore",
       "bytes": 824,
-      "sha256": "008144eeceea0d3f8943118141718bf1c6d7bb07ca75dfa836daee006e83c3cd",
-      "role": "documentation_or_environment"
-    },
-    {
-      "path": "HUP065/README.md",
-      "bytes": 1958,
-      "sha256": "a04b7724df452bff397876ea22e031fabb91fa064f2be1401b40e8ed7b28b5ac",
-      "role": "documentation_or_environment"
-    },
-    {
-      "path": "HUP065/SOURCE_ADAPTATION_AUDIT.template.json",
-      "bytes": 6511,
-      "sha256": "11e85260055e587ff26cc017d4240495eee2a95aea3405340d2c00d21dd87ef6",
-      "role": "portable_template"
-    },
-    {
-      "path": "HUP065/config.template.json",
-      "bytes": 29881,
-      "sha256": "f3428f2b4e64f0a3c66e32f3b04d8bc5b4191d381d5710fd968f4490caac38f5",
-      "role": "portable_template"
-    },
-    {
-      "path": "HUP065/h065/__init__.py",
-      "bytes": 137,
-      "sha256": "6bc1571436f6ae7f48bb579a380f020271cd7551fbac065e2edf1cd61fe7a785",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/contracts.py",
-      "bytes": 12824,
-      "sha256": "6f853cb4bfbe24b5f297bcf75b5a1025382823400f63e735a1de1c1a0af0c7a5",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/control.py",
-      "bytes": 53947,
-      "sha256": "4df38a43a15436a86bf852197b062841fe878cdad9ed2bc47d4b9edd10248cc3",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/data_model.py",
-      "bytes": 43258,
-      "sha256": "5dc512c1a1d109768e7f76442ce9b8c8b185c0c0090ad752956f4001151a0409",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/outer.py",
-      "bytes": 18858,
-      "sha256": "edcd656b85861a8adb55e70cd2eefb479a6a815a2c56f1d64ef9fa58a5ac0713",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/staging.py",
-      "bytes": 6816,
-      "sha256": "972ff787aca241041ddd21059ed5baa664eef1054de025ff60df7fe1d242f2b4",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/h065/training.py",
-      "bytes": 56151,
-      "sha256": "263f0a5aeacf32d3316c15db11ff03d69b0ba74745fbf08a45908b9ff30cdd74",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/publication/hup065_ofrc_all_channels_page_01.pdf",
-      "bytes": 128254,
-      "sha256": "8a665656fb6e68912094d2a93e02143d21a60bbf4921f2dcb7ebb22f37d44d46",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP065/publication/hup065_ofrc_all_channels_page_01.png",
-      "bytes": 880665,
-      "sha256": "aa889767c8bf8b14a676ae2b3ae2227c2996800bf5125caa6fe3b384f6172992",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP065/publication/hup065_ofrc_all_channels_page_02.pdf",
-      "bytes": 117293,
-      "sha256": "203d579c04a275c9280738f555af3534b13b487499a387e524af76b371b7e14e",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP065/publication/hup065_ofrc_all_channels_page_02.png",
-      "bytes": 769982,
-      "sha256": "ba8ced6a5cc81934fd7a01dca5411a329b1f752cfce9d187150a61c3ddcf5eb9",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP065/qa/publication_qa.json",
-      "bytes": 1990,
-      "sha256": "9c53d0df6e395fecf244c535dbd1dc563d5356208db8acbec652e35b76f2c68b",
-      "role": "quality_assurance"
-    },
-    {
-      "path": "HUP065/results/controller_selection.json",
-      "bytes": 1459,
-      "sha256": "3c0957070424962ef72fa839206e37748c2214b208156c03539bab5a38fbfc76",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/results/failure_provenance.json",
-      "bytes": 3296,
-      "sha256": "54d2c659a2bc34eeab0b98412e2774a9aa0f941836ef3eead9a5d8502c76e04e",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/results/gate_vectors.json",
-      "bytes": 5890,
-      "sha256": "181163b906e9fa0c6451afbfa9d86780d77e0e290062a429138bda1aa71ea1c9",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/results/outer_summary.json",
-      "bytes": 852,
-      "sha256": "92516e042dd8b64d4cb3c250070a6e7c37e8eac66b5a557d1909a1a2d12cdf60",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/results/part2_selection.json",
-      "bytes": 3266,
-      "sha256": "f95cf41c8b189cacf17b57b4da194028e0e24f2888562faa1d42baf875b42bb1",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/results/safety_summary.json",
-      "bytes": 950,
-      "sha256": "c684e8d9a6253bdc349d5b77d29b0b3a9ee5e4274779003d53bb17ccc55cde7f",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP065/runner.py",
-      "bytes": 83538,
-      "sha256": "03f598cd16c045d07e728f654f58531c1f37a7ecf6dc6257c1bdaea477a60c2d",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/science_backend.py",
-      "bytes": 18246,
-      "sha256": "f164aabe805940c6f87d82f2c38a4687e1dd38a343959eb5938b2f2fff437cb0",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP065/static_self_test.py",
-      "bytes": 32470,
-      "sha256": "f979be0df5b9937a5c43448b282dfd2095ecdda07f7420fb5385699662dcb48f",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/README.md",
-      "bytes": 2465,
-      "sha256": "727694266ba2bd732ded585a3cb0e2d1b466215e2066df39dbeabfd4ce84ff08",
-      "role": "documentation_or_environment"
-    },
-    {
-      "path": "HUP080/SOURCE_BINDING_AUDIT.template.json",
-      "bytes": 8493,
-      "sha256": "dd9401291250b4d234c4906b5717ca0a7dff044ee12c94ddcb0a484825f45257",
-      "role": "portable_template"
-    },
-    {
-      "path": "HUP080/config.template.json",
-      "bytes": 31829,
-      "sha256": "a2c6c0b97f137db1dff5d3cc8c69e440582dd7411e0832cd3a5608d9f3553b51",
-      "role": "portable_template"
-    },
-    {
-      "path": "HUP080/h080/__init__.py",
-      "bytes": 122,
-      "sha256": "7b8822ae3baf837b4a6cfab26bd63c09142acd7f203b95c80f250438075d5c5e",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/contracts.py",
-      "bytes": 29447,
-      "sha256": "3ff61c457062bc7f50cb8f7dd49402e9db37f931ddba1bb7a0e04ebaa77b8f69",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/control.py",
-      "bytes": 69374,
-      "sha256": "44c02a1adf56f907de04de5b588eedc9dd00b043776d2344e04ba48940cc7bdf",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/data_model.py",
-      "bytes": 44658,
-      "sha256": "83dcd6100040b19625865ba12163d38ea3fdc89b37a4acf14eb3c965a83d17d4",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/outer.py",
-      "bytes": 19779,
-      "sha256": "0804cc02345a3fa3943a447d91eebd34323248be1e23416e217b6891fbff31b5",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/pipeline.py",
-      "bytes": 6839,
-      "sha256": "23a6f63ab3cafa1a481af7328fa444c5caa38864f40951a2e37e5f94397728a9",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/renderer_input.py",
-      "bytes": 11123,
-      "sha256": "d82f465d98e709c9e6fbd50849bfe2d2973df0eef8cc4858824e84e064bd616b",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/staging.py",
-      "bytes": 6503,
-      "sha256": "de7155d8b90db893decad262775320beb46f4da01c1de923b648a6f3079b9442",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/h080/training.py",
-      "bytes": 56031,
-      "sha256": "4c5087a191bed9f3827ba407baf46e3c4a1502ba81d53d6a19cf717ea7bdf624",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_01.pdf",
-      "bytes": 120039,
-      "sha256": "f656aa87da5a40b229bec41836da7d0e8ef785bc499bd0b7f926be7e5991c30a",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_01.png",
-      "bytes": 771275,
-      "sha256": "bfb1a929548ba650d496ac058bad99ebe0332b02de3d16f27384a6af56cb46b0",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_02.pdf",
-      "bytes": 119952,
-      "sha256": "b4c37086b5fef77fefcc8039dd7119ff8b74bc4c158afd768eb310f486b94042",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_02.png",
-      "bytes": 765817,
-      "sha256": "a897191f3f2aa0707fbe6eb1c52d338a0b70b4236ca25d1090c0c1e77f8bfef1",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_03.pdf",
-      "bytes": 97633,
-      "sha256": "55b1faac4753067a6cbd2ef1c6106cf9ede7e00d267d22a59a79f3fcdebf1657",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/publication/hup080_ofrc_all_channels_page_03.png",
-      "bytes": 546734,
-      "sha256": "e5cace545d299c8fec22ee30e884ba7c8f4a12209dd0646b95a59a6e3eae4e9a",
-      "role": "accepted_publication_figure"
-    },
-    {
-      "path": "HUP080/qa/publication_qa.json",
-      "bytes": 2929,
-      "sha256": "0ef9579b8ad836fb4365ed336cbd4630f697242e84ba23687f2a33cd60b68c95",
-      "role": "quality_assurance"
-    },
-    {
-      "path": "HUP080/renderer_adapter/adapter_config.template.json",
-      "bytes": 1300,
-      "sha256": "396f847680c991b74b5e2711e08c6e46269aa6912a17e8931c7b4fa4cb431a6b",
-      "role": "portable_template"
-    },
-    {
-      "path": "HUP080/renderer_adapter/render_hup080_v2_preview.py",
-      "bytes": 8869,
-      "sha256": "436abdb2b65a5e22fa96ecb3af6e4ce48ed21b048b81380f1ce61c914b99370e",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/results/controller_selection.json",
-      "bytes": 1828,
-      "sha256": "109ef6b13fbd7ae19a44e7d2683c5f2b0026a8c813320f1d9c9264338f6e2865",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/results/gate_vectors.csv",
-      "bytes": 7021,
-      "sha256": "62153bf35970fc3f7d37107c6bc416cf117338bc93c37a13b219289a312859d8",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/results/outer_summary.json",
-      "bytes": 952,
-      "sha256": "e3e2205035ed3d0d7b3b5bc3e4dc5ca3d913ac0041be32211bf8bc58b7e6d394",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/results/part2_selection.json",
-      "bytes": 3929,
-      "sha256": "65ee0ff77804fa2d1003ec5e5eb2fb74ca8d1938028ddeb47b23724dd81e161c",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/results/safety_summary.json",
-      "bytes": 1061,
-      "sha256": "b04bce9b5f79be5da976edae8531c3a2ec2aadd5db3cccb1947609dbd7558ea1",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/results/v1_rolling_no_go.json",
-      "bytes": 3373,
-      "sha256": "b11d39a421b98b50ae215c8d638b8fb8c8ec490099af34dae4492ee54b0b3a98",
-      "role": "lightweight_result"
-    },
-    {
-      "path": "HUP080/runner.py",
-      "bytes": 3255,
-      "sha256": "c1c2f6510d635f3feb06389e2468ce43a5df919bea9d67627b71f4b1cbbb4e5d",
-      "role": "portable_code"
-    },
-    {
-      "path": "HUP080/selftest.py",
-      "bytes": 57370,
-      "sha256": "f90afd5c724f8121ad68e7f202d176561cc504970424048ae900b03deb884d50",
-      "role": "portable_code"
-    },
-    {
-      "path": "PORTABILITY_MAP.json",
-      "bytes": 11443,
-      "sha256": "ef865344346b1985fd039fb7cb02cbb686376e15c158e102ce205301c7a6b5ae",
-      "role": "documentation_or_environment"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3037,
-      "sha256": "551163c581426a15805751d3aad15e7b461578cb6447c5646165963488848c75",
-      "role": "documentation_or_environment"
+      "sha256": "008144eeceea0d3f8943118141718bf1c6d7bb07ca75dfa836daee006e83c3cd"
     },
     {
       "path": "archive_hashes/README.md",
       "bytes": 852,
-      "sha256": "04b3c0bf1b83819c8e8cbcf0fe1a8ad34f5d1ec7a86c9abc64cffabd2da5da61",
-      "role": "documentation_or_environment"
+      "sha256": "04b3c0bf1b83819c8e8cbcf0fe1a8ad34f5d1ec7a86c9abc64cffabd2da5da61"
     },
     {
       "path": "common/legacy_adapters/controller_runner.py",
       "bytes": 146562,
-      "sha256": "b916bd32898187d94b656e8634468456dc7d8e3a98ef502d71de15c384026055",
-      "role": "portable_code"
+      "sha256": "b916bd32898187d94b656e8634468456dc7d8e3a98ef502d71de15c384026055"
     },
     {
       "path": "common/legacy_adapters/historical_actor.py",
       "bytes": 10177,
-      "sha256": "ab5fd7bb17bed0a54fce0fd5dcf232fa3d6e9b875e3ffeaaa29cf9a731a62206",
-      "role": "portable_code"
+      "sha256": "ab5fd7bb17bed0a54fce0fd5dcf232fa3d6e9b875e3ffeaaa29cf9a731a62206"
     },
     {
       "path": "common/legacy_adapters/multistep_drift_calibration.py",
       "bytes": 4572,
-      "sha256": "768bad3e16cf2e4dec8306000f4c58f1af14f6f5b01b62aa2c6b757201fd2a8c",
-      "role": "portable_code"
+      "sha256": "768bad3e16cf2e4dec8306000f4c58f1af14f6f5b01b62aa2c6b757201fd2a8c"
     },
     {
       "path": "common/legacy_adapters/stage_contract.template.json",
       "bytes": 23538,
-      "sha256": "5a84abb1541de95676ef9e1db812c1d824bf4b1222403de268261f4dffd9300d",
-      "role": "portable_template"
+      "sha256": "5a84abb1541de95676ef9e1db812c1d824bf4b1222403de268261f4dffd9300d"
     },
     {
       "path": "common/legacy_adapters/stage_objective.py",
       "bytes": 4808,
-      "sha256": "700c7c3990595abf313effe6ddf80f6bca02888fbd813b2e7330e53a9f6829ae",
-      "role": "portable_code"
-    },
-    {
-      "path": "common/protocol/README.md",
-      "bytes": 618,
-      "sha256": "a8f01aec2d48c9f4a5243e611974584b683ccf55f65f19628149055a102e5893",
-      "role": "documentation_or_environment"
+      "sha256": "700c7c3990595abf313effe6ddf80f6bca02888fbd813b2e7330e53a9f6829ae"
     },
     {
       "path": "common/protocol/common_protocol.py",
       "bytes": 16260,
-      "sha256": "a10c11498a7b4f136273e6ffe07a5eaa0d6fa2e75c18d87087bc653dd0535790",
-      "role": "portable_code"
+      "sha256": "a10c11498a7b4f136273e6ffe07a5eaa0d6fa2e75c18d87087bc653dd0535790"
     },
     {
       "path": "common/protocol/protocol.template.json",
       "bytes": 24376,
-      "sha256": "97315b9d393de1b66501a64e6c28e67300813662c28f52a31883e79428b87253",
-      "role": "portable_template"
+      "sha256": "97315b9d393de1b66501a64e6c28e67300813662c28f52a31883e79428b87253"
+    },
+    {
+      "path": "common/protocol/README.md",
+      "bytes": 618,
+      "sha256": "a8f01aec2d48c9f4a5243e611974584b683ccf55f65f19628149055a102e5893"
     },
     {
       "path": "common/protocol/static_self_test.py",
       "bytes": 12072,
-      "sha256": "5f079cb09b483092de500e70be553693c8f13fd906673cf3513df63c8352a15a",
-      "role": "portable_code"
-    },
-    {
-      "path": "common/renderer/README.md",
-      "bytes": 523,
-      "sha256": "5b43ac03e4f2b300dcc3cb858ff55df884df2a28d692866fa464042e4a4315c8",
-      "role": "documentation_or_environment"
+      "sha256": "5f079cb09b483092de500e70be553693c8f13fd906673cf3513df63c8352a15a"
     },
     {
       "path": "common/renderer/config.json",
       "bytes": 2960,
-      "sha256": "39a06adcc56007c120ba0c953de307d0615b0edfac5499703d88c0db3bbc8941",
-      "role": "documentation_or_environment"
+      "sha256": "39a06adcc56007c120ba0c953de307d0615b0edfac5499703d88c0db3bbc8941"
+    },
+    {
+      "path": "common/renderer/README.md",
+      "bytes": 523,
+      "sha256": "5b43ac03e4f2b300dcc3cb858ff55df884df2a28d692866fa464042e4a4315c8"
     },
     {
       "path": "common/renderer/render_channel_plate.py",
       "bytes": 39525,
-      "sha256": "f644b5a4fed2cac529558f7e8aa8a83c39a04f11ecaafaa8ceba2638d6f9b37f",
-      "role": "portable_code"
+      "sha256": "f644b5a4fed2cac529558f7e8aa8a83c39a04f11ecaafaa8ceba2638d6f9b37f"
     },
     {
       "path": "common/renderer/selftest.py",
       "bytes": 11040,
-      "sha256": "99f2e1e685dd03052777f072f9613376727302ae3e6efa4b155b38f5d470b4a7",
-      "role": "portable_code"
+      "sha256": "99f2e1e685dd03052777f072f9613376727302ae3e6efa4b155b38f5d470b4a7"
+    },
+    {
+      "path": "common/run_external_fresh.py",
+      "bytes": 33319,
+      "sha256": "fdd5fd5fdfd76f350228a217bff92f5ca3d274547bbaa41a46f1d17d2bb26bf1"
+    },
+    {
+      "path": "common/run_external_fresh_uniform_reference.py",
+      "bytes": 35607,
+      "sha256": "e5c4428fdf010bdbe53015f20965e63d84863af9df72f283a6e6a2a55f0bda24"
+    },
+    {
+      "path": "current_patient.py",
+      "bytes": 2309,
+      "sha256": "8b569e9b4905e5d9fcfe5b42e05984d58309f094960675cdfef478b7379bc1a0"
     },
     {
       "path": "environment/requirements-lock.txt",
       "bytes": 194,
-      "sha256": "5bc8d5c5ee6194e9710c62eb39ce6a9c514d8ddbc01c1179e579660791b911d1",
-      "role": "documentation_or_environment"
+      "sha256": "5bc8d5c5ee6194e9710c62eb39ce6a9c514d8ddbc01c1179e579660791b911d1"
     },
     {
       "path": "environment/runtime_manifest.json",
       "bytes": 577,
-      "sha256": "43fcdece94879149e85acf694bbb9835c16191f4579f6fbd15f66b8866aeec5f",
-      "role": "documentation_or_environment"
+      "sha256": "43fcdece94879149e85acf694bbb9835c16191f4579f6fbd15f66b8866aeec5f"
+    },
+    {
+      "path": "HUP065/config.template.json",
+      "bytes": 29672,
+      "sha256": "3771d4553e0782208eb66670645ac4e01ce9be342ad879606abd51b3e2abe3ee"
+    },
+    {
+      "path": "HUP065/finalize_hup065.py",
+      "bytes": 5129,
+      "sha256": "57b32e5bb09f7a139ef442d2f806f64fa43e73ba2763e32d29833bd17d1016ad"
+    },
+    {
+      "path": "HUP065/h065/__init__.py",
+      "bytes": 137,
+      "sha256": "6bc1571436f6ae7f48bb579a380f020271cd7551fbac065e2edf1cd61fe7a785"
+    },
+    {
+      "path": "HUP065/h065/contracts.py",
+      "bytes": 12824,
+      "sha256": "6f853cb4bfbe24b5f297bcf75b5a1025382823400f63e735a1de1c1a0af0c7a5"
+    },
+    {
+      "path": "HUP065/h065/control.py",
+      "bytes": 53947,
+      "sha256": "4df38a43a15436a86bf852197b062841fe878cdad9ed2bc47d4b9edd10248cc3"
+    },
+    {
+      "path": "HUP065/h065/data_model.py",
+      "bytes": 43258,
+      "sha256": "5dc512c1a1d109768e7f76442ce9b8c8b185c0c0090ad752956f4001151a0409"
+    },
+    {
+      "path": "HUP065/h065/outer.py",
+      "bytes": 18858,
+      "sha256": "edcd656b85861a8adb55e70cd2eefb479a6a815a2c56f1d64ef9fa58a5ac0713"
+    },
+    {
+      "path": "HUP065/h065/staging.py",
+      "bytes": 6816,
+      "sha256": "972ff787aca241041ddd21059ed5baa664eef1054de025ff60df7fe1d242f2b4"
+    },
+    {
+      "path": "HUP065/h065/training.py",
+      "bytes": 56151,
+      "sha256": "263f0a5aeacf32d3316c15db11ff03d69b0ba74745fbf08a45908b9ff30cdd74"
+    },
+    {
+      "path": "HUP065/optimize_control.py",
+      "bytes": 19885,
+      "sha256": "0aa9d75c2780570c352065951abaa03e03f9d13bd606a54469ea17c2132ad8bf"
+    },
+    {
+      "path": "HUP065/plot_external_layout_snapshot.py",
+      "bytes": 16943,
+      "sha256": "10391ffc261ff08ecebc30424f23ff76367f3de14dbb7a52bf9b62131b6f80e3"
+    },
+    {
+      "path": "HUP065/plot_parameter_adaptation.py",
+      "bytes": 6998,
+      "sha256": "8bbd08645bd42d767e9ad044687158fd4dfbb649d87cb6af7f953b19abf1e81b"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_01.pdf",
+      "bytes": 95434,
+      "sha256": "1f0a638ce778349f9fdbd97866a668ca1caaea3951c99fda77bfa7267bc01fc6"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_01.png",
+      "bytes": 587444,
+      "sha256": "196e70597c5895f85e3e45d68a2e5e651ad952b8ffd64655a1b74c8a1a111a30"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_01.svg",
+      "bytes": 243990,
+      "sha256": "897a5dc3b1e6ca77432b99b04a188b9f16d063892658ca583915026c797be9f4"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_02.pdf",
+      "bytes": 89422,
+      "sha256": "511e3c580203076d52ed0a8e94e0cbc6d8797329f7a2f68f82bef8dd34f77ddf"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_02.png",
+      "bytes": 527945,
+      "sha256": "9240c86ceaa0fe3549c3ddc7d7ca912b6331e0c38eec7793967ee07fc7847106"
+    },
+    {
+      "path": "HUP065/publication/hup065_ofrc_all_channels_page_02.svg",
+      "bytes": 204354,
+      "sha256": "4ae3c8ab47364b0f1d435558809af712fb67d4f13c0b3cc6410838b6c1e4768c"
+    },
+    {
+      "path": "HUP065/qa/publication_qa.json",
+      "bytes": 560,
+      "sha256": "adf835d2b50d1190249e57434e26650d1b8c47592520c320e87ad99b166acbd8"
+    },
+    {
+      "path": "HUP065/README.md",
+      "bytes": 1106,
+      "sha256": "f50e3291fdde76b071a34cfebd5742025684c96f0e57e52227142c5a7694f005"
+    },
+    {
+      "path": "HUP065/reproduce_control.py",
+      "bytes": 6854,
+      "sha256": "7ed49f7c1273991c7fea8f0ce4674d17b69f3382b29399c43de3ccc42817502d"
+    },
+    {
+      "path": "HUP065/results/all_channel_context_bank_metrics.csv",
+      "bytes": 295872,
+      "sha256": "51b5221931055e3ec611b1578281b37ffc4136075c99a6a42956c0799857e004"
+    },
+    {
+      "path": "HUP065/results/controller_selection.json",
+      "bytes": 1235,
+      "sha256": "1f71f6c8d654839aed8d7427b786fcb4208edf44e1e3f23abe399c37a4396a50"
+    },
+    {
+      "path": "HUP065/results/evaluation_summary.json",
+      "bytes": 1347,
+      "sha256": "9efcb2e134886b677be7d9bac1efa461d86c2044dbb8773910fa2088c9b7c1b9"
+    },
+    {
+      "path": "HUP065/results/failure_provenance.json",
+      "bytes": 3296,
+      "sha256": "54d2c659a2bc34eeab0b98412e2774a9aa0f941836ef3eead9a5d8502c76e04e"
+    },
+    {
+      "path": "HUP065/results/gate_vectors.json",
+      "bytes": 2134,
+      "sha256": "d9539c7608ebb0e304baf9ca60212f28c9ff7fa7d148a80313d6b657794acba9"
+    },
+    {
+      "path": "HUP065/results/outer_summary.json",
+      "bytes": 761,
+      "sha256": "dce830597330d98a139eb20ce2ec7f37dc7f70eecc1ee935656e25bffa887af6"
+    },
+    {
+      "path": "HUP065/results/part2_selection.json",
+      "bytes": 3266,
+      "sha256": "f95cf41c8b189cacf17b57b4da194028e0e24f2888562faa1d42baf875b42bb1"
+    },
+    {
+      "path": "HUP065/results/safety_summary.json",
+      "bytes": 294,
+      "sha256": "a6d1ee820d47c6f53aaf573bec0d593a29c15906072416c185dabe298eca6136"
+    },
+    {
+      "path": "HUP065/results/trajectory_safety_metrics.csv",
+      "bytes": 4649,
+      "sha256": "516fbe13ddde0ca32af8b8a5db3b3fbdfb6ea64b810c29612c57d6b4868cee25"
+    },
+    {
+      "path": "HUP065/runner.py",
+      "bytes": 84118,
+      "sha256": "5fef962cdc8c92ea00e578ddcedaf8151ffb502df3d36726107be8cababbcb1f"
+    },
+    {
+      "path": "HUP065/science_backend.py",
+      "bytes": 18246,
+      "sha256": "f164aabe805940c6f87d82f2c38a4687e1dd38a343959eb5938b2f2fff437cb0"
+    },
+    {
+      "path": "HUP065/screen_small_gain.py",
+      "bytes": 10931,
+      "sha256": "4defa4e8c6fea104a983ea6f2ed1374b630dee8f6e1414a8c84df269c46aace0"
+    },
+    {
+      "path": "HUP065/SOURCE_ADAPTATION_AUDIT.template.json",
+      "bytes": 6511,
+      "sha256": "11e85260055e587ff26cc017d4240495eee2a95aea3405340d2c00d21dd87ef6"
+    },
+    {
+      "path": "HUP065/static_self_test.py",
+      "bytes": 32778,
+      "sha256": "e58c076a34788a7ab2a6b0482dcf451890a46427ab744089ab4cdbe0f08e246d"
+    },
+    {
+      "path": "HUP080/config.template.json",
+      "bytes": 31539,
+      "sha256": "e132b63b418d61526c81e858be96ae5dfa692967d8a1e995f94f2c2d9fc1a577"
+    },
+    {
+      "path": "HUP080/h080/__init__.py",
+      "bytes": 122,
+      "sha256": "7b8822ae3baf837b4a6cfab26bd63c09142acd7f203b95c80f250438075d5c5e"
+    },
+    {
+      "path": "HUP080/h080/contracts.py",
+      "bytes": 29447,
+      "sha256": "3ff61c457062bc7f50cb8f7dd49402e9db37f931ddba1bb7a0e04ebaa77b8f69"
+    },
+    {
+      "path": "HUP080/h080/control.py",
+      "bytes": 69374,
+      "sha256": "44c02a1adf56f907de04de5b588eedc9dd00b043776d2344e04ba48940cc7bdf"
+    },
+    {
+      "path": "HUP080/h080/data_model.py",
+      "bytes": 44658,
+      "sha256": "83dcd6100040b19625865ba12163d38ea3fdc89b37a4acf14eb3c965a83d17d4"
+    },
+    {
+      "path": "HUP080/h080/outer.py",
+      "bytes": 19779,
+      "sha256": "0804cc02345a3fa3943a447d91eebd34323248be1e23416e217b6891fbff31b5"
+    },
+    {
+      "path": "HUP080/h080/pipeline.py",
+      "bytes": 6839,
+      "sha256": "23a6f63ab3cafa1a481af7328fa444c5caa38864f40951a2e37e5f94397728a9"
+    },
+    {
+      "path": "HUP080/h080/renderer_input.py",
+      "bytes": 11123,
+      "sha256": "d82f465d98e709c9e6fbd50849bfe2d2973df0eef8cc4858824e84e064bd616b"
+    },
+    {
+      "path": "HUP080/h080/staging.py",
+      "bytes": 6503,
+      "sha256": "de7155d8b90db893decad262775320beb46f4da01c1de923b648a6f3079b9442"
+    },
+    {
+      "path": "HUP080/h080/training.py",
+      "bytes": 56031,
+      "sha256": "4c5087a191bed9f3827ba407baf46e3c4a1502ba81d53d6a19cf717ea7bdf624"
+    },
+    {
+      "path": "HUP080/optimize_control.py",
+      "bytes": 24055,
+      "sha256": "698761ac103c8d169d256addf5dc434479ea23e0663d4559cd7f9a8647f305f7"
+    },
+    {
+      "path": "HUP080/plot_external_layout_snapshot.py",
+      "bytes": 16943,
+      "sha256": "10391ffc261ff08ecebc30424f23ff76367f3de14dbb7a52bf9b62131b6f80e3"
+    },
+    {
+      "path": "HUP080/plot_parameter_adaptation.py",
+      "bytes": 5852,
+      "sha256": "1d37f6df2c8394654f2cc2b116f4e64e38bcd0d03e41d3f14b5e64cab380cabe"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_01.pdf",
+      "bytes": 90387,
+      "sha256": "1c129e4556b6a991ba7e51bab87b3556e5a4c75da8dbc5024f9d75398d510902"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_01.png",
+      "bytes": 524340,
+      "sha256": "c6ae4683a6d94e55beb5249ee0202af480915e2d7e09d4da176ade299fa25b4b"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_01.svg",
+      "bytes": 225878,
+      "sha256": "703c9963e2ab26fc509d4a873c5df5d8dca457c03b8cd362dab995d54c2e73cf"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_02.pdf",
+      "bytes": 89958,
+      "sha256": "0ef14547016c49a904c5642305e5267b62539be3809b9700a858a0d0d6f547ea"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_02.png",
+      "bytes": 524350,
+      "sha256": "36dd4393d7fc12f179771605f7741165f1cdbf16e5024a293d7f5b316f67228f"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_02.svg",
+      "bytes": 225775,
+      "sha256": "47d659c33f5a0091ba11d6f73d89bdfe4b146aed3e5981dacfe9bcbcf2f8bc60"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_03.pdf",
+      "bytes": 73370,
+      "sha256": "cb4b6545463ee98d4f4a27a8f7b8252d1cf3920bc379c41fa85b1d45e0a5f776"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_03.png",
+      "bytes": 365717,
+      "sha256": "09dc9c9f56a4e7e92af2e45931424d467dca935b603397376f0b12353db7d5b7"
+    },
+    {
+      "path": "HUP080/publication/hup080_ofrc_all_channels_page_03.svg",
+      "bytes": 151634,
+      "sha256": "64d5fbdc1463c6addea2d1544a194858da045e6cd641884d40968000a24dc043"
+    },
+    {
+      "path": "HUP080/qa/publication_qa.json",
+      "bytes": 726,
+      "sha256": "d0430c2e69f2b271d1e83a995f240d5580cb656fe613827f3182ce7746ab5a9d"
+    },
+    {
+      "path": "HUP080/README.md",
+      "bytes": 1180,
+      "sha256": "a6e2a9ea0e6005d3644ac1412f37921ce306ab3655fec88027e12a47985c7d20"
+    },
+    {
+      "path": "HUP080/renderer_adapter/adapter_config.template.json",
+      "bytes": 1300,
+      "sha256": "396f847680c991b74b5e2711e08c6e46269aa6912a17e8931c7b4fa4cb431a6b"
+    },
+    {
+      "path": "HUP080/renderer_adapter/render_hup080_v2_preview.py",
+      "bytes": 8869,
+      "sha256": "436abdb2b65a5e22fa96ecb3af6e4ce48ed21b048b81380f1ce61c914b99370e"
+    },
+    {
+      "path": "HUP080/reproduce_control.py",
+      "bytes": 6120,
+      "sha256": "877d5550f3d8f5ca6bc575768be6f698ae7aaa504a24ef8712e1c741bf525d56"
+    },
+    {
+      "path": "HUP080/results/all_channel_context_bank_metrics.csv",
+      "bytes": 446141,
+      "sha256": "249d0220760d4e30971a133f74651d08f570b27139885b146361b046fb21a98e"
+    },
+    {
+      "path": "HUP080/results/controller_selection.json",
+      "bytes": 1544,
+      "sha256": "05e88806c28135bb599e44751641895c55803be43776e3b5841a9e78b294572f"
+    },
+    {
+      "path": "HUP080/results/evaluation_summary.json",
+      "bytes": 676,
+      "sha256": "3371623363b99467135a2476d27080de43ff63cf2c496a350ce6e764b301ba49"
+    },
+    {
+      "path": "HUP080/results/gate_vectors.csv",
+      "bytes": 1941,
+      "sha256": "02cfceb80440659540bd700c1ad4a958473ab1f2b11e53d1521499aff803f729"
+    },
+    {
+      "path": "HUP080/results/gate_vectors.json",
+      "bytes": 3042,
+      "sha256": "48f950a6a75929f8fe2e6cf698cb96c4330b97e2a74dc8924fbacbc84dae9a14"
+    },
+    {
+      "path": "HUP080/results/outer_summary.json",
+      "bytes": 744,
+      "sha256": "aa3f5718cc97e6f4fadc701aa881009a649716a05a744e33c92dcbef5a5d3617"
+    },
+    {
+      "path": "HUP080/results/part2_selection.json",
+      "bytes": 3929,
+      "sha256": "65ee0ff77804fa2d1003ec5e5eb2fb74ca8d1938028ddeb47b23724dd81e161c"
+    },
+    {
+      "path": "HUP080/results/safety_summary.json",
+      "bytes": 292,
+      "sha256": "03530bdad89f78bef7a91765dee7b9df4c64ed39c5b3794e80e9440ddbcfdbf3"
+    },
+    {
+      "path": "HUP080/results/trajectory_safety_metrics.csv",
+      "bytes": 4674,
+      "sha256": "2f6642a663bd9ca11d42d6fe19f57681dfa3f59e1cb1dfff0792de4ce5118fe8"
+    },
+    {
+      "path": "HUP080/results/v1_rolling_no_go.json",
+      "bytes": 3373,
+      "sha256": "b11d39a421b98b50ae215c8d638b8fb8c8ec490099af34dae4492ee54b0b3a98"
+    },
+    {
+      "path": "HUP080/runner.py",
+      "bytes": 3835,
+      "sha256": "5c052a1e53919e05f51807d4fa2b901473d5d37b1dbf81a7ab57a04ea26a4087"
+    },
+    {
+      "path": "HUP080/selftest.py",
+      "bytes": 57678,
+      "sha256": "6fcd427861fa4392810be3e2535d19d3f8871dfa9da6873a1d58da8bfb8ca925"
+    },
+    {
+      "path": "HUP080/SOURCE_BINDING_AUDIT.template.json",
+      "bytes": 8493,
+      "sha256": "dd9401291250b4d234c4906b5717ca0a7dff044ee12c94ddcb0a484825f45257"
     },
     {
       "path": "materialize_config.py",
       "bytes": 15205,
-      "sha256": "b6aa2daea361911ba623a386459f02af01a37d59805e8e30865104aed9fcf504",
-      "role": "portable_code"
+      "sha256": "b6aa2daea361911ba623a386459f02af01a37d59805e8e30865104aed9fcf504"
+    },
+    {
+      "path": "PORTABILITY_MAP.json",
+      "bytes": 12222,
+      "sha256": "8f3c92aa34f256a9f46da1f4d3c31ceb69e293f9fb756326e3fbc38f9790772b"
     },
     {
       "path": "qa/PORTABILITY_TEST_REPORT.json",
       "bytes": 5255,
-      "sha256": "afbea79530012edbe647cfce85a151e63855fbf73a9dc539bac5fa1a2a87af1b",
-      "role": "quality_assurance"
+      "sha256": "afbea79530012edbe647cfce85a151e63855fbf73a9dc539bac5fa1a2a87af1b"
     },
     {
       "path": "qa/SENSITIVE_SCAN_REPORT.json",
       "bytes": 695,
-      "sha256": "e0d29fa3e95faf7c31d7af75a9286101518055a6c42a51a77808473bee69e4a4",
-      "role": "quality_assurance"
+      "sha256": "e0d29fa3e95faf7c31d7af75a9286101518055a6c42a51a77808473bee69e4a4"
     },
     {
       "path": "qa/TEST_REPORT.json",
       "bytes": 922,
-      "sha256": "91b1354df975647d39cf8110c9d0ef13b78cf188a95286a0835fa546ec5879e9",
-      "role": "quality_assurance"
+      "sha256": "91b1354df975647d39cf8110c9d0ef13b78cf188a95286a0835fa546ec5879e9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1854,
+      "sha256": "cf4a7cef3619a0e91545744d77b1bce7e9276d5c49be14d53e0df0ca94a19100"
     },
     {
       "path": "verify_public_results.py",
-      "bytes": 21099,
-      "sha256": "0f0a1b0fb43a5e64eb515d5aa8ceed67e21c6ce74358164d88aa6281d9979d47",
-      "role": "portable_code"
+      "bytes": 1215,
+      "sha256": "8c308328f88f89b759fdfae9cb1f05ef75e9293f09c227dc782d8be180df237c"
     }
   ]
 }

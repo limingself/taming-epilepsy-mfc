@@ -439,7 +439,7 @@
       1000.0
     ],
     "diffusion_shrinkage": 0.05,
-    "diffusion_relative_jitter": 1E-08,
+    "diffusion_relative_jitter": 1e-08,
     "effective_diffusion_multiplier": 0.79451175,
     "candidate_count": 144,
     "fold_aggregation": "worst_fold",
@@ -629,7 +629,7 @@
           "epochs": 180,
           "epoch_offset": 870,
           "validation_every": 10,
-          "learning_rate": 5E-05,
+          "learning_rate": 5e-05,
           "objective": "covariance",
           "actuator_alpha": 1.0,
           "train_scope": "all_actor_parameters"
@@ -637,7 +637,7 @@
       ],
       "discarded_robust_branch_executed": false,
       "wgan_epochs": 40,
-      "actor_learning_rate": 1E-05,
+      "actor_learning_rate": 1e-05,
       "critic_learning_rate": 0.0001,
       "adversarial_weight": 0.5,
       "action_anchor_weight": 0.2,
@@ -950,6 +950,18 @@
     "static_self_test_may_read_patient_data": false,
     "static_self_test_may_run_science": false,
     "overleaf_write_allowed": false
+  },
+  "current_full_wgangp": {
+    "enabled": true,
+    "runner": "runner.py",
+    "analysis_role": "post_hoc_amended_reanalysis",
+    "direct_actuators": 32,
+    "controller_sha256": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+    "lineage": "23-node fresh parent selected550; low-gain expansion to32 and 150-update continuation, selected added0",
+    "rms_cap": 0.405,
+    "canonical_core": "${REPO_ROOT}/part3_mfc/model_core.py",
+    "canonical_core_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+    "original_part_i_ii_values_retained": true,
+    "legacy_pipeline_stage_values_not_current_control_defaults": true
   }
 }
-

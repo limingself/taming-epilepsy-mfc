@@ -1,0 +1,88 @@
+{
+  "units": "Standardized signal amplitude and dimensionless model inputs",
+  "raw_or_serialized_inputs_public": false,
+  "framework": "Frozen Graph-RC stochastic recurrence, structured mean-deviation actor, existing empirical-law losses, WGAN-GP from first fresh actor update",
+  "external_conditions_not_patients": "8contexts x 3common-random-number banks per subject, not24patients",
+  "canonical_part3_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+  "release": "full-wgangp-inplace-20261006",
+  "separate_unadopted_exploration": "Historical immutable release contains the cold32 negative experiment; it is not the original project default.",
+  "authority": "Current original project paths; historical release snapshots remain immutable but are not default commands.",
+  "case_results": {
+    "HUP060": {
+      "channels": 36,
+      "direct_nodes": 13,
+      "status": "development_adaptation_case",
+      "training": "neutral fresh 1000 actor updates, update700 selected",
+      "checkpoint_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+      "time_w1_free": 0.34712877846045176,
+      "time_w1_controlled": 0.12105060595773774,
+      "occupation_w1_free": 0.3137938320029645,
+      "occupation_w1_controlled": 0.0788465386414842,
+      "metrics_csv": "output/part3/source_data/figures_06_08/channel_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_fresh",
+        "time_controlled": "time_w1_fresh",
+        "direct": "direct_actuator"
+      },
+      "expected_rows": 36,
+      "selected_actor_update": 700,
+      "teacher_proximity_weight": 0.0,
+      "surrogate_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+      "time_reduction_percent": 65.1280408110764,
+      "occupation_reduction_percent": 74.87313943100726
+    },
+    "HUP065": {
+      "channels": 64,
+      "direct_nodes": 32,
+      "status": "post_hoc_amended_reanalysis",
+      "training": "23-node fresh parent selected550; low-gain expansion to32 and 150-update continuation, selected added0",
+      "checkpoint_sha256": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+      "metrics_csv": "patient_extensions/HUP065/results/all_channel_context_bank_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_controlled",
+        "time_controlled": "time_w1_controlled",
+        "direct": "direct_actuated"
+      },
+      "expected_rows": 1536,
+      "selected_added_update": 0,
+      "surrogate_sha256": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+      "rms_cap": 0.405,
+      "conditions": 24,
+      "full_gate_b_all_conditions": 21,
+      "time_w1_free": 0.27179461046098846,
+      "time_w1_controlled": 0.20086363305685798,
+      "occupation_w1_free": 0.1795093774904715,
+      "occupation_w1_controlled": 0.12694506110397122,
+      "time_reduction_percent": 26.097271496232054,
+      "occupation_reduction_percent": 29.28221194978543
+    },
+    "HUP080": {
+      "channels": 96,
+      "direct_nodes": 76,
+      "status": "post_hoc_amended_reanalysis",
+      "training": "fresh parent selected200; selected occupancy_worst_lr3e5 continuation added125 of150",
+      "checkpoint_sha256": "c25d86d1a4dd9d0860106f10e800657e8be291ed3350313f0d9d05a410ab062c",
+      "metrics_csv": "patient_extensions/HUP080/results/all_channel_context_bank_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_controlled",
+        "time_controlled": "time_w1_controlled",
+        "direct": "direct_actuated"
+      },
+      "expected_rows": 2304,
+      "selected_added_update": 125,
+      "surrogate_sha256": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+      "old_rms_cap": 0.405,
+      "revised_rms_cap": 0.45,
+      "conditions": 24,
+      "old_budget_pass_count": 0,
+      "revised_budget_pass_count": 24,
+      "full_gate_b_all_conditions": 57,
+      "time_w1_free": 0.32861935989151325,
+      "time_w1_controlled": 0.09385697244094479,
+      "occupation_w1_free": 0.32035737631043043,
+      "occupation_w1_controlled": 0.07285532178847282,
+      "time_reduction_percent": 71.43900089394317,
+      "occupation_reduction_percent": 77.25811010579788
+    }
+  }
+}

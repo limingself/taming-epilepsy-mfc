@@ -1,8 +1,13 @@
 {
-  "schema_version": 1,
-  "paper_figure_count": 8,
+  "schema_version": 2,
+  "paper_figure_count": 10,
   "backend": "Python/matplotlib",
-  "formats": ["svg", "pdf", "png", "tiff"],
+  "formats": [
+    "svg",
+    "pdf",
+    "png",
+    "tiff"
+  ],
   "figures": [
     {
       "number": 1,
@@ -60,9 +65,13 @@
       "generator": "part3_mfc/figure_06_actor_wgan_control.py",
       "output_directory": "output/part3/figure_06",
       "stem": "hup060_actor_wgan_mfc_preview",
-      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
-      "derived_source_data": "output/part3/source_data/figure_06",
-      "provenance_note": "Main-result checkpoint used by the current manuscript figure."
+      "source_data": "output/part3/source_data/figure_06",
+      "provenance_note": "Current neutral1000 selected700 Full; same Full in control/component/baseline/loss. Public defaults verify frozen exports; optional public CSV redraw cannot retrain/evaluate.",
+      "formats": [
+        "svg",
+        "pdf",
+        "png"
+      ]
     },
     {
       "number": 7,
@@ -72,7 +81,12 @@
       "output_directory": "output/part3/figure_07",
       "stem": "hup060_matched_mfc_ablation_summary_v2",
       "source_data": "output/part3/source_data/figure_07",
-      "provenance_note": "Matched retrained full and component-ablation checkpoints."
+      "provenance_note": "Current neutral1000 selected700 Full; same Full in control/component/baseline/loss. Public defaults verify frozen exports; optional public CSV redraw cannot retrain/evaluate.",
+      "formats": [
+        "svg",
+        "pdf",
+        "png"
+      ]
     },
     {
       "number": 8,
@@ -81,9 +95,44 @@
       "generator": "part3_mfc/figure_08_all36_controlled_distributions.py",
       "output_directory": "output/part3/figure_08",
       "stem": "hup060_actor_wgan_all36_distribution_grid",
-      "source_data": "output/part3/source_data/figures_06_08/paired_comparison.npz",
-      "derived_source_data": "output/part3/source_data/figure_08",
-      "provenance_note": "Main-result checkpoint used by the current manuscript figure."
+      "source_data": "output/part3/source_data/figure_08",
+      "provenance_note": "Current neutral1000 selected700 Full; same Full in control/component/baseline/loss. Public defaults verify frozen exports; optional public CSV redraw cannot retrain/evaluate.",
+      "formats": [
+        "svg",
+        "pdf",
+        "png"
+      ]
+    },
+    {
+      "number": 9,
+      "part": 3,
+      "title": "Current RMS-matched generic-input baselines",
+      "generator": "part3_mfc/figure_09_trivial_baselines.py",
+      "output_directory": "output/part3/figure_09",
+      "stem": "hup060_trivial_controller_baselines",
+      "source_data": "output/part3/source_data/figure_09_trivial_baselines",
+      "formats": [
+        "svg",
+        "pdf",
+        "png"
+      ],
+      "provenance_note": "Same selected700 Full as Figs6/8; no implicit model/outer access"
+    },
+    {
+      "number": 10,
+      "part": 3,
+      "title": "Actual1000-update Full WGAN-GP loss record",
+      "generator": "part3_mfc/figure_10_training_losses.py",
+      "output_directory": "output/part3/figure_10",
+      "stem": "HUP060_WGANGP_loss_original_style_e1000",
+      "source_data": "output/part3/source_data/figure_10_loss",
+      "formats": [
+        "svg",
+        "pdf",
+        "png"
+      ],
+      "provenance_note": "Same selected700 Full as Figs6/8; no implicit model/outer access"
     }
-  ]
+  ],
+  "current_part3_controller_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0"
 }

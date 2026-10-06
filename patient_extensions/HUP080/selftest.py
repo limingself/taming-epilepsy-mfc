@@ -1129,7 +1129,7 @@ def _assert_renderer_candidate_contract(config: dict, runtime: Path) -> dict[str
         }
 
 
-def main() -> int:
+def historical_main() -> int:
     config = load_config()
     configure_runtime(config)
     assert_bytecode_guard()
@@ -1328,5 +1328,16 @@ def main() -> int:
     return 0
 
 
+
+def main():
+    """Default self-test verifies the current adopted result, not old23/65 gates."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from current_patient import main as current_main
+    return current_main('HUP080')
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
+

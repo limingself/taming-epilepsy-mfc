@@ -25,3 +25,13 @@ wandb/
 tensorboard/
 .DS_Store
 Thumbs.db
+
+# Current private frozen-input/controller trees never enter a public commit.
+*.npy
+*.npz
+*.pt
+*.pth
+*.joblib
+patient_results/
+artifacts/part3_hup060_actor_wgan_v1/current_full_wgangp/
+artifacts/part3_hup060_actor_wgan_v1/current_comparisons/

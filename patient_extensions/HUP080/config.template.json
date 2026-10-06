@@ -493,7 +493,7 @@
     "latent_components_min": 8,
     "latent_components_max": 24,
     "diffusion_shrinkage": 0.05,
-    "diffusion_relative_jitter": 1E-08,
+    "diffusion_relative_jitter": 1e-08,
     "diffusion_mode": "state_dependent",
     "diffusion_ridge_alphas": [
       0.1,
@@ -684,7 +684,7 @@
         "epochs": 180,
         "epoch_offset": 870,
         "validation_every": 10,
-        "learning_rate": 5E-05,
+        "learning_rate": 5e-05,
         "objective": "covariance",
         "actuator_alpha": 1.0,
         "train_scope": "all_actor_parameters"
@@ -779,7 +779,7 @@
     "discarded_s2r_executed": false,
     "wgan_epochs": 40,
     "validation_every_epochs": 4,
-    "actor_learning_rate": 1E-05,
+    "actor_learning_rate": 1e-05,
     "critic_learning_rate": 0.0001,
     "critic_pretrain_steps": 24,
     "critic_pretrain_banks": 3,
@@ -967,6 +967,18 @@
     ],
     "submission_dpi": 600,
     "overleaf_write": false
+  },
+  "current_full_wgangp": {
+    "enabled": true,
+    "runner": "runner.py",
+    "analysis_role": "post_hoc_amended_reanalysis",
+    "direct_actuators": 76,
+    "controller_sha256": "c25d86d1a4dd9d0860106f10e800657e8be291ed3350313f0d9d05a410ab062c",
+    "lineage": "fresh parent selected200; selected occupancy_worst_lr3e5 continuation added125 of150",
+    "rms_cap": 0.45,
+    "canonical_core": "${REPO_ROOT}/part3_mfc/model_core.py",
+    "canonical_core_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+    "original_part_i_ii_values_retained": true,
+    "legacy_pipeline_stage_values_not_current_control_defaults": true
   }
 }
-

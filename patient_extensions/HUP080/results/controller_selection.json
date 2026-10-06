@@ -1,17 +1,6 @@
 {
-  "schema_version": "patient-controller-selection-public-v1",
   "subject": "HUP080",
-  "candidate_id": "f-0.80_q-0.20_gain-0.350_tau-0.000",
-  "selection_role": "development-selected_then_frozen_before_outer_evaluation",
-  "parameters": {
-    "fraction": 0.8,
-    "quantile_q": 0.2,
-    "gain": 0.35,
-    "tau": 0.0
-  },
-  "channel_count": 96,
   "direct_actuator_count": 76,
-  "indirect_channel_count": 20,
   "direct_channel_indices_zero_based": [
     0,
     1,
@@ -112,8 +101,14 @@
     94,
     95
   ],
+  "indirect_channel_count": 20,
+  "parameters": {
+    "tau": 0.0,
+    "actuation_fraction": 0.7916666666666666
+  },
+  "selector": "Frozen patient-specific selected76 mask",
+  "current_checkpoint_sha256": "c25d86d1a4dd9d0860106f10e800657e8be291ed3350313f0d9d05a410ab062c",
+  "initialization_lineage": "fresh parent selected200; selected occupancy_worst_lr3e5 continuation added125 of150",
   "direct_mask_bitstring_sha256": "8b7d7db02aed3ffacdae45a78639a49c4173230173219b516960d68886bccc4b",
-  "tau_semantics": "tau_G=0 makes the heat kernel the identity: the 20 indirect channels receive no instantaneous heat-kernel control input and can change only through the frozen plant dynamics.",
-  "source_channel_metadata_sha256": "fc8f8654fe221c4a7755e55979b0a35918fdd1ed96bf02b3a551bcf17df89093",
-  "outer_used_for_selection_or_rescue": false
+  "tau_semantics": "At tau0 no instantaneous heat-kernel control input reaches indirect channels; frozen plant dynamics retain dynamic coupling."
 }

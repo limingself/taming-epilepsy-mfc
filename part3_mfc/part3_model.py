@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Final paper Part III: Actor--WGAN mean-field control workflow.
+"""Current paper Part III: neutral-initialized Full WGAN-GP control workflow.
 
 The public commands are ``train``, ``evaluate``, ``evaluate-ablations`` and
 ``source-data``.
@@ -7,10 +7,12 @@ Training is prefix-only; evaluation opens the frozen run-02 development
 window only after checkpoint freezing.  The forward empirical Fokker--Planck
 law is propagated by the frozen state-dependent Graph-RC-SDE from Part II.
 
-Figure 6/8 use the frozen main-result run
-``seed20261011_adv050_anchor020``.  Figure 7 uses the separately retrained,
-matched-budget full checkpoint and its three matched ablations.  These are
-the same architecture but are not claimed to be the same numerical weights.
+Figures6/8 use neutral1000-update training selected at update700. Figure7's
+Full is the identical selected controller; its three component-removal arms
+use matched1000-update budgets. Current CLI dispatch is in current_controller.
+Scientific definitions remain import-compatible; model_core.py preserves the
+exact executed kernel57da. Historical teacher/40-update functions below are
+not selected by the current command entry.
 """
 
 from __future__ import annotations
@@ -2093,26 +2095,10 @@ def export_source_data(argv: list[str] | None = None) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = list(sys.argv[1:] if argv is None else argv)
-    if not args or args[0] in {"-h", "--help"}:
-        print(
-            "Usage: python part3_model.py {train|evaluate|evaluate-ablations|source-data} [options]\n"
-            "  train                prefix-only Actor--WGAN training\n"
-            "  evaluate             freeze-then-open main-result evaluation\n"
-            "  evaluate-ablations   paired matched-budget ablation evaluation\n"
-            "  source-data          copy frozen Fig. 6--8 inputs to output/"
-        )
-        return 0
-    command, command_args = args[0], args[1:]
-    dispatch = {
-        "train": train_model,
-        "evaluate": evaluate_model,
-        "evaluate-ablations": evaluate_ablations,
-        "source-data": export_source_data,
-    }
-    if command not in dispatch:
-        raise SystemExit(f"unknown command: {command}")
-    return dispatch[command](command_args)
+    # Scientific definitions remain import-compatible; the old command path
+    # now selects current Full rather than the historical teacher/40-update run.
+    from part3_mfc.current_controller import main as current_main
+    return current_main(argv)
 
 
 if __name__ == "__main__":

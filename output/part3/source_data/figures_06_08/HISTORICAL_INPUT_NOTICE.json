@@ -1,0 +1,10 @@
+{
+  "not_current_controller_inputs": [
+    "paired_comparison.npz",
+    "training_history.csv"
+  ],
+  "current_checkpoint_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+  "current_private_pair": "artifacts/part3_hup060_actor_wgan_v1/current_full_wgangp/runs/fresh_seed20261011_e1000/evaluation/paired_comparison.npz",
+  "public_loss_trace_source": "output/part3/source_data/figure_10_loss/HUP060_WGANGP_loss_source.csv",
+  "PartII_free_only_artifact_unchanged": true
+}

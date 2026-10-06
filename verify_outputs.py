@@ -10,9 +10,6 @@ from pathlib import Path
 import platform
 import sys
 
-from PIL import Image
-
-
 ROOT = Path(__file__).resolve().parent
 FORMATS = ("svg", "pdf", "png", "tiff")
 
@@ -92,6 +89,7 @@ def validate_signature(path: Path, extension: str) -> dict[str, object]:
         "sha256": sha256(path),
     }
     if extension in {"png", "tiff"}:
+        from PIL import Image
         with Image.open(path) as image:
             image.verify()
         with Image.open(path) as image:
@@ -142,6 +140,12 @@ def source_records(path: Path) -> list[dict[str, object]]:
 
 
 def verify(parts: set[int] | None = None) -> dict[str, object]:
+    if parts == {3}:
+        from part3_mfc.current_controller import verify_current, verify_figure
+        result = verify_current()
+        result["validated_figure_count"] = 5
+        result["figures"] = [verify_figure(number) for number in (6, 7, 8, 9, 10)]
+        return result
     contract = json.loads((ROOT / "paper_figures.json").read_text(encoding="utf-8"))
     records: list[dict[str, object]] = []
     for figure in contract["figures"]:
@@ -155,7 +159,7 @@ def verify(parts: set[int] | None = None) -> dict[str, object]:
         source = ROOT / figure["source_data"]
         derived_source = figure.get("derived_source_data")
         exports = []
-        for extension in FORMATS:
+        for extension in figure.get("formats", FORMATS):
             path = directory / f"{stem}.{extension}"
             if not path.is_file() or path.stat().st_size == 0:
                 raise FileNotFoundError(f"missing or empty paper output: {path}")
@@ -185,6 +189,9 @@ def verify(parts: set[int] | None = None) -> dict[str, object]:
     }
     if parts is None or 2 in parts:
         payload["unified_part2_part3_protocol"] = validate_unified_part2_protocol()
+    if parts is None or 3 in parts:
+        from part3_mfc.current_controller import verify_current
+        payload["current_full_wgangp_protocol"] = verify_current()
     if parts is None:
         manifest_name = "reproduction_manifest.json"
     else:

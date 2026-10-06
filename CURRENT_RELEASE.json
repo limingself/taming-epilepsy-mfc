@@ -1,23 +1,43 @@
 {
-  "version": "2.0.0",
-  "tag": "full-wgangp-20261006",
+  "version": "2.1.0",
+  "tag": "full-wgangp-inplace-20261006",
   "date": "2026-10-06",
   "title": "Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics",
-  "current_package": "releases/full_wgangp_20261006",
-  "public_manifest": "releases/full_wgangp_20261006/public_manifest.json",
-  "public_verifier": "releases/full_wgangp_20261006/verify_public_results.py",
+  "current_package": ".",
+  "public_manifest": "CURRENT_PROJECT_MANIFEST.json",
+  "public_verifier": "verify_outputs.py",
   "manuscript_pages": 63,
   "method": "Frozen Graph-RC stochastic recurrence, structured mean-deviation actor, empirical-law penalties plus WGAN-GP from the first actor update",
-  "historical_root_entrypoints_preserved": true,
+  "historical_root_entrypoints_preserved": false,
   "historical_release": "patient-extensions-v1",
-  "HUP060_direct_inputs": [13, 36],
-  "HUP065_direct_inputs": [32, 64],
-  "HUP080_direct_inputs": [76, 96],
+  "HUP060_direct_inputs": [
+    13,
+    36
+  ],
+  "HUP065_direct_inputs": [
+    32,
+    64
+  ],
+  "HUP080_direct_inputs": [
+    76,
+    96
+  ],
   "HUP065_cold1000_experiment_adopted": false,
   "external_cases_role": "post hoc amended reanalysis",
   "public_deposit_scope": "Exact code and plotting sources, parameters, lightweight metrics, current figures and provenance",
   "private_bundle_is_required_for_retraining_and_replay": true,
   "raw_EDF_published": false,
   "external_signal_arrays_or_weights_published": false,
-  "does_not_claim_author_submission_signoff": true
+  "does_not_claim_author_submission_signoff": true,
+  "current_results": "output/part3/source_data/figures_06_08/current_results.json",
+  "main_entry": "part3_mfc/part3_model.py",
+  "patient_entries": [
+    "patient_extensions/HUP065/runner.py",
+    "patient_extensions/HUP080/runner.py"
+  ],
+  "previous_release_snapshot": "releases/full_wgangp_20261006",
+  "only_code_organization_and_default_entry_changed": true,
+  "no_training_or_new_evaluation_run": true,
+  "existing_entrypoint_names_preserved": true,
+  "default_root_controller_updated": true
 }

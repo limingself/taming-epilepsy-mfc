@@ -2,13 +2,17 @@
 
 ## Current Full WGAN-GP source package (2026-10-06)
 
-`releases/full_wgangp_20261006/` is an additive current-version code and
-lightweight result deposit. It preserves the existing patient-extension
+The existing `part3_mfc/`, `output/part3/` and `patient_extensions/` paths now
+contain the current Full WGAN-GP code, figures and lightweight results in place.
+The historical release folder is provenance, not the default project. This
+preserves the existing patient-extension
 publication boundary: HUP065/HUP080 signal arrays, serialized models and
-controller weights, large density tables, training histories, raw ZIP/EDF
+controller weights, large density tables, external full training histories, raw ZIP/EDF
 archives, and one-time authorization/access receipts are not redistributed.
 Exact scientific code, parameter metadata, aggregate/channel metrics,
 publication figures and a public-file hash verifier are supplied instead.
+Permitted HUP060 loss-figure scalar Source Data includes the actual plotted
+raw loss terms and derived rolling medians, not a complete private training bundle.
 
 The complete offline revision bundles retain those inputs, weights, logs
 and candidate outcomes for reproducibility. Replaying a frozen controller
@@ -18,9 +22,11 @@ an external evaluation or retraining was executed, nor a claim that all
 private input files were uploaded. The unadopted HUP065 cold-start experiment
 is kept separate from the adopted manuscript results.
 
-The current source manifest and `CURRENT_RELEASE.json` supersede the old
-root `PAPER_FINAL_VERSION.json` only as the version pointer; historical
-files and scientific results below are not overwritten.
+`CURRENT_PROJECT_MANIFEST.json`, `CURRENT_RELEASE.json`, `paper_figures.json`
+and the updated root `PAPER_FINAL_VERSION.json` identify the same adopted
+13/32/76-node controllers. Parts I/II and frozen prediction sources are
+unchanged. Historical tags and released snapshots remain recoverable; ordinary
+root commands no longer default to their earlier controllers.
 
 This repository does not contain the original EEG archives. The subject codes
 `HUP060`, `HUP065`, and `HUP080` refer to de-identified participants in OpenNeuro dataset

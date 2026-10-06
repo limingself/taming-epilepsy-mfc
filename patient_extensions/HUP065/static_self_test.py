@@ -609,10 +609,21 @@ def run_tests() -> dict[str, object]:
         Path.open = original_path_open
 
 
-def main() -> int:
+def historical_main() -> int:
     print(json.dumps(run_tests(), ensure_ascii=False, indent=2))
     return 0
 
 
+
+def main():
+    """Default self-test verifies the current adopted result, not old23/65 gates."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from current_patient import main as current_main
+    return current_main('HUP065')
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
+

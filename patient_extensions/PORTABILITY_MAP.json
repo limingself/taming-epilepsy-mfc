@@ -1,6 +1,6 @@
 {
   "schema_version": "patient-extensions-portability-map-v1",
-  "status": "PATH_AND_AUTHORIZATION_ONLY_PUBLIC_RELOCATION_SCIENTIFIC_PARAMETERS_UNCHANGED",
+  "status": "CURRENT_FULL_WGANGP_NATIVE_DEFAULTS_WITH_RETAINED_HISTORICAL_PREPARATION_PROVENANCE",
   "non_equivalence_notice": "The public templates and materialized configs are not byte-identical to the executed frozen configs and receive their own SHA-256 values.",
   "checkout_byte_portability": {
     "executed_windows_byte_hashes_retained_in_committed_templates": true,
@@ -228,5 +228,14 @@
   "private_archive_manifest_anchors": {
     "HUP065": "df6752e1916eb12e1bb0d16330fc77ce63e4444846d675cddcc4213c3f36a637",
     "HUP080": "6382eb5aec69643855866765ac39eb981f93abb6b99727e145ddb7d803ad4f0d"
+  },
+  "historical_schema_status": "PATH_AND_AUTHORIZATION_ONLY_PUBLIC_RELOCATION_SCIENTIFIC_PARAMETERS_UNCHANGED",
+  "current_defaults": {
+    "HUP065": "HUP065/runner.py",
+    "HUP080": "HUP080/runner.py",
+    "scientific_kernel": "../part3_mfc/model_core.py",
+    "scientific_kernel_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+    "current_results": "../output/part3/source_data/figures_06_08/current_results.json",
+    "old_source_adaptation_entries_are_historical_not_current_hash_locks": true
   }
 }

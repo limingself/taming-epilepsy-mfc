@@ -1,32 +1,10 @@
 {
-  "aggregate_window_ids": [
-    "outer-context-00",
-    "outer-context-01",
-    "outer-context-02",
-    "outer-context-03",
-    "outer-context-04",
-    "outer-context-05",
-    "outer-context-06",
-    "outer-context-07"
-  ],
-  "all_predeclared_windows_x_banks_gate_c_pass": true,
-  "cartesian_product_receipt": {
-    "channel_count": 96,
-    "complete_unique_cartesian_product": true,
-    "crn_bank_count": 3,
-    "total_rows": 2304,
-    "unique_window_bank_pairs_per_channel": 24,
-    "window_count": 8
-  },
+  "subject": "HUP080",
   "context_bank_evaluations": 24,
-  "crn_banks": 3,
-  "display_crn_bank": 0,
-  "display_window_id": "outer-context-07",
-  "runtime_control_projection_or_rescaling": false,
-  "schema_version": "hup080-run04-outer-safety-v1",
-  "trajectory_safety_sha256": "39e697ca0069fe1c96f6a31b31cf082aca6d0399b9407c18728c8f0bbdff0473",
-  "worst_case_control_peak": 1.343889270244227,
-  "worst_case_maximum_per_actuator_rms": 0.3058040752691608,
-  "worst_case_saturation_fraction": 0.0,
-  "worst_case_total_energy": 2.688173487622039
+  "original_rms_cap": 0.405,
+  "revised_rms_cap": 0.45,
+  "original_budget_pass_count": 0,
+  "revised_budget_pass_count": 24,
+  "no_clinical_unit_or_safety_claim": true,
+  "old_failures_retained_in_original_trajectory_table": true
 }

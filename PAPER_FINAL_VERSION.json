@@ -1,12 +1,16 @@
 {
-  "status": "paper_final_only",
+  "status": "current_full_wgangp_inplace",
   "subject": "HUP060",
   "paper_parts": 3,
-  "paper_figures": 8,
+  "paper_figures": 10,
   "part_1": {
     "model_code": "part1_network/part1_model.py",
-    "figure_code": ["part1_network/figure_01_plv_network_selection.py"],
-    "figures": [1]
+    "figure_code": [
+      "part1_network/figure_01_plv_network_selection.py"
+    ],
+    "figures": [
+      1
+    ]
   },
   "part_2": {
     "model_code": "part2_rc_sde/part2_model.py",
@@ -22,20 +26,120 @@
     "effective_diffusion_multiplier": 0.79451175,
     "unified_zero_control_source": "artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/run02_development_evaluation/paired_comparison.npz",
     "protocol_identity": "same frozen model, context-3 initial Markov state, particle-wise innovations, particles, and 1-s horizon as Part III u=0",
-    "figures": [2, 3, 4, 5]
+    "figures": [
+      2,
+      3,
+      4,
+      5
+    ]
   },
   "part_3": {
     "model_code": "part3_mfc/part3_model.py",
+    "scientific_core": "part3_mfc/model_core.py",
+    "scientific_core_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+    "fresh_training_code": "part3_mfc/train_full_wgangp.py",
     "figure_code": [
       "part3_mfc/figure_06_actor_wgan_control.py",
       "part3_mfc/figure_07_mfc_ablation.py",
-      "part3_mfc/figure_08_all36_controlled_distributions.py"
+      "part3_mfc/figure_08_all36_controlled_distributions.py",
+      "part3_mfc/figure_09_trivial_baselines.py",
+      "part3_mfc/figure_10_training_losses.py"
     ],
-    "main_checkpoint": "artifacts/part3_hup060_actor_wgan_v1/seed20261011_adv050_anchor020/frozen_actor_wgan.pt",
-    "main_checkpoint_sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac",
-    "matched_ablation_full_checkpoint": "artifacts/part3_hup060_actor_wgan_v1/ablation_full_seed20261011_v1/frozen_actor_wgan.pt",
-    "matched_ablation_full_checkpoint_sha256": "684af6f473f9e029977d5d2d0e75586df434345a2e28a2582fb32af364642c11",
-    "figures": [6, 7, 8],
-    "implementation": "structured_actor_plus_wgan_gp_critic_plus_empirical_particle_fp"
+    "figures": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "main_checkpoint": "artifacts/part3_hup060_actor_wgan_v1/current_full_wgangp/runs/fresh_seed20261011_e1000/frozen_actor_wgan.pt",
+    "main_checkpoint_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+    "main_checkpoint_in_public_package": false,
+    "selected_actor_update": 700,
+    "trained_actor_updates": 1000,
+    "teacher_loaded": false,
+    "teacher_proximity_weight": 0.0,
+    "matched_ablation_full_checkpoint_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+    "same_full_in_control_ablation_baseline_loss": true,
+    "implementation": "structured_mean_deviation_actor_existing_empirical_law_plus_full_wgan_gp_frozen_Graph_RC",
+    "public_default": "signal-free existing-table/figure verification; private retraining/evaluation requires explicit new tag and existing frozen inputs"
+  },
+  "external_cases": {
+    "HUP060": {
+      "channels": 36,
+      "direct_nodes": 13,
+      "status": "development_adaptation_case",
+      "training": "neutral fresh 1000 actor updates, update700 selected",
+      "checkpoint_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+      "time_w1_free": 0.34712877846045176,
+      "time_w1_controlled": 0.12105060595773774,
+      "occupation_w1_free": 0.3137938320029645,
+      "occupation_w1_controlled": 0.0788465386414842,
+      "metrics_csv": "output/part3/source_data/figures_06_08/channel_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_fresh",
+        "time_controlled": "time_w1_fresh",
+        "direct": "direct_actuator"
+      },
+      "expected_rows": 36,
+      "selected_actor_update": 700,
+      "teacher_proximity_weight": 0.0,
+      "surrogate_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+      "time_reduction_percent": 65.1280408110764,
+      "occupation_reduction_percent": 74.87313943100726
+    },
+    "HUP065": {
+      "channels": 64,
+      "direct_nodes": 32,
+      "status": "post_hoc_amended_reanalysis",
+      "training": "23-node fresh parent selected550; low-gain expansion to32 and 150-update continuation, selected added0",
+      "checkpoint_sha256": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+      "metrics_csv": "patient_extensions/HUP065/results/all_channel_context_bank_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_controlled",
+        "time_controlled": "time_w1_controlled",
+        "direct": "direct_actuated"
+      },
+      "expected_rows": 1536,
+      "selected_added_update": 0,
+      "surrogate_sha256": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+      "rms_cap": 0.405,
+      "conditions": 24,
+      "full_gate_b_all_conditions": 21,
+      "time_w1_free": 0.27179461046098846,
+      "time_w1_controlled": 0.20086363305685798,
+      "occupation_w1_free": 0.1795093774904715,
+      "occupation_w1_controlled": 0.12694506110397122,
+      "time_reduction_percent": 26.097271496232054,
+      "occupation_reduction_percent": 29.28221194978543
+    },
+    "HUP080": {
+      "channels": 96,
+      "direct_nodes": 76,
+      "status": "post_hoc_amended_reanalysis",
+      "training": "fresh parent selected200; selected occupancy_worst_lr3e5 continuation added125 of150",
+      "checkpoint_sha256": "c25d86d1a4dd9d0860106f10e800657e8be291ed3350313f0d9d05a410ab062c",
+      "metrics_csv": "patient_extensions/HUP080/results/all_channel_context_bank_metrics.csv",
+      "columns": {
+        "occupation_controlled": "occupation_w1_controlled",
+        "time_controlled": "time_w1_controlled",
+        "direct": "direct_actuated"
+      },
+      "expected_rows": 2304,
+      "selected_added_update": 125,
+      "surrogate_sha256": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+      "old_rms_cap": 0.405,
+      "revised_rms_cap": 0.45,
+      "conditions": 24,
+      "old_budget_pass_count": 0,
+      "revised_budget_pass_count": 24,
+      "full_gate_b_all_conditions": 57,
+      "time_w1_free": 0.32861935989151325,
+      "time_w1_controlled": 0.09385697244094479,
+      "occupation_w1_free": 0.32035737631043043,
+      "occupation_w1_controlled": 0.07285532178847282,
+      "time_reduction_percent": 71.43900089394317,
+      "occupation_reduction_percent": 77.25811010579788
+    }
   }
 }
