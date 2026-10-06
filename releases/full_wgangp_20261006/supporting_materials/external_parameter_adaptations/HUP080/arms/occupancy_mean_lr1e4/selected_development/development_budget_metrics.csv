@@ -1,0 +1,4 @@
+development_run_slot,finite,total_energy,maximum_per_actuator_rms,peak,saturation_fraction,old_budget_pass,revised_budget_pass
+0,True,3.7153506816872786,0.43012833643433085,1.1602799890593323,0.0,False,True
+1,True,3.7647725851004648,0.4264514536530107,1.1540814430233786,0.0,False,True
+2,True,3.670330269586573,0.4324695176559977,1.0996510075362518,0.0,False,True

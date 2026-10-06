@@ -1,0 +1,242 @@
+{
+  "status": "predeclared_single_seed_neutral1000_update_parameter_screen",
+  "subject": "HUP065",
+  "seed": 20261011,
+  "configured_actuators": 32,
+  "total_channels": 64,
+  "actuation_fraction": 0.5,
+  "selected_indices": [
+    1,
+    13,
+    14,
+    19,
+    20,
+    21,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    58
+  ],
+  "preset": {
+    "actor_updates": 1000,
+    "actor_lr": 0.0003,
+    "actor_min_lr": 1e-05,
+    "critic_lr": 0.0001,
+    "n_critic": 3,
+    "critic_warmup": 24,
+    "adv_weight": 0.5,
+    "gp_weight": 10.0,
+    "critic_drift": 0.001,
+    "particles": 32,
+    "horizon": 256,
+    "tau": 0.2,
+    "noise_scale": 0.79451175,
+    "input_step_scale": 0.5,
+    "amplitude": 1.8,
+    "actuator_rms_cap": 0.405,
+    "total_energy_cap": 3.7908,
+    "actor_gradient_clip": 1.0,
+    "critic_gradient_clip": 5.0,
+    "actor_weight_decay": 1e-05,
+    "actor_betas": [
+      0.9,
+      0.999
+    ],
+    "critic_betas": [
+      0.0,
+      0.9
+    ],
+    "optimizer_epsilon": 1e-08,
+    "covariance_coefficients": {
+      "mean": 10.0,
+      "log_variance": 10.0,
+      "worst_log_variance": 5.0,
+      "quantile": 8.0,
+      "worst_quantile": 8.0,
+      "no_harm_mean": 20.0,
+      "no_harm_quantile": 20.0,
+      "occupancy": 6.0,
+      "tube": 2.0,
+      "joint": 0.5,
+      "energy": 0.01,
+      "smoothness": 0.2,
+      "curvature": 0.1,
+      "saturation": 1.0,
+      "gain_regularization": 0.001
+    },
+    "validation_every": 25,
+    "validation_noise_seed": 20260922
+  },
+  "canonical_function_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+  "runner_source_sha256": "03d60e2a25ac841da6b84e9fe4b8b808d30b2964a2d2fd0075285aedb7f59d72",
+  "base_fresh_runner_sha256": "f9c0fe1d76b258730e6b2a44e9dd2c85c41d83b82626d3d5422d418a4c002dad",
+  "predictive_model_sha256": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+  "frozen_input_identities": {
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\DEV_MATERIALIZE\\development_arrays.npz": "a3b28c87987af9209f58970ed0ac1de5767574f24a154b3f5ae94accb429026f",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\selected_model.joblib": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\network.npz": "c9dc064d6d204f85c9480a8e15398fba6672e7f69bb6f6499ed1144a67049303",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\part2_plant_adjacency.npz": "35ace794c8765de245b64870d8e56b2f3cd0636ed30a385d4688aa164e6d72dc",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\refit_receipt.json": "15b5c42f94840d172318be9eb18fc2bcc80bef40f6595329e1749faad2c9ce17",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\config.json": "7f436ba67234c1e0007d29d925d06d2f353483da0cbb026538be322a83268ccf"
+  },
+  "frozen_bundle_files_verified": 41,
+  "canonical_dependency_imports": {
+    "mfc_pipeline": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\__init__.py",
+    "mfc_pipeline.causal_ltv_riccati": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\causal_ltv_riccati.py",
+    "mfc_pipeline.neural_hjb_fp": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\neural_hjb_fp.py",
+    "mfc_pipeline.causal_ltv_particle_rollout": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\causal_ltv_particle_rollout.py",
+    "mfc_pipeline.full_markov_hjb_fp_wgan": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\full_markov_hjb_fp_wgan.py",
+    "mfc_pipeline.actor_wgan": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\actor_wgan.py",
+    "mfc_pipeline.sequential_covariance_hjb": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\sequential_covariance_hjb.py",
+    "mfc_pipeline.square_wave_mfc": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\square_wave_mfc.py",
+    "mfc_pipeline.network": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\network.py",
+    "mfc_pipeline.metrics": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\metrics.py",
+    "mfc_pipeline.rc_koopman": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\rc_koopman.py",
+    "mfc_pipeline.rc_v2": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\rc_v2.py",
+    "mfc_pipeline.data": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\data.py",
+    "mfc_pipeline.statistics": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\statistics.py",
+    "mfc_pipeline.part2_data_pipeline": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\part2_data_pipeline.py",
+    "mfc_pipeline.part2_state_dependent_rc_sde": "frozen_inputs\\external_bundle\\snapshot\\project\\mfc_pipeline\\part2_state_dependent_rc_sde.py"
+  },
+  "baseline_source_hashes": {
+    "selection_report.json": "1c6f1e92a0fcf90b6f14fa9153b480be3bd9983264ad64bec38c2ed9e7396300",
+    "selected_validation_channel_metrics.csv": "504e189046db304edc922d68e8bca4848d46c40172cb1a6936bf3dfbdff24ea1",
+    "selected_validation_trajectory_metrics.csv": "446df58aebcc4f90120edd0903c4a234c4b5f7a77ee0afe630f31312eced3d73"
+  },
+  "adopted32_development_endpoints": {
+    "mean_time_w1_free": 0.2864570802361548,
+    "mean_time_w1_controlled": 0.2069359761989254,
+    "mean_occupation_w1_free": 0.12841828265047872,
+    "mean_occupation_w1_controlled": 0.03656738959725986,
+    "mean_control_rms": 0.2037698024552007,
+    "maximum_per_actuator_rms": 0.3494435917607047,
+    "total_energy": 1.3287112267916896,
+    "control_peak": 1.2992850392374784,
+    "saturation_fraction": 0.0,
+    "common_selection_score": 0.5977934369938859,
+    "p90_channel_distance_ratio": 0.9679518554853555,
+    "both_improved_count": 52.5,
+    "sd_ratio_le2_count": 64.0,
+    "budget_pass": true,
+    "maximum_total_energy": 1.3326977741115296,
+    "mean_abs_log_sd_ratio": 0.05620583766533142,
+    "p90_sd_ratio": 1.1190164190598357
+  },
+  "adopted32_actor_identity_only": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+  "adopted32_actor_weights_opened": false,
+  "actor_critic_teacher_checkpoint_loaded": false,
+  "neutral_actor_initializer": true,
+  "actor_hidden_weights_fresh_random_neutral_final_layers": true,
+  "model_noise_scaler_reference_and_dynamics_graph_frozen": true,
+  "tau_only_control_input_spreading": true,
+  "framework_error_function_forms_unchanged": true,
+  "only_existing_term_coefficient_overrides": {
+    "occupancy": 6.0,
+    "worst_quantile": 8.0
+  },
+  "fitting_ledger": [
+    {
+      "run": "run-01",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-01",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-01",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-01",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-01",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-02",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-02",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-02",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-02",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-02",
+      "context_index": 4,
+      "boundary_sample": 4754
+    }
+  ],
+  "fit_reference_shape": [
+    30,
+    256,
+    64
+  ],
+  "validation_reference_shape": [
+    30,
+    256,
+    64
+  ],
+  "fit_context_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "selection_context_index": 5,
+  "terminal_veto_context_index": 6,
+  "common_selection_score": ".4 mean(timeW1)/free+.4 mean(occupationW1)/free+.2 p90(.5 per-channel time/free+.5 occupation/free); per-channel free denominator floor.01",
+  "SD_selection_rule": "mean absolute logSD ratio is only a secondary tie-breaker; full SD summaries retained; no new loss/error functional",
+  "checkpoint_selection": "budget first, fixed common score then SD tie-breaker; separate terminal-eligible track additionally requires both mean endpoints not worse than adopted32 and score improvement",
+  "validation_checkpoint_retention": "all initial/step1/every25 actor+critic snapshots including ineligible candidates",
+  "ctx6_failure_stops_outer": true,
+  "ctx6_or_outer_reselection": false,
+  "outer_arrays_opened_during_training": false,
+  "classification": "post-hoc exploratory cold-initialization amendment; historical outer previously revealed; not new locked validation",
+  "no_projection_rescaling_or_new_loss_plot": true,
+  "no_global_optimality_or_all_channels_restoration_claim": true,
+  "original_code_history_and_overleaf_modified": false,
+  "not_automatically_adopted": true
+}

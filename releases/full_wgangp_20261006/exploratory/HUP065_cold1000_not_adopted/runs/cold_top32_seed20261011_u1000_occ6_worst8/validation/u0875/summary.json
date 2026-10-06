@@ -1,0 +1,22 @@
+{
+  "mean_time_w1_free": 0.2864570802361548,
+  "mean_time_w1_controlled": 0.20840334870054658,
+  "mean_occupation_w1_free": 0.12841828265047872,
+  "mean_occupation_w1_controlled": 0.040949774247199464,
+  "common_selection_score": 0.6310123645702053,
+  "p90_channel_distance_ratio": 1.053869906563608,
+  "mean_abs_log_sd_ratio": 0.06590310898091377,
+  "p90_sd_ratio": 1.1356588877383613,
+  "sd_ratio_le2_count": 64.0,
+  "both_improved_count": 49.0,
+  "mean_control_rms": 0.20908353824201864,
+  "maximum_per_actuator_rms": 0.37951266282787627,
+  "total_energy": 1.3989892903319952,
+  "control_peak": 1.2817607297545066,
+  "saturation_fraction": 0.0,
+  "maximum_total_energy": 1.4201019811341573,
+  "budget_pass": true,
+  "finite": true,
+  "both_mean_endpoints_not_worse_than_adopted32": false,
+  "terminal_candidate_eligible": false
+}

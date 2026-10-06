@@ -1,0 +1,6 @@
+{
+  "neutral_control_peak": 0.0,
+  "initial_to_free_max_abs_error": 0.0,
+  "trainable_parameters": 176924,
+  "no_actor_checkpoint_loaded": true
+}

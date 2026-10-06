@@ -1,0 +1,347 @@
+{
+  "subject": "HUP065",
+  "seed": 20261011,
+  "nodes": 32,
+  "actuation_fraction": 0.5,
+  "graph_spread": 0.2,
+  "model_sha256": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+  "input_paths": {
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\DEV_MATERIALIZE\\development_arrays.npz": "a3b28c87987af9209f58970ed0ac1de5767574f24a154b3f5ae94accb429026f",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\selected_model.joblib": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\network.npz": "c9dc064d6d204f85c9480a8e15398fba6672e7f69bb6f6499ed1144a67049303",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\part2_plant_adjacency.npz": "35ace794c8765de245b64870d8e56b2f3cd0636ed30a385d4688aa164e6d72dc",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\refit_receipt.json": "15b5c42f94840d172318be9eb18fc2bcc80bef40f6595329e1749faad2c9ce17",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\config.json": "7f436ba67234c1e0007d29d925d06d2f353483da0cbb026538be322a83268ccf"
+  },
+  "source_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+  "source_code_sha256": "8e52540c3aa7ca0a798e702b4beddc6d2f63232a0bd14192f3d33bb8398c688f",
+  "actor_updates": 150,
+  "actor_lr": 0.0001,
+  "actor_min_lr": 1e-05,
+  "critic_lr": 0.0001,
+  "n_critic": 3,
+  "adversarial_weight": 0.5,
+  "law_existing_coefficient_overrides": {
+    "occupancy": 2.0,
+    "worst_quantile": 5.0,
+    "no_harm_mean": 20.0,
+    "no_harm_quantile": 20.0
+  },
+  "initialization": {
+    "source_checkpoint": "C:\\Users\\LiMing\\Documents\\改论文\\.fresh_wgangp_figures_20261006\\external\\runs\\HUP065_seed20261011_u1000\\frozen_actor_wgan.pt",
+    "source_checkpoint_sha256": "9014e2ce416021387515338ddf1ffc3ca435be085d1ea3cd66147f9a78f4b475",
+    "source_selected_update": 550,
+    "source_actuators": [
+      1,
+      13,
+      20,
+      21,
+      26,
+      27,
+      28,
+      34,
+      35,
+      36,
+      37,
+      38,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      49,
+      50,
+      51,
+      52,
+      53
+    ],
+    "target_actuators": [
+      1,
+      13,
+      14,
+      19,
+      20,
+      21,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      58
+    ],
+    "explicit_warm_start": true,
+    "initialized_from_scratch": false,
+    "tensor_operations": [
+      {
+        "name": "mean_gain_delta",
+        "operation": "map_actuator_axis_zero_new"
+      },
+      {
+        "name": "deviation_gain_delta",
+        "operation": "map_actuator_axis_zero_new"
+      },
+      {
+        "name": "local_deviation_gain_logits",
+        "operation": "map_actuator_axis_zero_new"
+      },
+      {
+        "name": "reference_mean_path",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "reference_variance_path",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "reference_scale",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "base_gain",
+        "operation": "map_actuator_axis_zero_new"
+      },
+      {
+        "name": "actuated_channel_indices",
+        "operation": "retain_correct_new_plant_buffer"
+      },
+      {
+        "name": "markov_feature_center",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "markov_feature_scale",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "local_inverse_effect",
+        "operation": "retain_correct_new_plant_buffer"
+      },
+      {
+        "name": "spline_basis",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.0.weight",
+        "operation": "map_previous_control_feature_slots_zero_new"
+      },
+      {
+        "name": "common_residual.0.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.1.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.1.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.3.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.3.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_residual.5.weight",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "common_residual.5.bias",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "deviation_residual.0.weight",
+        "operation": "map_previous_control_feature_slots_zero_new"
+      },
+      {
+        "name": "deviation_residual.0.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_residual.1.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_residual.1.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_residual.3.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_residual.3.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_residual.5.weight",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "deviation_residual.5.bias",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "common_markov_residual.0.weight",
+        "operation": "map_previous_control_feature_slots_zero_new"
+      },
+      {
+        "name": "common_markov_residual.0.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_markov_residual.1.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_markov_residual.1.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_markov_residual.3.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_markov_residual.3.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "common_markov_residual.5.weight",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "common_markov_residual.5.bias",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "deviation_markov_residual.0.weight",
+        "operation": "map_previous_control_feature_slots_zero_new"
+      },
+      {
+        "name": "deviation_markov_residual.0.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_markov_residual.1.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_markov_residual.1.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_markov_residual.3.weight",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_markov_residual.3.bias",
+        "operation": "unchanged_shared_parameter_or_buffer"
+      },
+      {
+        "name": "deviation_markov_residual.5.weight",
+        "operation": "map_output_rows_zero_new"
+      },
+      {
+        "name": "deviation_markov_residual.5.bias",
+        "operation": "map_output_rows_zero_new"
+      }
+    ],
+    "initial_output_max_error": 1.0813572259849025e-13,
+    "initial_old_control_max_error": 5.750955267558311e-14,
+    "new_actuator_initial_peak": 0.0,
+    "source_critic_reused": true,
+    "optimizer_states_reused": false
+  },
+  "particles": 32,
+  "horizon": 256,
+  "amplitude_limit": 1.8,
+  "per_actuator_rms_cap": 0.405,
+  "input_energy_cap": 3.7908,
+  "diffusion_scale": 0.79451175,
+  "control_step_scale": 0.5,
+  "fit_contexts": [
+    {
+      "run": "run-01",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-01",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-01",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-01",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-01",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-02",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-02",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-02",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-02",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-02",
+      "context_index": 4,
+      "boundary_sample": 4754
+    }
+  ],
+  "selection_context_index": 5,
+  "terminal_veto_context_index": 6,
+  "outer_used_for_training_or_selection": false,
+  "no_runtime_projection_or_rescaling": true,
+  "fixed_common_selection_score": ".4*mean(time W1)/free+.4*mean(occupation W1)/free+.2*p90(.5*time/free+.5*occupation/free), per-channel free denominator floor .01",
+  "budget_first": true,
+  "validation_every": 25,
+  "all_reference_paths_used": true,
+  "not_adopted_in_paper": true
+}

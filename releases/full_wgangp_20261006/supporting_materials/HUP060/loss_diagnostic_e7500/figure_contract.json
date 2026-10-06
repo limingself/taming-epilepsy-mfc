@@ -1,0 +1,23 @@
+{
+  "core_conclusion": "Across the matched-full HUP060 long-run development trajectory, Actor loss declines and meets only the final-500 point diagnostic; Critic constraint diagnostics approach their target regime, but Critic estimates and fixed-bank validation remain non-stationary, so joint convergence is not demonstrated.",
+  "figure_archetype": "quantitative grid with a dominant Actor trajectory and subordinate Critic/validation diagnostics",
+  "target": "isolated manuscript preview; no automatic replacement of the Overleaf figure",
+  "backend": "Python (matplotlib only)",
+  "final_size_mm": [183, 165],
+  "panel_map": {
+    "a": "Actor total objective and law term",
+    "b": "weighted Actor adversarial and proximal-action terms",
+    "c": "signed Critic distribution estimate shown untransformed; values are positive in this run",
+    "d": "positive weighted gradient penalty and 0.001-weighted Critic drift",
+    "e": "Critic mean gradient norm against the target band",
+    "f": "fixed-bank validation selection score"
+  },
+  "evidence_hierarchy": {
+    "hero": "true 7500-epoch Actor trajectory",
+    "mechanism": "Actor and Critic component decomposition",
+    "validation": "fixed-bank selection score and boundary-best checkpoint"
+  },
+  "exports": ["PNG", "SVG", "PDF", "600-dpi TIFF", "CSV", "JSON"],
+  "image_integrity": "No synthetic epochs, sign changes, absolute-value transformations, offsets, plotting-value clipping, or hidden raw data. Trailing rolling medians are labelled.",
+  "reviewer_risk": "The 7500-epoch history is a matched-full development run, not a bitwise continuation of the paper-primary 40-epoch/e32 checkpoint trajectory; downstream 36-channel evaluations must not be relabelled as e7500 without rerunning them."
+}

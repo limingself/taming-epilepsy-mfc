@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "source_sha256": "00dccde1fd62fb8e633f296cd9c1373ec7107ca13ff0b1aa01b454d120cda002",
+  "portable_sha256": "198547534f9410b9feb042121d1228a956c2e7d2f4b1751c68d161f700befc32",
+  "only_filesystem_loader_adaptation": true,
+  "model_math_plot_layout_unchanged": true,
+  "scientific_modules_not_imported": true,
+  "training_started": false,
+  "figures_redrawn": false,
+  "diff": "--- executed_original\n+++ path_only_portable\n@@ -88,6 +88,8 @@\n         module = importlib.util.module_from_spec(spec)\n         sys.modules[spec.name] = module\n         spec.loader.exec_module(module)\n+        if hasattr(module, \"load_runner\"):\n+            module = module.load_runner()\n         source = module.source_module()\n         setup = module.setup(source)\n         adapter, selected = setup[4], setup[3]\n",
+  "original_grid_sources": {
+    "representative_sha256": "ef3499e69b5bca8cab0534d9e5536496a2dff157d9190d4b23431384c6e5ce9a",
+    "all36_sha256": "63c38d8148b765957f01e9d2fedfd683b998b5064b66f9c7bdd61740813bd8fb"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "selected_checkpoint": "C:\\Users\\LiMing\\Documents\\改论文\\.ablation_adopt_and_external_opt_20261006\\optimization\\HUP065\\small_gain_decoupled_screen\\results\\selected_pair_adaptation_u150\\frozen_actor_wgan.pt",
+  "selected_checkpoint_sha256": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+  "outer_used_for_selection": false,
+  "ctx6_used_for_selection": false,
+  "eligible_for_terminal_veto": true,
+  "registered_source_sha256": "4defa4e8c6fea104a983ea6f2ed1374b630dee8f6e1414a8c84df269c46aace0",
+  "classification": "post-hoc exploratory parameter amendment; previously revealed outer run",
+  "not_adopted_in_paper": true
+}

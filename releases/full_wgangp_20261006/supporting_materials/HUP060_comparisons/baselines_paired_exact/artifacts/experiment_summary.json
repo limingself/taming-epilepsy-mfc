@@ -1,0 +1,58 @@
+{
+  "status": "reviewer_requested_trivial_baseline_audit",
+  "patient": "HUP060",
+  "run": "run-02 development evaluation",
+  "horizon_samples": 256,
+  "particles": 32,
+  "selected_actuators": 13,
+  "frozen_plant_diffusion_scale": 0.79451175,
+  "full_raw_control_rms_target": 0.6730960629447963,
+  "paired_noise_reconstruction": {
+    "maximum_absolute_error": 7.549516567451064e-15,
+    "relative_l2_error": 1.8518836911710575e-15,
+    "noise_sha256": "31b9b39ced8e948e875b4a4629991c0d6ea1879fe245127a8128e30cae4cadd4",
+    "role": "evaluation-only reconstruction after policy freeze"
+  },
+  "primary_linear_damping": {
+    "gain": 0.291015625,
+    "raw_control_rms": 0.6741090230454977,
+    "raw_rms_relative_error": 0.0015049264978161947,
+    "mean_time_w1": 1.1250342347685542,
+    "mean_occupation_w1": 1.0896646715073404
+  },
+  "posthoc_linear_damping_oracle": {
+    "gain": 0.29062499999999997,
+    "mean_time_w1": 1.1176038980328815,
+    "mean_occupation_w1": 1.0822440703519471,
+    "warning": "development upper bound; not an independent test result"
+  },
+  "diffusion_sensitivity": {
+    "prediction_calibrated_primary_kappa": 1.0,
+    "posthoc_reference_oracle_kappa": 0.2,
+    "posthoc_reference_oracle_occupation_w1": 0.07303324936510286,
+    "posthoc_reference_oracle_observed_ictal_occupation_w1": 0.33803243421376156,
+    "warning": "kappa != 1 changes the frozen predictive plant and is a misspecification sensitivity, not a control result"
+  },
+  "moment_audit": {
+    "free_to_reference_w1": 0.3137938320029644,
+    "mean_aligned_residual_w1": 0.31360051239933073,
+    "sd_aligned_residual_w1": 0.013493693932021877,
+    "mean_sd_aligned_shape_residual_w1": 0.0107229961164056,
+    "shapley_location_contribution": 0.0014820087096249972,
+    "shapley_scale_contribution": 0.3015888271769339,
+    "shape_residual_contribution": 0.0107229961164056,
+    "median_reference_to_observed_sd_ratio": 0.2937301723184511,
+    "iqr_reference_to_observed_sd_ratio": [
+      0.22512931407997516,
+      0.5178532693218734
+    ],
+    "median_reference_to_free_sd_ratio": 0.3137079625740057,
+    "median_abs_full_reference_sd_difference": 0.03556036073336452,
+    "median_abs_free_reference_sd_difference": 0.4094877577061833,
+    "shapley_location_contribution_percent": 0.4722873933388839,
+    "shapley_scale_contribution_percent": 96.11050199803954,
+    "shape_residual_contribution_percent": 3.417210608621619
+  },
+  "positioning": "structured policy retains an incremental occupation-W1 benefit of 92.76% relative to energy-matched scalar damping",
+  "claim_guardrail": "report relative reduction in model-to-reference W1, not physiological recovery; 36 contacts, particles and random seeds are technical units"
+}

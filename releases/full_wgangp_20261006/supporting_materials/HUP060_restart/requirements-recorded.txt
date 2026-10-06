@@ -1,0 +1,14 @@
+# Exact installed distributions recorded for this CPU experiment.
+# Use Python 3.12.10; package index availability may differ.
+# A PyTorch +cpu build may require the official PyTorch CPU wheel index.
+torch==2.12.0
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.17.1
+scikit-learn==1.9.0
+joblib==1.5.3
+matplotlib==3.10.9
+networkx==3.6.1
+PyYAML==6.0.3
+threadpoolctl==3.6.0
+pillow==12.2.0

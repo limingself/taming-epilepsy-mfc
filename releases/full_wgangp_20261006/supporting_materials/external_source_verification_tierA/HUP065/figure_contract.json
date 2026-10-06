@@ -1,0 +1,24 @@
+{
+  "contract_schema_version": "nature-figure-contract-v1",
+  "core_conclusion": "The sealed HUP065 outer evaluation displays channel-wise observed, free, reference, and controlled occupation laws for the frozen sparse controller, while direct/indirect actuation and Gate status remain externally supplied rather than visually inferred.",
+  "figure_archetype": "quantitative grid",
+  "target": "appendix, double-column publication figure",
+  "publication_title_template": "HUP065: channel-resolved O/F/R/C occupation laws (outer evaluation; page {page}/2)",
+  "publication_summary_line": "Sparse direct actuation: 23/64 | complete Gate-B: 21/64 | safety: 64/64",
+  "backend": "Python/matplotlib only",
+  "final_size_per_page_mm": [
+    183.0,
+    190.0
+  ],
+  "panel_map": {
+    "page_01": "channels 1-36",
+    "page_02": "channels 37-64"
+  },
+  "evidence_hierarchy": {
+    "primary": "O/F/R/C occupation-law curves and displayed-context W1-to-reference values for every channel",
+    "supporting": "externally supplied D/I actuation labels, six Gate-B bits, safety status, and full-Gate status"
+  },
+  "source_data": "Frozen HUP065 run03 context07 candidate bound by COMMON_RENDERER_BINDING_GO.json",
+  "integrity_note": "No data, axes, page assignment, line style, gate vector, or scientific result is changed. Visual edits are limited to a pale white background and foreground z-order for W1 annotations, fixed-canvas header fitting, and publication-safe title/summary wording.",
+  "reviewer_risk": "The displayed curves and W1 labels are from the pre-frozen representative context07/bank0 view; supplied Gate outcomes summarize the frozen outer evaluation and must not be inferred from curve overlap."
+}

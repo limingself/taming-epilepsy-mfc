@@ -1,0 +1,22 @@
+{
+  "common_dev_selection_score": 0.2979125934539762,
+  "time_ratio": 0.3429014252337015,
+  "occupation_ratio": 0.20387100282555864,
+  "worst_decile_ratio": 0.4564424105034924,
+  "mean_abs_log_sd_ratio": 0.335593811799229,
+  "mean_time_w1_free": 0.3264094136178383,
+  "mean_time_w1_controlled": 0.11192625313925353,
+  "mean_occupation_w1_free": 0.3094077725625627,
+  "mean_occupation_w1_controlled": 0.06307927287435203,
+  "mean_abs_error": 0.021653136823521643,
+  "max_mean_abs_error": 0.05635855792068756,
+  "max_symmetric_sd_ratio": 2.0655260992418207,
+  "time_improved_channels": 96,
+  "occupation_improved_channels": 96,
+  "both_improved_channels": 96,
+  "old_budget_pass_count": 0,
+  "revised_budget_pass_count": 3,
+  "budget_case_count": 3,
+  "worst_per_actuator_rms": 0.42524732848159014,
+  "worst_energy": 3.671141835484386
+}

@@ -1,0 +1,120 @@
+{
+  "subject": "HUP080",
+  "actor_updates": 1000,
+  "update_unit": "one rotating fit context; not a whole-data epoch",
+  "seed": 20261011,
+  "actor_lr": 0.0003,
+  "actor_min_lr": 1e-05,
+  "critic_lr": 0.0001,
+  "n_critic": 3,
+  "adv_weight": 0.5,
+  "teacher_proximity_weight": 0.0,
+  "critic_warmup": 24,
+  "gp_weight": 10.0,
+  "critic_drift": 0.001,
+  "particles": 32,
+  "horizon": 256,
+  "actor_neutral_initialization": true,
+  "teacher_or_actor_checkpoint_loaded": false,
+  "graph_spread": 0.0,
+  "input_energy_cap": 5.6862,
+  "per_actuator_rms_cap": 0.405,
+  "no_runtime_projection_or_rescaling": true,
+  "input_paths": {
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\config.json": "4e46bb903166dd98b2805bf5aa9ca581744aa6fe797893b57c669a87dbcdfcab",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\01_prepare_development\\development_arrays.npz": "8d2c6d504f314938c8794fe69d58599f1c43882b9dcc640080b976968d6ede3e",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\selected_model.joblib": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\part1_selection_network.npz": "2c92b067e09a45d36d80304e9084364481a4c1830d80f197c0e7e22a26194fe9",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\part2_plant_network.npz": "7b994704db0c65c7535b3df054a0dd474ae4f0b538a3cccde8c1a874858b4734",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\refit_receipt.json": "80a3c4a22eb5693ac2e8c3ccad64981d83cacfef0f0da4150b281cb8d018a72f"
+  },
+  "source_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+  "model_sha256": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+  "source_code_sha256": "4bcb541d02828d155aa91845499a3413c2b6f90c8e86e9e54b769d0a05c33322",
+  "fit_contexts": [
+    {
+      "run": "run-01",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-01",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-01",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-01",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-01",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-02",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-02",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-02",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-02",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-02",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-03",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-03",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-03",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-03",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-03",
+      "context_index": 4,
+      "boundary_sample": 4754
+    }
+  ],
+  "selection_context_index": 5,
+  "terminal_veto_context_index": 6,
+  "validation_every": 50,
+  "outer_opened_during_training": false,
+  "classification": "post-hoc exploratory training amendment; previously revealed outer run is not a new locked validation",
+  "critic_reference_sampling": "uniform without-replacement prefix32 from a freshly permuted full45 at every critic update",
+  "reference_sampler_seed_rule": "warm: seed+70000000+i; joint: seed+80000000+1000*update+j",
+  "independent_gp_generator": true,
+  "actor_score_and_law_use_all45": true
+}

@@ -1,0 +1,40 @@
+{
+  "status": "development_dual_endpoint_comparison_failed",
+  "selected_update": 900,
+  "outer_arrays_opened": false,
+  "ctx6_opened": false,
+  "selection_track": "best_budget_feasible_development_preview_not_terminal_eligible",
+  "terminal_eligible": false,
+  "adopted32_development_baseline": {
+    "mean_time_w1_free": 0.2864570802361548,
+    "mean_time_w1_controlled": 0.2069359761989254,
+    "mean_occupation_w1_free": 0.12841828265047872,
+    "mean_occupation_w1_controlled": 0.03656738959725986,
+    "mean_control_rms": 0.2037698024552007,
+    "maximum_per_actuator_rms": 0.3494435917607047,
+    "total_energy": 1.3287112267916896,
+    "control_peak": 1.2992850392374784,
+    "saturation_fraction": 0.0,
+    "common_selection_score": 0.5977934369938859,
+    "p90_channel_distance_ratio": 0.9679518554853555,
+    "both_improved_count": 52.5,
+    "sd_ratio_le2_count": 64.0,
+    "budget_pass": true,
+    "maximum_total_energy": 1.3326977741115296,
+    "mean_abs_log_sd_ratio": 0.05620583766533142,
+    "p90_sd_ratio": 1.1190164190598357
+  },
+  "selected_development_metrics": {
+    "update": 900,
+    "budget": true,
+    "eligible": false,
+    "score": 0.6224443079613506,
+    "sd_error": 0.0633683447577495,
+    "time_w1": 0.2085261771275002,
+    "occupation_w1": 0.04023279546482634,
+    "checkpoint_sha256": "eccfb2e6d26bc4ffb5991370d319dad97fc54379fee59f486ee02f2255cd981a"
+  },
+  "no_terminal_checkpoint_rescue": true,
+  "not_automatically_adopted": true,
+  "frozen_checkpoint_sha256": "eccfb2e6d26bc4ffb5991370d319dad97fc54379fee59f486ee02f2255cd981a"
+}

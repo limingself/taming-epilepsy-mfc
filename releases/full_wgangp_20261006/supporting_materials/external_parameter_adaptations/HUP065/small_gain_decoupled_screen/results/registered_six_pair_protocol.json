@@ -1,0 +1,130 @@
+{
+  "pairs": [
+    [
+      0.05,
+      0.05
+    ],
+    [
+      0.1,
+      0.1
+    ],
+    [
+      0.2,
+      0.2
+    ],
+    [
+      0.0,
+      0.05
+    ],
+    [
+      0.0,
+      0.1
+    ],
+    [
+      0.05,
+      0.0
+    ]
+  ],
+  "configured_nodes": 32,
+  "new_nodes": 9,
+  "tau": 0.2,
+  "model_sha256": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+  "input_hashes": {
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\DEV_MATERIALIZE\\development_arrays.npz": "a3b28c87987af9209f58970ed0ac1de5767574f24a154b3f5ae94accb429026f",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\selected_model.joblib": "278591950c0938458fca1fc9dfdfb943eb4d413d1ad95a0f13fa59630b39fa89",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\network.npz": "c9dc064d6d204f85c9480a8e15398fba6672e7f69bb6f6499ed1144a67049303",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\part2_plant_adjacency.npz": "35ace794c8765de245b64870d8e56b2f3cd0636ed30a385d4688aa164e6d72dc",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\science_run\\p\\ALLDEV_REFIT\\refit_receipt.json": "15b5c42f94840d172318be9eb18fc2bcc80bef40f6595329e1749faad2c9ce17",
+    "D:\\VS code\\distribution control\\patient_results\\HUP065_sparse_control_final_v1\\frozen_run\\config.json": "7f436ba67234c1e0007d29d925d06d2f353483da0cbb026538be322a83268ccf"
+  },
+  "source_checkpoint_sha256": "9014e2ce416021387515338ddf1ffc3ca435be085d1ea3cd66147f9a78f4b475",
+  "explicit_warm_start": true,
+  "old23_parameters_fixed_for_initialization": true,
+  "canonical_covariance_coefficients": {
+    "mean": 10.0,
+    "log_variance": 10.0,
+    "worst_log_variance": 5.0,
+    "quantile": 8.0,
+    "worst_quantile": 5.0,
+    "no_harm_mean": 20.0,
+    "no_harm_quantile": 20.0,
+    "occupancy": 2.0,
+    "tube": 2.0,
+    "joint": 0.5,
+    "energy": 0.01,
+    "smoothness": 0.2,
+    "curvature": 0.1,
+    "saturation": 1.0,
+    "gain_regularization": 0.001
+  },
+  "fit_contexts": [
+    {
+      "run": "run-01",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-01",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-01",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-01",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-01",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-02",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-02",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-02",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-02",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-02",
+      "context_index": 4,
+      "boundary_sample": 4754
+    }
+  ],
+  "selection_context_index": 5,
+  "particles": 32,
+  "horizon": 256,
+  "diffusion_scale": 0.79451175,
+  "control_step_scale": 0.5,
+  "input_energy_cap": 3.7908,
+  "per_actuator_rms_cap": 0.405,
+  "amplitude_limit": 1.8,
+  "existing_actor_formula_unchanged": true,
+  "candidate_eligibility": "unchanged budgets; common score lower than zero baseline; both mean W1 endpoints not worsened",
+  "strict_score_improvement_epsilon": 1e-08,
+  "endpoint_numerical_tolerance": 1e-12,
+  "eligible_best_adaptation_updates": 150,
+  "all_actor_and_critic_parameters_may_update_during_adaptation": true,
+  "no_outer_or_ctx6_used_for_selection": true,
+  "source_wrapper_sha256": "4defa4e8c6fea104a983ea6f2ed1374b630dee8f6e1414a8c84df269c46aace0",
+  "source_optimizer_sha256": "8e52540c3aa7ca0a798e702b4beddc6d2f63232a0bd14192f3d33bb8398c688f",
+  "not_adopted_in_paper": true
+}

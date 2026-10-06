@@ -1,0 +1,22 @@
+{
+  "status": "completed_fresh_hybrid_training",
+  "subject": "HUP080",
+  "trained_updates": 1000,
+  "selected_update": 200,
+  "best_selection_score": 0.19635005386657828,
+  "initial_validation": {
+    "validation_law": 299.4600696459247,
+    "validation_mean_time_w1": 0.3264094136178383,
+    "validation_mean_occupation_w1": 0.30940777256256263
+  },
+  "selected_validation": {
+    "validation_law": 35.7297469181845,
+    "validation_mean_time_w1": 0.11192625313925353,
+    "validation_mean_occupation_w1": 0.06307927287435201
+  },
+  "elapsed_seconds": 4682.666509000002,
+  "teacher_loaded": false,
+  "outer_opened": false,
+  "checkpoint_sha256": "cdffedfea81d3e57943fe4f47bde6155efe3661fbeb325db9fda221213c68fc0",
+  "not_adopted_in_paper": true
+}

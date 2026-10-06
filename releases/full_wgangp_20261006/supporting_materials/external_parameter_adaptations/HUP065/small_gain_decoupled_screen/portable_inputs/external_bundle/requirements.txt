@@ -1,0 +1,11 @@
+# Observed experiment environment, CPython 3.12.10, Windows x86-64, CPU float64.
+# Exact dependency versions assist replay; numerical portability is not a bitwise guarantee.
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.3
+scikit-learn==1.9.0
+joblib==1.5.3
+torch==2.12.0
+matplotlib==3.10.9
+networkx==3.6.1
+PyYAML==6.0.3

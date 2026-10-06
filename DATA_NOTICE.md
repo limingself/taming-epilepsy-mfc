@@ -1,5 +1,27 @@
 # Data and clinical-use notice
 
+## Current Full WGAN-GP source package (2026-10-06)
+
+`releases/full_wgangp_20261006/` is an additive current-version code and
+lightweight result deposit. It preserves the existing patient-extension
+publication boundary: HUP065/HUP080 signal arrays, serialized models and
+controller weights, large density tables, training histories, raw ZIP/EDF
+archives, and one-time authorization/access receipts are not redistributed.
+Exact scientific code, parameter metadata, aggregate/channel metrics,
+publication figures and a public-file hash verifier are supplied instead.
+
+The complete offline revision bundles retain those inputs, weights, logs
+and candidate outcomes for reproducibility. Replaying a frozen controller
+or retraining it requires that separately obtained bundle and the documented
+dependencies. Passing the signal-free public verifier is not evidence that
+an external evaluation or retraining was executed, nor a claim that all
+private input files were uploaded. The unadopted HUP065 cold-start experiment
+is kept separate from the adopted manuscript results.
+
+The current source manifest and `CURRENT_RELEASE.json` supersede the old
+root `PAPER_FINAL_VERSION.json` only as the version pointer; historical
+files and scientific results below are not overwritten.
+
 This repository does not contain the original EEG archives. The subject codes
 `HUP060`, `HUP065`, and `HUP080` refer to de-identified participants in OpenNeuro dataset
 `ds004100`, version 1.1.3 (DOI: `10.18112/openneuro.ds004100.v1.1.3`; CC0 in

@@ -1,0 +1,129 @@
+{
+  "status": "isolated_7500epoch_matched_full_loss_decomposition_preview",
+  "longrun_history_sha256": "d0871d2f48fb6eaa33b7dbe103db741bc1b241fc1cc90b7112d34289ea9ee5f1",
+  "formal_history_sha256": "80154a125c90f2d6f91799cd8b8238026c0a14f787c3cadd80f595ab3bf18c74",
+  "longrun_checkpoint_sha256": "2f51180006dc907edc893cdc3d3e01fa10a0c30185ee5a8afd26af9f6c1ec8b4",
+  "formal_checkpoint_sha256": "9341c63966dc6f1f3e0aea8d94f000397cb929ef050d3030d870676b99a517ac",
+  "longrun_training_status": "prefix_only_matched_component_ablation",
+  "formal_training_status": "adopted_paper_primary_development_checkpoint",
+  "same_numerical_trajectory_as_paper_primary": false,
+  "paper_primary_selected_epoch": 32,
+  "paper_primary_checkpoint_role": "used for the existing HUP060 36-channel downstream evaluation",
+  "longrun_best_evaluated_epoch": 7500,
+  "longrun_best_validation_score": 0.7789922759275208,
+  "longrun_raw_train_total_minimum_epoch": 7359,
+  "longrun_raw_train_total_minimum_value": 24.91295624115598,
+  "raw_minimum_epoch_checkpoint_saved": false,
+  "formal_vs_longrun_first40_max_absolute_differences": {
+    "train_total": 0.08099208069228325,
+    "train_law": 0.009376664918065103,
+    "train_adversarial": 0.1605224580470874,
+    "critic_loss": 0.1479439182683862,
+    "critic_estimate": 0.16608578947150449,
+    "critic_gp": 0.0244598355555719,
+    "critic_mean_gradient_norm": 0.04720113639670309
+  },
+  "checkpoint_training_arguments": {
+    "seed": 20261011,
+    "epochs": 7500,
+    "validation_every": 250,
+    "n_critic": 3,
+    "adversarial_weight": 0.5,
+    "anchor_weight": 0.2,
+    "gradient_penalty_weight": 10.0,
+    "critic_drift_weight": 0.001
+  },
+  "actor_identity": "train_total = train_law + 0.5*train_adversarial + 0.2*train_action_anchor",
+  "actor_identity_max_abs_error": 1.9568954746571054e-14,
+  "critic_identity": "critic_loss = -critic_estimate + 10*critic_gp + 0.001*critic_drift_raw",
+  "critic_identity_max_abs_error": 0.0,
+  "no_negative_display_policy": "The signed critic_loss is not shifted or absolutized and is omitted from the no-negative display. The signed critic estimate is shown untransformed; its values happen to be positive in this run.",
+  "critic_recording_scope": "final (third) Critic update of each epoch",
+  "actor_window_statistics": {
+    "250": {
+      "width": 250,
+      "start_epoch": 7251,
+      "end_epoch": 7500,
+      "median": 26.79313717015033,
+      "relative_ols_change_pct_of_mean_abs": -1.0776525324879682,
+      "ols_p_value": 0.07263325312191621,
+      "first_half_median": 26.877392847889844,
+      "second_half_median": 26.645742122894625,
+      "half_median_shift_pct_of_mean_abs": -0.8631977088635544,
+      "point_estimate_0p5pct_diagnostic_met": false
+    },
+    "500": {
+      "width": 500,
+      "start_epoch": 7001,
+      "end_epoch": 7500,
+      "median": 26.788629038919346,
+      "relative_ols_change_pct_of_mean_abs": -0.37598820644168857,
+      "ols_p_value": 0.3863227672710463,
+      "first_half_median": 26.766313932638212,
+      "second_half_median": 26.79313717015033,
+      "half_median_shift_pct_of_mean_abs": 0.09993531261617465,
+      "point_estimate_0p5pct_diagnostic_met": true
+    },
+    "1000": {
+      "width": 1000,
+      "start_epoch": 6501,
+      "end_epoch": 7500,
+      "median": 26.94210147207675,
+      "relative_ols_change_pct_of_mean_abs": -1.934659329441088,
+      "ols_p_value": 6.080497159033887e-10,
+      "first_half_median": 27.059720293205935,
+      "second_half_median": 26.788629038919346,
+      "half_median_shift_pct_of_mean_abs": -1.0050978173183398,
+      "point_estimate_0p5pct_diagnostic_met": false
+    }
+  },
+  "actor_final500_point_diagnostic_0p5pct_met": true,
+  "actor_250_and_1000_sensitivity_diagnostics_met": false,
+  "formal_equivalence_test_performed": false,
+  "critic_final500": {
+    "critic_estimate": {
+      "width": 500,
+      "start_epoch": 7001,
+      "end_epoch": 7500,
+      "median": 1.158403346194754,
+      "relative_ols_change_pct_of_mean_abs": 0.9841684721568276,
+      "ols_p_value": 0.003911952753981428,
+      "first_half_median": 1.1566974040792992,
+      "second_half_median": 1.1614836465500353,
+      "half_median_shift_pct_of_mean_abs": 0.41285382825990435
+    },
+    "weighted_gp": {
+      "width": 500,
+      "start_epoch": 7001,
+      "end_epoch": 7500,
+      "median": 0.07186538181474,
+      "relative_ols_change_pct_of_mean_abs": 1.396698302028529,
+      "ols_p_value": 0.5424575681968096,
+      "first_half_median": 0.0718531209612075,
+      "second_half_median": 0.071920312571587,
+      "half_median_shift_pct_of_mean_abs": 0.09265046916788928
+    },
+    "gradient_norm": {
+      "width": 500,
+      "start_epoch": 7001,
+      "end_epoch": 7500,
+      "median": 1.0502652112667978,
+      "relative_ols_change_pct_of_mean_abs": 0.0005696281778843943,
+      "ols_p_value": 0.9953260809165269,
+      "first_half_median": 1.0505680747973698,
+      "second_half_median": 1.0501399601934565,
+      "half_median_shift_pct_of_mean_abs": -0.04076978958612244
+    },
+    "weighted_gp_median_le_0p10_pass": true,
+    "gradient_norm_median_0p95_to_1p05_pass": false
+  },
+  "validation_7000_to_7500": {
+    "fixed_bank_evaluation_count": 3,
+    "selection_score_improvement_pct": 0.635189426343469,
+    "selection_score_improvement_lt_0p1pct_pass": false,
+    "fixed_bank_critic_estimate_drift_pct": -1.8749455875240857,
+    "fixed_bank_critic_abs_drift_le_1pct_pass": false
+  },
+  "joint_actor_critic_validation_stabilization_pass": false,
+  "interpretation": "Actor loss declines and meets only the final-500 point diagnostic; the 250- and 1000-epoch sensitivity checks are not met. Critic constraint diagnostics approach their target regime, but Critic estimates and fixed-bank validation remain non-stationary. Joint convergence is therefore not demonstrated."
+}

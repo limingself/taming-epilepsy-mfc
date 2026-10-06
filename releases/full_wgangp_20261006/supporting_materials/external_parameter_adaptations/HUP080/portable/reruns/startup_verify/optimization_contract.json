@@ -1,0 +1,199 @@
+{
+  "subject": "HUP080",
+  "same_model_architecture_and_loss_components": true,
+  "model_sha256": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+  "actor_warm_start": true,
+  "original_training_selected_update": 200,
+  "warm_start_sha256": "cdffedfea81d3e57943fe4f47bde6155efe3661fbeb325db9fda221213c68fc0",
+  "mask_direct_count": 76,
+  "channels": 96,
+  "heat_kernel_time": 0.0,
+  "diffusion_scale": 0.79451175,
+  "control_step_scale": 0.5,
+  "amplitude_limit": 1.8,
+  "revised_per_actuator_rms_cap": 0.45,
+  "old_per_actuator_rms_cap": 0.405,
+  "energy_cap": 5.6862,
+  "saturation_cap": 0.01,
+  "development_reference_shape": [
+    45,
+    256,
+    96
+  ],
+  "fit_contexts": [
+    {
+      "run": "run-01",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-01",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-01",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-01",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-01",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-02",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-02",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-02",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-02",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-02",
+      "context_index": 4,
+      "boundary_sample": 4754
+    },
+    {
+      "run": "run-03",
+      "context_index": 0,
+      "boundary_sample": 512
+    },
+    {
+      "run": "run-03",
+      "context_index": 1,
+      "boundary_sample": 1573
+    },
+    {
+      "run": "run-03",
+      "context_index": 2,
+      "boundary_sample": 2633
+    },
+    {
+      "run": "run-03",
+      "context_index": 3,
+      "boundary_sample": 3694
+    },
+    {
+      "run": "run-03",
+      "context_index": 4,
+      "boundary_sample": 4754
+    }
+  ],
+  "selection_context_index": 5,
+  "source_input_hashes": {
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\config.json": "4e46bb903166dd98b2805bf5aa9ca581744aa6fe797893b57c669a87dbcdfcab",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\01_prepare_development\\development_arrays.npz": "8d2c6d504f314938c8794fe69d58599f1c43882b9dcc640080b976968d6ede3e",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\selected_model.joblib": "10272ee6883777b967f109b57c7dba74d6ef45607053113194fc1274ae0b9734",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\part1_selection_network.npz": "2c92b067e09a45d36d80304e9084364481a4c1830d80f197c0e7e22a26194fe9",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\part2_plant_network.npz": "7b994704db0c65c7535b3df054a0dd474ae4f0b538a3cccde8c1a874858b4734",
+    "D:\\VS code\\distribution control\\patient_results\\HUP080_sparse_control_final_v2\\frozen_run\\science_run\\artifacts\\04_final_refit\\refit_receipt.json": "80a3c4a22eb5693ac2e8c3ccad64981d83cacfef0f0da4150b281cb8d018a72f"
+  },
+  "arms": {
+    "occupancy_mean_lr1e4": {
+      "lr": 0.0001,
+      "min_lr": 1e-05,
+      "adv": 0.5,
+      "weights": {
+        "mean": 15.0,
+        "log_variance": 8.0,
+        "worst_log_variance": 5.0,
+        "quantile": 8.0,
+        "worst_quantile": 8.0,
+        "no_harm_mean": 30.0,
+        "no_harm_quantile": 30.0,
+        "occupancy": 6.0,
+        "energy": 0.05
+      }
+    },
+    "occupancy_worst_lr3e5": {
+      "lr": 3e-05,
+      "min_lr": 5e-06,
+      "adv": 0.25,
+      "weights": {
+        "mean": 20.0,
+        "log_variance": 5.0,
+        "worst_log_variance": 5.0,
+        "quantile": 10.0,
+        "worst_quantile": 10.0,
+        "no_harm_mean": 40.0,
+        "no_harm_quantile": 40.0,
+        "occupancy": 10.0,
+        "energy": 0.1
+      }
+    }
+  },
+  "planned_updates_per_arm": 150,
+  "validate_every": 25,
+  "selection_rule": "common .4*time_ratio + .4*occupation_ratio + .1*worst_channel_decile_ratio + .1*mean_abs_log_SD_ratio, budget-feasible preferred; starting checkpoint retained if no lower score",
+  "development_validation_noise_seed": 20260922,
+  "outer_already_revealed": true,
+  "outer_used_for_selection": false,
+  "selection_frozen_before_new_ctx6_or_outer_evaluation": true,
+  "no_new_loss_figure": true,
+  "starting_development_metrics": {
+    "common_dev_selection_score": 0.2979125934539762,
+    "time_ratio": 0.3429014252337015,
+    "occupation_ratio": 0.20387100282555864,
+    "worst_decile_ratio": 0.4564424105034924,
+    "mean_abs_log_sd_ratio": 0.335593811799229,
+    "mean_time_w1_free": 0.3264094136178383,
+    "mean_time_w1_controlled": 0.11192625313925353,
+    "mean_occupation_w1_free": 0.3094077725625627,
+    "mean_occupation_w1_controlled": 0.06307927287435203,
+    "mean_abs_error": 0.021653136823521643,
+    "max_mean_abs_error": 0.05635855792068756,
+    "max_symmetric_sd_ratio": 2.0655260992418207,
+    "time_improved_channels": 96,
+    "occupation_improved_channels": 96,
+    "both_improved_channels": 96,
+    "old_budget_pass_count": 0,
+    "revised_budget_pass_count": 3,
+    "budget_case_count": 3,
+    "worst_per_actuator_rms": 0.42524732848159014,
+    "worst_energy": 3.671141835484386
+  },
+  "historical_budget_reinterpretation": {
+    "ctx6_terminal_veto": {
+      "cases": 9,
+      "old_pass_count": 0,
+      "revised_pass_count": 9,
+      "rms_min": 0.4131035262204419,
+      "rms_max": 0.4335060034805401,
+      "max_energy": 3.693726831951766,
+      "max_peak": 1.2106072671919863,
+      "max_saturation": 0.0,
+      "performance_changed": false,
+      "classification": "post-hoc resource budget revision, not a new performance improvement"
+    },
+    "outer_posthoc_amendment": {
+      "cases": 24,
+      "old_pass_count": 0,
+      "revised_pass_count": 24,
+      "rms_min": 0.4218599910855307,
+      "rms_max": 0.440504476888031,
+      "max_energy": 3.7200157774064095,
+      "max_peak": 1.2313107272865873,
+      "max_saturation": 0.0,
+      "performance_changed": false,
+      "classification": "post-hoc resource budget revision, not a new performance improvement"
+    }
+  }
+}

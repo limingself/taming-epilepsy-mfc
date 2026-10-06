@@ -1,0 +1,21 @@
+{
+  "subject": "HUP065",
+  "backend": "Python/matplotlib only",
+  "archetype": "quantitative grid",
+  "core_conclusion": "Show contact-wise heterogeneity of the frozen32-node mean-only parameter candidate relative to recorded ictal, fixed free prediction and the patient reference; do not claim uniform restoration or a new locked external test.",
+  "evidence_chain": "All64 predeclared contacts at the unchanged outer context7/CRN0,36+28 panels, are an explicit display case; global conclusions are separately based on all24 frozen outer diagnostics.",
+  "scientific_role": "Patient-specific exploratory model-law control diagnostic",
+  "width_mm": 170,
+  "height_mm": [180, 155.34],
+  "four_curves": ["Recorded ictal", "Free prediction", "Preictal reference", "Controlled"],
+  "original_channel_labels_order": "Preserved; remove EEG prefix and -Ref suffix for displayed short labels only",
+  "normalization": "Original frozen model standardization; no min-max rescaling or controller-dependent normalization",
+  "original_density_grid": "Patient65 original240-point grids retained exactly; not the Patient80 grid",
+  "absolute_kde_bandwidth": 0.16,
+  "tail_handling": "No samples discarded for empirical W1; original plotting window retained without truncated-density renormalization",
+  "curve_annotation": "No distances, gate marks, original actor comparator or explanatory small print added",
+  "exports": ["editable vector PDF", "editable SVG text", "PNG300dpi", "full density CSV", "full display empirical W1 CSV", "numeric and visual QA"],
+  "uncertainty_definition": "One declared32-particle antithetic model ensemble and patient reference paths; not independent biological replicates; no significance or confidence interval claim",
+  "integrity_risks": ["Warm-start, not from scratch", "150 continuation updates selected0: no additional retraining gain", "32 configured inputs include9 very light mean-feedback additions", "Displayed curves not representative average of24 outer cases", "Only small global improvement and unchanged fullGateB21/64", "No new loss figure"],
+  "published_results_replaced": false
+}

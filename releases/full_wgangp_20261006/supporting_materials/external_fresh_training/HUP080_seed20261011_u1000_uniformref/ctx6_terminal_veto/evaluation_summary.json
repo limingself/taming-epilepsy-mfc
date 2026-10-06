@@ -1,0 +1,22 @@
+{
+  "subject": "HUP080",
+  "contexts": 3,
+  "crn_banks": 3,
+  "context_bank_evaluations": 9,
+  "channels": 96,
+  "direct_actuators": 76,
+  "gate_b_pass_count": 74,
+  "both_improved_all_context_bank_count": 96,
+  "gate_c_pass": false,
+  "safety_failed_trajectory_count": 9,
+  "energy_cap": 5.6862,
+  "per_actuator_rms_cap": 0.405,
+  "no_projection_or_rescaling": true,
+  "mean_time_w1_free": 0.34127067072617145,
+  "mean_time_w1_controlled": 0.1157575814888614,
+  "mean_occupation_w1_free": 0.3214297619709844,
+  "mean_occupation_w1_controlled": 0.06573915589800422,
+  "control_rms": 0.21788965038587754,
+  "total_energy": 3.6083732620410762,
+  "terminal_veto_pass": false
+}

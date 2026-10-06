@@ -1,0 +1,25 @@
+{
+  "contract_schema_version": "nature-figure-contract-v1",
+  "core_conclusion": "The sealed HUP080 outer evaluation displays channel-wise observed, free, reference, and controlled occupation laws for the frozen partial-actuation controller across all 96 channels, while direct/indirect actuation and Gate status remain externally supplied rather than visually inferred.",
+  "figure_archetype": "quantitative grid",
+  "target": "appendix, double-column publication figure",
+  "publication_title_template": "HUP080: channel-resolved O/F/R/C occupation laws (outer evaluation; page {page}/3)",
+  "publication_summary_line": "Direct actuation: 76/96 | complete Gate-B: 65/96 | safety: 96/96",
+  "backend": "Python/matplotlib only",
+  "final_size_per_page_mm": [
+    183.0,
+    190.0
+  ],
+  "panel_map": {
+    "page_01": "channels 1-36",
+    "page_02": "channels 37-72",
+    "page_03": "channels 73-96 followed by 12 intentionally blank grid cells"
+  },
+  "evidence_hierarchy": {
+    "primary": "O/F/R/C occupation-law curves and displayed-context W1-to-reference values for every channel",
+    "supporting": "externally supplied D/I actuation labels, six Gate-B bits, safety status, and full-Gate status"
+  },
+  "source_data": "Approved HUP080 run04 context07/bank0 preview, its canonical O/F/R/C input, and independently audited GO binding",
+  "integrity_note": "No data, axes, page assignment, channel order, line style, W1 value, gate vector, or scientific result is changed. Relative to package_overleaf_final, the only visible revision is the publication summary wording from 'Sparse direct actuation' to 'Direct actuation'.",
+  "reviewer_risk": "Direct actuation covers 76/96 channels (79.2%), so this package avoids characterizing the controller as sparse. The displayed curves and W1 labels are from the pre-frozen representative outer-context-07/bank0 view; supplied Gate outcomes summarize the frozen 8-context by 3-bank outer evaluation and must not be inferred from curve overlap. The final 12 cells on page 3 are intentionally blank, not missing channels."
+}

@@ -1,0 +1,34 @@
+{
+  "input_sha256": "1e0f8dbe012a456f82d447b82ec84375a35f0d44b583171a52611344907107e6",
+  "plot_contract": "Four occupation-law KDEs per channel, common standardized-amplitude x axis; per-channel y axes.",
+  "channel_count": 36,
+  "free_paths": 32,
+  "controlled_paths": 32,
+  "reference_paths": 15,
+  "time_points": 256,
+  "kde_absolute_bandwidth": 0.16,
+  "shared_x_limits": [
+    -4.0,
+    4.0
+  ],
+  "kde_grid_points": 401,
+  "tail_handling": "All raw samples plus at least five Gaussian kernel bandwidths are inside the shared axis; no quantile clipping.",
+  "curve_processing": "No curve-specific min-max normalization, recentering, smoothing beyond identical absolute KDE bandwidth or manual shape edits.",
+  "metric_definition": "Sample empirical 1D Wasserstein distance; occupation pools paths and time. Time-resolved distance averages per-time empirical W1. No KDE-based metric.",
+  "uncertainty": "One controller evaluation; ensemble paths are not independent training seeds. No confidence interval is claimed.",
+  "mean_occupation_w1_free": 0.3137938320029644,
+  "mean_occupation_w1_fresh": 0.07884653864148419,
+  "mean_time_w1_free": 0.3471287784604517,
+  "mean_time_w1_fresh": 0.12105060595773774,
+  "occupation_channels_improved_vs_free": 36,
+  "time_channels_improved_vs_free": 36,
+  "kde_integral_range": [
+    0.9999999999999978,
+    1.0000000000000007
+  ],
+  "aggregate_occupation_reduction_percent_vs_free": 74.87313943100725,
+  "aggregate_time_reduction_percent_vs_free": 65.12804081107639,
+  "paper_reference_sha256": "bb5e43d4b8774d144e3fd598650ee1653e22f8391764467b13e403d2577d8541",
+  "mean_occupation_w1_paper": 0.09654354725581749,
+  "mean_time_w1_paper": 0.13583723910310724
+}

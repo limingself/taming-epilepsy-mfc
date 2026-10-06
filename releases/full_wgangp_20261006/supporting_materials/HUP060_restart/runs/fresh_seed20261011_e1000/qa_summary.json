@@ -1,0 +1,825 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "completed_training_files_exist",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "training_completed_before_outcome_access",
+      "passed": true
+    },
+    {
+      "name": "epoch_history_exactly_zero_through_budget",
+      "passed": true,
+      "detail": {
+        "rows": 1001,
+        "expected": 1001
+      }
+    },
+    {
+      "name": "all_training_update_diagnostics_finite",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_loss",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_mean",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_log_variance",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_worst_log_variance",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_quantile",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_worst_quantile",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_no_harm_mean",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_no_harm_quantile",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_occupancy",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_tube",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_joint",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_energy",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_smoothness",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_curvature",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_slew_excess",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_curvature_excess",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_saturation",
+      "passed": true
+    },
+    {
+      "name": "finite_train_law_gain_regularization",
+      "passed": true
+    },
+    {
+      "name": "recorded_total_equals_law_plus_weighted_adversarial",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 5.684341886080802e-14,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "hybrid_adversarial_weight_is_point_five",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "no_teacher_in_training_contract",
+      "passed": true
+    },
+    {
+      "name": "no_teacher_in_training_summary",
+      "passed": true
+    },
+    {
+      "name": "no_teacher_proximity",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "adversarial_active_from_first_actor_update",
+      "passed": true
+    },
+    {
+      "name": "thirteen_unique_valid_actuators",
+      "passed": true
+    },
+    {
+      "name": "original_frozen_model_sha",
+      "passed": true
+    },
+    {
+      "name": "initial_actor_checkpoint_not_loaded",
+      "passed": true
+    },
+    {
+      "name": "initial_policy_neutral_zero",
+      "passed": true
+    },
+    {
+      "name": "initial_policy_parameters_present",
+      "passed": true
+    },
+    {
+      "name": "run02_not_used_for_training_or_selection",
+      "passed": true
+    },
+    {
+      "name": "run_not_adopted_in_paper",
+      "passed": true
+    },
+    {
+      "name": "originals_reported_unchanged",
+      "passed": true
+    },
+    {
+      "name": "present_original_artifact_hashes_unchanged",
+      "passed": true,
+      "detail": {
+        "checked_count": 4,
+        "absent_historical_paths": []
+      }
+    },
+    {
+      "name": "frozen_checkpoint_sha_matches_training_summary",
+      "passed": true
+    },
+    {
+      "name": "actor_state_keys_unchanged",
+      "passed": true
+    },
+    {
+      "name": "sampled_controller_weights_changed",
+      "passed": true,
+      "detail": {
+        "mean_gain_delta": 0.09390672441452987,
+        "deviation_gain_delta": 0.08449894983563254,
+        "common_residual.5.weight": 0.0693148009097254,
+        "deviation_residual.5.weight": 0.10452605705080305,
+        "common_markov_residual.5.weight": 0.07107701983273443,
+        "deviation_markov_residual.5.weight": 0.1043169128147804
+      }
+    },
+    {
+      "name": "all_frozen_actor_tensors_finite",
+      "passed": true
+    },
+    {
+      "name": "nontrainable_actor_buffers_unchanged",
+      "passed": true
+    },
+    {
+      "name": "all_validation_scores_follow_declared_rule",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 1.1102230246251565e-16,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "selected_epoch_is_minimum_recorded_validation_score",
+      "passed": true
+    },
+    {
+      "name": "selected_score_matches_history",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "frozen_checkpoint_best_epoch_matches_summary",
+      "passed": true
+    },
+    {
+      "name": "recorded_critic_update_budget",
+      "passed": true
+    },
+    {
+      "name": "copied_paper_baseline_exact_file_hash",
+      "passed": true
+    },
+    {
+      "name": "evaluation_is_frozen_development_preview",
+      "passed": true
+    },
+    {
+      "name": "evaluation_not_adopted_in_paper",
+      "passed": true
+    },
+    {
+      "name": "recorded_future_not_used_for_training_or_selection",
+      "passed": true
+    },
+    {
+      "name": "evaluation_frozen_checkpoint_sha",
+      "passed": true
+    },
+    {
+      "name": "all_evaluation_numeric_arrays_finite",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_observed_scaled",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_uncontrolled_scaled",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_reference_fit_scaled",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_reference_validation_scaled",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_selected_indices",
+      "passed": true
+    },
+    {
+      "name": "unchanged_baseline_channels",
+      "passed": true
+    },
+    {
+      "name": "paper_control_comparison_is_unchanged",
+      "passed": true
+    },
+    {
+      "name": "evaluation_mask_matches_training_contract",
+      "passed": true
+    },
+    {
+      "name": "saved_candidate_time_W1_vector",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "saved_candidate_occupation_W1_vector",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "no_control_rollout_parity",
+      "passed": true
+    },
+    {
+      "name": "exactly_thirty_six_unique_channels",
+      "passed": true
+    },
+    {
+      "name": "metric_table_channel_order",
+      "passed": true
+    },
+    {
+      "name": "metric_table_direct_mask",
+      "passed": true
+    },
+    {
+      "name": "free_sequence_shape",
+      "passed": true
+    },
+    {
+      "name": "empirical_metric_time_w1_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 5.551115123125783e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_occupation_w1_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 5.551115123125783e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_mean_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.71445146547012e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_sd_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_abs_mean_bias_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.8879238130678e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "free_occupation_W1_lower_bounds_absolute_mean_bias",
+      "passed": true,
+      "detail": {
+        "minimum_W1_minus_mean_bias": 0.09304675266856663
+      }
+    },
+    {
+      "name": "summary_mean_time_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "summary_mean_occupation_free",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "paper_sequence_shape",
+      "passed": true
+    },
+    {
+      "name": "empirical_metric_time_w1_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.020562075079397e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_occupation_w1_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.71445146547012e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_mean_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.71445146547012e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_sd_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 8.326672684688674e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_abs_mean_bias_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.107298248878237e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "paper_occupation_W1_lower_bounds_absolute_mean_bias",
+      "passed": true,
+      "detail": {
+        "minimum_W1_minus_mean_bias": 0.0
+      }
+    },
+    {
+      "name": "summary_mean_time_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "summary_mean_occupation_paper",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "fresh_sequence_shape",
+      "passed": true
+    },
+    {
+      "name": "empirical_metric_time_w1_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.71445146547012e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_occupation_w1_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.71445146547012e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_mean_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.367506770274758e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_sd_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 8.326672684688674e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "empirical_metric_abs_mean_bias_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.367506770274758e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "fresh_occupation_W1_lower_bounds_absolute_mean_bias",
+      "passed": true,
+      "detail": {
+        "minimum_W1_minus_mean_bias": 1.7500151306831802e-06
+      }
+    },
+    {
+      "name": "summary_mean_time_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "summary_mean_occupation_fresh",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "metric_reference_mean",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 9.540979117872439e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "metric_reference_sd",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 8.326672684688674e-17,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "per_channel_occupation_reduction_pct",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 1.4210854715202004e-14,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "aggregate_time_reduction",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "improved_count_vs_free_time",
+      "passed": true
+    },
+    {
+      "name": "improved_count_vs_paper_time",
+      "passed": true
+    },
+    {
+      "name": "aggregate_occupation_reduction",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "improved_count_vs_free_occupation",
+      "passed": true
+    },
+    {
+      "name": "improved_count_vs_paper_occupation",
+      "passed": true
+    },
+    {
+      "name": "nondirect_occupation_improved_count",
+      "passed": true
+    },
+    {
+      "name": "candidate_controls_shape",
+      "passed": true
+    },
+    {
+      "name": "candidate_controls_amplitude_at_most_one_point_eight",
+      "passed": true,
+      "detail": {
+        "peak": 1.8
+      }
+    },
+    {
+      "name": "candidate_commands_shape",
+      "passed": true
+    },
+    {
+      "name": "candidate_commands_amplitude_at_most_one_point_eight",
+      "passed": true,
+      "detail": {
+        "peak": 1.8
+      }
+    },
+    {
+      "name": "summary_control_peak",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "summary_control_rms",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "density_has_four_expected_series",
+      "passed": true
+    },
+    {
+      "name": "density_has_thirty_six_channel_labels",
+      "passed": true
+    },
+    {
+      "name": "density_has_exactly_one_hundred_forty_four_groups",
+      "passed": true
+    },
+    {
+      "name": "identical_absolute_KDE_bandwidth",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "all_density_curves_finite",
+      "passed": true
+    },
+    {
+      "name": "all_density_curves_nonnegative",
+      "passed": true
+    },
+    {
+      "name": "all_one_hundred_forty_four_curves_share_identical_increasing_grid",
+      "passed": true
+    },
+    {
+      "name": "density_integrals_at_least_point_9999",
+      "passed": true,
+      "detail": {
+        "minimum": 0.9999999999999978,
+        "maximum": 1.0000000000000004
+      }
+    },
+    {
+      "name": "density_integrals_at_most_one_plus_roundoff",
+      "passed": true
+    },
+    {
+      "name": "densities_match_raw_empirical_samples_without_rescale_or_recentering",
+      "passed": true,
+      "detail": {
+        "maximum_pointwise_error": 1.2878587085651816e-14
+      }
+    },
+    {
+      "name": "reported_KDE_integral_range",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 2.220446049250313e-16,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "reported_shared_x_limits",
+      "passed": true,
+      "detail": {
+        "max_abs_error": 0.0,
+        "atol": 1e-11,
+        "rtol": 1e-11
+      }
+    },
+    {
+      "name": "all_raw_tails_retained_plus_five_bandwidths",
+      "passed": true
+    },
+    {
+      "name": "overview_svg_exists",
+      "passed": true
+    },
+    {
+      "name": "overview_png_exists",
+      "passed": true
+    },
+    {
+      "name": "overview_pdf_exists",
+      "passed": true
+    },
+    {
+      "name": "overview_PNG_header_and_resolution",
+      "passed": true,
+      "detail": {
+        "width": 2881,
+        "height": 2992
+      }
+    },
+    {
+      "name": "SVG_contains_each_of_thirty_six_labels_exactly_once",
+      "passed": true,
+      "detail": {
+        "LAF1": 1,
+        "LAF2": 1,
+        "LAF3": 1,
+        "LAF4": 1,
+        "RA2": 1,
+        "RA3": 1,
+        "RAFa1": 1,
+        "RAFa2": 1,
+        "RAFa3": 1,
+        "RAFa4": 1,
+        "RAFb1": 1,
+        "RAFb2": 1,
+        "RAFb3": 1,
+        "RAFb4": 1,
+        "RAFc1": 1,
+        "RAFc2": 1,
+        "RAFc3": 1,
+        "RAFc4": 1,
+        "RAFd1": 1,
+        "RAFd2": 1,
+        "RAFd3": 1,
+        "RAFd4": 1,
+        "RH1": 1,
+        "RH2": 1,
+        "RH3": 1,
+        "RH4": 1,
+        "RPFa1": 1,
+        "RPFa2": 1,
+        "RPFa3": 1,
+        "RPFa4": 1,
+        "RPFb1": 1,
+        "RPFb2": 1,
+        "RPFb3": 1,
+        "RPFc1": 1,
+        "RPFc2": 1,
+        "RPFc3": 1
+      }
+    },
+    {
+      "name": "SVG_contains_all_four_legend_labels",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "details": {
+    "training": {
+      "epochs": 1000,
+      "selected_epoch": 700,
+      "technical_training_seeds": 1,
+      "elapsed_seconds": 2098.450881300014
+    },
+    "evaluation": {
+      "empirical_recomputed_mean_time_w1_fresh": 0.12105060595773774,
+      "empirical_recomputed_mean_occupation_w1_fresh": 0.07884653864148419,
+      "time_channels_improved_vs_free": 36,
+      "occupation_channels_improved_vs_free": 36,
+      "no_superiority_requirement": true
+    },
+    "figures": {
+      "density_groups": 144,
+      "shared_grid_points": 401,
+      "KDE_integral_range": [
+        0.9999999999999978,
+        1.0000000000000004
+      ],
+      "max_independent_KDE_error": 1.2878587085651816e-14,
+      "overview_png_sha256": "048f587a73a467133db4f42aa2166cc1dbf3ae85a398bfb623a884faacca1fa4",
+      "overview_svg_sha256": "f3405ce0d9fd1a261beb681a10d00b7ac924fabc2b14b510c09b74810241e098"
+    }
+  },
+  "run_directory": "C:\\Users\\LiMing\\Documents\\改论文\\.fresh_wgangp_20261006\\runs\\fresh_seed20261011_e1000",
+  "figures_directory": "C:\\Users\\LiMing\\Documents\\改论文\\.fresh_wgangp_20261006\\figures",
+  "checker_sha256": "11b183881e08ab3526f04ba5af3ee0419a7f58de5cb2f1c6936ee2db49b91c9c",
+  "elapsed_seconds": 4.439877600001637,
+  "scope": "Read-only artifact audit; no training or paper update; no required new-controller superiority"
+}

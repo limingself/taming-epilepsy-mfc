@@ -1,0 +1,20 @@
+{
+  "status": "completed_neutral_cold1000_parameter_screen",
+  "subject": "HUP065",
+  "trained_updates": 1000,
+  "selected_update": 900,
+  "terminal_eligible": false,
+  "best_budget_update": 900,
+  "best_budget_common_score": 0.6224443079613506,
+  "best_terminal_eligible_common_score": null,
+  "elapsed_seconds": 3019.6804046000034,
+  "actor_and_critic_checkpoint_load_calls": [],
+  "actor_teacher_or_critic_warmstart": false,
+  "critic_updates": 3024,
+  "frozen_checkpoint_sha256": "eccfb2e6d26bc4ffb5991370d319dad97fc54379fee59f486ee02f2255cd981a",
+  "outer_opened": false,
+  "ctx6_opened": false,
+  "all_inputs_unchanged": true,
+  "no_new_loss_figure": true,
+  "not_automatically_adopted": true
+}

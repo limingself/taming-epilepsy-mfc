@@ -8,9 +8,9 @@ authors:
   - family-names: Gao
     given-names: Ting
   - family-names: Duan
-    given-names: Jingqiao
-version: 1.1.0
-date-released: 2026-08-03
+    given-names: Jinqiao
+version: 2.0.0
+date-released: 2026-10-06
 url: "https://github.com/limingself/taming-epilepsy-mfc"
 repository-code: "https://github.com/limingself/taming-epilepsy-mfc"
 license: MIT

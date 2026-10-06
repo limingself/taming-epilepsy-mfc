@@ -1,0 +1,35 @@
+{
+  "status": "adopted_paper_primary_development_checkpoint",
+  "historical_training_status": "prefix_only_actor_wgan_gp_candidate",
+  "uses_recorded_run02_future": false,
+  "network_count": 2,
+  "network_roles": [
+    "locked-architecture structured 13-node mean-field Actor, fine-tuned",
+    "time-conditioned 36-channel Wasserstein Kantorovich critic"
+  ],
+  "not_an_hjb_value_network": true,
+  "fp_solver": "empirical particle push-forward through frozen Graph-RC-SDE",
+  "selection_rule": "among checkpoints with held-out legacy-law no more than 2% above epoch zero, minimize 0.50*(law/law0)+0.25*(time-W1/time-W10)+0.25*(occupation-W1/occupation-W10); epoch zero is reported but ineligible as an updated candidate",
+  "selected_from_law_noninferior_pool": true,
+  "best_epoch": 32,
+  "initial_validation_distribution_score": 0.23886748217661036,
+  "best_validation_selection_score": 0.9848431361130324,
+  "best_validation_law": 41.55167388983332,
+  "selected_validation_mean_time_w1": 0.13737632098687702,
+  "selected_validation_mean_occupation_w1": 0.09715909155830332,
+  "validation_selection_relative_change": -0.015156863886967575,
+  "passes_two_percent_validation_law_noninferiority": true,
+  "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+  "locked_baseline_hashes_before": {
+    "original_actor_sha256": "5b00b8a1cd60946510edd48820dc6544adb1535ec8f36a582d37ee40bfbfb763",
+    "original_rollout_sha256": "24ee40b818c0cdb08d50280f11d34f1ed08f0c582ed4eff8728210dcb4ccc4fb",
+    "original_summary_sha256": "c2f3cfce4c709aeb2879848233cd902c175391e858d3b74804b413d7235010be"
+  },
+  "locked_baseline_hashes_after": {
+    "original_actor_sha256": "5b00b8a1cd60946510edd48820dc6544adb1535ec8f36a582d37ee40bfbfb763",
+    "original_rollout_sha256": "24ee40b818c0cdb08d50280f11d34f1ed08f0c582ed4eff8728210dcb4ccc4fb",
+    "original_summary_sha256": "c2f3cfce4c709aeb2879848233cd902c175391e858d3b74804b413d7235010be"
+  },
+  "elapsed_seconds": 119.07279959999141,
+  "claim_guardrail": "adopted as the paper's primary Part-III development checkpoint; the locked original Actor remains an explicit comparator and the result is not an independent test"
+}

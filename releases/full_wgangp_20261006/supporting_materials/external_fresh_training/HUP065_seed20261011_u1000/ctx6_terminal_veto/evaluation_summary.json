@@ -1,0 +1,22 @@
+{
+  "subject": "HUP065",
+  "contexts": 2,
+  "crn_banks": 3,
+  "context_bank_evaluations": 6,
+  "channels": 64,
+  "direct_actuators": 23,
+  "gate_b_pass_count": 30,
+  "both_improved_all_context_bank_count": 44,
+  "gate_c_pass": true,
+  "safety_failed_trajectory_count": 0,
+  "energy_cap": 3.7908,
+  "per_actuator_rms_cap": 0.405,
+  "no_projection_or_rescaling": true,
+  "mean_time_w1_free": 0.32919005589883743,
+  "mean_time_w1_controlled": 0.22765884267278524,
+  "mean_occupation_w1_free": 0.1438208845553048,
+  "mean_occupation_w1_controlled": 0.0490256744103228,
+  "control_rms": 0.24849584683868683,
+  "total_energy": 1.421791770422763,
+  "terminal_veto_pass": true
+}

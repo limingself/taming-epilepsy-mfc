@@ -1,0 +1,68 @@
+{
+  "status": "read_only_completed_frozen_comparison",
+  "new_checkpoint_sha256": "2796775c4feb4534e9a4a294b2ab95687d77559b60bfab24cb383a42f1f25fdf",
+  "old23_controller_sha256": "9014e2ce416021387515338ddf1ffc3ca435be085d1ea3cd66147f9a78f4b475",
+  "outer_endpoints": {
+    "time": {
+      "old23_controlled": 0.20212691859309775,
+      "new32_controlled": 0.20086363305685798,
+      "free": 0.27179461046098846,
+      "old23_reduction_percent": 25.63247731429551,
+      "new32_reduction_percent": 26.097271496232054,
+      "relative_distance_decrease_percent": 0.6249961880549382
+    },
+    "occupation": {
+      "old23_controlled": 0.12767616849080168,
+      "new32_controlled": 0.12694506110397127,
+      "free": 0.17950937749047155,
+      "old23_reduction_percent": 28.874931061705233,
+      "new32_reduction_percent": 29.28221194978542,
+      "relative_distance_decrease_percent": 0.5726263526486419
+    }
+  },
+  "new_all24_old_budget_pass": true,
+  "original_RMS_cap": 0.405,
+  "original_energy_cap": 3.7908,
+  "maximum_outer_per_actuator_rms": 0.3645649336870359,
+  "maximum_outer_energy": 1.430014037731956,
+  "mean_total_energy_old23": 1.3127619827383272,
+  "mean_total_energy_new32": 1.3112901653235223,
+  "new_full_gateB_count": 21,
+  "new_persistent_both_endpoint_count": 28,
+  "new_cross_case_mean_both_endpoint_count": 39,
+  "new_nondirect_persistent_both_endpoint_count": 12,
+  "new_nondirect_cross_case_mean_both_endpoint_count": 19,
+  "new_nondirect_count": 32,
+  "predeclared_display_case_only": {
+    "context": 7,
+    "bank": 0,
+    "old23_mean_actuator_rms": 0.23681692607355526,
+    "old23_mean_delivered_rms_under_new_controller": 0.23624874779736202,
+    "old23_max_delivered_rms_under_new_controller": 0.3526000982463479,
+    "new9_mean_actuator_rms": 0.01049025640343636,
+    "new9_max_actuator_rms": 0.015050102010864042,
+    "new9_delivered_energy": 0.0010428640648055046,
+    "new9_active_actuator_count": 9,
+    "all32_active_actuator_count": 32,
+    "total_energy_old23": 1.367548100935177,
+    "total_energy_new32": 1.3615181465338229,
+    "data_parity_max_errors": {
+      "observed_standardized": 0.0,
+      "free_standardized": 0.0,
+      "reference_standardized": 0.0,
+      "standard_normal": 0.0
+    }
+  },
+  "old23_gain_parameter_max_change": {
+    "mean_gain_delta": 0.0,
+    "deviation_gain_delta": 0.0
+  },
+  "selected_added_update": 0,
+  "all_selected_actor_tensors_match_initialization_bitwise": true,
+  "no_additional_training_gain_claim": true,
+  "no_all_channel_restoration_claim": true,
+  "outer_arrays_re_evaluated": false,
+  "classification": "one-time post-hoc exploratory diagnostic of a development-selected candidate",
+  "no_new_loss_figure": true,
+  "published_external_results_replaced": false
+}

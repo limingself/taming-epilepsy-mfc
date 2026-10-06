@@ -1,5 +1,50 @@
 # Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics
 
+## Current manuscript version: Full WGAN-GP, 2026-10-06
+
+The current source and result package is
+[`releases/full_wgangp_20261006/`](releases/full_wgangp_20261006/), identified by
+[`CURRENT_RELEASE.json`](CURRENT_RELEASE.json) and tag `full-wgangp-20261006`.
+It corresponds to the adopted 63-page manuscript, not the historical
+teacher-initialized results below. The frozen Graph-RC predictive dynamics and
+structured mean-deviation architecture are retained. Empirical-law penalties
+and WGAN-GP are combined from the first actor update.
+
+| Case | Direct inputs | Current adopted controller | Time / occupation W1 reduction vs paired free |
+|---|---:|---|---:|
+| HUP060 | 13/36 | Neutral 1,000-update joint training, selected update 700 | 65.1% / 74.9% |
+| HUP065 | 32/64 | Weighted top-32 low-gain expansion of the fresh 23-input controller; selected added update 0 | 26.1% / 29.3% |
+| HUP080 | 76/96 | Fresh update 200 followed by parameter adaptation; selected added update 125 | 71.4% / 77.3% |
+
+Both patient extensions are post hoc amended reanalyses. HUP080's declared
+single-actuator RMS limit is 0.45; failures at its former 0.405 limit are
+retained. The separately archived HUP065 top-32 cold-start experiment is
+**not adopted**: its best development checkpoint did not improve the current
+32-input result, and its context-6 and outer evaluation were not opened.
+
+The public package supplies exact scientific/plotting source snapshots,
+parameters, unrounded summary and channel metrics, current figure files,
+provenance hashes, and a signal-free verification command:
+
+```powershell
+python -B releases/full_wgangp_20261006/verify_public_results.py
+```
+
+This command checks the public files and reported metrics; it does not train
+or evaluate on patient arrays. The complete frozen input/model/checkpoint
+bundles, all training logs and offline evidence are retained separately in
+the author's versioned revision archive. They are required for the documented
+private-bundle replay route and are not implied to be public. Original EDF
+recordings must be obtained independently from OpenNeuro. See the current
+package's `PRIVATE_BUNDLE_REPLAY.md` and `DATA_DICTIONARY.md` for exact scope.
+
+### Historical pipeline documentation
+
+The original root entry points, `PAPER_FINAL_VERSION.json`, eight-figure map,
+and `patient-extensions-v1` package below remain historical and unchanged.
+They do not select or regenerate the current Full WGAN-GP controllers. Use
+the current release package above for this manuscript version.
+
 Reproducible Python implementation and frozen figure bundle for a three-part
 brain-network control workflow:
 

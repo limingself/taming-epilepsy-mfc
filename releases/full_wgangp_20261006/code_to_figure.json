@@ -1,0 +1,181 @@
+{
+  "current_figures": [
+    {
+      "path": "figures/current/chaos_hup060_all36_control.pdf",
+      "sha256": "eb32536e56c7acbaec8eecc6f59c98049683eedaae62a71bdf06e2a0a7616ad1",
+      "scientific_sources": [
+        "additional_executed_plot_sources/plot_control_original_style.py",
+        "supporting_materials/HUP060_restart/run_experiment.py",
+        "supporting_materials/HUP060_restart/repro_source/part3_mfc/part3_model.py"
+      ],
+      "role": "Current Full update700; representative3x3 or all36 original layout",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/chaos_hup060_all36_prediction.pdf",
+      "sha256": "0ba96ed64e6563a8b25711c86e3f771864a6b6072166058343ac186dec196e47",
+      "scientific_sources": [
+        "supporting_materials/HUP060/current_figure_renderers/scripts/round3_reexport_supplementary_figures.py",
+        "supporting_materials/HUP060_restart/repro_source/part2_rc_sde/part2_model.py"
+      ],
+      "role": "Frozen Part-II prediction/feature comparison, unchanged; renderer contains historical control branches that are not the current control default",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/chaos_hup060_control.pdf",
+      "sha256": "9455d0dca0d1019166623df98cdd22e2c41c074a0acb358767d0914d0a3ffd20",
+      "scientific_sources": [
+        "additional_executed_plot_sources/plot_control_original_style.py",
+        "supporting_materials/HUP060_restart/run_experiment.py",
+        "supporting_materials/HUP060_restart/repro_source/part3_mfc/part3_model.py"
+      ],
+      "role": "Current Full update700; representative3x3 or all36 original layout",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/chaos_hup060_framework.pdf",
+      "sha256": "accf49095a29cd90c217d20b77f9f9bb8fb9e69402b2f937b32971e74889115d",
+      "scientific_sources": [
+        "framework/scripts/build_framework.mjs",
+        "framework/export_framework.py",
+        "framework/update_geometry.py"
+      ],
+      "role": "Current native editable framework with real adjacency and Full density curve",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/chaos_hup060_prediction.pdf",
+      "sha256": "2d1f713acdacc09536b0164265821fd9ba23f755b712a8743e5c459c6bfad869",
+      "scientific_sources": [
+        "supporting_materials/HUP060/current_figure_renderers/scripts/round3_reexport_main_figures.py",
+        "supporting_materials/HUP060_restart/repro_source/part2_rc_sde/part2_model.py"
+      ],
+      "role": "Frozen Part-II prediction/feature comparison, unchanged; renderer contains historical control branches that are not the current control default",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup060_context3_1s_free_state_delay_graph_ablation.pdf",
+      "sha256": "1f86db43dcc8f4eca553f8169e4b9a9a5f97502f367371a185fa65ae9a3531e4",
+      "scientific_sources": [
+        "supporting_materials/HUP060/current_figure_renderers/scripts/round3_reexport_supplementary_figures.py",
+        "supporting_materials/HUP060_restart/repro_source/part2_rc_sde/part2_model.py"
+      ],
+      "role": "Frozen Part-II prediction/feature comparison, unchanged; renderer contains historical control branches that are not the current control default",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup060_context3_all36_distribution_w1_summary.pdf",
+      "sha256": "53772c0eeb45db4d4f7491abe1768ed3422b1779f62f710c774d9faf994b4f32",
+      "scientific_sources": [
+        "supporting_materials/HUP060/current_figure_renderers/scripts/round3_reexport_supplementary_figures.py",
+        "supporting_materials/HUP060_restart/repro_source/part2_rc_sde/part2_model.py"
+      ],
+      "role": "Frozen Part-II prediction/feature comparison, unchanged; renderer contains historical control branches that are not the current control default",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup060_matched_mfc_ablation_summary_v2.pdf",
+      "sha256": "06b0decb8c56f85e47c6d06f66d122dd9f218a70f460e3a39c2b52d73957ae4a",
+      "scientific_sources": [
+        "supporting_materials/HUP060_comparisons/run_matched_ablation.py",
+        "supporting_materials/HUP060_comparisons/aggregate_matched_ablation.py",
+        "supporting_materials/HUP060_comparisons/plot_ablation_original_style.py"
+      ],
+      "role": "Current same-Full component removals; matched update budget, not matched RMS",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup060_part1_plv_network_selection.pdf",
+      "sha256": "10db482c5bc7b687595bbfbc5a03db78054319ad34bbb20495009a5d10b89709",
+      "scientific_sources": [
+        "supporting_materials/HUP060/current_figure_renderers/scripts/round3_reexport_framework_network.py",
+        "supporting_materials/HUP060/archived_figure_scripts/part1_network/figure_01_plv_network_selection.py"
+      ],
+      "role": "Frozen Part-I graph and actuator selection, unchanged by control restart",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup060_trivial_controller_baselines.pdf",
+      "sha256": "c5490e0077334cebfeace5b928e7ca93e8a6f087cb1b4bac2e94a492297a5a58",
+      "scientific_sources": [
+        "supporting_materials/HUP060_comparisons/recompute_hup060_baselines.py",
+        "supporting_materials/HUP060_comparisons/plot_baselines_original_style.py",
+        "supporting_materials/HUP060_restart/repro_source/part3_mfc/trivial_baseline_experiment.py"
+      ],
+      "role": "Current same-Full RMS-matched generic input baselines and noise sensitivity",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/HUP060_WGANGP_loss_original_style_e1000.pdf",
+      "sha256": "75e3be2a31b03d3fa9a9b0e605a384adb44fcfead92ac55c89ba23f1b44f4a85",
+      "scientific_sources": [
+        "supporting_materials/HUP060_approved_loss/plot_loss_approved.py",
+        "supporting_materials/HUP060_restart/run_experiment.py"
+      ],
+      "role": "Actual1000-update trace; raw values and trailing125 median, not same-limit convergence claim",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup065_ofrc_all_channels_page_01.pdf",
+      "sha256": "1f0a638ce778349f9fdbd97866a668ca1caaea3951c99fda77bfa7267bc01fc6",
+      "scientific_sources": [
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/plot_parameter_adaptation.py",
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/plot_external_layout_snapshot.py",
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/portable_inputs/optimizer_sources/screen_small_gain.py"
+      ],
+      "role": "Adopted32 warm-expanded controller, post-hoc outer display, not cold32 preview",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup065_ofrc_all_channels_page_02.pdf",
+      "sha256": "511e3c580203076d52ed0a8e94e0cbc6d8797329f7a2f68f82bef8dd34f77ddf",
+      "scientific_sources": [
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/plot_parameter_adaptation.py",
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/plot_external_layout_snapshot.py",
+        "supporting_materials/external_parameter_adaptations/HUP065/small_gain_decoupled_screen/portable_inputs/optimizer_sources/screen_small_gain.py"
+      ],
+      "role": "Adopted32 warm-expanded controller, post-hoc outer display, not cold32 preview",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup080_ofrc_all_channels_page_01_v2.pdf",
+      "sha256": "1c129e4556b6a991ba7e51bab87b3556e5a4c75da8dbc5024f9d75398d510902",
+      "scientific_sources": [
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_parameter_adaptation.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_external_layout_snapshot.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/optimize_hup080.py"
+      ],
+      "role": "Adopted76 continuation added125; original and revised RMS classification distinguished",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup080_ofrc_all_channels_page_02_v2.pdf",
+      "sha256": "0ef14547016c49a904c5642305e5267b62539be3809b9700a858a0d0d6f547ea",
+      "scientific_sources": [
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_parameter_adaptation.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_external_layout_snapshot.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/optimize_hup080.py"
+      ],
+      "role": "Adopted76 continuation added125; original and revised RMS classification distinguished",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    },
+    {
+      "path": "figures/current/hup080_ofrc_all_channels_page_03_v2.pdf",
+      "sha256": "cb4b6545463ee98d4f4a27a8f7b8252d1cf3920bc379c41fa85b1d45e0a5f776",
+      "scientific_sources": [
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_parameter_adaptation.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/plot_external_layout_snapshot.py",
+        "supporting_materials/external_parameter_adaptations/HUP080/optimize_hup080.py"
+      ],
+      "role": "Adopted76 continuation added125; original and revised RMS classification distinguished",
+      "replay_scope": "Existing signal-free published table verification; exact redraw/retraining requires separately supplied frozen inputs where declared."
+    }
+  ],
+  "adoption_authority": "results/current_results.json",
+  "archived_source_comments_not_default": true,
+  "additional_HUP060_renderer": {
+    "path": "additional_executed_plot_sources/plot_control_original_style.py",
+    "sha256": "00dccde1fd62fb8e633f296cd9c1373ec7107ca13ff0b1aa01b454d120cda002",
+    "note": "Executed original-layout source found in C workflow; newly synchronised as a supplemental source, not falsely claimed already in sealed943-file D archive."
+  }
+}

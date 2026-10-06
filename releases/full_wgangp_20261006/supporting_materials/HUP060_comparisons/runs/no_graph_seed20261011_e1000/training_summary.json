@@ -1,0 +1,27 @@
+{
+  "status": "complete_fresh_hybrid_wgangp_development_experiment",
+  "trained_epochs": 1000,
+  "best_epoch": 400,
+  "best_selection_score": 0.20102449600827021,
+  "initial_validation": {
+    "validation_law": 552.8604694858452,
+    "validation_mean_time_w1": 0.3548057055141175,
+    "validation_mean_occupation_w1": 0.3241608946470646
+  },
+  "selected_validation": {
+    "validation_law": 41.76927430241986,
+    "validation_mean_time_w1": 0.13108350030661775,
+    "validation_mean_occupation_w1": 0.09191390095845571
+  },
+  "elapsed_seconds": 3725.058256499993,
+  "teacher_checkpoint_loaded": false,
+  "teacher_proximity_weight": 0.0,
+  "adversarial_active_from_update": 1,
+  "critic_updates": 3024,
+  "component_removal": "no_graph_spread",
+  "originals_unchanged": true,
+  "source_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
+  "model_sha256": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
+  "checkpoint_sha256": "50195af6ccb1bd51603b9b4b7e7a11d64f25f14b190bf58245d1c82ae59cc99b",
+  "not_adopted_in_paper": true
+}

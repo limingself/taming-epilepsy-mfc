@@ -1,0 +1,29 @@
+{
+  "python_version": "3.12.10",
+  "python_executable": "C:\\Users\\LiMing\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "",
+  "processor": "",
+  "packages": {
+    "torch": "2.12.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.9",
+    "networkx": "3.6.1",
+    "PyYAML": "6.0.3",
+    "threadpoolctl": "3.6.0",
+    "pillow": "12.2.0"
+  },
+  "torch_runtime_version": "2.12.0+cpu",
+  "torch_cuda_version": null,
+  "torch_built_with_mkl": true,
+  "torch_built_with_openmp": true,
+  "training_device": "CPU",
+  "training_threads": 4,
+  "training_interop_threads": 1,
+  "floating_point_dtype": "float64",
+  "bitwise_cross_platform_reproduction_guaranteed": false
+}
