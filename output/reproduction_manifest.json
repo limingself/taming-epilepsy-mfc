@@ -334,62 +334,62 @@
     {
       "number": 5,
       "part": 2,
-      "title": "Protocol-matched state-delay-graph RC-SDE input ablation",
+      "title": "HUP060 nested state, delay, graph and reservoir comparison (current manuscript Fig. 3)",
       "generator": "part2_rc_sde/figure_05_input_ablation.py",
-      "generator_sha256": "193cd2097cc68f0be850952bd8bcb1a4bb4fb5c1f9efc93aaeb5bd1932e720be",
+      "generator_sha256": "6393230429a8f009a59d1b1a9c9249d2f5bad3bbdc2eda50ae24dc3febda7e94",
       "source_data": "output/part2/source_data/figure_05",
       "source_files": [
         {
           "path": "output/part2/source_data/figure_05/fixed_context_ablation_density_curves.csv",
-          "bytes": 472704,
-          "sha256": "c0b35b21e520ad92bad8188ad4ec5a4f9ff28aaf7cf277187673d4d6475acf2d"
+          "bytes": 169155,
+          "sha256": "26aa7291ff9e00553ac05b5e0d234ad5080839db29000bf257a840dc2ddf47a9"
         },
         {
           "path": "output/part2/source_data/figure_05/fixed_context_ablation_metrics.csv",
-          "bytes": 801,
-          "sha256": "3ccaf86ed5f1d75a45f8641f611f44ae4f719f985680b97671a5669ae9997e61"
+          "bytes": 3117,
+          "sha256": "e1d5916c8797d0d2575085f121ca60293c7f5675ac81a49b21594ac94b9f8496"
         },
         {
           "path": "output/part2/source_data/figure_05/unified_ablation_summary.json",
-          "bytes": 3421,
-          "sha256": "312e8eae7ac26ec0b5b393bb3fd99c96d2a2833286ff2570bd773e59aeacad04"
+          "bytes": 1415,
+          "sha256": "876563801ca47e37df5e86d029e896d407af23d42c5866c75c5343162c126ca6"
         }
       ],
       "exports": [
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.svg",
-          "bytes": 63315,
-          "sha256": "8f2cba7504f9dcee45afb6d1a8d5650587905b4b283e57535cbb0e90bcb56944"
+          "bytes": 65881,
+          "sha256": "29f9eb37ba47cc1fbbaa4b9842b1f74e0e9039366b5ee41ca2efbeb0b9a8c175"
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.pdf",
-          "bytes": 68696,
-          "sha256": "4ca3b1ed375581e870d65eccdbba362aa1202013052895697042426cf7871a36"
+          "bytes": 63042,
+          "sha256": "58c2b04ca9b14ffd9ab6e3cee191b889f304fc8564e4a7206e5830e5365610c3"
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.png",
-          "bytes": 245849,
-          "sha256": "373019d1e52b2be28ff88db72c3df7b60ac6a654256e7ee4feb3e8b15b0acc9f",
+          "bytes": 190379,
+          "sha256": "07b8582f36e270a90dbed01801d5f23c09f5c95e23de304d355ee19367e82c6f",
           "pixel_size": [
-            2159,
-            1388
+            1606,
+            1417
           ],
           "dpi": [
-            299.9994,
-            299.9994
+            240.00459999999998,
+            240.00459999999998
           ]
         },
         {
           "path": "output/part2/figure_05/hup060_context3_1s_free_state_delay_graph_ablation.tiff",
-          "bytes": 1144718,
-          "sha256": "812a334c41de3c6795f6a1d6a19c933ead939613050ad108d17412debebf2fd0",
+          "bytes": 1177946,
+          "sha256": "bb28603564a101b554472369e8b5734469e2b05d0d520df7f595b9c085eb7372",
           "pixel_size": [
-            4316,
-            2777
+            4015,
+            3543
           ],
           "dpi": [
-            600.0,
-            600.0
+            600,
+            600
           ]
         }
       ]

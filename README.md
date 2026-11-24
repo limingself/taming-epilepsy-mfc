@@ -1,8 +1,13 @@
 # Taming Epilepsy: Mean Field Control of Whole-Brain Dynamics
 
 The existing project paths now contain the current Full WGAN-GP code and
-adopted results. Parts I/II and the frozen Graph–RC prediction model are
-unchanged. Do not run a separate release folder for the current workflow.
+adopted results. Part I and the frozen Graph–RC prediction model are unchanged.
+The revised HUP060 forecasting comparison (manuscript Fig. 3) uses four
+nested predictors: current state, added delays, added graph features, and
+finally the full reservoir. The first three predictors have no reservoir.
+See the [Part II reproduction instructions](part2_rc_sde/README.md);
+the historical figure filenames are retained. Do not run a separate release
+folder for the current workflow.
 
 Full combines the frozen patient-specific Graph–RC dynamics, structured
 mean–deviation feedback, the existing empirical-law losses and WGAN-GP from
@@ -59,10 +64,10 @@ absent, never falling back to the historical teacher/controller. Actual
 training requires an explicit new tag; evaluation additionally requires an
 explicit evaluation decision. See the PartIII and patient READMEs.
 
-Parts I/II retain their original code and reproduction commands:
-`python reproduce_all.py --part 1` or `--part 2`. PartII's unchanged free-only
-provenance can retain its historical saved zero-input source: those unchanged
-free samples are not the newly selected controlled branch.
+Parts I/II retain their original reproduction commands:
+`python reproduce_all.py --part 1` or `--part 2`. The updated prediction
+ablation compares uncontrolled forecasts to recorded ictal activity; the
+full predictor and the separately reported controller are unchanged.
 
 Historical tags and `releases/full_wgangp_20261006` remain recoverable provenance,
 not the current default project. No original EEG archives or new external

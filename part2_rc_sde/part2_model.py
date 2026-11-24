@@ -93,11 +93,6 @@ NODE_SPECS = (
     ("RA3", "selected non-SOZ"),
     ("RAFa4", "unselected"),
 )
-VARIANT_SPECS = (
-    ("state_only", "State only"),
-    ("state_delay", "State + delay"),
-    ("state_delay_graph", "State + delay + graph"),
-)
 
 
 def _sha256(path: Path) -> str:
@@ -354,75 +349,17 @@ def _write_prediction_source_data(data: dict[str, Any]) -> None:
     )
 
 
-def _write_ablation_source_data(data: dict[str, Any]) -> pd.DataFrame:
-    SOURCE_05.mkdir(parents=True, exist_ok=True)
-    channels = data["channels"]
-    observed = np.asarray(data["observed"], dtype=np.float64)
-    rows: list[dict[str, Any]] = []
-    density_rows: list[dict[str, Any]] = []
-    for channel, node_class in NODE_SPECS:
-        channel_index = channels.index(channel)
-        observed_values = observed[DATA_CONTEXT, :, channel_index]
-        clouds = [observed_values]
-        for key, _label in VARIANT_SPECS:
-            clouds.append(data[key][DATA_CONTEXT, :, 1:, channel_index].reshape(-1))
-        pooled = np.concatenate(clouds)
-        low, high = np.quantile(pooled, [0.005, 0.995])
-        padding = 0.08 * max(float(high - low), 0.1)
-        grid = np.linspace(low - padding, high + padding, 450)
-        observed_density = _kde(observed_values, grid)
-        for key, label in VARIANT_SPECS:
-            predicted_values = data[key][DATA_CONTEXT, :, 1:, channel_index].reshape(-1)
-            predicted_density = _kde(predicted_values, grid)
-            rows.append(
-                {
-                    "channel": channel,
-                    "node_class": node_class,
-                    "variant": key,
-                    "variant_label": label,
-                    "context_index": FIXED_CONTEXT,
-                    "horizon_samples": HORIZON,
-                    "particles": EXPECTED_PARTICLES,
-                    "occupation_w1": float(wasserstein_distance(observed_values, predicted_values)),
-                }
-            )
-            for x_value, density_value in zip(grid, predicted_density, strict=True):
-                density_rows.append(
-                    {
-                        "channel": channel,
-                        "node_class": node_class,
-                        "variant": key,
-                        "variant_label": label,
-                        "standardized_amplitude": float(x_value),
-                        "density": float(density_value),
-                    }
-                )
-        for x_value, density_value in zip(grid, observed_density, strict=True):
-            density_rows.append(
-                {
-                    "channel": channel,
-                    "node_class": node_class,
-                    "variant": "observed",
-                    "variant_label": "Observed actual",
-                    "standardized_amplitude": float(x_value),
-                    "density": float(density_value),
-                }
-            )
-    metrics = pd.DataFrame(rows)
-    metrics.to_csv(
-        SOURCE_05 / "fixed_context_ablation_metrics.csv",
-        index=False,
-        encoding="utf-8-sig",
-    )
-    pd.DataFrame(density_rows).to_csv(
-        SOURCE_05 / "fixed_context_ablation_density_curves.csv",
-        index=False,
-        encoding="utf-8-sig",
-    )
-    return metrics
+def _write_ablation_source_data() -> None:
+    # The legacy fixed_context_ablation_rollouts NPZ still feeds unchanged prediction
+    # figures. Its earlier feature variants must never overwrite the nested Fig. 3.
+    from part2_rc_sde import nested_ablation_source as nested
+    if nested.ROLLOUT.is_file():
+        nested.build(nested.ROLLOUT,SOURCE_05,UNIFIED_ROLLOUT_PATH)
+    else:
+        nested.validate(SOURCE_05)
 
 
-def _write_unified_audits(data: dict[str, Any], ablation: pd.DataFrame) -> None:
+def _write_unified_audits(data: dict[str, Any]) -> None:
     """Write machine-readable protocol identity and descriptive metrics."""
 
     representative = pd.read_csv(SOURCE_02_04 / "representative_metrics.csv")
@@ -476,25 +413,6 @@ def _write_unified_audits(data: dict[str, Any], ablation: pd.DataFrame) -> None:
     (SOURCE_02_04 / "unified_protocol_summary.json").write_text(
         json.dumps(protocol, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    ablation_audit = {
-        "subject": "HUP060",
-        "split": "run-02 adaptation validation",
-        "protocol": (
-            "fixed context index 3; 1-s autonomous rollout; 32 particles; "
-            "same effective diffusion scale and innovation bank as Part III"
-        ),
-        "effective_diffusion_multiplier": EFFECTIVE_DIFFUSION_MULTIPLIER,
-        "context_index": FIXED_CONTEXT,
-        "forecast_boundary_sample": int(np.asarray(data["positions"])[DATA_CONTEXT]),
-        "analysis_sampling_rate_hz": SAMPLING_RATE,
-        "full_saved_rollout_parity_max_abs": float(data["full_saved_rollout_parity_max_abs"]),
-        "metrics": ablation.to_dict(orient="records"),
-        "future_observation_refresh": False,
-        "input_sha256": protocol["input_sha256"],
-    }
-    (SOURCE_05 / "unified_ablation_summary.json").write_text(
-        json.dumps(ablation_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
 
 
 def build_paper_source_data() -> None:
@@ -503,8 +421,8 @@ def build_paper_source_data() -> None:
     load_frozen_model()  # fail early if model provenance is unavailable
     evaluation = _load_frozen_evaluation()
     _write_prediction_source_data(evaluation)
-    ablation = _write_ablation_source_data(evaluation)
-    _write_unified_audits(evaluation, ablation)
+    _write_ablation_source_data()
+    _write_unified_audits(evaluation)
 
 
 def inspect_model() -> dict[str, Any]:

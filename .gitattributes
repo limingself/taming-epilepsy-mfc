@@ -17,3 +17,10 @@ reproduce_all.py -text
 verify_outputs.py -text
 .gitattributes -text whitespace=cr-at-eol,-blank-at-eof
 .gitignore -text whitespace=cr-at-eol,-blank-at-eof
+
+# The displayed Fig. 3 tables have byte-level checksums in their audit JSON.
+output/part2/source_data/figure_05/fixed_context_ablation_density_curves.csv -text whitespace=cr-at-eol,-blank-at-eof
+output/part2/source_data/figure_05/fixed_context_ablation_metrics.csv -text whitespace=cr-at-eol,-blank-at-eof
+output/part2/source_data/figure_05/unified_ablation_summary.json -text whitespace=cr-at-eol,-blank-at-eof
+output/part2/figure_05/*.svg -text whitespace=cr-at-eol,-blank-at-eof
+part2_rc_sde/figure_05_input_ablation.py -text whitespace=cr-at-eol,-blank-at-eof

@@ -37,6 +37,8 @@ def validate_unified_part2_protocol() -> dict[str, object]:
     ablation = json.loads(ablation_path.read_text(encoding="utf-8"))
     if abs(float(summary["effective_diffusion_multiplier"]) - 0.79451175) > 1e-12:
         raise RuntimeError("unexpected Part-II effective diffusion multiplier")
+    from part2_rc_sde.nested_ablation_source import validate as validate_nested
+    validate_nested(ablation_path.parent)
     parity = float(ablation["full_saved_rollout_parity_max_abs"])
     if parity > 1e-9:
         raise RuntimeError(f"Part-II/Part-III u=0 parity failed: {parity}")

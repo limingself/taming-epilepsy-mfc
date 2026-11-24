@@ -51,12 +51,12 @@
     {
       "number": 5,
       "part": 2,
-      "title": "Protocol-matched state-delay-graph RC-SDE input ablation",
+      "title": "HUP060 nested state, delay, graph and reservoir comparison (current manuscript Fig. 3)",
       "generator": "part2_rc_sde/figure_05_input_ablation.py",
       "output_directory": "output/part2/figure_05",
       "stem": "hup060_context3_1s_free_state_delay_graph_ablation",
       "source_data": "output/part2/source_data/figure_05",
-      "provenance_note": "All variants use the Part III diffusion multiplier and innovation bank; the full variant has zero maximum absolute discrepancy from the Part III u=0 branch."
+      "provenance_note": "Current manuscript Fig. 3, historical release ID 05. Three zero-reservoir refits are compared with the original full model on matched trajectories. Only the full arm uses the reservoir; it reproduces the Part III u=0 branch."
     },
     {
       "number": 6,

@@ -7,8 +7,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 844,
-      "sha256": "b2dff6aa632009f341d829093c582ad0b2911ec3a064e51c3e5617adf8f06922"
+      "bytes": 1416,
+      "sha256": "7aaacd9e2509d9a769c40ecd8c0def659a5d28798c6f73e644f8f41e4aafd823"
     },
     {
       "path": "CITATION.cff",
@@ -32,8 +32,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3975,
-      "sha256": "b0b00eb0370ecde06848b2a2823bd2e453db395c47e232ecdcc2432ff8e66647"
+      "bytes": 4296,
+      "sha256": "bc85c6834aa715e873ea839ade118187b0c17c1d273eaffb4c95660564d5bcd4"
     },
     {
       "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.pdf",
@@ -277,8 +277,8 @@
     },
     {
       "path": "paper_figures.json",
-      "bytes": 5532,
-      "sha256": "ad25e9a4f6ac75fdd62edb3f8189a20be7c786f396188965851be17b95a2a9c4"
+      "bytes": 5630,
+      "sha256": "faee46e92575ffad9f982fc695c19a883ce88888fdaf289bb87d6b33636fe5a4"
     },
     {
       "path": "part3_mfc/README.md",
@@ -672,8 +672,8 @@
     },
     {
       "path": "verify_outputs.py",
-      "bytes": 8122,
-      "sha256": "585f25b560e76c4f2214d2df53fe7b830ab1fd9ea5b4bb63d75500f850d40f14"
+      "bytes": 8244,
+      "sha256": "781b15ce087d045197aea56a3e3ffc00212f1312106a6a04229d1d18b4a2ff22"
     }
   ],
   "protected_part_i_ii_and_shared_files_unchanged": 59,

@@ -1,109 +1,36 @@
 {
   "subject": "HUP060",
-  "split": "run-02 adaptation validation",
-  "protocol": "fixed context index 3; 1-s autonomous rollout; 32 particles; same effective diffusion scale and innovation bank as Part III",
-  "effective_diffusion_multiplier": 0.79451175,
+  "split": "run-02 development",
   "context_index": 3,
   "forecast_boundary_sample": 3547,
-  "analysis_sampling_rate_hz": 256.0,
-  "full_saved_rollout_parity_max_abs": 0.0,
-  "metrics": [
-    {
-      "channel": "RPFa3",
-      "node_class": "selected SOZ",
-      "variant": "state_only",
-      "variant_label": "State only",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.11709250559189087
-    },
-    {
-      "channel": "RPFa3",
-      "node_class": "selected SOZ",
-      "variant": "state_delay",
-      "variant_label": "State + delay",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.0925863935610781
-    },
-    {
-      "channel": "RPFa3",
-      "node_class": "selected SOZ",
-      "variant": "state_delay_graph",
-      "variant_label": "State + delay + graph",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.07734505956504996
-    },
-    {
-      "channel": "RA3",
-      "node_class": "selected non-SOZ",
-      "variant": "state_only",
-      "variant_label": "State only",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.14853887198741472
-    },
-    {
-      "channel": "RA3",
-      "node_class": "selected non-SOZ",
-      "variant": "state_delay",
-      "variant_label": "State + delay",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.12716387614510644
-    },
-    {
-      "channel": "RA3",
-      "node_class": "selected non-SOZ",
-      "variant": "state_delay_graph",
-      "variant_label": "State + delay + graph",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.1278860722628614
-    },
-    {
-      "channel": "RAFa4",
-      "node_class": "unselected",
-      "variant": "state_only",
-      "variant_label": "State only",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.11441038592929481
-    },
-    {
-      "channel": "RAFa4",
-      "node_class": "unselected",
-      "variant": "state_delay",
-      "variant_label": "State + delay",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.11328612718198576
-    },
-    {
-      "channel": "RAFa4",
-      "node_class": "unselected",
-      "variant": "state_delay_graph",
-      "variant_label": "State + delay + graph",
-      "context_index": 3,
-      "horizon_samples": 256,
-      "particles": 32,
-      "occupation_w1": 0.1088900979280011
-    }
-  ],
+  "analysis_sampling_rate_hz": 256,
+  "horizon_samples": 256,
+  "particles": 32,
   "future_observation_refresh": false,
-  "input_sha256": {
-    "part2_model": "a2984a7f1042f2fff1231d744405f76ca8b649c8048812d7f48249a3e02e1e43",
-    "unified_part3_paired_comparison": "bb5e43d4b8774d144e3fd598650ee1653e22f8391764467b13e403d2577d8541",
-    "part2_ablation_rollout": "4e3fcf064ad164a865d3076160feb26d6ed8aaa312e8cbb7c9c74bc0d014dfdc",
-    "part1_node_table": "7338e6d7ffcb4b4258700d2bea559923db50f4d1a6a5b7eb5c987c1664f93cb3"
+  "effective_diffusion_multiplier": 0.79451175,
+  "training": "run-01, 32 s; identical 8127 one-step pairs; original PCA dimension 13",
+  "arms": {
+    "state": "current state",
+    "delay": "current state + delays (1,8,32)",
+    "graph": "state + delays + graph",
+    "full": "state + delays + graph + 96-unit reservoir"
+  },
+  "trainable_components": "Drift and conditional diffusion are refitted for each of the three zero-reservoir arms; full uses the original frozen model.",
+  "metric": "Empirical occupation W1 between recorded and predicted standardized amplitudes. KDE for display only.",
+  "mean_occupation_w1": {
+    "state": 0.17776141490507688,
+    "delay": 0.14433175722772457,
+    "graph": 0.15800979270526197,
+    "full": 0.10996506782603699
+  },
+  "n_improved_vs_previous": {
+    "delay": 31,
+    "graph": 3,
+    "full": 27
+  },
+  "full_saved_rollout_parity_max_abs": 0.0,
+  "source_sha256": {
+    "fixed_context_ablation_metrics.csv": "e1d5916c8797d0d2575085f121ca60293c7f5675ac81a49b21594ac94b9f8496",
+    "fixed_context_ablation_density_curves.csv": "26aa7291ff9e00553ac05b5e0d234ad5080839db29000bf257a840dc2ddf47a9"
   }
 }
