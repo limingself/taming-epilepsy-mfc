@@ -8,10 +8,13 @@ ROOT=Path(__file__).resolve().parents[1]
 def draw(number,output):
     output=Path(output).resolve()
     if output.exists() and any(output.iterdir()):raise RuntimeError('Use a new empty output directory; no frozen export overwrite')
-    if number in (7,9):
-        name='plot_ablation_original_style.py' if number==7 else 'plot_baselines_original_style.py'
-        source=ROOT/('output/part3/source_data/figure_07' if number==7 else 'output/part3/source_data/figure_09_trivial_baselines')
-        flags=['--source-dir',str(source),'--output-dir',str(output)] if number==7 else ['--source',str(source),'--output',str(output)]
+    if number==9:
+        return subprocess.run([sys.executable,'-B',str(ROOT/'part3_mfc/plot_physicad_controller_baselines.py'),
+                               '--outdir',str(output)],check=False).returncode
+    if number==7:
+        name='plot_ablation_original_style.py'
+        source=ROOT/'output/part3/source_data/figure_07'
+        flags=['--source-dir',str(source),'--output-dir',str(output)]
         return subprocess.run([sys.executable,'-B',str(ROOT/'part3_mfc'/name),*flags],check=False).returncode
     if number==10:
         raise RuntimeError('Default verifies approved raw/median loss exports; exact eight-panel redraw uses plot_loss_approved.py with separately supplied history, never an implicit data open')

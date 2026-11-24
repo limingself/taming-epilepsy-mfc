@@ -161,11 +161,12 @@ def verify(parts: set[int] | None = None) -> dict[str, object]:
         source = ROOT / figure["source_data"]
         derived_source = figure.get("derived_source_data")
         exports = []
-        for extension in figure.get("formats", FORMATS):
-            path = directory / f"{stem}.{extension}"
-            if not path.is_file() or path.stat().st_size == 0:
-                raise FileNotFoundError(f"missing or empty paper output: {path}")
-            exports.append(validate_signature(path, extension))
+        for export_stem in [stem, *(item["stem"] for item in figure.get("companion_exports", []))]:
+            for extension in figure.get("formats", FORMATS):
+                path = directory / f"{export_stem}.{extension}"
+                if not path.is_file() or path.stat().st_size == 0:
+                    raise FileNotFoundError(f"missing or empty paper output: {path}")
+                exports.append(validate_signature(path, extension))
         record = {
             "number": int(figure["number"]),
             "part": int(figure["part"]),

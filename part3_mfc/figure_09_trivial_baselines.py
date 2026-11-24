@@ -1,4 +1,4 @@
-"""Current RMS-matched baselines for the same Full700 controller."""
+"""Physica D Fig. 7 and Fig. S10 (historical pipeline slot 09)."""
 if __package__:
     from .current_controller import figure_main
 else:

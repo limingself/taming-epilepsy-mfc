@@ -17,8 +17,8 @@
     },
     {
       "path": "CURRENT_RELEASE.json",
-      "bytes": 1681,
-      "sha256": "53503ddad0389964ec359432d8dc3c9f61f9bae676ed23068e43e88ad99a7e61"
+      "bytes": 1926,
+      "sha256": "78a4b0cf1f72da1e62b77e032ef93bcbd0a39d92eb240590bd9908f35eb8a561"
     },
     {
       "path": "DATA_NOTICE.md",
@@ -27,13 +27,13 @@
     },
     {
       "path": "PAPER_FINAL_VERSION.json",
-      "bytes": 6179,
-      "sha256": "16451ebc6d5a5238a646573ed50c9b41fa62bb9a86b284c90ea0df4dc88cb83c"
+      "bytes": 6600,
+      "sha256": "d1378c0518341af8570b1509443ce2c57969ce8ac8660fff9a6533d129ed2e5e"
     },
     {
       "path": "README.md",
-      "bytes": 4296,
-      "sha256": "bc85c6834aa715e873ea839ade118187b0c17c1d273eaffb4c95660564d5bcd4"
+      "bytes": 4894,
+      "sha256": "c5915c9cb9cd4c1abaf19d3ec7af2e1f3b8caf935932763fe543ad2228d56532"
     },
     {
       "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.pdf",
@@ -79,6 +79,41 @@
       "path": "output/part3/figure_08/hup060_actor_wgan_all36_distribution_grid.svg",
       "bytes": 224548,
       "sha256": "48d9e72e15be6e3a691144b9b81032b4d9f97cc55fccb483c3992a2434f69cd1"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc.pdf",
+      "bytes": 57875,
+      "sha256": "ad0b1ad79aa0cd914aa192b42ebddb0858c1456bfeae5a5a7eebc8f512ddb915"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc.png",
+      "bytes": 173791,
+      "sha256": "8cddfb454981ed6456fa957f5f4bcb977879d50a5cdede2e5a1c579158f3bfa4"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc.svg",
+      "bytes": 48011,
+      "sha256": "d42376386a3d1c29ef4d2c2e6745f4e72ecef1827da94d4db5c815255eba16f6"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_noise_and_mismatch.pdf",
+      "bytes": 53647,
+      "sha256": "8326995a9626017ab076c1462bc19445499aad55096a325b962972ad3f4709ee"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_noise_and_mismatch.png",
+      "bytes": 130121,
+      "sha256": "17a39a562b51f1b18b624052d2393a3c77093a43d004ac07644cf2b07b1023ea"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_noise_and_mismatch.svg",
+      "bytes": 45374,
+      "sha256": "8326aa767ae1e1a323faeeef625631749f27e7a7f2a2276e7ede6b78d1020fc7"
+    },
+    {
+      "path": "output/part3/figure_09/figure_contract.json",
+      "bytes": 1041,
+      "sha256": "d068d07f871f9c1c09851f1b91aa024f18b0c93c9544b75da153c8f2e15c7eb4"
     },
     {
       "path": "output/part3/figure_09/hup060_trivial_controller_baselines.pdf",
@@ -191,6 +226,41 @@
       "sha256": "a5994b0687c993c043a9f3456c419bb280b633eb2e309c207165ca932f64b5b3"
     },
     {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/README.md",
+      "bytes": 4113,
+      "sha256": "66ea5bd83401190cafe2177cdcff7ea2ae74e77ee411c95e6bb133338cc613a3"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/controller_endpoints.csv",
+      "bytes": 416,
+      "sha256": "7ea5314db8d593a71298d7c8e957c84802a6a9aa6173491f1fced2a56813742a"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/damping_scan.csv",
+      "bytes": 1283,
+      "sha256": "4b630b79b64ecb341c8cbfaade3957c6d702083bce93446c385d310d7ebc7471"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/diffusion_scan.csv",
+      "bytes": 626,
+      "sha256": "0ee987b2bd03eccbba1de3d039dda4bbcda133f83a0df83aa826c92e171b5837"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/initial_mismatch.csv",
+      "bytes": 4522,
+      "sha256": "42b05cadae26becc41b451bbfe6be6cd9b76a413cc30f118eae297a965b55469"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/pooled_width_errors.csv",
+      "bytes": 2300,
+      "sha256": "701df579f9f838e09766b4951f40333bb180dd0a5955d23de62007797f12639a"
+    },
+    {
+      "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/primary_contact_endpoints.csv",
+      "bytes": 9850,
+      "sha256": "e723e45d3e661efa4e97cf65a26590adaf26155dbaab067acf65d4cc844045f1"
+    },
+    {
       "path": "output/part3/source_data/figure_09_trivial_baselines/primary_baselines_per_channel.csv",
       "bytes": 10243,
       "sha256": "81d30725b4b0582b05e7d4e4fa025b36e946ae85215a4f3817c57a8d170eab04"
@@ -277,13 +347,18 @@
     },
     {
       "path": "paper_figures.json",
-      "bytes": 5630,
-      "sha256": "faee46e92575ffad9f982fc695c19a883ce88888fdaf289bb87d6b33636fe5a4"
+      "bytes": 5989,
+      "sha256": "a3b420f002a7d0cde446fb220d0a55f3ae08782ed762aa5c1a473ae46d2697e1"
     },
     {
       "path": "part3_mfc/README.md",
-      "bytes": 2611,
-      "sha256": "21a635de79920887d799bf97526abe9a6e840c4e4f2e5f1333d0e3d6660d7484"
+      "bytes": 3340,
+      "sha256": "b8ff337ca6069ac8cc48b047f5f633dd00d217f77380d6047fa0fc81ffa435d8"
+    },
+    {
+      "path": "part3_mfc/TRACKING_MPC.md",
+      "bytes": 4601,
+      "sha256": "29276ee48a6fd023fd00787980c9822bb833a118b775b57cde8a741ed8db8e4e"
     },
     {
       "path": "part3_mfc/aggregate_matched_ablation.py",
@@ -292,8 +367,8 @@
     },
     {
       "path": "part3_mfc/current_controller.py",
-      "bytes": 8895,
-      "sha256": "224e9deeb0387f1abf7d86c1754a42a159dd192df4f2185836f07ce007378c35"
+      "bytes": 8975,
+      "sha256": "57a43b49642774e193188df69299c19375da25b95af91263c5233fd58a6dc48d"
     },
     {
       "path": "part3_mfc/figure_06_actor_wgan_control.py",
@@ -312,8 +387,8 @@
     },
     {
       "path": "part3_mfc/figure_09_trivial_baselines.py",
-      "bytes": 268,
-      "sha256": "4fc499bd6891c7a3ab45a1487d618eee13884ada07dec5dc8e8da9d552e821c1"
+      "bytes": 266,
+      "sha256": "f078c514c4c16bc2407d1ef7b9d59b40d11edaf721246272b3d42bbeebb20ddc"
     },
     {
       "path": "part3_mfc/figure_10_training_losses.py",
@@ -352,13 +427,18 @@
     },
     {
       "path": "part3_mfc/plot_current_source_data.py",
-      "bytes": 5149,
-      "sha256": "38d4e8a149da6234e560d72fa210bda0a5ceecf556b50ffbe2e478694d71c7c3"
+      "bytes": 5158,
+      "sha256": "c43254b3708dfcc059bb6a0e88706e07dfcc8d3352f614bad880663659ee919c"
     },
     {
       "path": "part3_mfc/plot_loss_approved.py",
       "bytes": 16938,
       "sha256": "8ba9cf1a07d76cf4f9447c5911b3cb8e5689323953e7705fab05943a56343c11"
+    },
+    {
+      "path": "part3_mfc/plot_physicad_controller_baselines.py",
+      "bytes": 14133,
+      "sha256": "95e09cd98714c69ee4679f9ed65b4a0bdd6373f263ea41c1a9bcee9562bab3db"
     },
     {
       "path": "part3_mfc/recompute_full_baselines.py",
@@ -369,6 +449,21 @@
       "path": "part3_mfc/run_component_ablation.py",
       "bytes": 22630,
       "sha256": "52b9e020ca6a5935f1724670630e1928774e17c01715299b73c8c9e3241645d3"
+    },
+    {
+      "path": "part3_mfc/test_tracking_mpc.py",
+      "bytes": 2069,
+      "sha256": "704b6829978abe460a7cdeeff8b580cd8b012d75d55686ceb3a460c06a1ca01e"
+    },
+    {
+      "path": "part3_mfc/tracking_mpc.py",
+      "bytes": 9516,
+      "sha256": "252aae203877eedafb4c74e83c73d53f8ddd8f85c07605ba3e65cbd3ac5546f3"
+    },
+    {
+      "path": "part3_mfc/tracking_mpc_metrics.py",
+      "bytes": 2667,
+      "sha256": "1c11b56a14a488d0622128d8ffaeb678e43ff591229d0d3e82c71c271c1c79bf"
     },
     {
       "path": "part3_mfc/train_full_wgangp.py",
@@ -672,8 +767,8 @@
     },
     {
       "path": "verify_outputs.py",
-      "bytes": 8244,
-      "sha256": "781b15ce087d045197aea56a3e3ffc00212f1312106a6a04229d1d18b4a2ff22"
+      "bytes": 8371,
+      "sha256": "837a279a1d4f5ea093e503a724921e7643c90a271111bc58a8ce483f9a4d5454"
     }
   ],
   "protected_part_i_ii_and_shared_files_unchanged": 59,

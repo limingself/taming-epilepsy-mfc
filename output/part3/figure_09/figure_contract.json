@@ -1,0 +1,24 @@
+{
+  "pipeline_slot": 9,
+  "manuscript": "Physica D red manuscript, 2026-11-24",
+  "figures": {
+    "7": {
+      "stem": "HUP060_controller_baselines_mpc",
+      "panels": {
+        "a": "Mean contact-wise time-resolved and occupation W1 by policy",
+        "b": "Absolute pooled-SD errors against the reference for 36 paired contacts",
+        "c": "Occupation W1 vs actual actuator-command RMS in the damping sweep, Full and tracking MPC"
+      }
+    },
+    "S10": {
+      "stem": "HUP060_noise_and_mismatch",
+      "panels": {
+        "a": "No-input noise sensitivity against the preictal reference and observed ictal activity",
+        "b": "Initial uncontrolled distribution mismatch: location, scale and shape; SD ratios"
+      }
+    }
+  },
+  "formats": ["pdf", "png", "svg"],
+  "validation_unit": "36 contacts in one HUP060 development window; the contacts are not independent patients.",
+  "shared_condition": "Full and tracking MPC use the same actuator mask, simulated noise draws and command bound, not matched realized energy."
+}

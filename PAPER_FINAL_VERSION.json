@@ -38,6 +38,14 @@
     "scientific_core": "part3_mfc/model_core.py",
     "scientific_core_sha256": "57da573dbe300ad6bd585fbd69e46102d9f315dba8862e63c7d3e8320b6943e1",
     "fresh_training_code": "part3_mfc/train_full_wgangp.py",
+    "tracking_baseline": {
+      "solver": "part3_mfc/tracking_mpc.py",
+      "metrics": "part3_mfc/tracking_mpc_metrics.py",
+      "figure_entry": "part3_mfc/figure_09_trivial_baselines.py",
+      "manuscript_figures": ["7", "S10"],
+      "planning_horizon_steps": 4,
+      "evaluation_scope": "HUP060 run02, same frozen model, mask, command bound and evaluation bank as Full; realized input RMS is not matched."
+    },
     "figure_code": [
       "part3_mfc/figure_06_actor_wgan_control.py",
       "part3_mfc/figure_07_mfc_ablation.py",

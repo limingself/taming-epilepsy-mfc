@@ -77,10 +77,11 @@ def verify_figure(number):
     manifest=read(ROOT/'CURRENT_PROJECT_MANIFEST.json')
     ledger={r['path']:r['sha256'] for r in manifest['files']}
     paths=[]
-    for extension in figure.get('formats',['pdf','png','svg']):
-        relative=figure['output_directory']+'/'+figure['stem']+'.'+extension
-        if relative not in ledger or sha(ROOT/relative)!=ledger[relative]:raise RuntimeError('Wrong frozen current figure '+relative)
-        paths.append(relative)
+    for panel in [figure, *figure.get('companion_exports', [])]:
+        for extension in figure.get('formats',['pdf','png','svg']):
+            relative=figure['output_directory']+'/'+panel['stem']+'.'+extension
+            if relative not in ledger or sha(ROOT/relative)!=ledger[relative]:raise RuntimeError('Wrong frozen current figure '+relative)
+            paths.append(relative)
     return dict(status='pass',figure=number,mode='verified_current_frozen_public_exports_not_regenerated',files=paths,
                 selected_full_update=700,training_started=False,signal_arrays_opened=False)
 

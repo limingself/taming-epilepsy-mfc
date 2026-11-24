@@ -9,6 +9,14 @@ See the [Part II reproduction instructions](part2_rc_sde/README.md);
 the historical figure filenames are retained. Do not run a separate release
 folder for the current workflow.
 
+For the revised HUP060 controller comparison (**Physica D Fig. 7 and Fig. S10**),
+use the existing [Part III baseline entry](part3_mfc/figure_09_trivial_baselines.py).
+Repository numbers are stable pipeline IDs: slot 05 is manuscript Fig. 3,
+slot 07 is the component ablation in manuscript Fig. 6, and slot 09 now produces
+manuscript Fig. 7 **and** S10. The tracking-MPC comparison changes neither the
+frozen dynamics nor the trained Full controller. See the
+[replay instructions](part3_mfc/TRACKING_MPC.md).
+
 Full combines the frozen patient-specific Graph–RC dynamics, structured
 mean–deviation feedback, the existing empirical-law losses and WGAN-GP from
 the first fresh actor update. It is not a pure GAN replacement of the plant.
@@ -46,6 +54,7 @@ output directory, for example:
 
 ```powershell
 python part3_mfc/figure_08_all36_controlled_distributions.py --redraw --output-dir ./new_public_redraw
+python part3_mfc/figure_09_trivial_baselines.py --redraw --output-dir ./fig7_s10_redraw
 ```
 
 `part3_mfc/part3_model.py` is the current command entry;

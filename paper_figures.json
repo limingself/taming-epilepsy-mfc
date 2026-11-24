@@ -106,17 +106,21 @@
     {
       "number": 9,
       "part": 3,
-      "title": "Current RMS-matched generic-input baselines",
+      "title": "HUP060 controller comparison on the frozen surrogate (Physica D Fig. 7)",
       "generator": "part3_mfc/figure_09_trivial_baselines.py",
       "output_directory": "output/part3/figure_09",
-      "stem": "hup060_trivial_controller_baselines",
-      "source_data": "output/part3/source_data/figure_09_trivial_baselines",
+      "stem": "HUP060_controller_baselines_mpc",
+      "source_data": "output/part3/source_data/figure_09_trivial_baselines/physicad",
+      "manuscript_figure": "7",
+      "companion_exports": [
+        {"manuscript_figure": "S10", "stem": "HUP060_noise_and_mismatch"}
+      ],
       "formats": [
         "svg",
         "pdf",
         "png"
       ],
-      "provenance_note": "Same selected700 Full as Figs6/8; no implicit model/outer access"
+      "provenance_note": "Full update 700 and four-step tracking MPC share the surrogate, actuator mask, command limit, and evaluation draws, not realized RMS. Noise-only sensitivity and the initial discrepancy appear in S10. Historical four-panel exports are not current."
     },
     {
       "number": 10,

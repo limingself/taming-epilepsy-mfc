@@ -6,7 +6,8 @@
   "current_package": ".",
   "public_manifest": "CURRENT_PROJECT_MANIFEST.json",
   "public_verifier": "verify_outputs.py",
-  "manuscript_pages": 63,
+  "manuscript_pages": 66,
+  "manuscript_revision": "2026-11-24 (Physica D red manuscript). The tag above identifies the unchanged Full controller, not this subsequent MPC comparison.",
   "method": "Frozen Graph-RC stochastic recurrence, structured mean-deviation actor, empirical-law penalties plus WGAN-GP from the first actor update",
   "historical_root_entrypoints_preserved": false,
   "historical_release": "patient-extensions-v1",
@@ -36,8 +37,8 @@
     "patient_extensions/HUP080/runner.py"
   ],
   "previous_release_snapshot": "releases/full_wgangp_20261006",
-  "only_code_organization_and_default_entry_changed": true,
-  "no_training_or_new_evaluation_run": true,
+  "only_code_organization_and_default_entry_changed": false,
+  "revision_scope": "Adds the tracking MPC baseline in the HUP060 development case; no actor training or new outer evaluation.",
   "existing_entrypoint_names_preserved": true,
   "default_root_controller_updated": true
 }
