@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "tag": "full-wgangp-inplace-20261006",
   "current_package": ".",
-  "scope": "Changed native-path current controller code/metrics/figures and entrypoint dependencies, not historical release or private frozen payload",
+  "scope": "Native code, public summaries and figure exports; includes Nov 25 development figure replay tools. Historical external results remain distinct.",
   "files": [
     {
       "path": ".gitattributes",
@@ -17,8 +17,8 @@
     },
     {
       "path": "CURRENT_RELEASE.json",
-      "bytes": 1926,
-      "sha256": "78a4b0cf1f72da1e62b77e032ef93bcbd0a39d92eb240590bd9908f35eb8a561"
+      "bytes": 2130,
+      "sha256": "015ad9e2207feabd0d7feb16b307013f11eb7e706bec9c20a3f681164cc020a1"
     },
     {
       "path": "DATA_NOTICE.md",
@@ -27,13 +27,13 @@
     },
     {
       "path": "PAPER_FINAL_VERSION.json",
-      "bytes": 6600,
-      "sha256": "d1378c0518341af8570b1509443ce2c57969ce8ac8660fff9a6533d129ed2e5e"
+      "bytes": 6855,
+      "sha256": "94f14c49193bdb8e5b698eef7891756cde7de6288aed7f2993dbdd9361810f52"
     },
     {
       "path": "README.md",
-      "bytes": 4894,
-      "sha256": "c5915c9cb9cd4c1abaf19d3ec7af2e1f3b8caf935932763fe543ad2228d56532"
+      "bytes": 5185,
+      "sha256": "57993b7e53a40cfe8db2113145467c1ff1cd982cb18e7ed31650ba8b9a58d008"
     },
     {
       "path": "output/part3/figure_06/hup060_actor_wgan_mfc_preview.pdf",
@@ -96,6 +96,21 @@
       "sha256": "d42376386a3d1c29ef4d2c2e6745f4e72ecef1827da94d4db5c815255eba16f6"
     },
     {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc_complete.pdf",
+      "bytes": 68919,
+      "sha256": "4d316be8612f6c29391a9cc7966b4105a0e353db22d3ae65c1c470598e22c49e"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc_complete.png",
+      "bytes": 317185,
+      "sha256": "e5be5be909c5a7a5dcec0eaa7c14373e7a370689a492bb1d560a7bc75b4349b6"
+    },
+    {
+      "path": "output/part3/figure_09/HUP060_controller_baselines_mpc_complete.svg",
+      "bytes": 113920,
+      "sha256": "ec3deedc94f2ccea877184cdd853a5889f42718cdbf1947d4eec14e8312c3453"
+    },
+    {
       "path": "output/part3/figure_09/HUP060_noise_and_mismatch.pdf",
       "bytes": 53647,
       "sha256": "8326995a9626017ab076c1462bc19445499aad55096a325b962972ad3f4709ee"
@@ -112,8 +127,8 @@
     },
     {
       "path": "output/part3/figure_09/figure_contract.json",
-      "bytes": 1041,
-      "sha256": "d068d07f871f9c1c09851f1b91aa024f18b0c93c9544b75da153c8f2e15c7eb4"
+      "bytes": 1339,
+      "sha256": "ad35510c13dc91dd3f3e0599c0dd6aa5c5edcbe408c5e0261c23c82740bb1078"
     },
     {
       "path": "output/part3/figure_09/hup060_trivial_controller_baselines.pdf",
@@ -227,8 +242,8 @@
     },
     {
       "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/README.md",
-      "bytes": 4113,
-      "sha256": "66ea5bd83401190cafe2177cdcff7ea2ae74e77ee411c95e6bb133338cc613a3"
+      "bytes": 4220,
+      "sha256": "66ccab7f1cda12b81199f3c423fe284649e472cb2e11cb417da4cf31f7888730"
     },
     {
       "path": "output/part3/source_data/figure_09_trivial_baselines/physicad/controller_endpoints.csv",
@@ -347,18 +362,18 @@
     },
     {
       "path": "paper_figures.json",
-      "bytes": 5989,
-      "sha256": "a3b420f002a7d0cde446fb220d0a55f3ae08782ed762aa5c1a473ae46d2697e1"
+      "bytes": 6642,
+      "sha256": "e1225e0991e054cf3774344debb573408677e0d27beba327bbeaddac7efd02c7"
     },
     {
       "path": "part3_mfc/README.md",
-      "bytes": 3340,
-      "sha256": "b8ff337ca6069ac8cc48b047f5f633dd00d217f77380d6047fa0fc81ffa435d8"
+      "bytes": 3445,
+      "sha256": "15c68a3e4a0e38ee28407e243349bae87ef0799f16f2f581c695460eb82a377b"
     },
     {
       "path": "part3_mfc/TRACKING_MPC.md",
-      "bytes": 4601,
-      "sha256": "29276ee48a6fd023fd00787980c9822bb833a118b775b57cde8a741ed8db8e4e"
+      "bytes": 4913,
+      "sha256": "f4001492f2fbd889ef8012d68b06adea500ea4b19aa0600318554b969593639c"
     },
     {
       "path": "part3_mfc/aggregate_matched_ablation.py",
@@ -387,8 +402,8 @@
     },
     {
       "path": "part3_mfc/figure_09_trivial_baselines.py",
-      "bytes": 266,
-      "sha256": "f078c514c4c16bc2407d1ef7b9d59b40d11edaf721246272b3d42bbeebb20ddc"
+      "bytes": 263,
+      "sha256": "91472849c851e2f8d19e4c56484eb632c4813b115c45a75e04f9f81065fc39b8"
     },
     {
       "path": "part3_mfc/figure_10_training_losses.py",
@@ -437,8 +452,8 @@
     },
     {
       "path": "part3_mfc/plot_physicad_controller_baselines.py",
-      "bytes": 14133,
-      "sha256": "95e09cd98714c69ee4679f9ed65b4a0bdd6373f263ea41c1a9bcee9562bab3db"
+      "bytes": 18213,
+      "sha256": "640de8c5578b1987759622150963b11f4b6dc8485cc479746dc1e85b420d02c0"
     },
     {
       "path": "part3_mfc/recompute_full_baselines.py",
@@ -486,6 +501,31 @@
       "sha256": "3771d4553e0782208eb66670645ac4e01ce9be342ad879606abd51b3e2abe3ee"
     },
     {
+      "path": "patient_extensions/HUP065/development_s4/README.md",
+      "bytes": 4839,
+      "sha256": "ad9043e68af4b7350669870ae3ec6d03f8d232a7f4df8d8aa6bd8b4f122d6a07"
+    },
+    {
+      "path": "patient_extensions/HUP065/development_s4/engine.py",
+      "bytes": 7497,
+      "sha256": "157a9d9b555c8c6da147b4d03b2a49de5033a7dc91e636dc1e22f14e651f7274"
+    },
+    {
+      "path": "patient_extensions/HUP065/development_s4/fit_predictor.py",
+      "bytes": 2247,
+      "sha256": "9d85f96c0e9b2317e9c08895c6f1e48df32f2ade3103a9eaf6c6165aafe27005"
+    },
+    {
+      "path": "patient_extensions/HUP065/development_s4/plot_all_contacts.py",
+      "bytes": 9108,
+      "sha256": "d0f9bec5719724d035b89173a62562964902d8aa5ae75196d54f2279611cce16"
+    },
+    {
+      "path": "patient_extensions/HUP065/development_s4/train_policy.py",
+      "bytes": 11222,
+      "sha256": "c70ba0cfd62f10e76c87289c889439e274511f366c79a9b786dd21f6387e1115"
+    },
+    {
       "path": "patient_extensions/HUP065/finalize_hup065.py",
       "bytes": 5129,
       "sha256": "57b32e5bb09f7a139ef442d2f806f64fa43e73ba2763e32d29833bd17d1016ad"
@@ -504,6 +544,16 @@
       "path": "patient_extensions/HUP065/plot_parameter_adaptation.py",
       "bytes": 6998,
       "sha256": "8bbd08645bd42d767e9ad044687158fd4dfbb649d87cb6af7f953b19abf1e81b"
+    },
+    {
+      "path": "patient_extensions/HUP065/publication/HUP065_run01_free_control.pdf",
+      "bytes": 127726,
+      "sha256": "2e72086b09d49b17f2a721bac0bbf11c86b119c560ff26ea44cfa368551ad634"
+    },
+    {
+      "path": "patient_extensions/HUP065/publication/HUP065_run01_free_control.png",
+      "bytes": 602022,
+      "sha256": "c53e88b88fb126829ca46c91c3285fcc5ff8a513473c8a82c2a14a737ac39bcc"
     },
     {
       "path": "patient_extensions/HUP065/publication/hup065_ofrc_all_channels_page_01.pdf",
@@ -596,6 +646,11 @@
       "sha256": "e58c076a34788a7ab2a6b0482dcf451890a46427ab744089ab4cdbe0f08e246d"
     },
     {
+      "path": "patient_extensions/HUP080/FIGURE_S5.md",
+      "bytes": 4048,
+      "sha256": "36354281ee73488f309b1a444f961b6317ca026a822dc65343dfb6d84e6b8ab9"
+    },
+    {
       "path": "patient_extensions/HUP080/README.md",
       "bytes": 1180,
       "sha256": "a6e2a9ea0e6005d3644ac1412f37921ce306ab3655fec88027e12a47985c7d20"
@@ -606,9 +661,74 @@
       "sha256": "e132b63b418d61526c81e858be96ae5dfa692967d8a1e995f94f2c2d9fc1a577"
     },
     {
+      "path": "patient_extensions/HUP080/development_control/README.md",
+      "bytes": 2681,
+      "sha256": "6431ce13c49d67ad0f858ce0273fc56b6274ecfcbfc70e6adc64c9ecfb2fedec"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/adaptive_run.py",
+      "bytes": 6717,
+      "sha256": "4fb6e48f0c1970bcd1cf099ab425ca14522f97bf6b8ca9cc726b60d7e9e50d86"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/calibrate.py",
+      "bytes": 9017,
+      "sha256": "21c8380f38099ce611311f678f4d7e47d98b400ff67cb82322a725767d8ff5bc"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/check_additional.py",
+      "bytes": 6804,
+      "sha256": "4f756e49a0a08d93aefe012a854aafd7252c5d2b57e7ac62882dd3922093248c"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/control_common.py",
+      "bytes": 2637,
+      "sha256": "96e4a21cc20b0ce4d9308157bda07871b7bd09d19eedf4b273409f029060e251"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/development_paths.py",
+      "bytes": 576,
+      "sha256": "29f12674f7409ad5391e23e1497c8b40a63a653848aff0aef4e36adedce1f212"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/exact_distances.py",
+      "bytes": 570,
+      "sha256": "2dd47d055a08ea626631c75c8d5035c0b424880ca42e3dfd9f1dd0ade76bce3b"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/extra_check_protocol.json",
+      "bytes": 1299,
+      "sha256": "ff30e3cd39e23c281efd7005867d15837bda2d9e4acc0a9342fe9fd5dc6a78d7"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/finalize.py",
+      "bytes": 6687,
+      "sha256": "6f43be88c1d7c0a9b574e50daf4e35b7004bf25d1350253bcd762778272a1990"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/predict_free.py",
+      "bytes": 10062,
+      "sha256": "c8c3252958ccb18bbce248ed31b5284e0a583691ff6e7ab65906a432844b82fe"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/refine.py",
+      "bytes": 8230,
+      "sha256": "a9d802cf5f7956afb810fb5d2d72d76486f876e16c41ddc69e50c2287a700a9e"
+    },
+    {
+      "path": "patient_extensions/HUP080/development_control/train_control.py",
+      "bytes": 12013,
+      "sha256": "868c0d7650984cf29161e3c90c5420adeec4a953d99e03f69423c6f9335ed54e"
+    },
+    {
       "path": "patient_extensions/HUP080/optimize_control.py",
       "bytes": 24055,
       "sha256": "698761ac103c8d169d256addf5dc434479ea23e0663d4559cd7f9a8647f305f7"
+    },
+    {
+      "path": "patient_extensions/HUP080/plot_development_control.py",
+      "bytes": 7396,
+      "sha256": "2698095073c64c489a3e05ced20e29df2f5a15b443f65e4adac40260b6605dad"
     },
     {
       "path": "patient_extensions/HUP080/plot_external_layout_snapshot.py",
@@ -619,6 +739,11 @@
       "path": "patient_extensions/HUP080/plot_parameter_adaptation.py",
       "bytes": 5852,
       "sha256": "1d37f6df2c8394654f2cc2b116f4e64e38bcd0d03e41d3f14b5e64cab380cabe"
+    },
+    {
+      "path": "patient_extensions/HUP080/publication/HUP080_refined_all96_overview.pdf",
+      "bytes": 156654,
+      "sha256": "ce5911945cb55727644521e5022c872387d7cf590b556b2ff7bfd155863104de"
     },
     {
       "path": "patient_extensions/HUP080/publication/hup080_ofrc_all_channels_page_01.pdf",
@@ -711,6 +836,16 @@
       "sha256": "03530bdad89f78bef7a91765dee7b9df4c64ed39c5b3794e80e9440ddbcfdbf3"
     },
     {
+      "path": "patient_extensions/HUP080/results/table_s17.csv",
+      "bytes": 226,
+      "sha256": "e93e2f8a91692eb157c42495ff4aeac47a48f25b4a2cd0254dca4311b689bcb3"
+    },
+    {
+      "path": "patient_extensions/HUP080/results/table_s17_window_banks.csv",
+      "bytes": 10518,
+      "sha256": "b717d197c689a7434b6a8d48f5c74645f751558156a09713c47595a8d0f46b19"
+    },
+    {
       "path": "patient_extensions/HUP080/results/trajectory_safety_metrics.csv",
       "bytes": 4674,
       "sha256": "2f6642a663bd9ca11d42d6fe19f57681dfa3f59e1cb1dfff0792de4ce5118fe8"
@@ -724,6 +859,11 @@
       "path": "patient_extensions/HUP080/selftest.py",
       "bytes": 57678,
       "sha256": "6fcd427861fa4392810be3e2535d19d3f8871dfa9da6873a1d58da8bfb8ca925"
+    },
+    {
+      "path": "patient_extensions/HUP080/summarize_development_windows.py",
+      "bytes": 6062,
+      "sha256": "9af6d693e65e3d0af1dd55a375f2e9fd056bc958e5d4ce446adc33593532e6d6"
     },
     {
       "path": "patient_extensions/PORTABILITY_MAP.json",

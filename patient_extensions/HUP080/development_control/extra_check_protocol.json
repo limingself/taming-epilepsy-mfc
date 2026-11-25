@@ -1,0 +1,15 @@
+{
+  "purpose": "Post-freeze check on additional development windows that were not scored in the earlier free-prediction or control comparisons listed in the previous calibration protocol; these are not independent new seizures.",
+  "subject": "HUP080",
+  "folds": [1, 2, 3],
+  "fit": "Two other development runs, with previous and candidate controllers using identical fold-trained model, preictal target convention, mask and bounds.",
+  "extra_forecast_starts_samples": [2340, 6076, 7680],
+  "horizon_and_history_samples": 256,
+  "particles": 32,
+  "evaluation_banks": [1, 2],
+  "arms": ["free", "previous_32_update_controller", "refined_controller"],
+  "comparison": "Mean across contacts and then windows, averaging simulation banks within windows. Calculate both occupation and time-resolved W1 and report paired old-vs-new differences, subgroup effects, and same-budget (not equal-energy) checks. No new experiment designs or checkpoint changes after examining these windows.",
+  "scoring_reference": "Held development run's preictal segments 15:30, only used for scoring, not given to the policies.",
+  "evaluation_noise": "Use exactly the pre-existing history-only scale rule and matched standard normal draws for all arms. The intra-window scale is fixed.",
+  "outer_run04_allowed": false
+}

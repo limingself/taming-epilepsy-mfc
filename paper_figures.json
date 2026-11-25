@@ -109,18 +109,15 @@
       "title": "HUP060 controller comparison on the frozen surrogate (Physica D Fig. 7)",
       "generator": "part3_mfc/figure_09_trivial_baselines.py",
       "output_directory": "output/part3/figure_09",
-      "stem": "HUP060_controller_baselines_mpc",
+      "stem": "HUP060_controller_baselines_mpc_complete",
       "source_data": "output/part3/source_data/figure_09_trivial_baselines/physicad",
       "manuscript_figure": "7",
-      "companion_exports": [
-        {"manuscript_figure": "S10", "stem": "HUP060_noise_and_mismatch"}
-      ],
       "formats": [
         "svg",
         "pdf",
         "png"
       ],
-      "provenance_note": "Full update 700 and four-step tracking MPC share the surrogate, actuator mask, command limit, and evaluation draws, not realized RMS. Noise-only sensitivity and the initial discrepancy appear in S10. Historical four-panel exports are not current."
+      "provenance_note": "Six panels (a–f) in one figure. Noise sensitivity and initial mismatch are included here; realized RMS is not matched. Earlier split exports are kept as history."
     },
     {
       "number": 10,
@@ -138,5 +135,27 @@
       "provenance_note": "Same selected700 Full as Figs6/8; no implicit model/outer access"
     }
   ],
-  "current_part3_controller_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0"
+  "current_part3_controller_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
+  "red_manuscript_development_figures": {
+    "S4": {
+      "patient": "HUP065",
+      "contacts": 64,
+      "actuators": 32,
+      "generator": "patient_extensions/HUP065/development_s4/plot_all_contacts.py",
+      "pdf": "patient_extensions/HUP065/publication/HUP065_run01_free_control.pdf"
+    },
+    "S5": {
+      "patient": "HUP080",
+      "contacts": 96,
+      "actuators": 76,
+      "generator": "patient_extensions/HUP080/plot_development_control.py",
+      "pdf": "patient_extensions/HUP080/publication/HUP080_refined_all96_overview.pdf"
+    },
+    "Table S17": {
+      "patient": "HUP080",
+      "generator": "patient_extensions/HUP080/summarize_development_windows.py",
+      "source": "patient_extensions/HUP080/results/table_s17_window_banks.csv",
+      "summary": "patient_extensions/HUP080/results/table_s17.csv"
+    }
+  }
 }

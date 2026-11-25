@@ -42,7 +42,9 @@
       "solver": "part3_mfc/tracking_mpc.py",
       "metrics": "part3_mfc/tracking_mpc_metrics.py",
       "figure_entry": "part3_mfc/figure_09_trivial_baselines.py",
-      "manuscript_figures": ["7", "S10"],
+      "manuscript_figures": [
+        "7"
+      ],
       "planning_horizon_steps": 4,
       "evaluation_scope": "HUP060 run02, same frozen model, mask, command bound and evaluation bank as Full; realized input RMS is not matched."
     },
@@ -149,5 +151,7 @@
       "time_reduction_percent": 71.43900089394317,
       "occupation_reduction_percent": 77.25811010579788
     }
-  }
+  },
+  "external_cases_scope": "Historical frozen outer-case metrics. These are not the development-window results plotted in the Nov 25 Fig. S4 or S5.",
+  "red_manuscript_development_figures": "paper_figures.json#red_manuscript_development_figures"
 }

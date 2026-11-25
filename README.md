@@ -9,29 +9,22 @@ See the [Part II reproduction instructions](part2_rc_sde/README.md);
 the historical figure filenames are retained. Do not run a separate release
 folder for the current workflow.
 
-For the revised HUP060 controller comparison (**Physica D Fig. 7 and Fig. S10**),
-use the existing [Part III baseline entry](part3_mfc/figure_09_trivial_baselines.py).
-Repository numbers are stable pipeline IDs: slot 05 is manuscript Fig. 3,
-slot 07 is the component ablation in manuscript Fig. 6, and slot 09 now produces
-manuscript Fig. 7 **and** S10. The tracking-MPC comparison changes neither the
-frozen dynamics nor the trained Full controller. See the
-[replay instructions](part3_mfc/TRACKING_MPC.md).
+## Figures in the November 25 Physica D red manuscript
+
+| Result | Reproduction entry | Scope |
+|---|---|---|
+| HUP060 Fig. 3 | [Nested forecasting ablation](part2_rc_sde/figure_05_input_ablation.py) | Four nested predictors; unchanged from the verified Nov 24 figure. |
+| HUP060 Fig. 7 | [Six-panel controller comparison](part3_mfc/figure_09_trivial_baselines.py) · [inputs and commands](part3_mfc/TRACKING_MPC.md) | All original comparisons plus tracking MPC; the previous split export is historical. |
+| HUP065 Fig. S4 | [Fit, replay and draw](patient_extensions/HUP065/development_s4/README.md) | 64 contacts, 32 direct inputs; run01 development display. |
+| HUP080 Fig. S5 / Table S17 | [Draw and tabulate](patient_extensions/HUP080/FIGURE_S5.md) · [fit and evaluate](patient_extensions/HUP080/development_control/README.md) | 96 contacts, 76 direct inputs; one run01 display and a separate 33-window summary. |
+
+Stable pipeline slot 05 corresponds to manuscript Fig. 3, slot 07 to Fig. 6, and slot 09 to Fig. 7. Fig. 7 compares methods on the same frozen HUP060 model and draw bank; realized input energy is an outcome, not a matched quantity.
 
 Full combines the frozen patient-specific Graph–RC dynamics, structured
 mean–deviation feedback, the existing empirical-law losses and WGAN-GP from
 the first fresh actor update. It is not a pure GAN replacement of the plant.
 
-| Patient | Direct inputs | Current controller |
-|---|---:|---|
-| HUP060 | 13/36 | Neutral initialization, 1,000 actor updates, selected update700 |
-| HUP065 | 32/64 | Fresh23-node parent, weighted top32 low-gain expansion, selected added0 of150 |
-| HUP080 | 76/96 | Fresh parent selected200, continuation selected added125 of150 |
-
-HUP060 is a development/adaptation case. The current65/80 results are post hoc
-amended reanalyses. HUP080's original RMS cap0.405 failed all24 conditions;
-the revised resource cap0.45 passes24/24, with the original failures retained.
-Model inputs have no physical stimulation units. The separate cold32 HUP065
-trial was not adopted because it failed the two-endpoint development comparison.
+HUP060 uses 13/36 inputs and the Full checkpoint at update 700. The updated patient figures above are **development** experiments. Older HUP065 run03 and HUP080 run04 checkpoints, their separate budget checks and public replay entries remain in the repository as provenance; their metrics do not describe the new figures. Model inputs are in standardized model units.
 
 ## Current commands
 
@@ -54,7 +47,7 @@ output directory, for example:
 
 ```powershell
 python part3_mfc/figure_08_all36_controlled_distributions.py --redraw --output-dir ./new_public_redraw
-python part3_mfc/figure_09_trivial_baselines.py --redraw --output-dir ./fig7_s10_redraw
+python part3_mfc/figure_09_trivial_baselines.py --redraw --output-dir ./fig7_complete_redraw
 ```
 
 `part3_mfc/part3_model.py` is the current command entry;
@@ -64,7 +57,7 @@ default. Control, ablation, RMS-matched baselines and actual loss records all
 identify the same Full update700 checkpoint. The current contract is
 `PAPER_FINAL_VERSION.json`; `CURRENT_PROJECT_MANIFEST.json` binds current code,
 public metrics and approved figures. `paper_figures.json` maps10 HUP060 outputs;
-65/80 pages remain under their original patient publication directories.
+the additional registry maps the current patient figures and Table S17.
 
 Private exact replay needs separately supplied frozen inputs/weights. Current
 local assets occupy the existing `artifacts/part3_hup060_actor_wgan_v1/` and

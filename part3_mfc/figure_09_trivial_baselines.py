@@ -1,4 +1,4 @@
-"""Physica D Fig. 7 and Fig. S10 (historical pipeline slot 09)."""
+"""Physica D six-panel Fig. 7 (historical pipeline slot 09)."""
 if __package__:
     from .current_controller import figure_main
 else:

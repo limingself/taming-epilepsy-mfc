@@ -1,24 +1,25 @@
 {
   "pipeline_slot": 9,
-  "manuscript": "Physica D red manuscript, 2026-11-24",
+  "manuscript": "Physica D red manuscript, 2026-11-25",
   "figures": {
     "7": {
-      "stem": "HUP060_controller_baselines_mpc",
+      "stem": "HUP060_controller_baselines_mpc_complete",
       "panels": {
-        "a": "Mean contact-wise time-resolved and occupation W1 by policy",
-        "b": "Absolute pooled-SD errors against the reference for 36 paired contacts",
-        "c": "Occupation W1 vs actual actuator-command RMS in the damping sweep, Full and tracking MPC"
-      }
-    },
-    "S10": {
-      "stem": "HUP060_noise_and_mismatch",
-      "panels": {
-        "a": "No-input noise sensitivity against the preictal reference and observed ictal activity",
-        "b": "Initial uncontrolled distribution mismatch: location, scale and shape; SD ratios"
+        "a": "Time-resolved and occupation W1: Free, no-input noise sensitivity at 0.2, Constant, White, P damping, tracking MPC and Full.",
+        "b": "Scalar proportional damping over 27 gains: occupation W1 and realized actuator-command RMS.",
+        "c": "No-input innovation sensitivity: distances to preictal reference and observed seizure for 13 noise multipliers.",
+        "d": "Initial Free-to-reference mismatch: location, scale, residual shape, and contact-wise SD ratios.",
+        "e": "Pooled-SD discrepancies for tracking MPC versus Full, paired at each of the 36 contacts.",
+        "f": "Residual occupation W1 against realized actuator-command RMS for Full, tracking MPC and proportional damping."
       }
     }
   },
-  "formats": ["pdf", "png", "svg"],
-  "validation_unit": "36 contacts in one HUP060 development window; the contacts are not independent patients.",
-  "shared_condition": "Full and tracking MPC use the same actuator mask, simulated noise draws and command bound, not matched realized energy."
+  "formats": [
+    "pdf",
+    "png",
+    "svg"
+  ],
+  "validation_unit": "36 contacts in one HUP060 development window; contacts are not independent patients.",
+  "shared_condition": "Tracking MPC and Full share a frozen model, mask, simulation innovations and command bound (1.8), not matched realized energy.",
+  "data_scope": "Eight previously released aggregate CSVs; no new controller fit or outer evaluation."
 }

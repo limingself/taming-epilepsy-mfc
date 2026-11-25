@@ -79,6 +79,11 @@ window. There is no new plant, hindsight input, patient-specific refit or claim
 that the numerical optimizer attains a global minimum.
 
 At manuscript precision both Full and MPC have mean occupation W1 of 0.079.
+In the six-panel red-manuscript Figure 7, panel a places tracking MPC beside the
+original controls, panel e pairs width errors by contact, and panel f reports
+residual distance versus realized command RMS. Panels b–d retain the damping,
+noise and initial-mismatch diagnostics; they do not refit tracking MPC.
+
 Full's median width error is 0.036 versus 0.095 for MPC, and Full is closer in
 width at 26/36 contacts. Both W1 endpoints improve relative to Free at 36/36
 contacts for Full and 34/36 for MPC. Command RMS is 0.673 versus 0.518.

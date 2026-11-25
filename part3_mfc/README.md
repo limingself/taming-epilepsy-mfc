@@ -17,7 +17,7 @@ baseline and actual-loss figures. Component-removal arms are separate matched
 | `figure_06_actor_wgan_control.py` | Original3×3 representative Full700 |
 | `figure_07_mfc_ablation.py` | Same-Full component removals |
 | `figure_08_all36_controlled_distributions.py` | Original6×6 four-law Full700 |
-| `figure_09_trivial_baselines.py` | Physica D Fig. 7: generic inputs, damping, tracking MPC and Full; Fig. S10: noise sensitivity and initial mismatch |
+| `figure_09_trivial_baselines.py` | Physica D Fig. 7a–f: generic inputs, damping, tracking MPC, Full, noise sensitivity and initial mismatch |
 | `figure_10_training_losses.py` | Actual1000-update raw loss and trailing125-update median |
 
 Defaults verify the exact adopted exports, not secretly redraw from a legacy
@@ -31,11 +31,11 @@ Fig. 7 compares 36 contacts under the same frozen HUP060 model and 13-site mask.
 Mean occupation distance rounds to 0.079 for both Full and tracking MPC.
 Full gives a smaller pooled standard-deviation error at 26/36 contacts (median
 0.036 vs 0.095); MPC uses less command RMS (0.518 vs 0.673). The shared 1.8
-limit is a bound on command amplitude, not an equal-energy constraint. Fig. S10
-reports a no-input noise scan and the **initial** mismatch, not a controller arm.
+limit is a bound on command amplitude, not an equal-energy constraint. Panels 7c–d report the no-input noise scan and the **initial**
+mismatch; the “Noise 0.2” bar in 7a is a no-input sensitivity setting, not a trained controller.
 Use [the MPC replay and scoring instructions](TRACKING_MPC.md) for the solver;
 the default figure command requires no private data. The older four-panel
-baseline graphic is retained for provenance only.
+baseline graphic, three-panel Fig. 7 and separate noise/mismatch export are historical.
 
 Private current run inputs/results live at
 `artifacts/part3_hup060_actor_wgan_v1/current_full_wgangp/`; comparisons are in

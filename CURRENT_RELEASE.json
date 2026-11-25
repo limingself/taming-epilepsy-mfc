@@ -6,8 +6,8 @@
   "current_package": ".",
   "public_manifest": "CURRENT_PROJECT_MANIFEST.json",
   "public_verifier": "verify_outputs.py",
-  "manuscript_pages": 66,
-  "manuscript_revision": "2026-11-24 (Physica D red manuscript). The tag above identifies the unchanged Full controller, not this subsequent MPC comparison.",
+  "manuscript_pages": 65,
+  "manuscript_revision": "2026-11-25, Physica D red manuscript; the historical tag and controller identities are preserved.",
   "method": "Frozen Graph-RC stochastic recurrence, structured mean-deviation actor, empirical-law penalties plus WGAN-GP from the first actor update",
   "historical_root_entrypoints_preserved": false,
   "historical_release": "patient-extensions-v1",
@@ -38,7 +38,9 @@
   ],
   "previous_release_snapshot": "releases/full_wgangp_20261006",
   "only_code_organization_and_default_entry_changed": false,
-  "revision_scope": "Adds the tracking MPC baseline in the HUP060 development case; no actor training or new outer evaluation.",
+  "revision_scope": "Combines all HUP060 Fig. 7 panels; records separate development predictor/controller replays for HUP065 Fig. S4 and HUP080 Fig. S5 / Table S17. No new outer evaluation.",
   "existing_entrypoint_names_preserved": true,
-  "default_root_controller_updated": true
+  "default_root_controller_updated": true,
+  "red_manuscript_figure_registry": "paper_figures.json#red_manuscript_development_figures",
+  "patient_entries_scope": "Legacy amended outer analyses; see the red manuscript figure registry for development results."
 }

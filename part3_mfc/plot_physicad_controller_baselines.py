@@ -1,14 +1,12 @@
-"""Reproduce Physica D Fig. 7 and Fig. S10 from released summary tables.
+"""Reproduce all six panels of the Physica D red manuscript HUP060 Figure 7 from public summaries.
 
-From the repository root:
-    python part3_mfc/plot_physicad_controller_baselines.py --check-only
-    python part3_mfc/plot_physicad_controller_baselines.py --outdir ./figures
-
-This is figure reproduction; no raw iEEG, surrogate fitting or actor training
-is required. "figure_09" is the historical export namespace, not the current
-manuscript figure number.
+From the repository root, use --check-only to validate numerical endpoints or
+--outdir NEW_DIRECTORY to export the figure in PDF, SVG and PNG. No raw iEEG,
+simulation trajectories, model checkpoints or controller training are needed.
+Pipeline slot 09 is the historical artifact identifier, not the figure number.
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -16,22 +14,23 @@ import matplotlib as mpl
 mpl.use("Agg")
 from matplotlib import pyplot as plt
 from matplotlib.ticker import FixedLocator, NullLocator
+from matplotlib.transforms import Bbox
 import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA = ROOT / "output/part3/source_data/figure_09_trivial_baselines/physicad"
+DEFAULT_DATA = ROOT / "output/part3/source_data/figure_09_trivial_baselines"
 DEFAULT_OUT = ROOT / "output/part3/figure_09"
 ARMS = ("Free", "Constant", "White", "P damping", "Tracking MPC", "Full")
-
-INK="#29343D"; GRAY="#566873"; LIGHT="#D6DBDD"
-FULL="#2069A1"; MPC="#A95623"; OCC="#C48548"; TIME="#446985"; REF="#287865"
-mpl.rcParams.update({"font.family":"sans-serif","font.sans-serif":["Arial","DejaVu Sans"],
-    "font.size":8.3,"axes.labelsize":8.5,"axes.titlesize":10.25,"xtick.labelsize":8,"ytick.labelsize":8,
-    "axes.spines.top":False,"axes.spines.right":False,"axes.linewidth":.75,
-    "axes.edgecolor":GRAY,"axes.labelcolor":INK,"text.color":INK,"xtick.color":INK,"ytick.color":INK,
-    "xtick.major.size":3,"ytick.major.size":3,"legend.frameon":False,"legend.fontsize":7.6,
-    "pdf.fonttype":42,"svg.fonttype":"none","svg.hashsalt":"HUP060-Fig7-MPC","mathtext.fontset":"dejavusans"})
+STEM='HUP060_controller_baselines_mpc_complete'
+INK='#263746'; FAINT='#dce1e5'; FULL='#2166a1'; MPC='#a95424'; GREY='#566977'; GREEN='#287565'
+TIME='#436a8a'; OCC='#c88d57'; P='#995e4b'
+mpl.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Arial','DejaVu Sans'],'font.size':7.5,
+                     'axes.labelsize':7.8,'xtick.labelsize':7.2,'ytick.labelsize':7.2,'legend.fontsize':7.0,
+                     'pdf.fonttype':42,'svg.fonttype':'none','svg.hashsalt':'hup060-complete-audit-v1',
+                     'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.7,'axes.edgecolor':GREY,
+                     'text.color':INK,'axes.labelcolor':INK,'xtick.color':GREY,'ytick.color':GREY,
+                     'xtick.major.size':2.8,'ytick.major.size':2.8,'legend.frameon':False,'axes.axisbelow':True})
 
 
 def load_tables(path):
@@ -112,105 +111,107 @@ def numerical_summary(tables):
     }
 
 
-def panel(ax,ch,title):
-    ax.set_title(title,loc="left",fontweight="bold",pad=8)
-    ax.text(-.14 if ch!="a" else -.072,1.055,ch,transform=ax.transAxes,
-            ha="left",va="bottom",fontsize=11.2,weight="bold")
-def save(fig, stem, outdir):
-    for extension in ("png","svg","pdf"):
-        kw={"metadata":{"CreationDate":None,"ModDate":None}} if extension=="pdf" else ({"metadata": {"Date": None}} if extension == "svg" else {})
-        fig.savefig(outdir/f"{stem}.{extension}",dpi=260,**kw)
-    plt.close(fig)
-def figures(tables, outdir):
-    """Render the original manuscript panels from validated tables."""
-    rows, w, dc, sc, m, _ = tables
-    outdir.mkdir(parents=True, exist_ok=True)
-    fig=plt.figure(figsize=(7.17,4.80))
-    a=fig.add_axes([.107,.625,.857,.279]); b=fig.add_axes([.14,.12,.30,.345]); c=fig.add_axes([.588,.12,.375,.345])
-    panel(a,"a","Distribution matching on the frozen model")
-    pos=np.arange(len(rows)); z=.292
-    for dx,col,color,lab in ((-.5,"time_w1",TIME,r"Time-resolved $W_1$"),(.5,"occupation_w1",OCC,r"Occupation $W_1$")):
-        a.bar(pos+dx*z,rows[col],z,color=color,label=lab,zorder=3)
-    a.set(xticks=pos,xticklabels=rows.index,xlim=(-.5,5.5),yticks=[0,.5,1,1.5],ylim=(0,1.58),ylabel=r"Mean contact-wise $W_1$")
-    a.set_axisbelow(True); a.grid(axis="y",color=LIGHT,lw=.5)
-    a.legend(loc="upper right",fontsize=8.1,handlelength=1.0)
-    panel(b,"b","Matching distribution width")
-    maxval=.328
-    b.fill_between([0,maxval],[0,0],[0,maxval],color="#EDF4F8",zorder=0)
-    b.plot([0,maxval],[0,maxval],c="#96A2A9",ls="--",lw=.85)
-    b.scatter(w.mpc,w.full,s=20,color=GRAY,edgecolor="white",lw=.4,zorder=3)
-    b.set_aspect("equal",adjustable="box")
-    b.set(xlim=(-.01,maxval),ylim=(-.01,maxval),xlabel="Tracking MPC: absolute SD error",ylabel="Full: absolute SD error",
-        xticks=[0,.1,.2,.3],yticks=[0,.1,.2,.3])
-    b.text(.045,.95,f"{sum(w.full<w.mpc)}/{len(w)} below the line",transform=b.transAxes,fontsize=7.5,va="top")
-    b.text(.045,.84,"Median SD error",transform=b.transAxes,fontsize=7.25,va="top",color=GRAY)
-    b.text(.045,.75,f"Full  {w.full.median():.3f}",transform=b.transAxes,fontsize=7.25,va="top",color=FULL)
-    b.text(.045,.66,f"MPC  {w.mpc.median():.3f}",transform=b.transAxes,fontsize=7.25,va="top",color=MPC)
-    panel(c,"c","Distance and input cost")
-    c.plot(dc.control_rms,dc.mean_occupation_w1,color="#88939B",lw=1,marker=".",ms=3.2)
-    c.set(yscale="log",xlim=(-.045,1.82),ylim=(.032,26000),xlabel="Actuator-command RMS",ylabel=r"Occupation $W_1$")
-    c.set_xticks([0,.5,1,1.5]); c.yaxis.set_major_locator(FixedLocator([.1,1,10,100,1000,10000]))
-    c.yaxis.set_minor_locator(NullLocator()); c.grid(axis="y",which="major",color=LIGHT,lw=.45,zorder=0)
-    def marker(name,col,mk,tx,ty,word):
-        x,y=rows.loc[name,["command_rms","occupation_w1"]]
-        c.scatter(x,y,s=27,c=col,marker=mk,edgecolor="white",lw=.5,zorder=5)
-        c.annotate(word,xy=(x,y),xytext=(tx,ty),textcoords="data",ha="center",va="center",fontsize=7.5,
-            color=col,arrowprops=dict(arrowstyle="-",color=col,lw=.6,shrinkA=1,shrinkB=2))
-    marker("P damping","#53636C","D",.54,8,"Matched P")
-    marker("Tracking MPC",MPC,"s",.30,.051,"MPC")
-    marker("Full",FULL,"o",.95,.055,"Full")
-    best=dc.loc[dc.mean_occupation_w1.idxmin()]
-    c.annotate("Best P",xy=(best.control_rms,best.mean_occupation_w1),xytext=(.14,.9),fontsize=7,color=GRAY,
-        ha="left",arrowprops=dict(arrowstyle="-",color=GRAY,lw=.6,shrinkB=2))
-    c.text(.036,.872,"Scalar damping sweep",transform=c.transAxes,ha="left",va="top",fontsize=7.45,color=GRAY)
-    save(fig, "HUP060_controller_baselines_mpc", outdir)
-    fig=plt.figure(figsize=(7.17,3.30))
-    a=fig.add_axes([.101,.201,.36,.59]); b1=fig.add_axes([.613,.676,.35,.137]); b2=fig.add_axes([.613,.185,.35,.289])
-    fig.text(.044,.895,"a",fontsize=11.2,fontweight="bold")
-    fig.text(.101,.895,"Noise sensitivity of the free model",fontsize=10.25,fontweight="bold")
-    for col,colr,mk,lab in (("mean_occupation_w1",REF,"o","To preictal reference"),("mean_occupation_w1_to_observed_ictal",GRAY,"s","To ictal recording")):
-        a.plot(sc.kappa_sigma,sc[col],c=colr,marker=mk,ms=3.0,lw=1.15,label=lab)
-    a.axvline(1,color="#96A1A7",ls="--",lw=.65,zorder=0)
-    i=sc.mean_occupation_w1.idxmin(); a.axvline(sc.loc[i,"kappa_sigma"],color=REF,ls=":",lw=.75,zorder=0)
-    a.set(xlim=(-.035,1.54),ylim=(0,.60),xticks=[0,.5,1,1.5],yticks=[0,.2,.4,.6],
-          xlabel=r"Relative noise multiplier $\kappa_\sigma$",ylabel=r"Occupation $W_1$")
-    a.legend(loc="upper left",handlelength=1.4,fontsize=7.6)
-    a.set_axisbelow(True); a.grid(axis="y",color=LIGHT,lw=.5)
-    fig.text(.547,.895,"b",fontsize=11.2,fontweight="bold")
-    fig.text(.613,.895,"Initial mismatch",fontsize=10.25,fontweight="bold")
-    parts=m[["shapley_location_contribution","shapley_scale_contribution","shape_residual_contribution"]].mean().values
-    total=parts.sum();left=0
-    for value,color,label in zip(parts,["#719BB6","#D6A16D","#A6AEB1"],["Location","Scale","Shape"]):
-        b1.barh(0,value,left=left,height=.64,color=color,label=label);left+=value
-    b1.set(xlim=(0,.325),xticks=(0,.1,.2,.3),ylim=(-.47,.47),yticks=[],xlabel=r"Contribution to free-to-reference $W_1$")
-    b1.set_xlabel(r"Contribution to free-to-reference $W_1$",fontsize=7.5,labelpad=1.8)
-    b1.spines["left"].set_visible(False)
-    b1.text(parts[0]+.5*parts[1],0,f"Scale: {100*parts[1]/total:.1f}%",ha="center",va="center",fontsize=7.7)
-    # Place a single minimal key immediately above the stack.
-    b1.legend(loc="lower center",bbox_to_anchor=(.5,.96),ncol=3,fontsize=6.8,handlelength=.85,handletextpad=.3,columnspacing=.8,borderpad=.1)
+def render(data, out, check_only=False):
+    verified = numerical_summary(load_tables(data / 'physicad'))
+    files={name: data/'physicad'/(name+'.csv') for name in ('controller_endpoints','damping_scan','diffusion_scan','initial_mismatch','pooled_width_errors','primary_contact_endpoints')}
+    files.update({name:data/(name+'.csv') for name in ('trivial_baseline_summary','random_input_seed_metrics')})
+    dfs={name:pd.read_csv(f) for name,f in files.items()}
+    rows=dfs['controller_endpoints'].set_index('arm'); old=dfs['trivial_baseline_summary'].set_index('variant'); seeds=dfs['random_input_seed_metrics']
+    order=['Free','Noise 0.2','Constant','White','P damping','Tracking MPC','Full']; legacy=['free','diffusion_reference_oracle','constant_input','white_input','linear_damping_rms_matched',None,'full_actor_wgan']
+    metric=['time_w1','occupation_w1','command_rms']; metric_old=['mean_time_w1','mean_occupation_w1','control_rms']
+    table=pd.DataFrame([rows.loc[name,metric].to_numpy() if name!='Noise 0.2' else old.loc[key,metric_old].to_numpy() for name,key in zip(order,legacy)],columns=metric,index=order,dtype=float)
+    for name,key in zip(order,legacy):
+        if key: np.testing.assert_allclose(table.loc[name], old.loc[key,metric_old].to_numpy(dtype=float), atol=1e-12,rtol=0)
+    for name,key in [('Constant','constant_input'),('White','white_input')]:
+        subset=seeds[seeds.variant==key]; assert len(subset)==32
+        np.testing.assert_allclose(table.loc[name],subset[metric_old].median(),atol=1e-12,rtol=0)
+    dc,sc,m,w,by=[dfs[n] for n in ('damping_scan','diffusion_scan','initial_mismatch','pooled_width_errors','primary_contact_endpoints')]; assert len(m)==len(w)==36 and len(dc)==27
+    parts_names=['shapley_location_contribution','shapley_scale_contribution','shape_residual_contribution']
+    np.testing.assert_allclose(m[parts_names].sum(axis=1),m.free_to_reference_w1,atol=1e-12,rtol=0)
+    for arm,label in [('free','Free'),('full','Full'),('mpc','Tracking MPC')]:
+        sub=by[by.arm==arm].set_index('channel').loc[w.contact]; np.testing.assert_allclose(sub.sd_gap,w[arm],atol=1e-12,rtol=0)
+        np.testing.assert_allclose(sub[['time_w1','occ_w1']].mean(),table.loc[label,metric[:2]],atol=1e-12,rtol=0)
+    parts=m[parts_names].mean().values; frac=parts[1]/parts.sum(); nwin=int((w.full<w.mpc).sum()); best=dc.loc[dc.mean_occupation_w1.idxmin()]; oracle=sc.loc[sc.mean_occupation_w1.idxmin()]; assert np.isclose(oracle.kappa_sigma,old.loc['diffusion_reference_oracle','kappa_sigma'])
+    np.testing.assert_allclose(oracle.mean_occupation_w1,table.loc['Noise 0.2','occupation_w1'],atol=1e-12,rtol=0)
+    if check_only:
+        verified.update(panel_ids=list("abcdef"), n_noise=len(sc), n_damping=len(dc),
+                        n_bars=2*len(table), data_sha256={name: hashlib.sha256(path.read_bytes()).hexdigest()
+                                                         for name, path in files.items()})
+        print(json.dumps(verified, indent=2, allow_nan=False))
+        return
+    fig=plt.figure(figsize=(183/25.4,185/25.4),facecolor='white')
+    l,r=.103,.595; ww=.370
+    # Explicit row/column bounds leave room for normal-size labels and the two axes in d.
+    a=fig.add_axes([l,.722,ww,.190]); b=fig.add_axes([r,.722,ww,.190])
+    c=fig.add_axes([l,.395,ww,.185]); d1=fig.add_axes([r,.528,ww,.042]); d2=fig.add_axes([r,.375,ww,.075]);
+    e=fig.add_axes([l,.081,ww,.178]); f=fig.add_axes([r,.081,ww,.178]);
+    def heading(col,y,letter,name):
+        fig.text(col-.085,y,letter,va='baseline',fontsize=11.2,fontweight='bold'); fig.text(col,y,name,va='baseline',fontsize=9.35,fontweight='bold')
+    for col,y,letter,name in [(l,.948,'a','Distribution matching'),(r,.948,'b','Proportional damping'),(l,.617,'c','Noise sensitivity'),(r,.617,'d','Initial distribution mismatch'),(l,.296,'e','Matching distribution width'),(r,.296,'f','Distance and input cost')]:heading(col,y,letter,name)
+    x=np.arange(len(table)); width=.35
+    for side,col,clr,lab in [(-.5,'time_w1',TIME,r'Time-resolved $W_1$'),(.5,'occupation_w1',OCC,r'Occupation $W_1$')]:
+        bars=a.bar(x+side*width,table[col],width,color=clr,label=lab,zorder=3)
+        np.testing.assert_allclose([q.get_height() for q in bars],table[col],rtol=0,atol=0)
+    a.set(xticks=x,xticklabels=['Free','Noise\n0.2','Constant','White','P\ndamping','Tracking\nMPC','Full'],ylim=(0,1.88),xlim=(-.55,6.55),yticks=[0,.5,1,1.5],ylabel=r'Mean contact-wise $W_1$')
+    a.tick_params(axis='x',labelsize=6.7); a.legend(loc='upper right',ncol=2,fontsize=6.65,handlelength=.9,columnspacing=.8,handletextpad=.35,borderpad=.05);a.grid(axis='y',color=FAINT,lw=.45)
+    def logaxes(ax):
+        ax.set(xscale='linear',yscale='log',xlim=(-.05,1.82),ylim=(.036,26000),xticks=[0,.5,1,1.5],xlabel='Actuator-command RMS',ylabel=r'Occupation $W_1$')
+        ax.yaxis.set_major_locator(FixedLocator([.1,1,10,100,1000,10000]));ax.yaxis.set_minor_locator(NullLocator());ax.grid(axis='y',color=FAINT,lw=.45)
+    def marks(ax,name,color,symbol,label=None):
+        row=table.loc[name]; ax.scatter(row.command_rms,row.occupation_w1,s=25,color=color,marker=symbol,edgecolor='white',lw=.5,zorder=5,label=label)
+    def annotate(ax,text,xy,xytext,clr=GREY):ax.annotate(text,xy=xy,xytext=xytext,textcoords='data',fontsize=6.9,color=clr,ha='left',va='center',arrowprops={'arrowstyle':'-','color':clr,'lw':.6,'shrinkA':1,'shrinkB':2})
+    logaxes(b); b.plot(dc.control_rms,dc.mean_occupation_w1,c=P,marker='.',ms=3.6,lw=.9,label='Damping sweep'); marks(b,'P damping',P,'D','RMS-matched damping'); marks(b,'Full',FULL,'o','Full');b.axvline(table.loc['Full','command_rms'],c=GREY,ls='--',lw=.65,zorder=1)
+    b.legend(loc='upper left',fontsize=6.8,labelspacing=.3,handlelength=1.2,borderpad=.2,frameon=True,facecolor='white',edgecolor='none',framealpha=1)
+    annotate(b,f'Best gain {best.gain:.2f}\nRMS {best.control_rms:.3f}',(best.control_rms,best.mean_occupation_w1),(.075,11))
+    for key,clr,marker,lab in [('mean_occupation_w1',GREEN,'o','To preictal reference'),('mean_occupation_w1_to_observed_ictal',GREY,'s','To ictal recording')]:
+        c.plot(sc.kappa_sigma,sc[key],color=clr,marker=marker,ms=3,lw=1.1,label=lab)
+    c.set(xlim=(-.035,1.54),ylim=(0,.60),xticks=[0,.5,1,1.5],yticks=[0,.2,.4,.6],xlabel=r'Relative noise multiplier $\kappa_\sigma$',ylabel=r'Occupation $W_1$');c.grid(axis='y',color=FAINT,lw=.45)
+    c.legend(loc='upper left',fontsize=6.9,handlelength=1.1);c.axvline(1,ls='--',color=GREY,lw=.6);c.axvline(oracle.kappa_sigma,ls=':',color=GREEN,lw=.8)
+    c.text(.227,.190,'Post hoc 0.2',va='bottom',fontsize=6.3,color=GREEN);c.text(1.02,.05,'Frozen 1',fontsize=6.3,color=GREY)
+    left=0
+    for val,color,lab in zip(parts,['#80a9c5','#d4a06b','#b4bcc0'],['Location','Scale','Residual shape']):d1.barh([0],val,left=left,height=.62,color=color,label=lab);left+=val
+    d1.set(ylim=(-.4,.4),xlim=(0,.325),xticks=[0,.1,.2,.3],yticks=[],xlabel=r'Contribution to free-to-reference $W_1$');d1.xaxis.label.set_size(7.1);d1.xaxis.labelpad=.5;d1.tick_params(axis='x',labelsize=6.7,pad=1.5);d1.spines['left'].set_visible(False)
+    d1.text(parts[0]+.5*parts[1],0,f'Scale: {100*frac:.1f}%',va='center',ha='center',fontsize=7.4);d1.legend(loc='lower center',bbox_to_anchor=(.50,1.01),ncol=3,fontsize=6.5,borderpad=.08,handlelength=.8,handletextpad=.3,columnspacing=.6)
     rng=np.random.default_rng(20261109)
-    for k,(col,clr) in enumerate((("reference_to_observed_sd_ratio","#465965"),("reference_to_free_sd_ratio","#83949B"))):
-        v=m[col].to_numpy(); j=rng.uniform(-.09,.09,len(v));b2.scatter(k+j,v,s=8,c=clr,alpha=.6,edgecolor="none")
-        q1,med,q3=np.quantile(v,[.25,.5,.75]); b2.vlines(k,q1,q3,color=INK,lw=1.8);b2.hlines(med,k-.15,k+.15,color=INK,lw=1.2)
-    b2.axhline(1,ls="--",color="#839097",lw=.7,zorder=0)
-    b2.set(xlim=(-.45,1.45),ylim=(0,max(1.1,m[["reference_to_observed_sd_ratio","reference_to_free_sd_ratio"]].max().max()*1.07)),
-       ylabel="SD ratio",xticks=[0,1],xticklabels=["Reference /\nrecorded ictal","Reference /\nfree model"],yticks=[0,.5,1])
-    save(fig, "HUP060_noise_and_mismatch", outdir)
+    for i,(key,color) in enumerate([('reference_to_observed_sd_ratio',INK),('reference_to_free_sd_ratio','#85929b')]):
+        v=m[key].to_numpy();d2.scatter(i+rng.uniform(-.08,.08,len(v)),v,s=9,color=color,alpha=.58,edgecolor='none');q1,med,q3=np.quantile(v,[.25,.5,.75]);d2.vlines(i,q1,q3,color=INK,lw=1.8);d2.hlines(med,i-.16,i+.16,color=INK,lw=1.2)
+    d2.set(xlim=(-.45,1.45),ylim=(0,max(1.1,m[['reference_to_observed_sd_ratio','reference_to_free_sd_ratio']].max().max()*1.08)),xticks=[0,1],xticklabels=['Reference / recorded','Reference / free model'],yticks=[0,.5,1],ylabel='SD ratio');d2.tick_params(axis='x',labelsize=6.9);d2.axhline(1,color=GREY,ls='--',lw=.7,zorder=0);d2.grid(axis='y',color=FAINT,lw=.45)
+    maxval=.328
+    e.fill_between([0,maxval],[0,0],[0,maxval],color='#edf4f8',zorder=0);e.plot([0,maxval],[0,maxval],ls='--',lw=.8,color='#96a2a9');e.scatter(w.mpc,w.full,s=17,c=GREY,edgecolor='white',lw=.4,zorder=3)
+    e.set(aspect='equal',xlim=(-.01,maxval),ylim=(-.01,maxval),xticks=[0,.1,.2,.3],yticks=[0,.1,.2,.3],xlabel='Tracking MPC: absolute SD error',ylabel='Full: absolute SD error')
+    for y,label,clr in [(.96,f'{nwin}/{len(w)} below the line',INK),(.83,'Median SD error',GREY),(.73,f'Full  {w.full.median():.3f}',FULL),(.63,f'MPC  {w.mpc.median():.3f}',MPC)]:e.text(.035,y,label,color=clr,fontsize=6.5,ha='left',va='top',transform=e.transAxes)
+    logaxes(f);f.plot(dc.control_rms,dc.mean_occupation_w1,color='#87959d',lw=1,marker='.',ms=3.4)
+    for name,col,mk,txt,tx in [('Full',FULL,'o','Full',(.94,.082)),('Tracking MPC',MPC,'s','MPC',(.30,.055)),('P damping',GREY,'D','Matched P',(.53,9))]:
+        marks(f,name,col,mk); z=table.loc[name];annotate(f,txt,(z.command_rms,z.occupation_w1),tx,col)
+    annotate(f,'Best P',(best.control_rms,best.mean_occupation_w1),(.13,1));f.text(.035,.92,'Scalar damping sweep',transform=f.transAxes,color=GREY,fontsize=6.9,va='top')
+    fig.canvas.draw();rend=fig.canvas.get_renderer(); boxes=[(i,ax.get_tightbbox(rend)) for i,ax in enumerate(fig.axes)];
+    assert all(fig.bbox.contains(bb.x0,bb.y0) and fig.bbox.contains(bb.x1,bb.y1) for _,bb in boxes)
+    for i,bi in boxes:
+        for j,bj in boxes[i+1:]:
+            assert Bbox.intersection(bi,bj) is None, f'Overlapping axes text or legend: {i}, {j}'
+    out.mkdir(parents=True,exist_ok=True)
+    for ext in ['pdf','svg','png']:
+        meta={'CreationDate':None,'ModDate':None} if ext=='pdf' else ({'Date':None} if ext=='svg' else {})
+        fig.savefig(out/(STEM+'.'+ext),dpi=260,metadata=meta)
+    table.to_csv(out/(STEM+'_panel_a_values.csv'),index_label='arm')
+    qa={'panel_ids':list('abcdef'),'n_axes':len(fig.axes),'n_contacts':len(w),'n_damping':len(dc),'n_noise':len(sc),'n_bars':len(a.patches),'scale_percent':100*frac,'width_wins':nwin,'median_full_sd_error':w.full.median(),'median_mpc_sd_error':w.mpc.median(),'data_sha256':{n:hashlib.sha256(f.read_bytes()).hexdigest() for n,f in files.items()}};
+    (out/(STEM+'_qa.json')).write_text(json.dumps(qa,indent=2),encoding='utf-8');plt.close(fig);print(json.dumps(qa,indent=2))
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA, help="Folder containing the plot and contact-level validation tables")
-    parser.add_argument("--outdir", type=Path, default=DEFAULT_OUT, help="Folder for the PDF, PNG and SVG pairs")
-    parser.add_argument("--check-only", action="store_true", help="Validate the source tables and print their numerical summaries without plotting")
-    opts = parser.parse_args(argv)
-    tables = load_tables(opts.data_dir)
-    print(json.dumps(numerical_summary(tables), indent=2, allow_nan=False))
-    if not opts.check_only:
-        stems = ("HUP060_controller_baselines_mpc", "HUP060_noise_and_mismatch")
-        if any((opts.outdir / (stem + "." + ext)).exists()
-               for stem in stems for ext in ("pdf", "png", "svg")):
-            parser.error("An export already exists. Choose a fresh --outdir; frozen figures are not overwritten.")
-        figures(tables, opts.outdir)
+    parser.add_argument("--data-dir", "--data", type=Path, default=DEFAULT_DATA,
+                        help="Source-data folder, or its physicad subfolder")
+    parser.add_argument("--outdir", "--out", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--check-only", action="store_true",
+                        help="Check source tables and report metrics without writing files")
+    args = parser.parse_args(argv)
+    data = args.data_dir.parent if args.data_dir.name == "physicad" else args.data_dir
+    if not args.check_only:
+        outputs = [STEM + suffix for suffix in (".pdf", ".png", ".svg", "_qa.json", "_panel_a_values.csv")]
+        if any((args.outdir / name).exists() for name in outputs):
+            parser.error("An output already exists. Choose a fresh --outdir; frozen figures are not overwritten.")
+    render(data, args.outdir, args.check_only)
     return 0
 
 
