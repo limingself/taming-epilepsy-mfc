@@ -1,4 +1,11 @@
-# HUP080: red-manuscript Fig. S5 and Table S17
+# HUP080: current manuscript Fig. S5
+
+[All 96 controlled contact distributions (PDF)](../single_window_replay/publication/HUP080/HUP080_run02_full_all96.pdf) · [shared replay code](../single_window_replay/run.py) · [training and evaluation instructions](../single_window_replay/README.md).
+The current S5 uses the HUP060 workflow: fit dynamics on run-01 and assess control in the preselected one-second run-02 window.
+
+## Archive: November 25 development figure and Table S17
+
+The commands, figure labels and metrics below refer to this historical manuscript revision, not to the current S5.
 
 These results concern **development runs 01–03**. They are distinct from the earlier run04 evaluation in this directory. The [published Fig. S5](publication/HUP080_refined_all96_overview.pdf) is a one-page, vector PDF showing all 96 contacts in run01 at sample 5150, noise bank 1. Black is the recorded ictal signal, grey dashed the free prediction, green dash-dotted the preictal reference, and blue the refined feedback. In this window, mean occupation W1 to the reference fell from 0.562 to 0.142 and time-resolved W1 from 0.597 to 0.214. Both fell at all 96 contacts, including the 20 without direct input. These are unsmoothed, full-sample distances, not distances between the plotted lines.
 

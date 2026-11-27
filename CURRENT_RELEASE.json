@@ -6,8 +6,8 @@
   "current_package": ".",
   "public_manifest": "CURRENT_PROJECT_MANIFEST.json",
   "public_verifier": "verify_outputs.py",
-  "manuscript_pages": 65,
-  "manuscript_revision": "2026-11-25, Physica D red manuscript; the historical tag and controller identities are preserved.",
+  "manuscript_pages": 58,
+  "manuscript_revision": "2026-11-27, Physica D red manuscript; the version and tag above identify the historical base.",
   "method": "Frozen Graph-RC stochastic recurrence, structured mean-deviation actor, empirical-law penalties plus WGAN-GP from the first actor update",
   "historical_root_entrypoints_preserved": false,
   "historical_release": "patient-extensions-v1",
@@ -24,23 +24,29 @@
     96
   ],
   "HUP065_cold1000_experiment_adopted": false,
-  "external_cases_role": "post hoc amended reanalysis",
+  "external_cases_role": "Patient-specific run-01 fits and preselected one-second run-02 simulated feedback examples; not external intervention recordings.",
   "public_deposit_scope": "Exact code and plotting sources, parameters, lightweight metrics, current figures and provenance",
   "private_bundle_is_required_for_retraining_and_replay": true,
   "raw_EDF_published": false,
   "external_signal_arrays_or_weights_published": false,
   "does_not_claim_author_submission_signoff": true,
+  "single_window_results": "patient_extensions/single_window_replay/reported_results.json",
   "current_results": "output/part3/source_data/figures_06_08/current_results.json",
+  "current_results_scope": "HUP060 control and archival multi-window results; use single_window_results for HUP065/HUP080 in the current manuscript.",
   "main_entry": "part3_mfc/part3_model.py",
   "patient_entries": [
+    "patient_extensions/single_window_replay/run.py --subject HUP065",
+    "patient_extensions/single_window_replay/run.py --subject HUP080"
+  ],
+  "historical_patient_entries": [
     "patient_extensions/HUP065/runner.py",
     "patient_extensions/HUP080/runner.py"
   ],
   "previous_release_snapshot": "releases/full_wgangp_20261006",
   "only_code_organization_and_default_entry_changed": false,
-  "revision_scope": "Combines all HUP060 Fig. 7 panels; records separate development predictor/controller replays for HUP065 Fig. S4 and HUP080 Fig. S5 / Table S17. No new outer evaluation.",
+  "revision_scope": "HUP060 unchanged; Fig. S4 (HUP065) and Fig. S5 (HUP080) are the all-contact controlled density plates. Older development and outer analyses are archived separately.",
   "existing_entrypoint_names_preserved": true,
   "default_root_controller_updated": true,
-  "red_manuscript_figure_registry": "paper_figures.json#red_manuscript_development_figures",
-  "patient_entries_scope": "Legacy amended outer analyses; see the red manuscript figure registry for development results."
+  "red_manuscript_figure_registry": "paper_figures.json#red_manuscript_figures",
+  "patient_entries_scope": "Ordered single-window training entries; supply prepared inputs and fresh output directories as documented in patient_extensions/single_window_replay/README.md."
 }

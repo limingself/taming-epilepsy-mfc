@@ -152,6 +152,7 @@
       "occupation_reduction_percent": 77.25811010579788
     }
   },
-  "external_cases_scope": "Historical frozen outer-case metrics. These are not the development-window results plotted in the Nov 25 Fig. S4 or S5.",
-  "red_manuscript_development_figures": "paper_figures.json#red_manuscript_development_figures"
+  "external_cases_scope": "Historical frozen outer-case metrics; not the current S4/S5 run-02 examples.",
+  "current_single_window_results": "patient_extensions/single_window_replay/reported_results.json",
+  "red_manuscript_figures": "paper_figures.json#red_manuscript_figures"
 }

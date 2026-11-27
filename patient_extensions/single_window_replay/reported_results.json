@@ -4,12 +4,16 @@
   "simulation": "32 free and 32 controlled paths with matched noise, evaluated against 15 recorded preictal reference paths. Observed is one recorded ictal path. These are not intervention recordings.",
   "prediction_baselines": {"RMSE": "last observation held constant", "occupation_W1": "preceding one-second recorded history"},
   "HUP065": {
+    "figure": "S4", "fit_run": "run-01", "evaluation_run": "run-02",
+    "selected_noise_multiplier_relative": 1.25, "selected_input_step_scale": 1.0,
     "contacts": 64, "direct_inputs": 32, "actor_updates": 1000, "selected_update": 600,
     "time_W1_to_reference": {"observed": 0.648798, "free": 0.337586, "controlled": 0.194349, "contacts_improved_vs_free": 64},
     "occupation_W1_to_reference": {"observed": 0.160050, "free": 0.206547, "controlled": 0.079409, "contacts_improved_vs_free": 54},
     "forecast_vs_observed": {"RMSE": 0.654221, "baseline_RMSE": 0.850431, "occupation_W1": 0.158358, "baseline_occupation_W1": 0.101334, "median_channel_correlation": 0.143750}
   },
   "HUP080": {
+    "figure": "S5", "fit_run": "run-01", "evaluation_run": "run-02",
+    "selected_noise_multiplier_relative": 1.25, "selected_input_step_scale": 1.0,
     "contacts": 96, "direct_inputs": 76, "actor_updates": 1000, "selected_update": 200,
     "time_W1_to_reference": {"observed": 0.621129, "free": 0.386248, "controlled": 0.121190, "contacts_improved_vs_free": 96},
     "occupation_W1_to_reference": {"observed": 0.376716, "free": 0.350342, "controlled": 0.040774, "contacts_improved_vs_free": 96},

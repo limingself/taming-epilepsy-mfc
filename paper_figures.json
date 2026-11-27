@@ -136,7 +136,28 @@
     }
   ],
   "current_part3_controller_sha256": "980952488c536b76cfc51fa5d979243e0a69be4cba1cbf36aacdc094e7b29ab0",
-  "red_manuscript_development_figures": {
+  "manuscript_patient_order": ["HUP060", "HUP065", "HUP080"],
+  "red_manuscript_figures": {
+    "S4": {
+      "patient": "HUP065", "contacts": 64, "actuators": 32,
+      "fit_run": "run-01", "evaluation_run": "run-02", "window_seconds": 1,
+      "runner": "patient_extensions/single_window_replay/run.py",
+      "generator": "patient_extensions/single_window_replay/render.py",
+      "pdf": "patient_extensions/single_window_replay/publication/HUP065/HUP065_run02_full_all64.pdf",
+      "png": "patient_extensions/single_window_replay/publication/HUP065/HUP065_run02_full_all64.png",
+      "metrics": "patient_extensions/single_window_replay/publication/HUP065/contact_metrics.csv"
+    },
+    "S5": {
+      "patient": "HUP080", "contacts": 96, "actuators": 76,
+      "fit_run": "run-01", "evaluation_run": "run-02", "window_seconds": 1,
+      "runner": "patient_extensions/single_window_replay/run.py",
+      "generator": "patient_extensions/single_window_replay/render.py",
+      "pdf": "patient_extensions/single_window_replay/publication/HUP080/HUP080_run02_full_all96.pdf",
+      "png": "patient_extensions/single_window_replay/publication/HUP080/HUP080_run02_full_all96.png",
+      "metrics": "patient_extensions/single_window_replay/publication/HUP080/contact_metrics.csv"
+    }
+  },
+  "historical_2026_11_25_development_figures": {
     "S4": {
       "patient": "HUP065",
       "contacts": 64,

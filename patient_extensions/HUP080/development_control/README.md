@@ -1,4 +1,11 @@
-# HUP080: development predictor and controller for Fig. S5 / Table S17
+# HUP080: current manuscript Fig. S5
+
+[All 96 controlled contact distributions (PDF)](../../single_window_replay/publication/HUP080/HUP080_run02_full_all96.pdf) · [shared replay code](../../single_window_replay/run.py) · [training and evaluation instructions](../../single_window_replay/README.md).
+The current S5 uses the HUP060 workflow: fit dynamics on run-01 and assess control in the preselected one-second run-02 window.
+
+## Archive: November 25 development predictor and controller
+
+The commands, figure labels and metrics below refer to this historical manuscript revision, not to the current S5.
 
 This is the code path for the November 25 red manuscript. It uses only development recordings 01–03. The earlier run04 controller, evaluation and hashes belong to a different experiment and are left intact.
 

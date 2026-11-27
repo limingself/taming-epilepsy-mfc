@@ -1,4 +1,11 @@
-# HUP065: current32/64 Full WGAN-GP
+# HUP065: current manuscript Fig. S4
+
+[All 64 controlled contact distributions (PDF)](../single_window_replay/publication/HUP065/HUP065_run02_full_all64.pdf) · [shared replay code](../single_window_replay/run.py) · [training and evaluation instructions](../single_window_replay/README.md).
+The current S4 uses the HUP060 workflow: fit dynamics on run-01 and assess control in the preselected one-second run-02 window.
+
+## Archive: multi-context Full WGAN-GP results
+
+The patient-specific `runner.py`, tables and figures below reproduce this historical experiment, not the current S4.
 
 `runner.py` defaults to signal-free current-result verification. The adopted
 mask is PartI's weighted ranking top32. A neutral23-node fresh parent was

@@ -3,7 +3,8 @@
 Example: python render.py --subject HUP065 --input eval.npz --out figures
 The input and all outputs (including contact labels) are local derived data. This
 script only reads the supplied frozen snapshot; it never fits or selects a model.
-The three figure series distinguish autonomous prediction from simulated feedback.
+The default exports the all-contact density plate used for Fig. S4 or S5.
+Use --diagnostics for the original supplementary local views and paginated plots.
 """
 from __future__ import annotations
 
@@ -126,7 +127,7 @@ def scores(data):
     return frame, total
 
 
-def draw(data, subject, out):
+def draw(data, subject, out, *, diagnostics=False):
     """Same empirical KDE, full ordering, fixed particle, and layouts as the case figures."""
     import matplotlib as mpl
     mpl.use("Agg")
@@ -199,11 +200,17 @@ def draw(data, subject, out):
         fig.supylabel("Density" if kind == "control" else amplitude,fontsize=9,x=.007)
         return fig
 
-    for kind in descriptions:
+    for kind in (descriptions if diagnostics else ("control",)):
         fig = page(kind, range(n), True)
-        for ext in ("png","pdf","svg"):
-            fig.savefig(out/f"{kind}_all{n}.{ext}", dpi=185)
+        if kind == "control":
+            for ext in ("pdf", "png"):
+                fig.savefig(out/f"{subject}_run02_full_all{n}.{ext}", dpi=185)
+        if diagnostics:
+            for ext in ("png","pdf","svg"):
+                fig.savefig(out/f"{kind}_all{n}.{ext}", dpi=185)
         plt.close(fig)
+        if not diagnostics:
+            continue
         with PdfPages(out/f"{kind}_16_per_page.pdf") as pdf:
             for first in range(0,n,16):
                 fig = page(kind,range(first,min(first+16,n)),False)
@@ -215,7 +222,10 @@ def main(argv=None):
     parser.add_argument("--subject", choices=CASES, required=True)
     parser.add_argument("--input", type=Path, required=True, help="Frozen, combined evaluation NPZ")
     parser.add_argument("--out", type=Path, required=True, help="Local destination for derived data and figures")
-    parser.add_argument("--metrics-only", action="store_true", help="Skip KDE and all plots")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--metrics-only", action="store_true", help="Skip KDE and all plots")
+    mode.add_argument("--diagnostics", action="store_true",
+                      help="Also draw forecasts, example paths and paginated local diagnostics")
     args = parser.parse_args(argv)
     with threadpool_limits(limits=1):
         data = load_eval(args.input, args.subject)
@@ -230,7 +240,7 @@ def main(argv=None):
         frame.to_csv(args.out/"contact_metrics.csv", index=False, encoding="utf-8-sig")
         (args.out/"metrics.json").write_text(json.dumps(summary,indent=2,allow_nan=False)+"\n",encoding="utf-8")
         if not args.metrics_only:
-            draw(data,args.subject,args.out)
+            draw(data,args.subject,args.out,diagnostics=args.diagnostics)
     return 0
 
 

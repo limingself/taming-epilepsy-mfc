@@ -1,4 +1,11 @@
-# HUP080: current76/96 Full WGAN-GP
+# HUP080: current manuscript Fig. S5
+
+[All 96 controlled contact distributions (PDF)](../single_window_replay/publication/HUP080/HUP080_run02_full_all96.pdf) · [shared replay code](../single_window_replay/run.py) · [training and evaluation instructions](../single_window_replay/README.md).
+The current S5 uses the HUP060 workflow: fit dynamics on run-01 and assess control in the preselected one-second run-02 window.
+
+## Archive: multi-context Full WGAN-GP results
+
+The patient-specific `runner.py`, tables and figures below reproduce this historical experiment, not the current S5.
 
 `runner.py` defaults to signal-free current-result verification. The adopted
 controller starts from fresh selected update200 and chooses added125 of150 in

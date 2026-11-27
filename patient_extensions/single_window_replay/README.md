@@ -1,13 +1,24 @@
 # Single-window replay: HUP065 and HUP080
 
-HUP065 supplies the updated Fig. S4 in the local red manuscript revision.
-HUP080 is a companion comparison from the same pipeline; it does **not**
-replace the existing Fig. S5. Both cases use the
-HUP060 preprocessing, Graph-RC-SDE, Full controller, initialization and window
-rule. The fixed channel/input counts are **64/32** and **96/76**, respectively.
-These are retrospective model-based controls, not intervention recordings.
-The separate three-case summaries retain HUP065 run-03 and HUP080 run-04;
-these examples do not replace those experiments.
+After HUP060, the manuscript presents **HUP065 as Fig. S4**, then **HUP080
+as Fig. S5**. Both figures show the full set of contact amplitude distributions
+under mean-field control, not ablations. They use the HUP060 preprocessing,
+Graph-RC-SDE, Full controller, initialization and window-selection rule.
+Each patient's dynamics are fitted on run-01 using the same procedure; the noise
+and input scales are calibrated on run-01. Evaluation uses one preselected
+one-second window from run-02. The old run-01 displays and run-03/run-04
+summaries are separate historical experiments, not the current S4/S5.
+
+| Figure | Results in display order | Direct inputs / contacts | Time-resolved W1 reduction | Occupation W1 reduction |
+|---|---|---:|---:|---:|
+| S4 · HUP065 | [PDF](publication/HUP065/HUP065_run02_full_all64.pdf) · [PNG](publication/HUP065/HUP065_run02_full_all64.png) · [metrics](publication/HUP065/contact_metrics.csv) | 32/64 | 42.4% (64/64 improved) | 61.6% (54/64 improved) |
+| S5 · HUP080 | [PDF](publication/HUP080/HUP080_run02_full_all96.pdf) · [PNG](publication/HUP080/HUP080_run02_full_all96.png) · [metrics](publication/HUP080/contact_metrics.csv) | 76/96 | 68.6% (96/96 improved) | 88.4% (96/96 improved) |
+
+Percentages compare the contact-mean W1 distance to the same preictal reference
+under full control and no control. Counts are contacts with strictly smaller
+W1 under control. These are model-based simulations, not intervention recordings.
+To verify the published figures and numerical results without EEG inputs,
+run `python patient_extensions/single_window_replay/verify_publication.py` from the repository root.
 
 ## Run from original recordings
 
@@ -72,9 +83,11 @@ treatment effect or a held-out phase-accurate waveform correlation.
 The private output directory contains the fit and noise receipts under
 `dynamics/`, input-scale receipts under `scale_calibration/`, and the
 frozen training/evaluation receipts and `combined_policy_eval.npz` under
-`control/`. `figures/` contains the all-contact density and trajectory plots
-and their numerical metrics. Use [`render.py`](render.py) to redraw the
-figures from the locally generated combined archive.
+`control/`. By default, `figures/` contains each patient's all-contact
+controlled distribution plate (PDF and PNG) and numerical metrics. These
+plates are the current S4/S5. Use [`render.py`](render.py) to redraw the
+plate from the locally generated combined archive; add `--diagnostics` if
+you also want forecast and trajectory plots for local inspection.
 
 ```sh
 python -B -m unittest discover -s tests

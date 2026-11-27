@@ -1,4 +1,11 @@
-# HUP065: Figure S4, development-window replay
+# HUP065: current manuscript Fig. S4
+
+[All 64 controlled contact distributions (PDF)](../../single_window_replay/publication/HUP065/HUP065_run02_full_all64.pdf) · [shared replay code](../../single_window_replay/run.py) · [training and evaluation instructions](../../single_window_replay/README.md).
+The current S4 uses the HUP060 workflow: fit dynamics on run-01 and assess control in the preselected one-second run-02 window.
+
+## Archive: November 25 development-window replay
+
+The commands, figure labels and metrics below refer to this historical manuscript revision, not to the current S4.
 
 The one-page, 64-contact red-manuscript figure is in
 [`../publication/HUP065_run01_free_control.png`](../publication/HUP065_run01_free_control.png)
