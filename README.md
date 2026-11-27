@@ -9,6 +9,12 @@ See the [Part II reproduction instructions](part2_rc_sde/README.md);
 the historical figure filenames are retained. Do not run a separate release
 folder for the current workflow.
 
+## November 27 single-window replays
+
+The [HUP065 and HUP080 run-02 replay](patient_extensions/single_window_replay/README.md) uses run-01 to fit each patient's Graph–RC dynamics and select the noise and input scales. Both cases follow the HUP060 preprocessing, mean-field control and evaluation procedure. A fixed one-second run-02 window is shown for all 64 or 96 contacts, with 32 or 76 directly actuated, respectively. The history before the forecast boundary is available to the controller; the recorded future is used only for evaluation. Controlled trajectories are simulations, not recorded responses to stimulation.
+
+The HUP065 replay supplies the revised Fig. S4 for the red manuscript. The HUP080 replay is a separate development example; it does not replace the November 25 Fig. S5 or the archived run-04 results. The historical figure entries are listed below.
+
 ## Figures in the November 25 Physica D red manuscript
 
 | Result | Reproduction entry | Scope |
